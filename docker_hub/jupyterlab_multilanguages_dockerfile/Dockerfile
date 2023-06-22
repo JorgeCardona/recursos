@@ -47,7 +47,7 @@ RUN wget https://downloads.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3-
 	
 	
 # Install JupyterLab and PySpark
-RUN pip install jupyterlab==4.0.2 pyspark==3.4.0 pandas==1.5.3 apache-beam[interactive]==2.48.0 Faker==18.11.1 itables==1.5.3
+RUN pip install jupyterlab==4.0.2 pyspark==3.4.0 pandas==1.5.3 apache-beam[interactive]==2.48.0 Faker==18.11.1 itables==1.5.3 panel==1.1.1
 
 ARG VERSION_JAVA_KERNEL=1.3.0
 # Install kernel for Java in JupyterLab
@@ -75,13 +75,13 @@ ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 # Set the working directory
 WORKDIR /notebooks
 
-# Expose ports for JupyterLab, Spark UI
-EXPOSE 8888 4040
+# Expose ports for JupyterLab, Spark UI, PANEL
+EXPOSE 8888 4040 7777
 
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040  jorgecardona/jupyterlabmultilanguages:v1
+# docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 7777:7777 jorgecardona/jupyterlabmultilanguages:v1
 
 # docker build -t jorgecardona/jupyterlabmultilanguages:v1 .
 # docker push jorgecardona/jupyterlabmultilanguages:v1
