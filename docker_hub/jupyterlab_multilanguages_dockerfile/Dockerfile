@@ -76,12 +76,12 @@ ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 WORKDIR /notebooks
 
 # Expose ports for JupyterLab, Spark UI, PANEL, NodeJS
-EXPOSE 8888 4040 7777 3000
+EXPOSE 8888 4040 5006 3000
 
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 7777:7777 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
+# docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
 
 # docker build -t jorgecardona/jupyterlabmultilanguages:v1 .
 # docker push jorgecardona/jupyterlabmultilanguages:v1
