@@ -72,6 +72,11 @@ RUN pip install kotlin-jupyter-kernel
 # Instala el kernel de JavaScript en Jupyter Notebook
 RUN ijsinstall # jernel javaScript
 
+# Instala el kernel de Scala en Jupyter Notebook
+RUN curl -Lo coursier https://git.io/coursier-cli
+RUN chmod +x coursier
+RUN ./coursier launch --fork almond -- --install
+RUN rm -f coursier
 
 # Configurar variables de entorno
 ENV SPARK_HOME=/usr/local/spark
