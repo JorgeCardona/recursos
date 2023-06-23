@@ -47,7 +47,14 @@ RUN wget https://downloads.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3-
 	
 	
 # Install JupyterLab and PySpark
-RUN pip install jupyterlab==4.0.2 pyspark==3.4.0 pandas==1.5.3 apache-beam[interactive]==2.48.0 Faker==18.11.1 itables==1.5.3 panel==1.1.1
+RUN pip install jupyterlab==3.6.4
+RUN pip install jupyterlab-git==0.41.0 
+RUN pip install pyspark==3.4.0 
+RUN pip install pandas==1.5.3 
+RUN pip install apache-beam[interactive]==2.48.0 
+RUN pip install Faker==18.11.1 
+RUN pip install itables==1.5.3 
+RUN pip install panel==1.1.1
 
 ARG VERSION_JAVA_KERNEL=1.3.0
 # Install kernel for Java in JupyterLab
