@@ -73,6 +73,7 @@ RUN pip install kotlin-jupyter-kernel
 RUN ijsinstall # jernel javaScript
 
 # Instala el kernel de Scala en Jupyter Notebook
+# https://almond.sh/docs/quick-start-install
 RUN curl -Lo coursier https://git.io/coursier-cli
 RUN chmod +x coursier
 RUN ./coursier launch --fork almond -- --install
