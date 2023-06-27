@@ -1,68 +1,68 @@
-Nombre;Ejemplo;Retorna;Documentación
-abs;abs(-4);4;https://docs.python.org/3/library/functions.html#abs
-all;all([True, False, True]);False;https://docs.python.org/3/library/functions.html#all
-any;any([True, False, True]);True;https://docs.python.org/3/library/functions.html#any
-ascii;ascii("hello");'hello';https://docs.python.org/3/library/functions.html#ascii
-bin;bin(10);'0b1010';https://docs.python.org/3/library/functions.html#bin
-bool;bool(0);False;https://docs.python.org/3/library/functions.html#bool
-bytearray;bytearray([104, 101, 108, 108, 111]);bytearray(b'hello');https://docs.python.org/3/library/functions.html#bytearray
-bytes;bytes([104, 101, 108, 108, 111]);b'hello';https://docs.python.org/3/library/functions.html#bytes
-callable;callable(print);True;https://docs.python.org/3/library/functions.html#callable
-chr;chr(65);'A';https://docs.python.org/3/library/functions.html#chr
-classmethod;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#classmethod
-compile;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#compile
-complex;complex(2, 3);(2+3j);https://docs.python.org/3/library/functions.html#complex
-delattr;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#delattr
-dict;dict(key1='value1', key2='value2');{'key1': 'value1', 'key2': 'value2'};https://docs.python.org/3/library/functions.html#dict
-dir;dir();Lista de nombres en el ámbito actual;https://docs.python.org/3/library/functions.html#dir
-divmod;divmod(10, 3);(3, 1);https://docs.python.org/3/library/functions.html#divmod
-enumerate;enumerate(['a', 'b', 'c']);[(0, 'a'), (1, 'b'), (2, 'c')];https://docs.python.org/3/library/functions.html#enumerate
-eval;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#eval
-exec;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#exec
-filter;list(filter(lambda x: x > 0, [-1, 2, -3, 4, -5]));[2, 4];https://docs.python.org/3/library/functions.html#filter
-float;float(3);3.0;https://docs.python.org/3/library/functions.html#float
-format;"{:.2f}".format(3.14159);'3.14';https://docs.python.org/3/library/functions.html#format
-frozenset;frozenset([1, 2, 3]);frozenset({1, 2, 3});https://docs.python.org/3/library/functions.html#frozenset
-getattr;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#getattr
-globals;Devuelve un diccionario que representa el ámbito global actual;;https://docs.python.org/3/library/functions.html#globals
-hasattr;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#hasattr
-hash;hash('hello');Un número entero único;https://docs.python.org/3/library/functions.html#hash
-help;help(str);Ver la documentación de la clase 'str';https://docs.python.org/3/library/functions.html#help
-hex;hex(16);'0x10';https://docs.python.org/3/library/functions.html#hex
-id;id('hello');Un número entero único;https://docs.python.org/3/library/functions.html#id
-input;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#input
-int;int(3.14);3;https://docs.python.org/3/library/functions.html#int
-isinstance;isinstance(3, int);True;https://docs.python.org/3/library/functions.html#isinstance
-issubclass;issubclass(bool, int);True;https://docs.python.org/3/library/functions.html#issubclass
-iter;iter([1, 2, 3]);Un objeto iterador;https://docs.python.org/3/library/functions.html#iter
-len;len('hello');5;https://docs.python.org/3/library/functions.html#len
-list;list((1, 2, 3));[1, 2, 3];https://docs.python.org/3/library/functions.html#list
-locals;Devuelve un diccionario que representa el ámbito local actual;;https://docs.python.org/3/library/functions.html#locals
-map;list(map(lambda x: x * 2, [1, 2, 3]));[2, 4, 6];https://docs.python.org/3/library/functions.html#map
-max;max([1, 2, 3]);3;https://docs.python.org/3/library/functions.html#max
-memoryview;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#memoryview
-min;min([1, 2, 3]);1;https://docs.python.org/3/library/functions.html#min
-next;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#next
-object;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#object
-oct;oct(8);'0o10';https://docs.python.org/3/library/functions.html#oct
-open;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#open
-ord;ord('A');65;https://docs.python.org/3/library/functions.html#ord
-pow;pow(2, 3);8;https://docs.python.org/3/library/functions.html#pow
-print;print('hello');hello;https://docs.python.org/3/library/functions.html#print
-property;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#property
-range;list(range(5));[0, 1, 2, 3, 4];https://docs.python.org/3/library/functions.html#range
-repr;repr('hello');"'hello'";https://docs.python.org/3/library/functions.html#repr
-reversed;list(reversed([1, 2, 3]));[3, 2, 1];https://docs.python.org/3/library/functions.html#reversed
-round;round(3.14159, 2);3.14;https://docs.python.org/3/library/functions.html#round
-set;set([1, 2, 3]);{1, 2, 3};https://docs.python.org/3/library/functions.html#set
-setattr;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#setattr
-slice;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#slice
-sorted;sorted([3, 2, 1]);[1, 2, 3];https://docs.python.org/3/library/functions.html#sorted
-staticmethod;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#staticmethod
-str;str(3);'3';https://docs.python.org/3/library/functions.html#str
-sum;sum([1, 2, 3]);6;https://docs.python.org/3/library/functions.html#sum
-super;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#super
-tuple;tuple([1, 2, 3]);(1, 2, 3);https://docs.python.org/3/library/functions.html#tuple
-type;type('hello');<class 'str'>;https://docs.python.org/3/library/functions.html#type
-vars;Ver la documentación oficial para más detalles;;https://docs.python.org/3/library/functions.html#vars
-zip;list(zip([1, 2, 3], ['a', 'b', 'c']));[(1, 'a'), (2, 'b'), (3, 'c')];https://docs.python.org/3/library/functions.html#zip
+﻿Nombre,Ejemplo,Retorna,Documentacion
+abs,abs(-4),4,https://docs.python.org/3/library/functions.html#abs
+all,"all([True, False, True])",False,https://docs.python.org/3/library/functions.html#all
+any,"any([True, False, True])",True,https://docs.python.org/3/library/functions.html#any
+ascii,"ascii(""hello"")",'hello',https://docs.python.org/3/library/functions.html#ascii
+bin,bin(10),'0b1010',https://docs.python.org/3/library/functions.html#bin
+bool,bool(0),False,https://docs.python.org/3/library/functions.html#bool
+bytearray,"bytearray([104, 101, 108, 108, 111])",bytearray(b'hello'),https://docs.python.org/3/library/functions.html#bytearray
+bytes,"bytes([104, 101, 108, 108, 111])",b'hello',https://docs.python.org/3/library/functions.html#bytes
+callable,callable(print),True,https://docs.python.org/3/library/functions.html#callable
+chr,chr(65),'A',https://docs.python.org/3/library/functions.html#chr
+classmethod,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#classmethod
+compile,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#compile
+complex,"complex(2, 3)",(2+3j),https://docs.python.org/3/library/functions.html#complex
+delattr,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#delattr
+dict,"dict(key1='value1', key2='value2')","{'key1': 'value1', 'key2': 'value2'}",https://docs.python.org/3/library/functions.html#dict
+dir,dir(),Lista de nombres en el ambito actual,https://docs.python.org/3/library/functions.html#dir
+divmod,"divmod(10, 3)","(3, 1)",https://docs.python.org/3/library/functions.html#divmod
+enumerate,"enumerate(['a', 'b', 'c'])","[(0, 'a'), (1, 'b'), (2, 'c')]",https://docs.python.org/3/library/functions.html#enumerate
+eval,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#eval
+exec,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#exec
+filter,"list(filter(lambda x: x > 0, [-1, 2, -3, 4, -5]))","[2, 4]",https://docs.python.org/3/library/functions.html#filter
+float,float(3),3,https://docs.python.org/3/library/functions.html#float
+format,{:.2f}.format(3.14159),'3.14',https://docs.python.org/3/library/functions.html#format
+frozenset,"frozenset([1, 2, 3])","frozenset({1, 2, 3})",https://docs.python.org/3/library/functions.html#frozenset
+getattr,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#getattr
+globals,Devuelve un diccionario que representa el ambito global actual,,https://docs.python.org/3/library/functions.html#globals
+hasattr,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#hasattr
+hash,hash('hello'),Un numero entero unico,https://docs.python.org/3/library/functions.html#hash
+help,help(str),Ver la documentacion de la clase 'str',https://docs.python.org/3/library/functions.html#help
+hex,hex(16),'0x10',https://docs.python.org/3/library/functions.html#hex
+id,id('hello'),Un numero entero unico,https://docs.python.org/3/library/functions.html#id
+input,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#input
+int,int(3.14),3,https://docs.python.org/3/library/functions.html#int
+isinstance,"isinstance(3, int)",True,https://docs.python.org/3/library/functions.html#isinstance
+issubclass,"issubclass(bool, int)",True,https://docs.python.org/3/library/functions.html#issubclass
+iter,"iter([1, 2, 3])",Un objeto iterador,https://docs.python.org/3/library/functions.html#iter
+len,len('hello'),5,https://docs.python.org/3/library/functions.html#len
+list,"list((1, 2, 3))","[1, 2, 3]",https://docs.python.org/3/library/functions.html#list
+locals,Devuelve un diccionario que representa el ambito local actual,,https://docs.python.org/3/library/functions.html#locals
+map,"list(map(lambda x: x * 2, [1, 2, 3]))","[2, 4, 6]",https://docs.python.org/3/library/functions.html#map
+max,"max([1, 2, 3])",3,https://docs.python.org/3/library/functions.html#max
+memoryview,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#memoryview
+min,"min([1, 2, 3])",1,https://docs.python.org/3/library/functions.html#min
+next,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#next
+object,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#object
+oct,oct(8),'0o10',https://docs.python.org/3/library/functions.html#oct
+open,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#open
+ord,ord('A'),65,https://docs.python.org/3/library/functions.html#ord
+pow,"pow(2, 3)",8,https://docs.python.org/3/library/functions.html#pow
+print,print('hello'),hello,https://docs.python.org/3/library/functions.html#print
+property,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#property
+range,list(range(5)),"[0, 1, 2, 3, 4]",https://docs.python.org/3/library/functions.html#range
+repr,repr('hello'),'hello',https://docs.python.org/3/library/functions.html#repr
+reversed,"list(reversed([1, 2, 3]))","[3, 2, 1]",https://docs.python.org/3/library/functions.html#reversed
+round,"round(3.14159, 2)",3.14,https://docs.python.org/3/library/functions.html#round
+set,"set([1, 2, 3])","{1, 2, 3}",https://docs.python.org/3/library/functions.html#set
+setattr,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#setattr
+slice,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#slice
+sorted,"sorted([3, 2, 1])","[1, 2, 3]",https://docs.python.org/3/library/functions.html#sorted
+staticmethod,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#staticmethod
+str,str(3),'3',https://docs.python.org/3/library/functions.html#str
+sum,"sum([1, 2, 3])",6,https://docs.python.org/3/library/functions.html#sum
+super,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#super
+tuple,"tuple([1, 2, 3])","(1, 2, 3)",https://docs.python.org/3/library/functions.html#tuple
+type,type('hello'),<class 'str'>,https://docs.python.org/3/library/functions.html#type
+vars,Ver la documentacion oficial para mas detalles,,https://docs.python.org/3/library/functions.html#vars
+zip,"list(zip([1, 2, 3], ['a', 'b', 'c']))","[(1, 'a'), (2, 'b'), (3, 'c')]",https://docs.python.org/3/library/functions.html#zip
