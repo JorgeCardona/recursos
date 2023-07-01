@@ -1,1 +1,7 @@
 https://www.mockaroo.com/
+
+# DataSets
+https://my.api.mockaroo.com/food.json?key=65fdd9e0
+https://my.api.mockaroo.com/music.json?key=65fdd9e0
+https://my.api.mockaroo.com/pets.json?key=65fdd9e0
+https://my.api.mockaroo.com/users.json?key=65fdd9e0
