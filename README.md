@@ -15,7 +15,7 @@ docker run --name jorgecardona-postgres --rm -e POSTGRES_DB=test_poc -e POSTGRES
 ```
 
 # Probar el acceso a la base de datos
-<img src="probar_conexion_postgresql.png">
+<img src="Contenedores\Bases de datos\probar_conexion_postgresql.png">
 
 # Detener Contenedor postgres
 ```
@@ -27,7 +27,7 @@ docker stop jorgecardona-postgres
 docker run --name jorgecardona-mysql --rm -e MYSQL_DATABASE=test_poc -e MYSQL_PASSWORD=12345678 -e MYSQL_USER=admin -e MYSQL_ROOT_PASSWORD=root -d -p 3333:3306 mysql:8.0.33
 ```
 # Probar el acceso a la base de datos
-<img src="probar_conexion_mysql.png">
+<img src="Contenedores\Bases de datos\probar_conexion_mysql.png">
 
 # Detener Contenedor mysql
 ```
