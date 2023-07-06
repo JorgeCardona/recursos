@@ -12,33 +12,33 @@
 
 # LAS TABLAS EN POSTGRES SON SENSIBLES AL CASO
 # Iniciar postgres con docker
-```
+```yaml
 docker run --name jorgecardona-postgres --rm -e POSTGRES_DB=test_poc -e POSTGRES_PASSWORD=12345678 -e POSTGRES_USER=admin -d -p 5555:5432 postgres:13.11-bullseye
 ```
 
 # Iniciar mysql con docker
-```
+```yaml
 docker run --name jorgecardona-mysql --rm -e MYSQL_DATABASE=test_poc -e MYSQL_PASSWORD=12345678 -e MYSQL_USER=admin -e MYSQL_ROOT_PASSWORD=root -d -p 3333:3306 mysql:8.0.33
 ```
 
 # crea el entorno virtual
-```
+```bash
 jorge@cardona:~$ virtualenv venv
 ```
 
 # activa el entorno virtual
-```
+```bash
 jorge@cardona:~$ source venv/bin/activate
 ```
 
 # instala dbt-core y el conector de MySQL y PostgreSQL
-```
+```bash
 (venv) jorge@cardona:~$ pip install dbt-mysql
 (venv) jorge@cardona:~$ pip install dbt-postgres
 ```
 
 # listar los comandos de DBT
-```
+```yaml
 (venv) jorge@cardona:~$ dbt
 
 An ELT tool for managing your SQL transformations and data models. For more documentation on these commands, visit: docs.getdbt.com
@@ -66,7 +66,7 @@ Available sub-commands:
 ```
 
 # crea un nuevo proyecto DBT
-```
+```yaml
 (venv) jorge@cardona:~$ dbt init multi_database
 
 # define el conector a usar
@@ -79,7 +79,7 @@ Which database would you like to use?
 ```
 
 # ir al directorio del proyecto DBT
-```
+```bash
 (venv) jorge@cardona:~$ cd .\dbt init multi_database\
 ```
 # DIRECTORIODE UN PROYECTO DBT
@@ -100,12 +100,12 @@ Which database would you like to use?
 ```
 
 # ver el yaml de configuracion
-```
+```bash
 (venv) jorge@cardona:~$ ~/.dbt/profiles.yml
 ```
 
 # EJEMPLO DE profiles.yaml
-```
+```yaml
 multi_database:
   target: dev
   outputs:
@@ -130,7 +130,7 @@ multi_database:
 ```
 
 # probar la conexion a la base de datos
-```
+```yaml
 (venv) jorge@cardona/multi_database:~$ dbt debug
 
 23:04:18  Running with dbt=1.5.2
@@ -160,7 +160,7 @@ multi_database:
 ```
 
 # usar un archivo .csv para crear una tabla con datos a partir de este archivo
-```
+```yaml
 (venv) jorge@cardona/multi_database:~$ dbt seed
 
 23:38:17  Running with dbt=1.5.2
@@ -211,7 +211,7 @@ models/postgres_tabla_query_directo_flight_logs.sql
 
 # CREAR UNA TABLA
 ## EJEMPLO POSTGRES
-```
+```sql
 {{ 
 config(
 		materialized='table', 
@@ -230,7 +230,7 @@ FROM test_poc.public."FLIGHT_LOGS"
 ORDER BY flight_number
 ```
 # CREAR LA TABLA
-```
+```yaml
 (venv) jorge@cardona/multi_database:~$ dbt run
 
 00:19:17  Running with dbt=1.5.2
@@ -282,7 +282,7 @@ models/postgres_vista_query_con_with_y_referencia.sql
 ```
 
 ## EJEMPLO POSTGRES
-```
+```sql
 -- alias de tabla a consultar
 WITH SELECT_TEST AS(
 
@@ -298,7 +298,7 @@ SELECT flight_number,
 FROM SELECT_TEST
 ```
 # CREAR LA VISTA
-```
+```yaml
 (venv) jorge@cardona/multi_database:~$ dbt run
 
 00:34:08  Running with dbt=1.5.2
@@ -348,7 +348,7 @@ There are 1 unused configuration paths:
 ```
 # PARA USAR MYSQL CAMBIAR target=prod
 
-```
+```yaml
 multi_database:
   target: prod
   outputs:
@@ -373,7 +373,7 @@ multi_database:
 ```
 # EJEMPLO DE sources.yaml
 
-```
+```yaml
 version: 2
 
 sources:
@@ -409,7 +409,7 @@ models/postgres_vista_query_directo_con_source.sql
 ```
 
 ## EJEMPLO MYSQL
-```
+```sql
 SELECT t1.*
 FROM {{ source('tabla_referencia','clientes_alias') }} AS t1
 JOIN {{ source('vista_referencia','vista_query_con_with_flight_logs') }} AS t2
@@ -421,7 +421,7 @@ WHERE t1.id > 1500 AND t1.id < 1800
 
 # SNAPSHOT
 
-```
+```sql
 -- target_database='dbt_snapshots'
 -- target_schema='dbt_snapshots'
 {% snapshot validar_multi_campos_snapshot %}
@@ -451,7 +451,7 @@ WHERE id = 1
 
 ---
 
-```
+```sql
 -- si no existe la base de datos o las tablas, las crea.
 -- target_database='dbt_snapshots_todos_los_campos'
 -- target_schema='dbt_snapshots_todos_los_campos'
@@ -485,6 +485,25 @@ WHERE id = 1
 (venv) jorge@cardona/multi_database:~$ dbt snapshot
 ```
 <img src="imagenes\snapshot_mysql.png">
+
+# MODIFICAR UN REGISTRO
+<img src="imagenes\snapshot_mysql_secure_code.png">
+
+# EJECUTAR EL SNAPSHOT
+```
+(venv) jorge@cardona/multi_database:~$ dbt snapshot
+```
+<img src="imagenes\snapshot_mysql_secure_code_completado.png">
+
+# MODIFICAR UN REGISTRO
+<img src="imagenes\snapshot_mysql_flight_number.png">
+
+# EJECUTAR EL SNAPSHOT
+```
+(venv) jorge@cardona/multi_database:~$ dbt snapshot
+```
+<img src="imagenes\snapshot_mysql_flight_number_completado.png">
+
 
 # ALGUNAS COSAS NO FUNCIONAN BIEN EN LOS CONTENEDORES DE DOCKER Y POSTGRES COMO LOS SNAPSHOT LOS QUERIES CON JOIN
 # LOS QUERIES NO DEBEN TERMINAR EN punto y coma ; generan errores
