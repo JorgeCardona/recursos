@@ -526,7 +526,7 @@ FROM SELECT_TEST
 
 # EJECUTANDO UN MODELO ESPECIFICO
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt run --models src.flight_logs.vista_con_nombre_personalizado
+(venv) jorge@cardona/multi_database:~$ dbt run --models src.vista_con_nombre_personalizado
 ```
 <img src="imagenes\vista_mysql_con_nombre_personalizado.png">
 
