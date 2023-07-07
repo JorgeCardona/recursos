@@ -21,6 +21,11 @@ docker run --name jorgecardona-postgres --rm -e POSTGRES_DB=test_poc -e POSTGRES
 docker run --name jorgecardona-mysql --rm -e MYSQL_DATABASE=test_poc -e MYSQL_PASSWORD=12345678 -e MYSQL_USER=admin -e MYSQL_ROOT_PASSWORD=root -d -p 3333:3306 mysql:8.0.33
 ```
 
+# En la consola de MySQL ejecutar el comando para poder actualizar y eliminar.
+```sql
+SET SQL_SAFE_UPDATES = 0;
+```
+
 # crea el entorno virtual
 ```bash
 jorge@cardona:~$ virtualenv venv
@@ -381,9 +386,20 @@ sources:
     description: Fuente de datos original creada con el csv
     schema: test_poc
     database: test_poc
+
+    freshness: # si se ubica antes de las tablas aplica para todas las tablas
+      warn_after:
+        count: 1
+        period: minute # si en este tiempo 1 minuto no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra la alerta
+      error_after:
+        count: 3
+        period: minute  # si en este tiempo 3 minutos no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra el error      
+
     tables:
-       - name: tabla_original # se puede usar como un alias en la source
-         identifier: flight_logs # debe ser el nombrede la tabla en la base de datos    
+      - name: tabla_original # se puede usar como un alias en la source
+        identifier: flight_logs # debe ser el nombrede la tabla en la base de datos
+        # cmapo que sirve para probar que tan a menudo se actualiza la tabla 
+        loaded_at_field: test_time_freshness # tiene que ser un campo TIMESTAMP de la tabla para el freshness 
 
   - name: tabla_referencia
     description: Fuente de datos de clientes
@@ -402,6 +418,67 @@ sources:
         quoting: 
           identifier: true
 ```
+# PROBAR freshness
+## SE TRATA DE VALIDAR QUE LOS DATOS DE LA FUENTE DE DATOS SE ESTE ACTUALIZANDO PERIODICAMENTE EN EL TIEMPO DETERMINADO, SINO MUESTRA UN **WARNING** O **ERROR** SEGUN EL CASO
+
+# ADICIONA UNA COLUMNA TIMESTAMP PARA HACER LA PRUEBA
+```sql
+ALTER TABLE test_poc.flight_logs 
+ADD COLUMN test_time_freshness TIMESTAMP NULL DEFAULT now();
+```
+
+# VALIDANDO SIN QUE PASE EL INTERVALO INICIAL DE 1 MINUTO
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt source freshness
+
+05:16:01  Found 4 models, 0 tests, 2 snapshots, 0 analyses, 172 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
+05:16:01
+05:16:01  Concurrency: 1 threads (target='prod')
+05:16:01
+05:16:01  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
+05:16:01  1 of 1 PASS freshness of fuente_original.tabla_original ........................ [PASS in 0.04s]
+```
+
+# VALIDANDO WARNINGS, YA PASO 1 MINUTO
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt source freshness
+
+05:04:57  Found 4 models, 0 tests, 2 snapshots, 0 analyses, 172 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
+05:04:57
+05:04:57  Concurrency: 1 threads (target='prod')
+05:04:57  
+05:04:57  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
+05:04:57  1 of 1 WARN freshness of fuente_original.tabla_original ........................ [WARN in 0.04s]
+05:04:57  Done.
+```
+
+# VALIDANDO ERRORES, YA PASARON 2 MINUTOS
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt source freshness
+
+05:04:40  Concurrency: 1 threads (target='prod')
+05:04:40
+05:04:40  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
+05:04:40  1 of 1 ERROR STALE freshness of fuente_original.tabla_original ................. [ERROR STALE in 0.04s]
+05:04:40
+```
+
+# INSERTANDO NUEVOS DATOS
+```sql
+INSERT INTO test_poc.flight_logs
+VALUES ('7777', '01H4EEMMVWTD0QNCNHCWDQ7Y40', '2014', '2309', 'United', 'RST', 'Gabriela Zea', 'Colombia', '2022-03-30', '2023-07-07 14:14:22', 'CRY', 'Kaseda-shirakame', 'Japan', '26-1-2022', '2023-07-06 00:46:28', '5.55', 'Rici Preon', '8', 'Female', 'China', 'C3', '501.04', 'DOP', '43.15', 'B2', 'F6', 'Departed', 'Carolee Bonett', 'Adriena Burbury', '7', 'Boeing 737', 'N12345', '2884.71', '3647.15', now());
+```
+# VALIDANDO SIN QUE PASE EL INTERVALO INICIAL DE 1 MINUTO
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt source freshness
+
+05:16:01  Found 4 models, 0 tests, 2 snapshots, 0 analyses, 172 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
+05:16:01
+05:16:01  Concurrency: 1 threads (target='prod')
+05:16:01
+05:16:01  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
+05:16:01  1 of 1 PASS freshness of fuente_original.tabla_original ........................ [PASS in 0.04s]
+```
 
 ### dentro de la carpeta models crear una carpeta src y el archivo sql y adicionar el codigodel ejemplo 
 ```
@@ -418,6 +495,35 @@ WHERE t1.id > 1500 AND t1.id < 1800
 ```
 
 <img src="imagenes\vista_mysql_source_join.png">
+
+### dentro de la carpeta models crear una carpeta src y el archivo sql y adicionar el codigo del ejemplo 
+```
+models/vista_con_nombre_personalizado.sql
+```
+# EJEMPLO MYSQL
+```sql
+{{
+  config(
+    materialized='view',
+    alias='nombre_personalizado'
+  )
+}}
+
+# alias de tabla a consultar
+WITH SELECT_TEST AS(
+
+SELECT * FROM {{ ref('tabla_query_directo_flight_logs') }}
+)
+
+# select que crea la vista
+SELECT flight_number, 
+		airline, 
+		departure_airport,
+		departure_city, 
+		departure_country
+FROM SELECT_TEST
+```
+<img src="imagenes\vista_mysql_con_nombre_personalizado.png">
 
 # SNAPSHOT
 
