@@ -503,6 +503,7 @@ JOIN {{ source('vista_referencia','vista_query_con_with_flight_logs') }} AS t2
 WHERE t1.id > 1500 AND t1.id < 1800
 ```
 
+# CREAR VISTA CON NOMBRE PERSONALIZADO
 <img src="imagenes\vista_mysql_source_join.png">
 
 ### dentro de la carpeta models crear una carpeta src y el archivo sql y adicionar el codigo del ejemplo 
@@ -874,6 +875,149 @@ models:
 04:58:13    Got 9 results, configured to fail if != 0
 04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\tests\validar_menores_de_edad.sql
 ```
+
+# DEFINIENDO VARIABLES CON SET Y USARLAS
+# USANDO EL LOG PARA VER EL CONTENIDO DE LAS VARIABLES
+
+# ADICIONAR UN NUEVO MODELO
+### dentro de la carpeta macro test un archivo .sql  y adicionar el codigo del ejemplo 
+```
+models/ejemplo_con_jinja_set.sql
+```
+
+# EJEMPLO DEL MODELO
+```sql
+{{
+  config(
+    materialized='view',
+    alias='jinja_test_set'
+  )
+}}
+
+
+{% set seat_numbers = ('A1', 'B2', 'C3') %}
+
+-- VER EL LOG SIN LA FECHA a la izquierda en la salida estándar
+{% do log(print("--- El valor de seat_numbers es: " ~ seat_numbers), info=True) %}
+-- Imprimir el valor de seat_numbers en la salida estándar
+{% do log("*** El valor de seat_numbers es: " ~ seat_numbers, info=True) %}
+
+WITH result_table AS (
+  SELECT *
+    FROM  {{ref('flight_logs')}}
+  WHERE seat_number IN {{ seat_numbers }}
+    LIMIT 10
+)
+
+SELECT *
+FROM result_table
+```
+# EJECUTAR EL MODELO
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt run --models ejemplo_con_jinja_set
+
+17:41:10  Found 5 models, 6 tests, 2 snapshots, 0 analyses, 174 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
+17:41:10  
+17:41:10  Concurrency: 1 threads (target='prod')
+17:41:10  
+17:41:10  1 of 1 START view model test_poc.jinja_test_set ................................ [RUN]
+17:41:11  1 of 1 OK created view model test_poc.jinja_test_set ........................... [SUCCESS 0 in 0.15s]
+17:41:11  
+17:41:11  Finished running 1 view model in 0.31s.
+17:41:11  
+17:41:11  Completed successfully
+```
+
+
+# USAR MACROS DENTRO DE MODELOS
+# ADICIONAR UN NUEVO MACRO
+### dentro de la carpeta macro un archivo .sql  y adicionar el codigo del ejemplo 
+```
+macro/macro_filro.sql
+```
+# DEFINIR EL MACRO, poner siempre el -% ya que genera lineas o espacios en blanco y entregando una respuesta mal
+# EJEMPLO DE MACRO
+```sql
+{%- macro  filtrar_valores_usando_un_macro(query) -%}
+    {%- set filtrar -%}
+        {{query}}
+    {%- endset -%}
+
+    {% do log(print("--- El query a ejecutar es: " ~ filtrar), info=True) %}
+    {%- set resultado_query = run_query(filtrar) -%}
+
+    {%- if execute -%}
+        {# Return the first column #}
+        {% set results_list = resultado_query.columns[0].values() %}
+    {%- else -%}
+        {% set results_list = [] %}
+    {%- endif -%}
+    
+{% do log(print("--- El valor de results_list del query es: " ~ results_list), info=True) %}
+
+{{results_list}} {# esto hace las veces de retorno de variables {{nombre_de_la_variable_a_retornar}}, sino queda como retorno vacio #}
+{% endmacro %}
+```
+
+# EJEMPLO DE MODELO
+# ADICIONAR UN NUEVO MODELO
+### dentro de la carpeta models un archivo .sql  y adicionar el codigo del ejemplo 
+```
+models/usar_macro.sql
+```
+```sql
+{% set query_generos_registrados %}
+  SELECT DISTINCT passenger_gender
+    FROM  {{ref('flight_logs')}}
+    WHERE passenger_gender IS NOT NULL -- evita que retorne valores nulos
+{% endset %}
+
+{%- set results_list -%}
+    {# AQUI SE LLAMA LA FUNCION CREADA EN EL MACRO Y SE LE PASAN LOS PARAMETROS DE LA FUNCION #}
+    {{ filtrar_valores_usando_un_macro(query_generos_registrados)}}
+{%- endset -%}
+
+-- VER EL LOG SIN LA FECHA a la izquierda en la salida estándar
+{% do log(print("--- El valor de results_list en usar_macro es : " ~ results_list), info=True) %}
+
+# hacer el query con los valores filtrados
+WITH result_table AS (
+  SELECT *
+    FROM  {{ref('flight_logs')}}
+  WHERE passenger_gender IN {{ results_list}}
+    LIMIT 10
+)
+
+SELECT *
+FROM result_table
+```
+
+# EJECUTAR EL MODELO
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt run --models usar_macro
+
+17:41:10  Found 5 models, 6 tests, 2 snapshots, 0 analyses, 174 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
+17:41:10  
+17:41:10  Concurrency: 1 threads (target='prod')
+17:41:10  
+17:41:10  1 of 1 START view model test_poc.jinja_test_set ................................ [RUN]
+17:41:11  1 of 1 OK created view model test_poc.jinja_test_set ........................... [SUCCESS 0 in 0.15s]
+17:41:11  
+17:41:11  Finished running 1 view model in 0.31s.
+17:41:11  
+17:41:11  Completed successfully
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ALGUNAS COSAS NO FUNCIONAN BIEN EN LOS CONTENEDORES DE DOCKER Y POSTGRES COMO LOS SNAPSHOT LOS QUERIES CON JOIN
