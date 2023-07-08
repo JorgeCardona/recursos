@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: flight_logs # se puede usar el nombre del script sql o el identifier
+    columns:
+      - name: id
+        tests:
+          - unique 
+      - name: departure_gate
+        tests:
+          - not_null
+          - accepted_values:
+              name: valores_esperados # nombre del caso de prueba
+              values: ['A1', 'B2', 'C3'] # ['A1', 'B2', 'C3']
+              config:
+                where: "id > 1"
+      - name: passenger_age
+        tests: 
+          - tercera_edad

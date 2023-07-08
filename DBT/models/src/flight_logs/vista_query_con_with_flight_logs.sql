@@ -8,6 +8,7 @@ SELECT * FROM {{ ref('tabla_query_directo_flight_logs') }}
 SELECT flight_number, 
 		airline, 
 		departure_airport,
+		departure_gate,
 		departure_city, 
 		departure_country
 FROM SELECT_TEST

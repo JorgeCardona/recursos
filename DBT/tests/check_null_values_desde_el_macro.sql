@@ -1,0 +1,1 @@
+{{ check_null_values (ref('flight_logs')) }}

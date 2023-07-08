@@ -229,9 +229,10 @@ SELECT id,
 		flight_number, 
 		airline, 
 		departure_airport,
+		departure_gate,
 		departure_city, 
 		departure_country
-FROM test_poc.public."FLIGHT_LOGS"
+FROM test_poc.flight_logs
 ORDER BY flight_number
 ```
 # CREAR LA TABLA
@@ -289,15 +290,17 @@ models/postgres_vista_query_con_with_y_referencia.sql
 ## EJEMPLO POSTGRES
 ```sql
 -- alias de tabla a consultar
+# alias de tabla a consultar
 WITH SELECT_TEST AS(
 
 SELECT * FROM {{ ref('postgres_tabla_query_directo_flight_logs') }}
 )
 
---- select que crea la vista
+# select que crea la vista
 SELECT flight_number, 
 		airline, 
 		departure_airport,
+		departure_gate,
 		departure_city, 
 		departure_country
 FROM SELECT_TEST
@@ -420,6 +423,12 @@ sources:
 ```
 # PROBAR freshness
 ## SE TRATA DE VALIDAR QUE LOS DATOS DE LA FUENTE DE DATOS SE ESTE ACTUALIZANDO PERIODICAMENTE EN EL TIEMPO DETERMINADO, SINO MUESTRA UN **WARNING** O **ERROR** SEGUN EL CASO
+
+| FRESHNESS VALUES|
+|-----------------|
+| minute |
+| hour |
+| day|
 
 # ADICIONA UNA COLUMNA TIMESTAMP PARA HACER LA PRUEBA
 ```sql
@@ -609,11 +618,262 @@ WHERE id = 1
 # MODIFICAR UN REGISTRO
 <img src="imagenes\snapshot_mysql_flight_number.png">
 
-# EJECUTAR EL SNAPSHOT
+# EJECUTAR EL SNAPSHOT ESPECIFICO
 ```
-(venv) jorge@cardona/multi_database:~$ dbt snapshot
+(venv) jorge@cardona/multi_database:~$ dbt snapshot --select snapshot_tabla_unos_campos
 ```
 <img src="imagenes\snapshot_mysql_flight_number_completado.png">
+
+
+# LOS RESULTADOS DE LOS TEST **SIEMPRE DEBE SER 0 COLUMNAS CONTADAS** PARA QUE EL TEST PASE, DE LO CONTRARIO MOSTRARA ERROR
+| TEST TYPES|
+|-----------|
+
+| Singular        | Generic   |
+|-----------------|-----------|
+| Unique          | custome |
+| not_null        |       |
+| accepted_values |      |
+| Relationships   |   |
+
+# GENERIC TEST DESDE EL YAML schema.yaml
+### dentro de la carpeta models y el archivo schema. yaml y adicionar el codigo del ejemplo 
+```
+models/schema.yaml
+```
+# EJEMPLO DE CODIGO DEL YAML
+```yaml
+version: 2
+
+models:
+  - name: flight_logs # se puede usar el nombre del script sql o el identifier
+    columns:
+      - name: id
+        tests:
+          - unique 
+      - name: departure_gate
+        tests:
+          - not_null
+          - accepted_values:
+              name: valores_esperados # nombre del caso de prueba
+              values: ['A1', 'B2', 'C3'] 
+              config:
+                where: "id > 1"
+```
+# EJECUTAR LAS PRUEBAS DE VALIDACION DE DATOS DEL MODELO
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt test
+
+03:31:25  1 of 3 START test not_null_flight_logs_departure_gate .......................... [RUN]
+03:31:25  1 of 3 PASS not_null_flight_logs_departure_gate ................................ [PASS in 0.05s]
+03:31:25  2 of 3 START test unique_flight_logs_id ........................................ [RUN]
+03:31:25  2 of 3 PASS unique_flight_logs_id .............................................. [PASS in 0.03s]
+03:31:25  3 of 3 START test valores_esperados ............................................ [RUN]
+03:31:26  3 of 3 PASS valores_esperados .................................................. [PASS in 0.04s]
+03:31:26  
+03:31:26  Finished running 3 tests in 0.25s.
+03:31:26  Completed successfully
+03:31:26  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+```
+
+# VALIDACIONES FALLIDAS
+```yaml
+version: 2
+
+models:
+  - name: flight_logs # se puede usar el nombre del script sql o el identifier
+    columns:
+      - name: id
+        tests:
+          - unique 
+      - name: departure_gate
+        tests:
+          - not_null
+          - accepted_values:
+              name: valores_esperados # nombre del caso de prueba
+              values: ['A1', 'B2'] 
+              config:
+                where: "id > 1"
+```
+# EJECUTAR LAS PRUEBAS DE VALIDACION DE DATOS EL TEST FALLA POR QUE EL VALOR C3 NO ESTA COMO VALOR ESPERADO
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt test
+
+03:33:14  1 of 3 START test not_null_flight_logs_departure_gate .......................... [RUN]
+03:33:15  1 of 3 PASS not_null_flight_logs_departure_gate ................................ [PASS in 0.05s]
+03:33:15  2 of 3 START test unique_flight_logs_id ........................................ [RUN]
+03:33:15  2 of 3 PASS unique_flight_logs_id .............................................. [PASS in 0.04s]
+03:33:15  3 of 3 START test valores_esperados ............................................ [RUN]
+03:33:15  3 of 3 FAIL 1 valores_esperados ................................................ [FAIL 1 in 0.03s]
+03:33:15  
+03:33:15  Finished running 3 tests in 0.26s.
+03:33:15  Completed with 1 error and 0 warnings:
+03:33:15  Failure in test valores_esperados (models\schema.yaml)
+03:33:15    Got 1 result, configured to fail if != 0
+03:33:15    compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\valores_esperados.sql
+```
+
+# SE PUEDE ACCEDER AL CASO DE PRUEBA CREADO Y VER EL CODIGO GENERADO POR DBT Y VEMOS QUE HAY MAS DE 1 ARCHIVO, PORESO GENERA ERROR YA QUE DEBERIA SER 0
+``` SQL
+-- compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\valores_esperados.sql
+
+with all_values as (
+
+    select
+        departure_gate as value_field,
+        count(*) as n_records
+
+    from (select * from `test_poc`.`flight_logs` where id > 1) dbt_subquery
+    group by departure_gate
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'A1','B2'
+)
+```
+
+# TEST SINGULAR TEST CON SQL
+### dentro de la carpeta test crear un archivo .sql  y adicionar el codigo del ejemplo 
+```
+test/schema.validar_menores_de_edad.sql
+```
+# EJEMPLO DE CODIGO DEL TEST
+```sql
+SELECT * FROM 
+{{ ref('flight_logs') }}
+WHERE passenger_age < 18
+LIMIT 10
+```
+# EJECUTAR LAS PRUEBAS DE VALIDACION DE DATOS DEL CASO ESPECIFICO FALLA POR QUE HAY MENORES DE EDAD
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt test --select validar_menores_de_edad
+
+03:52:57  1 of 4 START test not_null_flight_logs_departure_gate .......................... [RUN]
+03:52:57  1 of 4 PASS not_null_flight_logs_departure_gate ................................ [PASS in 0.06s]
+03:52:57  2 of 4 START test unique_flight_logs_id ........................................ [RUN]
+03:52:57  2 of 4 PASS unique_flight_logs_id .............................................. [PASS in 0.04s]
+03:52:57  3 of 4 START test validar_menores_de_edad ...................................... [RUN]
+03:52:57  3 of 4 FAIL 9 validar_menores_de_edad .......................................... [FAIL 9 in 0.04s]
+03:52:57  4 of 4 START test valores_esperados ............................................ [RUN]
+03:52:57  4 of 4 FAIL 1 valores_esperados ................................................ [FAIL 1 in 0.05s]
+03:52:57
+03:52:57  Finished running 4 tests in 0.34s.
+03:52:57
+03:52:57  Completed with 2 errors and 0 warnings:
+03:52:57
+03:52:57  Failure in test validar_menores_de_edad (tests\validar_menores_de_edad.sql)
+03:52:57  Failure in test valores_esperados (models\schema.yaml)
+```
+
+# MACROS
+### dentro de la carpeta macro crear un archivo .sql  y adicionar el codigo del ejemplo 
+```
+macro/macro_sin_valores_nulos.sql
+```
+# EJEMPLO DE CODIGO SQL PARA MACRO
+```sql
+{% macro check_null_values(model) %}
+ SELECT * FROM {{ model }} WHERE
+ {% for col in adapter.get_columns_in_relation(model) -%} # -% significa que elimina los espacios en blancodel final trim
+ {{ col.column }} IS NULL OR
+ {% endfor %}
+ FALSE
+{% endmacro %}
+```
+### dentro de la carpeta macro test un archivo .sql  y adicionar el codigo del ejemplo 
+```
+test/check_null_values_desde_el_macro.sql
+```
+# EJEMPLO DE CODIGO SQL PARA TEST USANDO LA MACRO
+```sql
+{{ check_null_values (ref('flight_logs')) }}
+```
+# EJECUTAR EL TEST
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt test --select check_null_values_desde_el_macro
+
+04:35:16  1 of 1 START test check_null_values_desde_el_macro ............................. [RUN]
+04:35:17  1 of 1 PASS check_null_values_desde_el_macro ................................... [PASS in 0.08s]
+04:35:17
+04:35:17  Finished running 1 test in 0.23s.
+```
+
+# EJECUTAR ESTE SQL PARA CREAR REGISTRO CON VALORES NULOS
+```sql
+INSERT INTO `test_poc`.`flight_logs` (`id`) VALUES ('12345678');
+```
+# EJECUTAR EL TEST
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt test --select check_null_values_desde_el_macro
+
+04:36:02  1 of 1 START test check_null_values_desde_el_macro ............................. [RUN]
+04:36:02  1 of 1 FAIL 1 check_null_values_desde_el_macro ................................. [FAIL 1 in 0.07s]
+04:36:02  Finished running 1 test in 0.20s.
+04:36:02  Completed with 1 error and 0 warnings:
+04:36:02  Failure in test check_null_values_desde_el_macro (tests\check_null_values_desde_el_macro.sql)
+```
+# ADICIONAR UN NUEVO MACRO
+### dentro de la carpeta macro test un archivo .sql  y adicionar el codigo del ejemplo 
+```
+test/macro_validar_adultos_mayores.sql
+```
+
+# CODIGO DE EJEMPLO DEL MACRO
+```sql
+{% test tercera_edad(model, column_name) %}
+SELECT
+ *
+FROM
+ {{ model }}
+WHERE
+ {{ column_name}} > 80
+{% endtest %}
+```
+
+# ACTUALIZAR EL sources.yml
+```yaml
+version: 2
+
+models:
+  - name: flight_logs # se puede usar el nombre del script sql o el identifier
+    columns:
+      - name: id
+        tests:
+          - unique 
+      - name: departure_gate
+        tests:
+          - not_null
+          - accepted_values:
+              name: valores_esperados # nombre del caso de prueba
+              values: ['A1', 'B2', 'C3'] # ['A1', 'B2', 'C3']
+              config:
+                where: "id > 1"
+      - name: passenger_age
+        tests: 
+          - tercera_edad
+```
+
+# EJECUTAR EL TEST
+```yaml
+(venv) jorge@cardona/multi_database:~$ dbt test
+
+04:58:13  Completed with 4 errors and 0 warnings:
+04:58:13  Failure in test check_null_values_desde_el_macro (tests\check_null_values_desde_el_macro.sql)
+04:58:13    Got 1 result, configured to fail if != 0
+04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\tests\check_null_values_desde_el_macro.sql
+04:58:13  Failure in test not_null_flight_logs_departure_gate (models\schema.yaml)
+04:58:13    Got 1 result, configured to fail if != 0
+04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\not_null_flight_logs_departure_gate.sql
+04:58:13  Failure in test tercera_edad_flight_logs_passenger_age (models\schema.yaml)
+04:58:13    Got 1207 results, configured to fail if != 0
+04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\tercera_edad_flight_logs_passenger_age.sql
+04:58:13  Failure in test validar_menores_de_edad (tests\validar_menores_de_edad.sql)
+04:58:13    Got 9 results, configured to fail if != 0
+04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\tests\validar_menores_de_edad.sql
+```
 
 
 # ALGUNAS COSAS NO FUNCIONAN BIEN EN LOS CONTENEDORES DE DOCKER Y POSTGRES COMO LOS SNAPSHOT LOS QUERIES CON JOIN
