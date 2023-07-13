@@ -1,48 +1,59 @@
-# PRUEBA CON CONTENEDORES DE POSTGRES Y MYSQL
-| Configuración | PostgreSQL| MySQL                        |
-|---------------|-----------|------------------------------|
-| Host          | localhost | localhost                    |
-| Port          | 5555      | 3333                         |
-| User          | admin     | admin                        |
-| Password      | 12345678  | 12345678                     |
-| Database      | test_poc  | test_poc                     |
-| Schema        | public    | test_poc                     |
+# EMOJIS
+# https://es.piliapp.com/emoji/list/
+# Contenido
+ - [Crear un entorno virtual](#crear-un-entorno-virtual)
+ - [Activar el entorno virtual](#activar-el-entorno-virtual)
+ - [Instalar DBT y el adapatador a base de datos](#instalacion-de-dbt-core-y-el-conector-postgresql)
+ - [Validar version de DBT](#verificar-version-dbt) 
+ - [Listar los comandos de DBT](#listar-los-comandos-de-dbt)
+ - [Crear un proyecto DBT](#crear-un-proyecto-dbt)
+ - [Estructura de un proyecto DBT](#estructura-de-un-proyecto-dbt)
+ - [Descripcion de los directorios y archivos en un proyecto DBT](#descripcion-de-los-directorios-y-archivos-de-un-proyecto-dbt)
+ - [Acceder al yaml de configuracion de Perfiles](#acceder-al-yaml-de-configuracion-de-perfiles)
+ - [Probar la conexion a la base de datos desde DBT](#probar-la-conexion-a-la-base-de-datos-desde-dbt)
+ - [Poblar la base de datos usando un archivo CSV](#poblar-la-base-de-datos-usando-un-archivo)
+ - [Crear el primer modelo una vista](#crear-el-primer-modelo-una-vista)
+ - [Crear el segundo modelo una tabla](#crear-el-segundo-modelo-una-tabla)
+ - [Crear el tercer una tabla con nombre personalizado, usando una tabla temporal](#crear-el-tercer-modelo-una-tabla-con-nombre-personalizado-alias-y-con-una-tabla-temporal-usando-with)
+ - [Adicionar columna TIMESTAMP para probar el freshness](#adicionar-columna-timestamp-para-probar-el-freshness)
 
-# Cliente DBeaver para probar las conexiones
-
-# LAS TABLAS EN POSTGRES SON SENSIBLES AL CASO
-# Iniciar postgres con docker
+## Crear un entorno virtual
 ```yaml
-docker run --name jorgecardona-postgres --rm -e POSTGRES_DB=test_poc -e POSTGRES_PASSWORD=12345678 -e POSTGRES_USER=admin -d -p 5555:5432 postgres:13.11-bullseye
-```
+jorge@cardona:~$ pip install virtualenv
 
-# Iniciar mysql con docker
-```yaml
-docker run --name jorgecardona-mysql --rm -e MYSQL_DATABASE=test_poc -e MYSQL_PASSWORD=12345678 -e MYSQL_USER=admin -e MYSQL_ROOT_PASSWORD=root -d -p 3333:3306 mysql:8.0.33
-```
-
-# En la consola de MySQL ejecutar el comando para poder actualizar y eliminar.
-```sql
-SET SQL_SAFE_UPDATES = 0;
-```
-
-# crea el entorno virtual
-```bash
 jorge@cardona:~$ virtualenv venv
 ```
 
-# activa el entorno virtual
-```bash
+### Activar el entorno virtual
+```yaml
+# linux
 jorge@cardona:~$ source venv/bin/activate
+(venv) jorge@cardona:~$
+
+# windows
+jorge@cardona:~$ venv/Scripts/activate
+(venv) jorge@cardona:~$
 ```
 
-# instala dbt-core y el conector de MySQL y PostgreSQL
-```bash
-(venv) jorge@cardona:~$ pip install dbt-mysql
+## Instalacion de dbt-core y el conector PostgreSQL
+```yaml
+(venv) jorge@cardona:~$ pip install dbt-core
 (venv) jorge@cardona:~$ pip install dbt-postgres
 ```
 
-# listar los comandos de DBT
+## Verificar Version DBT
+```yaml
+(venv) jorge@cardona:~$ dbt --version
+
+Core:
+  - installed: 1.5.2
+  - latest:    1.5.2 - Up to date!
+
+Plugins:
+  - postgres: 1.5.2 - Up to date!
+```
+
+# Listar los comandos de DBT
 ```yaml
 (venv) jorge@cardona:~$ dbt
 
@@ -70,314 +81,480 @@ Available sub-commands:
 
 ```
 
-# crea un nuevo proyecto DBT
+# Crear un proyecto DBT
 ```yaml
-(venv) jorge@cardona:~$ dbt init multi_database
+(venv) jorge@cardona:~$ dbt init dbt_poc
 
 # define el conector a usar
 Enter a number: 
 Which database would you like to use?
-[1] mariadb
-[2] mysql
-[3] mysql5
-[4] postgres
+[1] postgres
+
+Enter a number: 1
+Your new dbt project "dbt_poc" was created!
+Happy modeling!
 ```
+
+# Estructura de un proyecto DBT
+```
+⭐ dbt_poc [project_directory]
+┗ ☢️ analyses [package]
+  ┗ 📍.gitkeep
+┗ 🦄 macros [package]
+  ┗ 📍.gitkeep
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yml
+  ┗ ♻️ sources.yml
+┗ 🌼 seeds [package]
+  ┗ 📍.gitkeep
+┗ 📸 snapshots [package]
+  ┗ 📍.gitkeep
+┗ 🚀 test [package]
+  ┗ 📍.gitkeep
+┗ 🔎 logs [package]
+  ┗ 👀 dbt.log
+┗ 🔑 dbt_project.yml
+┗ 🎁 README.md
+┗ ⛔.gitignore
+┗ 🛒 dbt_packages [package]
+┗ 🎯 target [package]
+┗ ❄️ assets [package] creado 
+```
+
+# Descripcion de los directorios y archivos de un proyecto DBT
+
+Aquí tienes la tabla actualizada, incluyendo los archivos faltantes:
+
+| Archivo/Directorio      | Función                                                     | Descripción                                                                                                                             |
+|----------------------|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| dbt_poc              | Directorio principal del proyecto dbt                        | Directorio raíz del proyecto dbt                                                                                                        |
+| ┗ analyses           | Carpeta que contiene análisis (queries) de datos             | Contiene los archivos .sql que representan los análisis de datos realizados en el proyecto                                              |
+| ┗ macros             | Carpeta que contiene macros personalizados                   | Contiene los archivos .sql con macros reutilizables que pueden ser invocados en los modelos y análisis                                 |
+| ┗ models             | Carpeta que contiene los modelos de datos                    | Contiene los archivos .sql que representan los modelos de datos utilizados para transformar y combinar los datos de origen                |
+| ┗ ┗ schema.yml        | Archivo que define la estructura del esquema de los modelos  | Archivo YAML que describe la estructura del esquema de los modelos de datos                                                              |
+| ┗ ┗ sources.yml       | Archivo que define las fuentes de datos de los modelos       | Archivo YAML que especifica las fuentes de datos utilizadas por los modelos de datos                                                    |
+| ┗ seeds              | Carpeta que contiene datos de prueba (seeds)                 | Contiene los archivos .csv o .json que proporcionan datos iniciales de prueba para el desarrollo y las pruebas de los modelos de dbt       |
+| ┗ snapshots          | Carpeta que contiene instantáneas de los modelos de datos    | Contiene los archivos .sql que representan instantáneas (cachés) de los modelos de datos para un acceso más rápido y eficiente             |
+| ┗ test               | Carpeta que contiene pruebas para los modelos                | Contiene los archivos .sql que representan las pruebas unitarias y de integración para los modelos de datos                             |
+| ┗ logs               | Carpeta que contiene los registros de ejecución de dbt       | Contiene el archivo dbt.log que registra los detalles y resultados de las ejecuciones de dbt                                          |
+| ┗ dbt_project.yml    | Archivo de configuración principal de dbt                    | Archivo YAML que contiene la configuración del proyecto dbt, incluyendo las conexiones a bases de datos, variables y configuraciones de dbt |
+| ┗ README.md          | Archivo de documentación del proyecto                        | Archivo de texto que proporciona información y descripción general del proyecto dbt                                                     |
+| ┗ .gitignore         | Archivo que especifica los archivos/directorios ignorados por Git | Archivo que indica a Git qué archivos y directorios debe ignorar durante el control de versiones                                        |
+| ┗ dbt_packages       | Carpeta que puede contener paquetes externos de dbt          | Carpeta opcional para almacenar paquetes externos de dbt, que pueden ser utilizados en el proyecto                                    |
+| ┗ target             | Carpeta que contiene los archivos generados por dbt          | Carpeta donde se generan los archivos resultantes de las transformaciones y cargas de datos realizadas por dbt                          |
+| ┗ .gitkeep           | Archivo de marcador                                          | El archivo `.gitkeep` se utiliza para mantener los directorios vacíos dentro del control de versiones de Git.                           |
+
 
 # ir al directorio del proyecto DBT
 ```bash
-(venv) jorge@cardona:~$ cd .\dbt init multi_database\
-```
-# DIRECTORIODE UN PROYECTO DBT
-```
-📦 multi_database [project_directory]
-┗ 📂 analyses [package]
-┗ 📂 dbt_packages [package]
-┗ 📂 logs [package]
-┗ 📂 macros [package]
-┗ 📂 models [package]
-┗ 📂 seeds [package]
-┗ 📂 snapshots [package]
-┗ 📂 target [package]
-┗ 📂 test [package]
-┗ 📜 dbt_project.yml
-┗ 📜 README.md
-┗ ⚠️ .gitignore
+(venv) jorge@cardona:~$ cd dbt_poc
 ```
 
-# ver el yaml de configuracion
-```bash
-(venv) jorge@cardona:~$ ~/.dbt/profiles.yml
+# Acceder al yaml de configuracion de perfiles
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ ~/.dbt/profiles.yml
 ```
 
 # EJEMPLO DE profiles.yaml
 ```yaml
-multi_database:
+dbt_poc:
   target: dev
   outputs:
-    prod:
-      type: mysql
-      server: localhost
-      port: 3333  # optional
-      database: test_poc
-      schema: test_poc
-      username: admin
-      password: '12345678' # las claves deben estar entre comillas
-      driver: MySQL ODBC 8.0 ANSI Driver
     dev:
       type: postgres
       threads: 1
       host: localhost
-      port: 5555
-      user: admin
+      port: 5432
+      user: postgres
       pass: '12345678'
-      dbname: test_poc
+      dbname: postgres
       schema: public
 ```
 
-# probar la conexion a la base de datos
+# Probar la conexion a la base de datos desde DBT
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt debug
+(venv) jorge@cardona/dbt_poc:~$ dbt debug
 
-23:04:18  Running with dbt=1.5.2
-23:04:18  dbt version: 1.5.2
-23:04:18  python version: 3.9.2rc1
-23:04:18  python path: C:\dbt_venv\venv\Scripts\python.exe
-23:04:18  os info: Windows-10-10.0.19041-SP0
-23:04:18  Using profiles.yml file at C:\Users\QiDimMak\.dbt\profiles.yml
-23:04:18  Using dbt_project.yml file at C:\dbt_venv\multi_database\dbt_project.yml
-23:04:18  Configuration:
-23:04:18    profiles.yml file [OK found and valid]
-23:04:18    dbt_project.yml file [OK found and valid]
-23:04:18  Required dependencies:
-23:04:18   - git [OK found]
+04:43:41  Running with dbt=1.5.2
+04:43:41  Configuration:
+04:43:41    profiles.yml file [OK found and valid]
+04:43:41    dbt_project.yml file [OK found and valid]
+04:43:41  Required dependencies:
+04:43:41   - git [OK found]
 
-23:04:18  Connection:
-23:04:18    host: localhost
-23:04:18    port: 5555
-23:04:18    user: admin
-23:04:18    database: test_poc
-23:04:18    schema: public
-23:04:18    search_path: None
-23:04:18    keepalives_idle: 0
-23:04:18    sslmode: None
-23:04:18  Registered adapter: postgres=1.5.2
-23:04:18    Connection test: [OK connection ok]
+04:43:41  Connection:
+04:43:41    host: localhost
+04:43:41    port: 5432
+04:43:41    user: postgres
+04:43:41    database: postgres
+04:43:41    schema: public
+04:43:41    search_path: None
+04:43:41    keepalives_idle: 0
+04:43:41    sslmode: None
+04:43:41  Registered adapter: postgres=1.5.2
+04:43:42    Connection test: [OK connection ok]
+
+04:43:42  All checks passed!
 ```
 
-# usar un archivo .csv para crear una tabla con datos a partir de este archivo
+# Poblar la base de datos usando un archivo
+
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt seed
+Adicionar el archivo flight_logs.csv dentro de la carpeta SEEDS
+```
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+```
+```yaml
+# dbt seed --show permite ver un random example de los datos del seed
+# dbt seed ejecuta el poblado de datos sin preview
+(venv) jorge@cardona/dbt_poc:~$ dbt seed --show
 
 23:38:17  Running with dbt=1.5.2
 23:38:17  Registered adapter: postgres=1.5.2
-23:38:17  Found 2 models, 4 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
-23:38:18
+23:38:17  Found 0 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
 23:38:18  Concurrency: 1 threads (target='dev')
-23:38:18
 23:38:18  1 of 1 START seed file public.FLIGHT_LOGS ...................................... [RUN]
 23:39:28  1 of 1 OK loaded seed file public.flight_logs .................................. [INSERT 5000 in 70.82s]
-23:39:28  
 23:39:29  Finished running 1 seed in 0 hours 1 minutes and 10.99 seconds (70.99s).
-23:39:29
-23:39:29  Completed successfully
-23:39:29  
-23:39:29  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+23:39:30  Random sample of table: public.flight_logs
+23:39:30 ------------------------------------------
+|    id | secure_code          | flight_id | flight_number | airline  | departure_airport | departure_city | departure_country | departure_date |      departure_time | arrival_airport | arrival_city | arrival_country | arrival_date |        arrival_time | flight_duration | passenger_name     | passenger_age | passenger_gender | passenger_nationa... | seat_number | ticket_price | currency | baggage_weight | departure_gate | arrival_gate 
+| flight_status | pilot_name         | co_pilot_name    | cabin_crew_count | aircraft_type | aircraft_registra... | fuel_consumption | flight_distance |
+| ----- | -------------------- | --------- | ------------- | -------- | ----------------- | -------------- | ----------------- | -------------- | ------------------- | --------------- | ------------ | --------------- | ------------ | ------------------- | --------------- | ------------------ | ------------- | ---------------- | -------------------- | ----------- | ------------ | -------- | -------------- | -------------- | ------------ 
+| ------------- | ------------------ | ---------------- | ---------------- | ------------- | -------------------- | ---------------- | --------------- |
+| 3,430 | 01H4EEMWYE4HC82Y7... |     3,430 |         1,430 | United   | SOD               | Shimiaozi      | China             |     2022-11-25 | 2023-07-06 16:29:56 | VMU             | Bayog        | Philippines     | 5-10-2022    | 2023-07-06 08:02:19 |           22.14 | Byram Booth        |            33 | Male             | Indonesia            | B2          |       480.64 | CNY      |          21.52 | C3             | F6
+| On Time       | Martainn Payfoot   | Warde Sleford    |                2 | Embraer E190  | N12345               |         2,104.68 |        4,823.04 |
+| 2,868 | 01H4EEMV833E8RQQ8... |     2,868 |         5,640 | American | MIM               | Cartago        | Colombia          |     2022-11-18 | 2023-07-06 19:15:12 | MBP             | Bolou        | Indonesia       | 4-7-2022     | 2023-07-06 00:12:07 |           22.60 | Ebony Navarro      |            18 | Non-binary       | Togo                 | C3          |       710.09 | COP      |          22.89 | B2             | F6
+| Cancelled     | Yoko Born          | Aurlie O'Sheils  |                8 | Embraer E190  | N67890               |         7,892.16 |        3,247.37 |
+|   ... | ...                  |       ... |           ... | ...      | ...               | ...            | ...               |            ... |                 ... | ...             | ...          | ...             | ...          |
+  ... |             ... | ...                |           ... | ...              | ...                  | ...         |          ... | ...      |            ... | ...            | ...          | ...           | ...                | ...
+|              ... | ...           | ...                  |              ... |             ... |
+23:39:30  Completed successfully
+23:39:30  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 ```
-
 # Probar la tabla y datos creados con la SEED 
-<img src="imagenes\seed_postgres.png">
+<img src="imagenes\poblado_seed.png">
 
-# CREAR VISTAS Y TABLAS A PARTIR DE MODELOS
-
-# DIRECTORIO DE UN MODELO DE DATOS
-```
-📦 multi_database [project_directory]
-┗ 📂 analyses [package]
-┗ 📂 dbt_packages [package]
-┗ 📂 logs [package]
-┗ 📂 macros [package]
-┗ 📂 models [package]
-┃ ┣ 📂 src
-┃ ┃ ┣ 🌌 postgres_tabla_query_directo_flight_logs.sql
-┗ 📂 seeds [package]
-┗ 📂 snapshots [package]
-┗ 📂 target [package]
-┗ 📂 test [package]
-┗ 📜 dbt_project.yml
-┗ 📜 README.md
-┗ ⚠️ .gitignore
-```
-
-# CREAR EL PRIMER MODELO
-### dentro de la carpeta models crear una carpeta src y el archivo sql y adicionar el codigodel ejemplo 
-```
-models/postgres_tabla_query_directo_flight_logs.sql
-```
-
-# CREAR UNA TABLA
-## EJEMPLO POSTGRES
+# Adicionar columna TIMESTAMP para probar el freshness
 ```sql
-{{ 
-config(
-		materialized='table', 
-		sort='flight_number', 
-		dist='id'
-		) 
-}}
+ALTER TABLE postgres.public.flight_logs 
+ADD COLUMN test_time_freshness TIMESTAMP NULL DEFAULT now();
+```
+<img src="imagenes\freshness_adicionar_columna.png">
 
-SELECT id,
-		flight_number, 
-		airline, 
-		departure_airport,
-		departure_gate,
-		departure_city, 
-		departure_country
-FROM test_poc.flight_logs
+# MODELOS
+
+Un modelo en dbt es como un plano o una receta para transformar datos. Imagina que tienes un montón de ingredientes y necesitas convertirlos en algo delicioso, como una pizza. Para hacerlo, sigues una receta paso a paso que te indica cómo mezclar los ingredientes, amasar la masa, agregar los toppings y hornearla.
+
+En dbt, un modelo es similar a esa receta. Es un conjunto de instrucciones que te dicen cómo tomar datos de una fuente (como una base de datos) y transformarlos en algo útil. Los modelos de dbt te ayudan a realizar operaciones como filtrar datos, agregar cálculos o combinar información de diferentes tablas. Son como las instrucciones que sigues para crear algo nuevo y útil con tus datos.
+
+En resumen, un modelo en dbt es como una receta que te dice cómo transformar datos para obtener información valiosa. Es una manera de organizar y estructurar los datos para que puedas analizarlos y tomar decisiones basadas en ellos.
+
+# TIPOS DE MODELO
+| Materialización | Descripción                                                  | Ejemplo de Implementación en dbt                                                                                                                               |
+|-----------------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Table           | Crea una tabla física en la base de datos.                   | {{config(materialized='table')}}
+| View            | Crea una vista virtual en la base de datos.                   | {{config(materialized='view')}} |
+| Incremental     | Actualiza solo las filas modificadas desde la última ejecución. | {{config(materialized='incremental')}}                   |
+| Snapshot        | Crea una tabla que almacena instantáneas de datos en un momento específico. | {{config(materialized='snapshot')}} |
+| Ephemeral       | Genera los resultados de manera dinámica cada vez que se consulta el modelo. | {{config(materialized='ephemeral')}} |
+
+# CREAR **UNA VISTA** COMO PRIMER MODELO 
+## dentro de la carpeta models crear una carpeta src
+### dentro de la carpeta src crear un archivo sql y adicionar el codigo del ejemplo 
+```
+models/src/modelo_1_vista_query_directo.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+```
+## EJEMPLO guardando algunas columnas en la SINK
+```sql
+SELECT 
+      id,
+      flight_number, 
+      airline, 
+      departure_airport,
+      departure_gate,
+      departure_city, 
+      departure_country
+FROM public.flight_logs
 ORDER BY flight_number
 ```
-# CREAR LA TABLA
-```yaml
-(venv) jorge@cardona/multi_database:~$ dbt run
 
-00:19:17  Running with dbt=1.5.2
-00:19:17  Registered adapter: postgres=1.5.2
-00:19:17  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
-There are 1 unused configuration paths:
-- models.multi_database.example
-00:19:17  Found 1 model, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
-00:19:17
-00:19:17  Concurrency: 1 threads (target='dev')
-00:19:17
-00:19:17  1 of 1 START sql table model public.postgres_tabla_query_directo_flight_logs ... [RUN]
-00:19:17  1 of 1 OK created sql table model public.postgres_tabla_query_directo_flight_logs  [SELECT 5000 in 0.15s]
-00:19:17
-00:19:17  Finished running 1 table model in 0 hours 0 minutes and 0.33 seconds (0.33s).
-00:19:17
-00:19:17  Completed successfully
-00:19:17
-00:19:17  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
-```
-<img src="imagenes\tabla_postgres.png">
-
-# CREAR UNA VISTA Y USAR UN MODELO DE REFERENCIA
-### usando el archivo sql creado anteriormente 'postgres_tabla_query_directo_flight_logs'
-
-# DIRECTORIO DE UN MODELO DE DATOS
-```
-📦 multi_database [project_directory]
-┗ 📂 analyses [package]
-┗ 📂 dbt_packages [package]
-┗ 📂 logs [package]
-┗ 📂 macros [package]
-┗ 📂 models [package]
-┃ ┣ 📂 src
-┃ ┃ ┣ 🌌 postgres_tabla_query_directo_flight_logs.sql
-┃ ┃ ┣ 🌌 postgres_vista_query_con_with_y_referencia.sql
-┗ 📂 seeds [package]
-┗ 📂 snapshots [package]
-┗ 📂 target [package]
-┗ 📂 test [package]
-┗ 📜 dbt_project.yml
-┗ 📜 README.md
-┗ ⚠️ .gitignore
-```
-
-### dentro de la carpeta models crear una carpeta src y el archivo sql y adicionar el codigodel ejemplo 
-```
-models/postgres_vista_query_con_with_y_referencia.sql
-```
-
-## EJEMPLO POSTGRES
-```sql
--- alias de tabla a consultar
-# alias de tabla a consultar
-WITH SELECT_TEST AS(
-
-SELECT * FROM {{ ref('postgres_tabla_query_directo_flight_logs') }}
-)
-
-# select que crea la vista
-SELECT flight_number, 
-		airline, 
-		departure_airport,
-		departure_gate,
-		departure_city, 
-		departure_country
-FROM SELECT_TEST
-```
 # CREAR LA VISTA
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt run
+(venv) jorge@cardona/dbt_poc:~$ dbt run
 
-00:34:08  Running with dbt=1.5.2
-00:34:08  Registered adapter: postgres=1.5.2
-00:34:08  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
-There are 1 unused configuration paths:
-- models.multi_database.example
-00:34:08  Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 3 sources, 0 exposures, 0 metrics, 0 groups
-00:34:08  
-00:34:08  Concurrency: 1 threads (target='dev')
-00:34:08  
-00:34:08  1 of 2 START sql table model public.postgres_tabla_query_directo_flight_logs ... [RUN]
-00:34:08  1 of 2 OK created sql table model public.postgres_tabla_query_directo_flight_logs  [SELECT 5000 in 0.15s]
-00:34:08  2 of 2 START sql view model public.postgres_vista_query_con_with_flight_logs ... [RUN]
-00:34:08  2 of 2 OK created sql view model public.postgres_vista_query_con_with_flight_logs  [CREATE VIEW in 0.08s]
-00:34:08  
-00:34:08  Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.41 seconds (0.41s).
-00:34:08  
-00:34:08  Completed successfully
-00:34:08
-00:34:08  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+- models.dbt_poc.example
+01:35:05  Found 1 model, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
+01:35:05
+01:35:05  Concurrency: 1 threads (target='dev')
+01:35:05  
+01:35:05  1 of 1 START sql view model public.modelo_1_vista_query_directo ................ [RUN]
+01:35:06  1 of 1 OK created sql view model public.modelo_1_vista_query_directo ........... [CREATE VIEW in 0.17s]
+01:35:06  
+01:35:06  Finished running 1 view model in 0 hours 0 minutes and 0.45 seconds (0.45s).
+01:35:06
+01:35:06  Completed successfully
+01:35:06
+01:35:06  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 ```
-<img src="imagenes\vista_postgres_referencia.png">
 
+# Comprobar el modelo creado
+<img src="imagenes\modelo_1.png">
 
-# CREAR UNA NUEVA VISTA CON JOINS, USANDO FUENTES
-# DIRECTORIO DE FUENTES DE DATOS
+# CREAR **UNA TABLA** COMO SEGUNDO MODELO 
+### dentro de la carpeta src crear un archivo sql y adicionar el codigo del ejemplo 
 ```
-📦 multi_database [project_directory]
-┗ 📂 analyses [package]
-┗ 📂 dbt_packages [package]
-┗ 📂 logs [package]
-┗ 📂 macros [package]
-┗ 📂 models [package]
-┃ ┃ 🌻 sources.yaml
-┃ ┣ 📂 src
-┃ ┃ ┣ 🌌 postgres_tabla_query_directo_flight_logs.sql
-┃ ┃ ┣ 🌌 postgres_vista_query_con_with_y_referencia.sql
-┃ ┃ ┣ 🌌 mysql_vista_query_directo_con_source_y_join.sql
-┗ 📂 seeds [package]
-┗ 📂 snapshots [package]
-┗ 📂 target [package]
-┗ 📂 test [package]
-┗ 📜 dbt_project.yml
-┗ 📜 README.md
-┗ ⚠️ .gitignore
+models/src/modelo_2_tabla_query_con_with_renombrando_columnas.sql
 ```
-# PARA USAR MYSQL CAMBIAR target=prod
 
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+```
+## EJEMPLO TABLA, renombrando la columnas y guardandolas con este nombre en la SINK
+```sql
+{{
+  config(
+    materialized='table',
+    sort='flight_number',
+    dist='id'
+    ) 
+}}
+
+WITH EJEMPLO_SELECT_WITH AS (
+  SELECT
+    id AS ID,
+    flight_number AS FLIGHT_CODE,
+    airline AS CARRIER,
+    departure_airport AS ORIGINATING_AIRPORT,
+    departure_gate AS BOARDING_GATE,
+    departure_city AS ORIGINATING_CITY,
+    departure_country AS ORIGINATING_COUNTRY
+  FROM public.flight_logs
+)
+
+SELECT * 
+FROM EJEMPLO_SELECT_WITH
+ORDER BY FLIGHT_CODE
+```
+
+# CREAR LA TABLA
 ```yaml
-multi_database:
-  target: prod
-  outputs:
-    prod:
-      type: mysql
-      server: localhost
-      port: 3306  # optional
-      database: test_poc
-      schema: test_poc
-      username: root
-      password: '12345678' # las claves deben estar entre comillas
-      driver: MySQL ODBC 8.0 ANSI Driver
-    dev:
-      type: postgres
-      threads: 1
-      host: localhost
-      port: 5555
-      user: admin
-      pass: '12345678'
-      dbname: test_poc
-      schema: public
+(venv) jorge@cardona/dbt_poc:~$ dbt run
+
+- models.dbt_poc.example
+01:34:07  Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
+01:34:07
+01:34:07  Concurrency: 1 threads (target='dev')
+01:34:07  
+01:34:07  1 of 2 START sql view model public.modelo_1_vista_query_directo ................ [RUN]
+01:34:07  1 of 2 OK created sql view model public.modelo_1_vista_query_directo ........... [CREATE VIEW in 0.16s]
+01:34:07  2 of 2 START sql table model public.modelo_2_tabla_query_con_with_renombrando_columnas  [RUN]
+01:34:07  2 of 2 OK created sql table model public.modelo_2_tabla_query_con_with_renombrando_columnas  [SELECT 5000 in 0.14s]
+01:34:08  
+01:34:08  Finished running 1 view model, 1 table model in 0 hours 0 minutes and 0.55 seconds (0.55s).
+01:34:08
+01:34:08  Completed successfully
+01:34:08
+01:34:08  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+```
+# Comprobar el modelo creado
+<img src="imagenes\modelo_2.png">
+
+# CREAR UNA **TABLA CON NOMBRE PERSONALIZADO** COMO TERCER MODELO ALIAS Y CON UNA TABLA TEMPORAL USANDO WITH
+### dentro de la carpeta src crear un archivo sql y adicionar el codigo del ejemplo 
+```
+models/src/modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+```
+
+# Estrategias incrementales admitidas por adaptador
+| data platform adapter | default strategy | additional supported strategies   |
+|-----------------------|------------------|-----------------------------------|
+| dbt-postgres          | append           | delete+insert                     |
+| dbt-redshift          | append           | delete+insert                     |
+| dbt-bigquery          | merge            | insert_overwrite                  |
+| dbt-spark             | append           | merge (Delta only) insert_overwrite |
+| dbt-databricks        | append           | merge (Delta only) insert_overwrite |
+| dbt-snowflake         | merge            | append, delete+insert             |
+| dbt-trino             | append           | merge delete+insert               |
+
+La estrategia merge está disponible en dbt-postgres y dbt-redshift a partir de dbt v1.6.
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+```
+## EJEMPLO TABLA INCREMENTAL, renombrando la columnas y guardandolas con este nombre en la SINK
+```sql
+{{
+  config(
+    materialized='incremental',
+    alias='tabla_incremental'
+    ) 
+}}
+
+WITH SELECT_TEST AS (
+    SELECT * FROM {{ ref('modelo_2_tabla_query_con_with_renombrando_columnas') }}
+)
+
+SELECT * FROM SELECT_TEST
+```
+
+# CREAR LA TABLA EJECUTANDO **SOLO EL MODELO ESPECIFICO**
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt run --models src.modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia
+
+- models.dbt_poc.example
+01:42:30  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
+01:42:30
+01:42:31  Concurrency: 1 threads (target='dev')
+01:42:31
+01:42:31  1 of 1 START sql table model public.tabla_personalizada ........................ [RUN]
+01:42:31  1 of 1 OK created sql table model public.tabla_personalizada ................... [SELECT 5000 in 0.18s]
+01:42:31
+01:42:31  Finished running 1 table model in 0 hours 0 minutes and 0.53 seconds (0.53s).
+01:42:31
+01:42:31  Completed successfully
+01:42:31
+01:42:31  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+```
+# Comprobar el modelo creado
+<img src="imagenes\modelo_3.png">
+
+
+# CREAR UNA **TABLA CON JOIN** COMO CUARTO MODELO
+### dentro de la carpeta src crear un archivo sql y adicionar el codigo del ejemplo 
+```
+models/src/modelo_4_tabla_incremental_usando_join.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+```
+## EJEMPLO TABLA INCREMENTAL, USANDO JOIN
+```sql
+{{
+  config(
+    materialized='incremental',
+    incremental_strategy = 'append',
+    alias='tabla_join'
+    ) 
+}}
+
+WITH SELECT_JOIN AS (
+    SELECT T1.* FROM {{ref('modelo_1_vista_query_directo')}} AS T1
+    INNER JOIN {{ref('modelo_2_tabla_query_con_with_renombrando_columnas')}} AS T2
+    ON T1.id = T2.ID
+)
+
+SELECT * FROM SELECT_JOIN
+LIMIT 10
+```
+
+# CREAR LA TABLA EJECUTANDO **SOLO EL MODELO ESPECIFICO**
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt run --models src.modelo_4_tabla_incremental_usando_join
+
+- models.dbt_poc.example
+02:44:29  Found 4 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
+02:44:29  
+02:44:29  Concurrency: 1 threads (target='dev')
+02:44:29  
+02:44:29  1 of 1 START sql incremental model public.tabla_join ........................... [RUN]
+02:44:29  1 of 1 OK created sql incremental model public.tabla_join ...................... [INSERT 0 10 in 0.23s]
+02:44:29  
+02:44:29  Finished running 1 incremental model in 0 hours 0 minutes and 0.48 seconds (0.48s).
+02:44:29
+02:44:29  Completed successfully
+02:44:29
+02:44:29  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+```
+# Comprobar el modelo creado
+<img src="imagenes\modelo_4.png">
+
+# SI SE VUELVE A EJECUTAR EL MODELO **APPEND** ADICIONA LOS REGISTROS ANTERIORES A LOS QUE YA EXISTIAN, EN OTRAS PALABRA DUPLICA LOS DATOS QUE EXISTIAN INICIALMENTE
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt run --models src.modelo_4_tabla_incremental_usando_join
+
+- models.dbt_poc.example
+02:44:29  Found 4 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics, 0 groups
+02:44:29  
+02:44:29  Concurrency: 1 threads (target='dev')
+02:44:29  
+02:44:29  1 of 1 START sql incremental model public.tabla_join ........................... [RUN]
+02:44:29  1 of 1 OK created sql incremental model public.tabla_join ...................... [INSERT 0 10 in 0.23s]
+02:44:29  
+02:44:29  Finished running 1 incremental model in 0 hours 0 minutes and 0.48 seconds (0.48s).
+02:44:29
+02:44:29  Completed successfully
+02:44:29
+02:44:29  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+```
+# Comprobar el modelo creado
+<img src="imagenes\modelo_4.1.png">
+
+
+# USAR EL ARCHIVO sources.yaml  PARA REFERENCIAS RAPIDASA LAS FUENTES DE DATOS
+### dentro de la carpeta models crear un archivo yaml y adicionar el codigo del ejemplo 
+```
+models/sources.yaml
+```
+
+```
+# SE PUEDE DEFINIR EN MODELS
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+
+# SE PUEDE DEFINIR DENTRO DE SRC PARA ASOCIAR A ESOS MODELOS ESPECIFICOS
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ ⚙️ sources.yaml
 ```
 # EJEMPLO DE sources.yaml
 
@@ -385,44 +562,109 @@ multi_database:
 version: 2
 
 sources:
+
   - name: fuente_original
-    description: Fuente de datos original creada con el csv
-    schema: test_poc
-    database: test_poc
-
-    freshness: # si se ubica antes de las tablas aplica para todas las tablas
-      warn_after:
-        count: 1
-        period: minute # si en este tiempo 1 minuto no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra la alerta
-      error_after:
-        count: 3
-        period: minute  # si en este tiempo 3 minutos no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra el error      
-
+    database: postgres
+    schema: public
     tables:
       - name: tabla_original # se puede usar como un alias en la source
-        identifier: flight_logs # debe ser el nombrede la tabla en la base de datos
-        # cmapo que sirve para probar que tan a menudo se actualiza la tabla 
-        loaded_at_field: test_time_freshness # tiene que ser un campo TIMESTAMP de la tabla para el freshness 
+        identifier: flight_logs # debe ser el nombre de la tabla en la base de datos
 
   - name: tabla_referencia
-    description: Fuente de datos de clientes
-    schema: test_poc
-    database: test_poc
+    database: postgres
+    schema: public  
     tables:
-       - name: clientes_alias # se puede usar como un alias en la source
-         identifier: tabla_query_directo_flight_logs # debe ser el nombrede la tabla en la base de datos
+       - name: tabla_referencia_desde_source # alias en la source
+         identifier: modelo_2_tabla_query_con_with_renombrando_columnas # debe ser el nombre de la tabla en la base de datos
 
   - name: vista_referencia
-    description: Fuente de datos de órdenes
-    schema: test_poc
-    database: test_poc
+    database: postgres
+    schema: public  
     tables:
-      - name: vista_query_con_with_flight_logs
-        quoting: 
-          identifier: true
+      - name: vista_referencia_desde_source # alias en la source
+        identifier: modelo_1_vista_query_directo # debe ser el nombre de la tabla en la base de datos
+
+  - name: tabla_incremental_source
+    database: postgres
+    schema: public  
+    tables:
+      - name: tabla_incremental_referencia # alias en la source
+        identifier: tabla_incremental # debe ser el nombre de la tabla en la base de datos
 ```
-# PROBAR freshness
-## SE TRATA DE VALIDAR QUE LOS DATOS DE LA FUENTE DE DATOS SE ESTE ACTUALIZANDO PERIODICAMENTE EN EL TIEMPO DETERMINADO, SINO MUESTRA UN **WARNING** O **ERROR** SEGUN EL CASO
+
+# CREAR UNA **TABLA CON JOIN** COMO QUINTO MODELO
+### dentro de la carpeta src crear un archivo sql y adicionar el codigo del ejemplo 
+```
+models/src/modelo_4_tabla_incremental_usando_join.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql    
+```
+## EJEMPLO TABLA USANDO SOURCE COMO REFERENCIA
+```sql
+{{
+  config(
+    materialized='view',
+    alias='tabla_source'
+    ) 
+}}
+
+WITH SELECT_JOIN_SOURCE_REF AS (
+    SELECT T1.* FROM {{ source('fuente_original','tabla_original') }} AS T1
+    LEFT JOIN {{ ref('modelo_2_tabla_query_con_with_renombrando_columnas') }} AS T2
+    ON T1.id = T2.ID
+)
+
+SELECT * 
+FROM SELECT_JOIN_SOURCE_REF
+WHERE id = 1
+```
+
+# CREAR LA TABLA EJECUTANDO **SOLO EL MODELO ESPECIFICO**
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt run --models src.modelo_5_tabla_usando_el_alias_del_source
+
+- models.dbt_poc.example
+03:41:36  Found 5 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+03:41:36
+03:41:36  Concurrency: 1 threads (target='dev')
+03:41:36
+03:41:36  1 of 1 START sql view model public.tabla_source ................................ [RUN]
+03:41:36  1 of 1 OK created sql view model public.tabla_source ........................... [CREATE VIEW in 0.15s]
+03:41:37
+03:41:37  Finished running 1 view model in 0 hours 0 minutes and 0.50 seconds (0.50s).
+03:41:37
+03:41:37  Completed successfully
+03:41:37
+03:41:37  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+```
+# Comprobar el modelo creado
+<img src="imagenes\modelo_5.png">
+
+
+# FRESHNESS
+Imagina que tienes una caja llena de diferentes juguetes. Cada juguete tiene una etiqueta que muestra cuándo fue la última vez que lo usaste. Esa etiqueta es como el "freshness" en dbt.
+
+El "freshness" en dbt se refiere a la actualidad de los datos en una base de datos. Piensa en una base de datos como una enorme colección de información almacenada en un ordenador. Los datos pueden provenir de muchas fuentes diferentes, como ventas de una tienda, registros de estudiantes en una escuela o información meteorológica.
+
+Para asegurarnos de que los datos en la base de datos estén actualizados, necesitamos verificar su "freshness". Esto significa que debemos comprobar cuándo fue la última vez que se actualizaron esos datos. Es como mirar las etiquetas de los juguetes en la caja para saber cuándo los usaste por última vez.
+
+Cuando trabajamos con bases de datos y dbt, es importante que los datos sean "fresh" o actualizados. Esto nos ayuda a tomar decisiones basadas en información reciente. Por ejemplo, si queremos saber cuántas camisetas se vendieron en una tienda hoy, necesitamos datos frescos para obtener una respuesta precisa.
+
+En resumen, el "freshness" en dbt se refiere a la actualidad de los datos en una base de datos, como la etiqueta en un juguete que muestra cuándo fue la última vez que se usó. Es importante tener datos actualizados para tomar decisiones informadas.
+
+## SE TRATA DE VALIDAR QUE LA TABLA DONDE ALMACENAMOS LOS DATOS, SE ESTE ACTUALIZANDO PERIODICAMENTE EN EL TIEMPO DETERMINADO, SINO MUESTRA UN **WARNING** O **ERROR** SEGUN EL CASO
 
 | FRESHNESS VALUES|
 |-----------------|
@@ -432,29 +674,82 @@ sources:
 
 # ADICIONA UNA COLUMNA TIMESTAMP PARA HACER LA PRUEBA
 ```sql
-ALTER TABLE test_poc.flight_logs 
+ALTER TABLE public.flight_logs 
 ADD COLUMN test_time_freshness TIMESTAMP NULL DEFAULT now();
+```
+
+<img src="imagenes\freshness_adicionar_columna.png">
+
+
+# ACTUALIZAMOS el sources.yaml
+# **ATENCION A LA HORA DE DBT** Y LA **HORA DE INSERCION A LA BASE DE DATOS**, PUEDE TENER UNA GRAN DIFERENCIA Y HACE QUE LA PRUEBA FALLE INMEDIATAMENTE
+
+```yaml
+version: 2
+
+sources:
+
+  - name: fuente_original
+    description: Fuente de datos original creada con el csv
+    
+    database: postgres
+    schema: public
+
+    freshness: # si se ubica antes de las tablas aplica para todas las tablas
+      warn_after:
+        count: 1
+        period: day # si en este tiempo 1 minuto no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra la alerta
+      error_after:
+        count: 3
+        period: day  # si en este tiempo 3 minutos no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra el error      
+
+    tables:
+      - name: tabla_original # se puede usar como un alias en la source
+        identifier: flight_logs # debe ser el nombrede la tabla en la base de datos
+        # cmapo que sirve para probar que tan a menudo se actualiza la tabla 
+        loaded_at_field: test_time_freshness # tiene que ser un campo TIMESTAMP de la tabla para el freshness 
+
+  - name: tabla_referencia
+    database: postgres
+    schema: public  
+    tables:
+       - name: tabla_referencia_desde_source # alias en la source
+         identifier: modelo_2_tabla_query_con_with_renombrando_columnas # debe ser el nombre de la tabla en la base de datos
+
+  - name: vista_referencia
+    database: postgres
+    schema: public  
+    tables:
+      - name: vista_referencia_desde_source # alias en la source
+        identifier: modelo_1_vista_query_directo # debe ser el nombre de la tabla en la base de datos
+
+  - name: tabla_incremental_source
+    database: postgres
+    schema: public  
+    tables:
+      - name: tabla_incremental_referencia # alias en la source
+        identifier: tabla_incremental # debe ser el nombre de la tabla en la base de datos
 ```
 
 # VALIDANDO SIN QUE PASE EL INTERVALO INICIAL DE 1 MINUTO
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt source freshness
+(venv) jorge@cardona/dbt_poc:~$ dbt source freshness
 
 05:16:01  Found 4 models, 0 tests, 2 snapshots, 0 analyses, 172 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
 05:16:01
-05:16:01  Concurrency: 1 threads (target='prod')
+05:16:01  Concurrency: 1 threads (target='dev')
 05:16:01
 05:16:01  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
 05:16:01  1 of 1 PASS freshness of fuente_original.tabla_original ........................ [PASS in 0.04s]
 ```
 
-# VALIDANDO WARNINGS, YA PASO 1 MINUTO
+# VALIDANDO WARNINGS, YA PASO 1 MINUTO Y EJECUTANDO SOLO PARA ESA FUENTE
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt source freshness
+(venv) jorge@cardona/dbt_poc:~$ dbt source freshness --select source:fuente_original
 
 05:04:57  Found 4 models, 0 tests, 2 snapshots, 0 analyses, 172 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
 05:04:57
-05:04:57  Concurrency: 1 threads (target='prod')
+05:04:57  Concurrency: 1 threads (target='dev')
 05:04:57  
 05:04:57  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
 05:04:57  1 of 1 WARN freshness of fuente_original.tabla_original ........................ [WARN in 0.04s]
@@ -463,9 +758,9 @@ ADD COLUMN test_time_freshness TIMESTAMP NULL DEFAULT now();
 
 # VALIDANDO ERRORES, YA PASARON 2 MINUTOS
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt source freshness
+(venv) jorge@cardona/dbt_poc:~$ dbt source freshness --select source:fuente_original
 
-05:04:40  Concurrency: 1 threads (target='prod')
+05:04:40  Concurrency: 1 threads (target='dev')
 05:04:40
 05:04:40  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
 05:04:40  1 of 1 ERROR STALE freshness of fuente_original.tabla_original ................. [ERROR STALE in 0.04s]
@@ -474,82 +769,68 @@ ADD COLUMN test_time_freshness TIMESTAMP NULL DEFAULT now();
 
 # INSERTANDO NUEVOS DATOS
 ```sql
-INSERT INTO test_poc.flight_logs
+INSERT INTO public.flight_logs
 VALUES ('7777', '01H4EEMMVWTD0QNCNHCWDQ7Y40', '2014', '2309', 'United', 'RST', 'Gabriela Zea', 'Colombia', '2022-03-30', '2023-07-07 14:14:22', 'CRY', 'Kaseda-shirakame', 'Japan', '26-1-2022', '2023-07-06 00:46:28', '5.55', 'Rici Preon', '8', 'Female', 'China', 'C3', '501.04', 'DOP', '43.15', 'B2', 'F6', 'Departed', 'Carolee Bonett', 'Adriena Burbury', '7', 'Boeing 737', 'N12345', '2884.71', '3647.15', now());
 ```
 # VALIDANDO SIN QUE PASE EL INTERVALO INICIAL DE 1 MINUTO
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt source freshness
+(venv) jorge@cardona/dbt_poc:~$ dbt source freshness --select source:fuente_original
 
 05:16:01  Found 4 models, 0 tests, 2 snapshots, 0 analyses, 172 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
 05:16:01
-05:16:01  Concurrency: 1 threads (target='prod')
+05:16:01  Concurrency: 1 threads (target='dev')
 05:16:01
 05:16:01  1 of 1 START freshness of fuente_original.tabla_original ....................... [RUN]
 05:16:01  1 of 1 PASS freshness of fuente_original.tabla_original ........................ [PASS in 0.04s]
 ```
 
-### dentro de la carpeta models crear una carpeta src y el archivo sql y adicionar el codigodel ejemplo 
-```
-models/postgres_vista_query_directo_con_source.sql
-```
-
-## EJEMPLO MYSQL
-```sql
-SELECT t1.*
-FROM {{ source('tabla_referencia','clientes_alias') }} AS t1
-JOIN {{ source('vista_referencia','vista_query_con_with_flight_logs') }} AS t2
-  ON t1.flight_number = t2.flight_number
-WHERE t1.id > 1500 AND t1.id < 1800
-```
-
-# CREAR VISTA CON NOMBRE PERSONALIZADO
-<img src="imagenes\vista_mysql_source_join.png">
-
-### dentro de la carpeta models crear una carpeta src y el archivo sql y adicionar el codigo del ejemplo 
-```
-models/vista_con_nombre_personalizado.sql
-```
-# EJEMPLO MYSQL
-```sql
-{{
-  config(
-    materialized='view',
-    alias='nombre_personalizado'
-  )
-}}
-
-# alias de tabla a consultar
-WITH SELECT_TEST AS(
-
-SELECT * FROM {{ ref('tabla_query_directo_flight_logs') }}
-)
-
-# select que crea la vista
-SELECT flight_number, 
-		airline, 
-		departure_airport,
-		departure_city, 
-		departure_country
-FROM SELECT_TEST
-```
-
-# EJECUTANDO UN MODELO ESPECIFICO
-```yaml
-(venv) jorge@cardona/multi_database:~$ dbt run --models src.vista_con_nombre_personalizado
-```
-<img src="imagenes\vista_mysql_con_nombre_personalizado.png">
 
 # SNAPSHOT
 
+Imagina que tienes una cámara que toma fotos de tus juguetes y las imprime en papel. Cada foto es como un "snapshot" en dbt.
+
+En dbt, un "snapshot" es una imagen o una captura de los datos en un momento específico. Es como tomar una foto de los datos en un momento determinado y guardarla para poder verla más adelante.
+
+Cuando trabajamos con bases de datos, los datos pueden cambiar con el tiempo. Es como si tus juguetes se movieran o cambiaran de forma. Pero a veces queremos guardar una imagen fija de esos datos en un punto específico.
+
+Por ejemplo, imagina que tienes una lista de tus juguetes favoritos en una hoja de papel. Si tomas una foto de esa lista y la guardas, tendrás un "snapshot" de tus juguetes favoritos en ese momento. Incluso si más tarde añades o quitas juguetes de la lista, siempre podrás volver a esa foto y recordar cómo era tu lista original.
+
+En dbt, los "snapshots" se utilizan para guardar copias de seguridad de los datos en un momento específico. Esto nos permite conservar una imagen de los datos tal como eran en ese momento, aunque puedan cambiar más adelante.
+
+En resumen, los "snapshots" en dbt son como tomar una foto de los datos en un momento específico y guardarla para poder verla más adelante. Es útil para conservar una imagen fija de los datos, incluso si cambian con el tiempo. Es como tener una foto de tus juguetes favoritos para recordar cómo eran en ese momento.
+
+# CREAR EL PRIMER SNAPSHOT
+### dentro de la carpeta snapshots crear un archivo sql y adicionar el codigo del ejemplo 
+```
+snapshots/snapshot_1_tabla_validar_multi_campos_snapshot.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql        
+```
+
 ```sql
+-- en MySQL si ponemos una database que no existe la crea
+-- en Postgres tiene que existir la base de datos
 -- target_database='dbt_snapshots'
 -- target_schema='dbt_snapshots'
 {% snapshot validar_multi_campos_snapshot %}
 
 {{
   config(
-    target_database='dbt_snapshots',
+    target_database='postgres',
     target_schema='dbt_snapshots',
     unique_key='id',
     strategy='check',
@@ -570,17 +851,57 @@ WHERE id = 1
 {% endsnapshot %}
 ```
 
----
+# EJECUTAR EL SNAPSHOT
 
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt snapshot
+
+- models.dbt_poc.example
+22:22:38  Found 5 models, 0 tests, 1 snapshot, 0 analyses, 307 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+22:22:38  
+22:22:38  Concurrency: 1 threads (target='dev')
+22:22:38  
+22:22:38  1 of 1 START snapshot dbt_snapshots.validar_multi_campos_snapshot .............. [RUN]
+22:22:38  1 of 1 OK snapshotted dbt_snapshots.validar_multi_campos_snapshot .............. [success in 0.27s]
+22:22:38  
+22:22:38  Finished running 1 snapshot in 0 hours 0 minutes and 0.78 seconds (0.78s).
+22:22:38
+22:22:38  Completed successfully
+```
+
+# Comprobar el snapshot creado
+<img src="imagenes\snapshot_1.png">
+
+
+# CREAR EL SEGUNDO SNAPSHOT
+### dentro de la carpeta snapshots crear un archivo sql y adicionar el codigo del ejemplo 
+```
+snapshots/snapshot_2_tabla_validar_todos_los_campos.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql 
+```
+     
 ```sql
--- si no existe la base de datos o las tablas, las crea.
--- target_database='dbt_snapshots_todos_los_campos'
--- target_schema='dbt_snapshots_todos_los_campos'
 {% snapshot validar_todos_los_campos_snapshot %}
 
 {{
   config(
-    target_database='dbt_snapshots_todos_los_campos',
+    target_database='postgres',
     target_schema='dbt_snapshots_todos_los_campos',
     unique_key='id',
     strategy='check',
@@ -601,32 +922,79 @@ WHERE id = 1
 {% endsnapshot %}
 ```
 
+# EJECUTAR EL SNAPSHOT DE ESTE CASO
+```
+(venv) jorge@cardona/dbt_poc:~$ dbt snapshot --select snapshot_2_tabla_validar_todos_los_campos
+
+- models.dbt_poc.example
+22:36:26  Found 5 models, 0 tests, 2 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+22:36:26
+22:36:26  Concurrency: 1 threads (target='dev')
+22:36:26
+22:36:26  1 of 1 START snapshot dbt_snapshots_todos_los_campos.validar_todos_los_campos_snapshot  [RUN]
+22:36:27  1 of 1 OK snapshotted dbt_snapshots_todos_los_campos.validar_todos_los_campos_snapshot  [success in 0.17s]
+22:36:27
+22:36:27  Finished running 1 snapshot in 0 hours 0 minutes and 0.56 seconds (0.56s).
+22:36:27
+22:36:27  Completed successfully
+```
+
+# Comprobar el snapshot creado
+<img src="imagenes\snapshot_2.png">
+
+# MODIFICAR UN REGISTRO CON 1 CAMPO CUALQUIERA
+
+```sql
+UPDATE postgres.public.flight_logs 
+SET secure_code = 1
+WHERE id = 1;
+```
+<img src="imagenes\snapshot_actualizacion_1.png">
+
+# EJECUTAR EL SNAPSHOT PARA VER SI AFECTARON LOS CAMBIOS DE LA TABLA DONDE SE COPIARON LOS DATOS
+```
+(venv) jorge@cardona/dbt_poc:~$ dbt snapshot
+```
+# SE AFECTA EL QUE VALIDA TODOS LOS CAMPOS, PORQUE secure_code NO ESTA DECLARADO COMO VALIDACION EN LA OTRA SNAPSHOT
+# SE ADICIONO UN NUEVO REGISTRO CON LOS CAMBIOS ACTUALES
+<img src="imagenes\snapshot_comparacion_1.png">
+
+
+# MODIFICAR EL REGISTRO DE NUEVO CON UN CAMPO RELACIONADO EN LA RESTRICCION
+
+```sql
+UPDATE postgres.public.flight_logs 
+SET secure_code = 1
+WHERE id = 1;
+```
+
+<img src="imagenes\snapshot_actualizacion_2.png">
+
 # EJECUTAR EL SNAPSHOT
 ```
 (venv) jorge@cardona/multi_database:~$ dbt snapshot
 ```
-<img src="imagenes\snapshot_mysql.png">
 
-# MODIFICAR UN REGISTRO
-<img src="imagenes\snapshot_mysql_secure_code.png">
+# SE AFECTA AMBAS TABLAS POR QUE TIENEN UN CAMPO EN COMUN MODIFICADO
+<img src="imagenes\snapshot_comparacion_2.png">
+ 
 
-# EJECUTAR EL SNAPSHOT
-```
-(venv) jorge@cardona/multi_database:~$ dbt snapshot
-```
-<img src="imagenes\snapshot_mysql_secure_code_completado.png">
+# TEST
 
-# MODIFICAR UN REGISTRO
-<img src="imagenes\snapshot_mysql_flight_number.png">
+Imagina que tienes una lista de tareas para hacer y quieres asegurarte de que las completes correctamente. Los "tests" en dbt son como las pruebas que haces para verificar si has realizado esas tareas correctamente.
 
-# EJECUTAR EL SNAPSHOT ESPECIFICO
-```
-(venv) jorge@cardona/multi_database:~$ dbt snapshot --select snapshot_tabla_unos_campos
-```
-<img src="imagenes\snapshot_mysql_flight_number_completado.png">
+En dbt, los "tests" se utilizan para verificar si los datos en una base de datos cumplen ciertos criterios o reglas. Es como tener una lista de verificación para asegurarse de que los datos estén correctos y no tengan errores.
 
+Piensa en un juego en el que debes organizar diferentes juguetes en cajas según su color. Si tienes una caja para los juguetes rojos, una para los juguetes azules y otra para los juguetes verdes, puedes hacer un "test" para comprobar si cada juguete está en la caja correcta.
+
+Los "tests" en dbt funcionan de manera similar. Puedes crear reglas o criterios que los datos deben cumplir, como "el campo 'edad' debe ser un número entero" o "el campo 'nombre' no debe estar vacío". Luego, dbt realizará esos "tests" en los datos y te dirá si cumplen con esas reglas o si hay algún error.
+
+Los "tests" son importantes porque ayudan a garantizar la calidad de los datos. Al igual que tú quieres asegurarte de que los juguetes estén en las cajas correctas, los "tests" en dbt nos ayudan a asegurarnos de que los datos estén limpios y precisos.
+
+En resumen, los "tests" en dbt son como pruebas o reglas que se utilizan para verificar si los datos cumplen con ciertos criterios. Son como una lista de verificación para asegurarse de que los datos estén correctos y sin errores. Es como organizar los juguetes en las cajas correctas según su color.
 
 # LOS RESULTADOS DE LOS TEST **SIEMPRE DEBE SER 0 COLUMNAS CONTADAS** PARA QUE EL TEST PASE, DE LO CONTRARIO MOSTRARA ERROR
+
 | TEST TYPES|
 |-----------|
 
@@ -637,11 +1005,31 @@ WHERE id = 1
 | accepted_values |      |
 | Relationships   |   |
 
+
 # GENERIC TEST DESDE EL YAML schema.yaml
 ### dentro de la carpeta models y el archivo schema. yaml y adicionar el codigo del ejemplo 
 ```
 models/schema.yaml
 ```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql      
+```
+
 # EJEMPLO DE CODIGO DEL YAML
 ```yaml
 version: 2
@@ -663,7 +1051,7 @@ models:
 ```
 # EJECUTAR LAS PRUEBAS DE VALIDACION DE DATOS DEL MODELO
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt test
+(venv) jorge@cardona/dbt_poc:~$ dbt test
 
 03:31:25  1 of 3 START test not_null_flight_logs_departure_gate .......................... [RUN]
 03:31:25  1 of 3 PASS not_null_flight_logs_departure_gate ................................ [PASS in 0.05s]
@@ -677,7 +1065,7 @@ models:
 03:31:26  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
 ```
 
-# VALIDACIONES FALLIDAS
+# VALIDACIONES FALLIDAS, ACTUALIZAR EL schema.yaml
 ```yaml
 version: 2
 
@@ -698,7 +1086,7 @@ models:
 ```
 # EJECUTAR LAS PRUEBAS DE VALIDACION DE DATOS EL TEST FALLA POR QUE EL VALOR C3 NO ESTA COMO VALOR ESPERADO
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt test
+(venv) jorge@cardona/dbt_poc:~$ dbt test
 
 03:33:14  1 of 3 START test not_null_flight_logs_departure_gate .......................... [RUN]
 03:33:15  1 of 3 PASS not_null_flight_logs_departure_gate ................................ [PASS in 0.05s]
@@ -714,7 +1102,7 @@ models:
 03:33:15    compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\valores_esperados.sql
 ```
 
-# SE PUEDE ACCEDER AL CASO DE PRUEBA CREADO Y VER EL CODIGO GENERADO POR DBT Y VEMOS QUE HAY MAS DE 1 ARCHIVO, PORESO GENERA ERROR YA QUE DEBERIA SER 0
+# SE PUEDE ACCEDER AL CASO DE PRUEBA CREADO Y VER EL CODIGO GENERADO POR DBT Y VEMOS QUE HAY MAS DE 1 ARCHIVO, POR ESO GENERA ERROR YA QUE DEBERIA SER 0
 ``` SQL
 -- compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\valores_esperados.sql
 
@@ -736,40 +1124,146 @@ where value_field not in (
 )
 ```
 
-# TEST SINGULAR TEST CON SQL
+# TEST SINGULAR O TEST PERSONALIZADOS CON SQL
 ### dentro de la carpeta test crear un archivo .sql  y adicionar el codigo del ejemplo 
 ```
-test/schema.validar_menores_de_edad.sql
+test/validar_menores_de_edad.sql
 ```
-# EJEMPLO DE CODIGO DEL TEST
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql    
+```
+
+# EJEMPLO DE CODIGO DEL TEST, CON EXCEPCION PERSONALIZADA
+# LANZA LA EXCEPCION SI EXISTEN MENORES DE EDAD EN EL VUELO
 ```sql
-SELECT * FROM 
-{{ ref('flight_logs') }}
-WHERE passenger_age < 18
-LIMIT 10
+SELECT CASE
+    WHEN (
+            SELECT COUNT(passenger_age) FROM 
+                    {{ ref('flight_logs') }}
+            WHERE passenger_age < 18
+          ) > 0 THEN 
+                    NULL
+    ELSE
+        RAISE EXCEPTION 'HAY MENORES DE EDAD EN EL VUELO'
+END
 ```
+
 # EJECUTAR LAS PRUEBAS DE VALIDACION DE DATOS DEL CASO ESPECIFICO FALLA POR QUE HAY MENORES DE EDAD
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt test --select validar_menores_de_edad
+(venv) jorge@cardona/dbt_poc:~$ dbt test --select test_1_verificar_que_no_hay_menores_de_edad
 
-03:52:57  1 of 4 START test not_null_flight_logs_departure_gate .......................... [RUN]
-03:52:57  1 of 4 PASS not_null_flight_logs_departure_gate ................................ [PASS in 0.06s]
-03:52:57  2 of 4 START test unique_flight_logs_id ........................................ [RUN]
-03:52:57  2 of 4 PASS unique_flight_logs_id .............................................. [PASS in 0.04s]
-03:52:57  3 of 4 START test validar_menores_de_edad ...................................... [RUN]
-03:52:57  3 of 4 FAIL 9 validar_menores_de_edad .......................................... [FAIL 9 in 0.04s]
-03:52:57  4 of 4 START test valores_esperados ............................................ [RUN]
-03:52:57  4 of 4 FAIL 1 valores_esperados ................................................ [FAIL 1 in 0.05s]
-03:52:57
-03:52:57  Finished running 4 tests in 0.34s.
-03:52:57
-03:52:57  Completed with 2 errors and 0 warnings:
-03:52:57
-03:52:57  Failure in test validar_menores_de_edad (tests\validar_menores_de_edad.sql)
-03:52:57  Failure in test valores_esperados (models\schema.yaml)
+- models.dbt_poc.example
+04:12:33  Found 5 models, 4 tests, 2 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+04:12:33
+04:12:33  Concurrency: 1 threads (target='dev')
+04:12:33  
+04:12:33  1 of 1 START test test_1_verificar_que_no_hay_menores_de_edad ...................................... [RUN]
+04:12:33  1 of 1 FAIL 5 test_1_verificar_que_no_hay_menores_de_edad .......................................... [FAIL 5 in 0.09s]
+04:12:34  
+04:12:34  Finished running 1 test in 0 hours 0 minutes and 0.54 seconds (0.54s).
+04:12:34
+04:12:34  Completed with 1 error and 0 warnings:
+04:12:34  
+04:12:34  Failure in test test_1_verificar_que_no_hay_menores_de_edad (tests\test_1_verificar_que_no_hay_menores_de_edad.sql)
+04:12:34    Got 5 results, configured to fail if != 0
+04:12:34
+04:12:34    compiled Code at target\compiled\dbt_poc\tests\test_1_verificar_que_no_hay_menores_de_edad.sql
+```
+
+### dentro de la carpeta test crear un archivo .sql  y adicionar el codigo del ejemplo 
+```
+test/test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql    
+```
+
+# EJEMPLO DE CODIGO DEL TEST 2
+```sql
+SELECT CASE
+    WHEN (
+            SELECT COUNT(*) 
+                FROM {{ ref('flight_logs') }}
+            WHERE 'XANADU' IN (departure_city, arrival_city)
+          ) > 0 THEN 
+                    NULL
+    ELSE
+        RAISE EXCEPTION 'NO EXISTEN VUELOS DE O HACIA XANADU'
+END
+```
+
+# EJECUTAR LAS PRUEBAS DE VALIDACION DE DATOS DEL CASO ESPECIFICO FALLA POR QUE HAY MENORES DE EDAD
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt test --select test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu
+
+- models.dbt_poc.example
+04:47:14  Found 5 models, 5 tests, 2 snapshots, 0 analyses, 307 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+04:47:14  
+04:47:15  Concurrency: 1 threads (target='dev')
+04:47:15  
+04:47:15  1 of 1 START test test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu ....... [RUN]
+04:47:15  1 of 1 ERROR test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu ............ [ERROR in 0.09s]
+04:47:15  
+04:47:15  Finished running 1 test in 0 hours 0 minutes and 0.56 seconds (0.56s).
+04:47:15  
+04:47:15  Completed with 1 error and 0 warnings:
+04:47:15
+04:47:15  Database Error in test test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu (tests\test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql)
+04:47:15    error de sintaxis en o cerca de «EXCEPTION»
+04:47:15    LINE 15:         RAISE EXCEPTION 'NO EXISTEN VUELOS DE O HACIA XANADU...
+04:47:15                           ^
+04:47:15    compiled Code at target\run\dbt_poc\tests\test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+04:47:15
+04:47:15  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
 ```
 
 # MACROS
+
+Imagina que estás construyendo una casa de juguete y necesitas hacer varias piezas iguales. En lugar de construir cada pieza desde cero una y otra vez, puedes usar una máquina especial que hace copias exactas de la pieza. Esa máquina es como un "macro" en dbt.
+
+En dbt, un macro es como una máquina que guarda un conjunto de instrucciones o código que puedes reutilizar en diferentes partes de tu proyecto de análisis de datos. Es como una forma de automatizar una tarea que tienes que hacer repetidamente.
+
+Por ejemplo, supongamos que en tu análisis de datos siempre necesitas calcular la suma de una columna en una tabla. En lugar de escribir la misma fórmula una y otra vez, puedes crear un macro que haga ese cálculo por ti. Luego, cada vez que necesites calcular la suma, simplemente llamas al macro y él se encargará de hacer el cálculo automáticamente.
+
+Los macros en dbt pueden ser útiles porque te ahorran tiempo y esfuerzo al automatizar tareas repetitivas. Puedes crear tus propios macros personalizados para adaptarse a tus necesidades específicas en el análisis de datos.
+
+En resumen, un macro en dbt es como una máquina especial que guarda un conjunto de instrucciones o código que puedes reutilizar en diferentes partes de tu análisis de datos. Es como una forma de automatizar tareas repetitivas y ahorrar tiempo y esfuerzo. Es como usar una máquina para hacer copias exactas de una pieza de una casa de juguete en lugar de construir cada una desde cero.
+
 ### dentro de la carpeta macro crear un archivo .sql  y adicionar el codigo del ejemplo 
 ```
 macro/macro_sin_valores_nulos.sql
@@ -777,49 +1271,122 @@ macro/macro_sin_valores_nulos.sql
 # EJEMPLO DE CODIGO SQL PARA MACRO
 ```sql
 {% macro check_null_values(model) %}
- SELECT * FROM {{ model }} WHERE
- {% for col in adapter.get_columns_in_relation(model) -%} # -% significa que elimina los espacios en blancodel final trim
- {{ col.column }} IS NULL OR
- {% endfor %}
- FALSE
+    SELECT * FROM {{ model }} WHERE
+    {% for col in adapter.get_columns_in_relation(model) -%} 
+        {{ col.column }} IS NULL OR
+    {% endfor %}
+        FALSE
 {% endmacro %}
 ```
 ### dentro de la carpeta macro test un archivo .sql  y adicionar el codigo del ejemplo 
 ```
-test/check_null_values_desde_el_macro.sql
+test/test_3_check_null_values_desde_el_macro.sql
 ```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+    ┗ test_3_check_null_values_desde_el_macro.sql
+  ┗ 🦄 macros
+    ┗ macro_sin_valores_nulos.sql
+```
+
 # EJEMPLO DE CODIGO SQL PARA TEST USANDO LA MACRO
 ```sql
 {{ check_null_values (ref('flight_logs')) }}
 ```
 # EJECUTAR EL TEST
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt test --select check_null_values_desde_el_macro
+(venv) jorge@cardona/dbt_poc:~$ dbt test --select test_3_check_null_values_desde_el_macro
 
-04:35:16  1 of 1 START test check_null_values_desde_el_macro ............................. [RUN]
-04:35:17  1 of 1 PASS check_null_values_desde_el_macro ................................... [PASS in 0.08s]
-04:35:17
-04:35:17  Finished running 1 test in 0.23s.
+- models.dbt_poc.example
+04:58:14  Found 5 models, 6 tests, 2 snapshots, 0 analyses, 308 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+04:58:14
+04:58:14  Concurrency: 1 threads (target='dev')
+04:58:14  
+04:58:14  1 of 1 START test test_3_check_null_values_desde_el_macro ...................... [RUN]
+04:58:14  1 of 1 PASS test_3_check_null_values_desde_el_macro ............................ [PASS in 0.10s]
+04:58:14  
+04:58:14  Finished running 1 test in 0 hours 0 minutes and 0.58 seconds (0.58s).
+04:58:14  
+04:58:14  Completed successfully
 ```
 
 # EJECUTAR ESTE SQL PARA CREAR REGISTRO CON VALORES NULOS
 ```sql
-INSERT INTO `test_poc`.`flight_logs` (`id`) VALUES ('12345678');
+INSERT INTO postgres.public.flight_logs (id) VALUES ('12345678');
 ```
-# EJECUTAR EL TEST
-```yaml
-(venv) jorge@cardona/multi_database:~$ dbt test --select check_null_values_desde_el_macro
 
-04:36:02  1 of 1 START test check_null_values_desde_el_macro ............................. [RUN]
-04:36:02  1 of 1 FAIL 1 check_null_values_desde_el_macro ................................. [FAIL 1 in 0.07s]
-04:36:02  Finished running 1 test in 0.20s.
-04:36:02  Completed with 1 error and 0 warnings:
-04:36:02  Failure in test check_null_values_desde_el_macro (tests\check_null_values_desde_el_macro.sql)
+# VALIDAR EL REGISTRO INSERTADO
+<img src="imagenes\test_1_usando_macros.png">
+
+
+# VOLVER A EJECUTAR EL TEST
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt test --select check_null_values_desde_el_macro
+
+- models.dbt_poc.example
+05:03:22  Found 5 models, 6 tests, 2 snapshots, 0 analyses, 308 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+05:03:22  
+05:03:23  Concurrency: 1 threads (target='dev')
+05:03:23  
+05:03:23  1 of 1 START test test_3_check_null_values_desde_el_macro ...................... [RUN]
+05:03:23  1 of 1 FAIL 1 test_3_check_null_values_desde_el_macro .......................... [FAIL 1 in 0.10s]
+05:03:23  
+05:03:23  Finished running 1 test in 0 hours 0 minutes and 0.40 seconds (0.40s).
+05:03:23
+05:03:23  Completed with 1 error and 0 warnings:
+05:03:23
+05:03:23  Failure in test test_3_check_null_values_desde_el_macro (tests\test_3_check_null_values_desde_el_macro.sql)
+05:03:23    Got 1 result, configured to fail if != 0
+05:03:23
+05:03:23    compiled Code at target\compiled\dbt_poc\tests\test_3_check_null_values_desde_el_macro.sql
 ```
 # ADICIONAR UN NUEVO MACRO
 ### dentro de la carpeta macro test un archivo .sql  y adicionar el codigo del ejemplo 
 ```
-test/macro_validar_adultos_mayores.sql
+macro/macro_validar_adultos_mayores.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+    ┗ test_3_check_null_values_desde_el_macro.sql
+  ┗ 🦄 macros
+    ┗ macro_sin_valores_nulos.sql
+    ┗ macro_validar_adultos_mayores.sql
 ```
 
 # CODIGO DE EJEMPLO DEL MACRO
@@ -830,11 +1397,11 @@ SELECT
 FROM
  {{ model }}
 WHERE
- {{ column_name}} > 80
+ {{ column_name }} > 80
 {% endtest %}
 ```
 
-# ACTUALIZAR EL sources.yml
+# ACTUALIZAR EL schema.yml
 ```yaml
 version: 2
 
@@ -859,30 +1426,62 @@ models:
 
 # EJECUTAR EL TEST
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt test
+(venv) jorge@cardona/dbt_poc:~$  dbt test --select tercera_edad_flight_logs_passenger_age
 
-04:58:13  Completed with 4 errors and 0 warnings:
-04:58:13  Failure in test check_null_values_desde_el_macro (tests\check_null_values_desde_el_macro.sql)
-04:58:13    Got 1 result, configured to fail if != 0
-04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\tests\check_null_values_desde_el_macro.sql
-04:58:13  Failure in test not_null_flight_logs_departure_gate (models\schema.yaml)
-04:58:13    Got 1 result, configured to fail if != 0
-04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\not_null_flight_logs_departure_gate.sql
-04:58:13  Failure in test tercera_edad_flight_logs_passenger_age (models\schema.yaml)
-04:58:13    Got 1207 results, configured to fail if != 0
-04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\models\schema.yaml\tercera_edad_flight_logs_passenger_age.sql
-04:58:13  Failure in test validar_menores_de_edad (tests\validar_menores_de_edad.sql)
-04:58:13    Got 9 results, configured to fail if != 0
-04:58:13    compiled SQL at target\compiled\dbt_mysql_poc\tests\validar_menores_de_edad.sql
+- models.dbt_poc.example                                                                                        
+05:08:55  Found 5 models, 7 tests, 2 snapshots, 0 analyses, 309 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+05:08:55  
+05:08:56  Concurrency: 1 threads (target='dev')
+05:08:56  
+05:08:56  1 of 1 START test tercera_edad_flight_logs_passenger_age ....................... [RUN]
+05:08:56  1 of 1 FAIL 1208 tercera_edad_flight_logs_passenger_age ........................ [FAIL 1208 in 0.09s]
+05:08:56  
+05:08:56  Finished running 1 test in 0 hours 0 minutes and 0.39 seconds (0.39s).
+05:08:56  
+05:08:56  Completed with 1 error and 0 warnings:
+05:08:56
+05:08:56  Failure in test tercera_edad_flight_logs_passenger_age (models\schema.yaml)
+05:08:56    Got 1208 results, configured to fail if != 0
+05:08:56
+05:08:56    compiled Code at target\compiled\dbt_poc\models\schema.yaml\tercera_edad_flight_logs_passenger_age.sql
+05:08:56
+05:08:56  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
 ```
 
 # DEFINIENDO VARIABLES CON SET Y USARLAS
 # USANDO EL LOG PARA VER EL CONTENIDO DE LAS VARIABLES
 
 # ADICIONAR UN NUEVO MODELO
-### dentro de la carpeta macro test un archivo .sql  y adicionar el codigo del ejemplo 
+### dentro de la carpeta models/src test un archivo .sql  y adicionar el codigo del ejemplo 
 ```
-models/ejemplo_con_jinja_set.sql
+models/src/modelo_6_set_1_con_jinja.sql
+```
+
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+    ┗ modelo_6_set_1_con_jinja.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+    ┗ test_3_check_null_values_desde_el_macro.sql
+  ┗ 🦄 macros
+    ┗ macro_sin_valores_nulos.sql
+    ┗ macro_validar_adultos_mayores.sql
 ```
 
 # EJEMPLO DEL MODELO
@@ -914,26 +1513,29 @@ FROM result_table
 ```
 # EJECUTAR EL MODELO
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt run --models ejemplo_con_jinja_set
+(venv) jorge@cardona/dbt_poc:~$ dbt run --models dbt run --models modelo_6_set_1_con_jinja
 
-17:41:10  Found 5 models, 6 tests, 2 snapshots, 0 analyses, 174 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
-17:41:10  
-17:41:10  Concurrency: 1 threads (target='prod')
-17:41:10  
-17:41:10  1 of 1 START view model test_poc.jinja_test_set ................................ [RUN]
-17:41:11  1 of 1 OK created view model test_poc.jinja_test_set ........................... [SUCCESS 0 in 0.15s]
-17:41:11  
-17:41:11  Finished running 1 view model in 0.31s.
-17:41:11  
-17:41:11  Completed successfully
+- models.dbt_poc.example
+05:19:59  Found 6 models, 7 tests, 2 snapshots, 0 analyses, 310 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+05:19:59  
+05:19:59  Concurrency: 1 threads (target='dev')
+05:19:59  
+05:19:59  1 of 1 START sql view model public.jinja_test_set .............................. [RUN]
+--- El valor de seat_numbers es: ('A1', 'B2', 'C3')
+05:19:59
+05:19:59  *** El valor de seat_numbers es: ('A1', 'B2', 'C3')
+05:20:00  1 of 1 OK created sql view model public.jinja_test_set ......................... [CREATE VIEW in 0.29s]
+05:20:00  
+05:20:00  Finished running 1 view model in 0 hours 0 minutes and 0.81 seconds (0.81s).
+05:20:00
+05:20:00  Completed successfully
 ```
-
 
 # USAR MACROS DENTRO DE MODELOS
 # ADICIONAR UN NUEVO MACRO
 ### dentro de la carpeta macro un archivo .sql  y adicionar el codigo del ejemplo 
 ```
-macro/macro_filro.sql
+macro/macro_filro_con_set.sql
 ```
 # DEFINIR EL MACRO, poner siempre el -% ya que genera lineas o espacios en blanco y entregando una respuesta mal
 # EJEMPLO DE MACRO
@@ -959,11 +1561,40 @@ macro/macro_filro.sql
 {% endmacro %}
 ```
 
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+    ┗ modelo_6_set_1_con_jinja.sql
+    ┗ modelo_7_usar_macro.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+    ┗ test_3_check_null_values_desde_el_macro.sql
+  ┗ 🦄 macros
+    ┗ macro_sin_valores_nulos.sql
+    ┗ macro_validar_adultos_mayores.sql
+    ┗ macro_filro_con_set.sql
+```
+
 # EJEMPLO DE MODELO
 # ADICIONAR UN NUEVO MODELO
-### dentro de la carpeta models un archivo .sql  y adicionar el codigo del ejemplo 
+### dentro de la carpeta models/src test un archivo .sql  y adicionar el codigo del ejemplo 
 ```
-models/usar_macro.sql
+models/modelo_7_usar_macro.sql
 ```
 ```sql
 {% set query_generos_registrados %}
@@ -980,7 +1611,7 @@ models/usar_macro.sql
 -- VER EL LOG SIN LA FECHA a la izquierda en la salida estándar
 {% do log(print("--- El valor de results_list en usar_macro es : " ~ results_list), info=True) %}
 
-# hacer el query con los valores filtrados
+-- hacer el query con los valores filtrados
 WITH result_table AS (
   SELECT *
     FROM  {{ref('flight_logs')}}
@@ -994,19 +1625,68 @@ FROM result_table
 
 # EJECUTAR EL MODELO
 ```yaml
-(venv) jorge@cardona/multi_database:~$ dbt run --models usar_macro
+(venv) jorge@cardona/dbt_poc:~$ dbt run --models modelo_7_usar_macro
 
-17:41:10  Found 5 models, 6 tests, 2 snapshots, 0 analyses, 174 macros, 0 operations, 2 seed files, 3 sources, 0 exposures, 0 metrics
-17:41:10  
-17:41:10  Concurrency: 1 threads (target='prod')
-17:41:10  
-17:41:10  1 of 1 START view model test_poc.jinja_test_set ................................ [RUN]
-17:41:11  1 of 1 OK created view model test_poc.jinja_test_set ........................... [SUCCESS 0 in 0.15s]
-17:41:11  
-17:41:11  Finished running 1 view model in 0.31s.
-17:41:11  
-17:41:11  Completed successfully
+05:24:18  Found 7 models, 7 tests, 2 snapshots, 0 analyses, 310 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+05:24:18  
+05:24:18  Concurrency: 1 threads (target='dev')
+05:24:18  
+05:24:18  1 of 1 START sql view model public.modelo_7_usar_macro ......................... [RUN]
+--- El query a ejecutar es: 
+  SELECT DISTINCT passenger_gender
+    FROM  "postgres"."public"."flight_logs"
+    WHERE passenger_gender IS NOT NULL -- evita que retorne valores nulos
+
+05:24:18
+--- El valor de results_list del query es: ('Genderqueer', 'Bigender', 'Genderfluid', 'Male', 'Non-binary', 'Polygender', 'Female', 'Agender')
+05:24:18  
+--- El valor de results_list en usar_macro es :
+
+('Genderqueer', 'Bigender', 'Genderfluid', 'Male', 'Non-binary', 'Polygender', 'Female', 'Agender')
+
+05:24:18
+05:24:18  1 of 1 OK created sql view model public.modelo_7_usar_macro .................... [CREATE VIEW in 0.18s]
+05:24:18  
+05:24:18  Finished running 1 view model in 0 hours 0 minutes and 0.52 seconds (0.52s).
+05:24:18  
+05:24:18  Completed successfully
+05:24:18
+05:24:18  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PRUEBA CON CONTENEDORES DE POSTGRES Y MYSQL
+| Configuración | PostgreSQL| MySQL                        |
+|---------------|-----------|------------------------------|
+| Host          | localhost | localhost                    |
+| Port          | 5555      | 3333                         |
+| User          | admin     | admin                        |
+| Password      | 12345678  | 12345678                     |
+| Database      | test_poc  | test_poc                     |
+| Schema        | public    | test_poc                     |
+
+# Cliente DBeaver para probar las conexiones
+# LAS TABLAS EN POSTGRES SON SENSIBLES AL CASO
 
 
 

@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+
+  - name: fuente_original
+    description: Fuente de datos original creada con el csv
+
+    database: postgres
+    schema: public
+
+    freshness: # si se ubica antes de las tablas aplica para todas las tablas
+      warn_after:
+        count: 1
+        period: minute # si en este tiempo 1 minuto no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra la alerta
+      error_after:
+        count: 3
+        period: minute  # si en este tiempo 3 minutos no hay nuevos registros y actualizada la columna de timestamp 'test_time_freshness' muestra el error      
+
+    tables:
+      - name: tabla_original # se puede usar como un alias en la source
+        identifier: flight_logs # debe ser el nombrede la tabla en la base de datos
+        # cmapo que sirve para probar que tan a menudo se actualiza la tabla 
+        loaded_at_field: test_time_freshness # tiene que ser un campo TIMESTAMP de la tabla para el freshness 
+
+  - name: tabla_referencia
+    database: postgres
+    schema: public  
+    tables:
+       - name: tabla_referencia_desde_source # alias en la source
+         identifier: modelo_2_tabla_query_con_with_renombrando_columnas # debe ser el nombre de la tabla en la base de datos
+
+  - name: vista_referencia
+    database: postgres
+    schema: public  
+    tables:
+      - name: vista_referencia_desde_source # alias en la source
+        identifier: modelo_1_vista_query_directo # debe ser el nombre de la tabla en la base de datos
+
+  - name: tabla_incremental_source
+    database: postgres
+    schema: public  
+    tables:
+      - name: tabla_incremental_referencia # alias en la source
+        identifier: tabla_incremental # debe ser el nombre de la tabla en la base de datos
