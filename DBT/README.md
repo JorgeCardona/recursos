@@ -1654,13 +1654,124 @@ FROM result_table
 05:24:18  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 ```
 
+# USANDO VARIABLES
 
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+    ┗ modelo_6_set_1_con_jinja.sql
+    ┗ modelo_7_usar_macro.sql
+    ┗ modelo_8_usando_variables_dbt_project.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+    ┗ test_3_check_null_values_desde_el_macro.sql
+  ┗ 🦄 macros
+    ┗ macro_sin_valores_nulos.sql
+    ┗ macro_validar_adultos_mayores.sql
+    ┗ macro_filro_con_set.sql
+  ┗ 🔑 dbt_project.yml
+```
+# EDITAR EL ARCHIVO dbt_project.yml ADICIONANDO LA SECCION var
+# YAML BASE
 
+```yaml
+...
+...
+...
+models:
+  dbt_poc:
+    # Config indicated by + and applies to all files under models/example/
+    example:
+      +materialized: view
+```
+# ADICIONAR ESTE CODIGO AL FINAL
 
+```yaml
+# variables personalizadas
+# SE PUEDEN DECLARAN LOS VALORES DE CADENA SIN COMILLAS
+vars:
+  tipo_de_avion : Embraer E190
+  maximos_registros: 3
 
+# SE RECOMIENDA DECLARA LOS VALORES DE CADENA CON COMILLAS, PARA EVITAR ESPACIOS EN BLANCO, ETC
+vars:
+  tipo_de_avion : 'Embraer E190'
+  maximos_registros: 3
+```
+# YAML FINAL
+#
+```yaml
+...
+...
+...
+models:
+  dbt_poc:
+    # Config indicated by + and applies to all files under models/example/
+    example:
+      +materialized: view
 
+# variables personalizadas
+# variables personalizadas
+vars:
+  tipo_de_avion : 'Embraer E190'
+  maximos_registros: 3
+```
+# ADICIONAR UN NUEVO MODELO
+### dentro de la carpeta models/scr adicionar un archivo .sql  y adicionar el codigo del ejemplo 
 
+```yaml
+models/src/modelo_8_usando_variables_dbt_project.sql
+```
 
+# CODIGO DE EJMEPLO USANDO LA VARIABLE var
+#
+```sql
+{{ 
+config(
+		materialized='view', 
+		alias='vista_usando_variables'
+		) 
+}}
+
+-- MANEJO ESPECIAL CON COMILLAS DOBLES AL TRAER LOS VALORES DE LAS var, DADO QUE AL COMPARAR EN EL WHERE DEBE SER COMILLAS SENCILLAS, DE LO CONTRARIO DA ERROR
+SELECT DISTINCT airline
+    FROM  {{ref('flight_logs')}}
+    WHERE aircraft_type = '{{var("tipo_de_avion")}}' AND 
+          airline IS NOT NULL 
+LIMIT {{var('maximos_registros')}}
+```
+
+# EJECUTAR EL MODELO
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt run --models modelo_8_usando_variables_dbt_project
+
+- models.dbt_poc.example
+21:16:34  Found 8 models, 7 tests, 2 snapshots, 0 analyses, 310 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+21:16:34
+21:16:34  Concurrency: 1 threads (target='dev')
+21:16:34
+21:16:34  1 of 1 START sql view model public.vista_usando_variables ...................... [RUN]
+21:16:35  1 of 1 OK created sql view model public.vista_usando_variables ................. [CREATE VIEW in 0.18s]
+21:16:35
+21:16:35  Finished running 1 view model in 0 hours 0 minutes and 0.52 seconds (0.52s).
+21:16:35
+21:16:35  Completed successfully
+```
+<img src="imagenes\variables_desde_dbt_project.png">
 
 
 

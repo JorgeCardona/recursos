@@ -38,3 +38,8 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+# variables personalizadas
+vars:
+  tipo_de_avion : 'Embraer E190'
+  maximos_registros: 3
