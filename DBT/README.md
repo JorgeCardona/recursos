@@ -1833,3 +1833,6 @@ Press Ctrl+C to exit.
 
 ## Recursos en el Gráfico de linaje
 <img src="imagenes\docs_5.png">
+
+## Vista Recursos del Proyecto
+<img src="imagenes\docs_6.png">
