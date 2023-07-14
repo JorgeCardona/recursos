@@ -1775,52 +1775,61 @@ LIMIT {{var('maximos_registros')}}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-# PRUEBA CON CONTENEDORES DE POSTGRES Y MYSQL
-| Configuración | PostgreSQL| MySQL                        |
-|---------------|-----------|------------------------------|
-| Host          | localhost | localhost                    |
-| Port          | 5555      | 3333                         |
-| User          | admin     | admin                        |
-| Password      | 12345678  | 12345678                     |
-| Database      | test_poc  | test_poc                     |
-| Schema        | public    | test_poc                     |
-
-# Cliente DBeaver para probar las conexiones
-# LAS TABLAS EN POSTGRES SON SENSIBLES AL CASO
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ALGUNAS COSAS NO FUNCIONAN BIEN EN LOS CONTENEDORES DE DOCKER Y POSTGRES COMO LOS SNAPSHOT LOS QUERIES CON JOIN
-# LOS QUERIES NO DEBEN TERMINAR EN punto y coma ; generan errores
-
-# Detener Contenedor postgres
-```
-docker stop jorgecardona-postgres
+# DOCUMENTACION
+# GENERAR EL JSON DE LA DOCUMENTACION
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt docs generate
+- models.dbt_poc.example
+23:14:11  Found 8 models, 7 tests, 2 snapshots, 0 analyses, 310 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+23:14:11
+23:14:11  Concurrency: 1 threads (target='dev')
+23:14:11  
+--- El valor de seat_numbers es: ('A1', 'B2', 'C3')
+23:14:11  
+23:14:11  *** El valor de seat_numbers es: ('A1', 'B2', 'C3')
+23:14:11
+23:14:12  Building catalog
+23:14:12  Catalog written to C:\Users\QiDimMak\Desktop\dbt postgres\dbt_poc\target\catalog.json
 ```
 
-# Detener Contenedor mysql
+# INICIAR EL SERVIDOR LOCAL PARA ACCEDER A LA DOCUMENTACION
 ```
-docker stop jorgecardona-mysql
+(venv) jorge@cardona/dbt_poc:~$ dbt docs serve
+- models.dbt_poc.example
+23:14:11  Found 8 models, 7 tests, 2 snapshots, 0 analyses, 310 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+23:14:11
+23:14:11  Concurrency: 1 threads (target='dev')
+23:14:11  
+--- El valor de seat_numbers es: ('A1', 'B2', 'C3')
+23:14:11  
+23:14:11  *** El valor de seat_numbers es: ('A1', 'B2', 'C3')
+23:14:11
+23:14:12  Building catalog
+23:14:12  Catalog written to C:\Users\QiDimMak\Desktop\dbt postgres\dbt_poc\target\catalog.json
+(venv) PS C:\Users\QiDimMak\Desktop\dbt postgres\dbt_poc> dbt docs serve
+23:16:40  Running with dbt=1.5.2
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
+
+
+Press Ctrl+C to exit.
+127.0.0.1 - - [13/Jul/2023 18:16:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2023 18:16:42] "GET /manifest.json?cb=1689290202671 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2023 18:16:42] "GET /catalog.json?cb=1689290202671 HTTP/1.1" 200 -
 ```
 
+# MENU DE LA DOCUMENTACION
+## PROYECTO
+<img src="imagenes\docs_1.png">
+
+## BASE DE DATOS
+<img src="imagenes\docs_2.png">
+
+## Acceso al Gráfico de linaje
+<img src="imagenes\docs_3.png">
+
+## Gráfico de linaje
+<img src="imagenes\docs_4.png">
+
+## Recursos en el Gráfico de linaje
+<img src="imagenes\docs_5.png">
