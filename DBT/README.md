@@ -128,7 +128,7 @@ Aquí tienes la tabla actualizada, incluyendo los archivos faltantes:
 | Archivo/Directorio      | Función                                                     | Descripción                                                                                                                             |
 |----------------------|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | dbt_poc              | Directorio principal del proyecto dbt                        | Directorio raíz del proyecto dbt                                                                                                        |
-| ┗ analyses           | Carpeta que contiene análisis (queries) de datos             | Contiene los archivos .sql que representan los análisis de datos realizados en el proyecto                                              |
+| ┗ analyses           | Carpeta que contiene los archivos .sql con análisis (queries) de datos, que representan los análisis de datos realizados en el proyecto.  | Cualquier .sql dentro de este directorio, se compilará, pero no se ejecutará.  |
 | ┗ macros             | Carpeta que contiene macros personalizados                   | Contiene los archivos .sql con macros reutilizables que pueden ser invocados en los modelos y análisis                                 |
 | ┗ models             | Carpeta que contiene los modelos de datos                    | Contiene los archivos .sql que representan los modelos de datos utilizados para transformar y combinar los datos de origen                |
 | ┗ ┗ schema.yml        | Archivo que define la estructura del esquema de los modelos  | Archivo YAML que describe la estructura del esquema de los modelos de datos                                                              |
@@ -1448,7 +1448,7 @@ models:
 05:08:56  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
 ```
 
-# DEFINIENDO VARIABLES CON SET Y USARLAS
+# DEFINIENDO VARIABLES LOCALES CON SET Y USARLAS
 # USANDO EL LOG PARA VER EL CONTENIDO DE LAS VARIABLES
 
 # ADICIONAR UN NUEVO MODELO
@@ -1654,7 +1654,7 @@ FROM result_table
 05:24:18  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 ```
 
-# USANDO VARIABLES
+# USANDO VARIABLES DE PROYECTO
 
 ```
 ⭐ dbt_poc [project_directory]
@@ -1775,6 +1775,95 @@ LIMIT {{var('maximos_registros')}}
 
 
 
+# USANDO ANALYSES
+
+# ADICIONAR UN NUEVO MODELO
+### dentro de la carpeta analyses/ adicionar un archivo .sql  y adicionar el codigo del ejemplo 
+
+```yaml
+analyses/analyses_test.sql
+```
+
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+    ┗ modelo_6_set_1_con_jinja.sql
+    ┗ modelo_7_usar_macro.sql
+    ┗ modelo_8_usando_variables_dbt_project.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+    ┗ test_3_check_null_values_desde_el_macro.sql
+  ┗ 🦄 macros
+    ┗ macro_sin_valores_nulos.sql
+    ┗ macro_validar_adultos_mayores.sql
+    ┗ macro_filro_con_set.sql
+  ┗ 🔑 dbt_project.yml
+┗ ☢️ analyses [package]
+  ┗ analyses_test.sql
+```
+
+# CODIGO DE EJEMPLO
+
+```sql
+{% set seat_numbers = ('A1', 'B2', 'C3') %}
+
+WITH result_table AS (
+  SELECT *
+    FROM  {{ref('flight_logs')}}
+  WHERE seat_number IN {{ seat_numbers }}
+    LIMIT 5
+)
+
+SELECT *
+FROM result_table
+```
+
+# COMPILAR EL ANALYSES
+## VEMOS QUE RETORNA EL QUERY LIMPIO, CON LOS VALORES DE REEMPLAZO DE LAS VARIABLES
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt compile --select analyses_test
+
+- models.dbt_poc.example
+04:16:32  Found 8 models, 7 tests, 2 snapshots, 1 analysis, 310 macros, 0 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+04:16:32
+04:16:32
+04:16:32  Compiled node 'analyses_test' is:
+
+WITH result_table AS (
+  SELECT *
+    FROM  "postgres"."public"."flight_logs"
+  WHERE seat_number IN ('A1', 'B2', 'C3')
+    LIMIT 5
+)
+
+SELECT *
+FROM result_table
+```
+
+# EL QUERY QUEDA ALMACENADO EN 
+## .\target\compiled\dbt_poc\analyses\analyses_test.sql
+# SE PUEDE VALIDAR EL QUERY GENERADO ABRIENDO EL ARCHIVO .sql Y EJECUTANDOLO EN LA BASE DE DATOS.
+
+
+
+
+
+
+
 # DOCUMENTACION
 # GENERAR EL JSON DE LA DOCUMENTACION
 ```yaml
@@ -1836,3 +1925,17 @@ Press Ctrl+C to exit.
 
 ## Vista Recursos del Proyecto
 <img src="imagenes\docs_6.png">
+
+
+
+| Command   | --select  | --exclude | --selector | --defer       | --resource-type | --inline  |
+|-----------|-----------|-----------|------------|--------------|-----------------|-----------|
+| run       | ✓         | ✓         | ✓          | ✓            |                 |           |
+| test      | ✓         | ✓         | ✓          | ✓            |                 |           |
+| seed      | ✓         | ✓         | ✓          |              |                 |           |
+| snapshot  | ✓         | ✓         | ✓          |              |                 |           |
+| ls (list) | ✓         | ✓         | ✓          |              | ✓               |           |
+| compile   | ✓         | ✓         | ✓          |              |                 | ✓         |
+| freshness | ✓         | ✓         | ✓          |              |                 |           |
+| build     | ✓         | ✓         | ✓          | ✓            | ✓               |           |
+
