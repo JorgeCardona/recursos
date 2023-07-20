@@ -1926,7 +1926,7 @@ Press Ctrl+C to exit.
 ## Vista Recursos del Proyecto
 <img src="imagenes\docs_6.png">
 
-
+# TABLA RESUMEN DE COMANDOS DBT
 
 | Command   | --select  | --exclude | --selector | --defer       | --resource-type | --inline  |
 |-----------|-----------|-----------|------------|--------------|-----------------|-----------|
