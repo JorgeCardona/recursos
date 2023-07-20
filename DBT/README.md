@@ -1966,6 +1966,7 @@ LIMIT {{var('maximos_registros')}}
 
 # SI SE QUIERE USAR EL on-run-start Y EL on-run-end
 # EDITAR EL ARCHIVO dbt_project.yaml Y ADICIONAR LA SECCION HOOKS
+## OPCION 1
 ```yaml
 ...
 ...
@@ -1981,6 +1982,20 @@ on-run-start:
 
 on-run-end:
   - "{{ hook_postprocesamiento() }}"
+```
+
+## OPCION 2, DESDE LA SECCION MODELS, SE PUEDE USAR MACROS, QUERIES, ETC
+```yaml
+...
+...
+...
+models:
+  pre-hook: "SELECT COUNT(*) FROM {{ref('flight_logs')}}"
+  post-hook: "SELECT DISTINCT airline FROM  {{ref('flight_logs')}} LIMIT 5" 
+  dbt_poc:
+    # Config indicated by + and applies to all files under models/example/
+    example:
+      +materialized: view
 ```
 
 # SON EQUIVALENTES USAR EL MODELO Y LA CONFIGURACION, O EDITAR EL dbt_project.yaml 
