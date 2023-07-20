@@ -1990,15 +1990,19 @@ on-run-end:
 ...
 ...
 models:
-  pre-hook: "SELECT COUNT(*) FROM {{ref('flight_logs')}}"
-  post-hook: "SELECT DISTINCT airline FROM  {{ref('flight_logs')}} LIMIT 5" 
+  pre-hook: "TRUNCATE TABLE public.tabla_join"
+  post-hook: "INSERT INTO public.tabla_join VALUES (7777,	5555, 'DBT', 'HOOKS', 'POST',	'PROCESSING', 'OK')" 
   dbt_poc:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
 ```
 
-# SON EQUIVALENTES USAR EL MODELO Y LA CONFIGURACION, O EDITAR EL dbt_project.yaml 
+# SON EQUIVALENTES USAR EL MODELO Y LA CONFIGURACION, O EDITAR EL dbt_project.yaml
+
+# ANTES DE ACTIVAR LOS HOOKS
+<img src="imagenes\modelo_4.1.png">
+
 # EJECUTAR RUN PARA ACTIVAR LOS HOOKS
 ```yaml
 (venv) jorge@cardona/dbt_poc:~$ dbt run -m modelo_1_vista_query_directo
@@ -2020,6 +2024,10 @@ HOOK POST PROCESAMIENTO,Finaliza ejecución de DBT a las
 05:10:07  Completed successfully
 05:10:07  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 ```
+
+# DESPUES DE ACTIVAR LOS HOOKS
+#  SE EJECUTO EL TRUNCATE Y LUEGO SE INSERTO EL REGISTRO
+<img src="imagenes\hooks.png">
 
 # DOCUMENTACION
 # GENERAR EL JSON DE LA DOCUMENTACION
