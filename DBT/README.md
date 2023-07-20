@@ -1834,6 +1834,9 @@ FROM result_table
 
 # COMPILAR EL ANALYSES
 ## VEMOS QUE RETORNA EL QUERY LIMPIO, CON LOS VALORES DE REEMPLAZO DE LAS VARIABLES
+# EL QUERY QUEDA ALMACENADO EN 
+## .\target\compiled\dbt_poc\analyses\analyses_test.sql
+## SE PUEDE VALIDAR EL QUERY GENERADO ABRIENDO EL ARCHIVO .sql Y EJECUTANDOLO EN LA BASE DE DATOS.
 ```yaml
 (venv) jorge@cardona/dbt_poc:~$ dbt compile --select analyses_test
 
@@ -1853,10 +1856,6 @@ WITH result_table AS (
 SELECT *
 FROM result_table
 ```
-
-# EL QUERY QUEDA ALMACENADO EN 
-## .\target\compiled\dbt_poc\analyses\analyses_test.sql
-# SE PUEDE VALIDAR EL QUERY GENERADO ABRIENDO EL ARCHIVO .sql Y EJECUTANDOLO EN LA BASE DE DATOS.
 
 
 
