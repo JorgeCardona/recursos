@@ -1777,7 +1777,7 @@ LIMIT {{var('maximos_registros')}}
 
 # USANDO ANALYSES
 
-# ADICIONAR UN NUEVO MODELO
+# ADICIONAR UN NUEVO ANALYSES, SE USA PARA PROBAR QUERIES SIN MATERIALIZAR TABLAS O VISTAS
 ### dentro de la carpeta analyses/ adicionar un archivo .sql  y adicionar el codigo del ejemplo 
 
 ```yaml
