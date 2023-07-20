@@ -43,3 +43,10 @@ models:
 vars:
   tipo_de_avion : 'Embraer E190'
   maximos_registros: 3
+
+# hooks
+on-run-start:
+  - "{{ hook_preprocesamiento() }}"
+
+on-run-end:
+  - "{{ hook_postprocesamiento() }}"

@@ -1858,10 +1858,153 @@ FROM result_table
 ```
 
 
+# USANDO HOOKS, EJECUTAR COMANDOS AL INICIAR O TERMINAR ACCIONES
+
+Los hooks (ganchos) son una capacidad más avanzada que le permite ejecutar SQL personalizado y aprovechar las acciones específicas de la base de datos, más allá de lo que dbt pone a disposición de inmediato con materializaciones y configuraciones estándar.
+
+| Hook          | Descripción                                                                                                       | Comandos afectados                            |
+|---------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| pre-hook      | Ejecutado antes de que se construya un modelo, semilla o instantánea.                                            | dbt run, dbt test, dbt seed, dbt snapshot     |
+| post-hook     | Se ejecuta después de construir un modelo, semilla o instantánea.                                                 | dbt run, dbt test, dbt seed, dbt snapshot     |
+| on-run-start  | Ejecutado al comienzo de dbt run, dbt test, dbt seed, dbt snapshot.                                               | dbt run, dbt test, dbt seed, dbt snapshot     |
+| on-run-end    | Ejecutado al final de dbt run, dbt test, dbt seed, dbt snapshot.                                                 | dbt run, dbt test, dbt seed, dbt snapshot     |
 
 
+# ADICIONAR NUEVAS ACIIONES USANDO HOOKS
+### dentro de la carpeta macros/ adicionar un archivo .sql  y adicionar el codigo del ejemplo 
 
+```yaml
+macros/macro_show_message.sql
+macros/macro_run_preprocessing.sql
+macros/macro_run_postprocessing.sql
+```
 
+```
+⭐ dbt_poc [project_directory]
+┗ 🌼 seeds [package]
+  ┗ 📚flight_logs.csv
+┗ 🌞 models [package]
+  ┗ ⚜️ schema.yaml
+  ┗ ♻️ sources.yaml
+  ┗ 🦔 src
+    ┗ modelo_1_vista_query_directo.sql
+    ┗ modelo_2_tabla_query_con_with_renombrando_columnas.sql
+    ┗ modelo_3_tabla_incremental_nombre_personalizado_uso_script_de_referencia.sql
+    ┗ modelo_4_tabla_incremental_usando_join.sql
+    ┗ modelo_5_tabla_usando_el_alias_del_source.sql
+    ┗ modelo_6_set_1_con_jinja.sql
+    ┗ modelo_7_usar_macro.sql
+    ┗ modelo_8_usando_variables_dbt_project.sql
+    ┗ modelo_9_hooks.sql
+  ┗ 📸 snapshots [package]
+    ┗ snapshot_1_tabla_validar_multi_campos.sql   
+    ┗ snapshot_2_tabla_validar_todos_los_campos.sql
+  ┗ 🚀 test [package]
+    ┗ test_1_verificar_que_no_hay_menores_de_edad.sql
+    ┗ test_2_verificar_que_salen_vuelos_desde_o_hacia_xanadu.sql
+    ┗ test_3_check_null_values_desde_el_macro.sql
+  ┗ 🦄 macros
+    ┗ macro_sin_valores_nulos.sql
+    ┗ macro_validar_adultos_mayores.sql
+    ┗ macro_filro_con_set.sql
+    ┗ macro_show_message.sql
+    ┗ macro_run_preprocessing.sql
+    ┗ macro_run_postprocessing.sql
+  ┗ 🔑 dbt_project.yml
+┗ ☢️ analyses [package]
+  ┗ analyses_test.sql
+```
+
+# CODIGO DE EJEMPLO
+
+```sql
+-- macro_show_message.sql
+{% macro mostrar_mensaje(message) %}
+  {% do log(print(message), info=True) %}
+{% endmacro %}
+```
+
+```sql
+-- macro_run_preprocessing.sql
+{% macro hook_preprocesamiento() %}
+  {% set current_timestamp = target.timestamp %}
+  {% set message = "HOOK PRE PROCESAMIENTO, Inicio de ejecución de DBT a las " ~ current_timestamp %}
+  {# LLAMO UN MACRO DESDE OTRO MACRO #}
+  {% do mostrar_mensaje(message) %}
+{% endmacro %}
+```
+
+```sql
+-- macro_run_postprocessing.sql
+{% macro hook_postprocesamiento() %}
+  {% set current_timestamp = target.timestamp %}
+  {% set message = "HOOK POST PROCESAMIENTO,Finaliza ejecución de DBT a las " ~ current_timestamp %}
+  {# LLAMO UN MACRO DESDE OTRO MACRO #}
+  {% do mostrar_mensaje(message) %}
+{% endmacro %}
+```
+
+# SI SE QUIERE USAR EL pre_hook Y EL post_hook SE CREA UN NUEVO MODELO Y EN LA SECCION DE CONFIGURACION SE LE HACE EL LLAMADO
+
+```sql
+-- modelo_9_hooks.sql
+{{ 
+config(
+		materialized='view', 
+		alias='vista_hooks',
+        pre_hook= "{{ hook_preprocesamiento() }}",
+        post_hook="{{ hook_postprocesamiento() }}"
+		) 
+}}
+
+SELECT DISTINCT airline
+    FROM  {{ref('flight_logs')}}
+    WHERE aircraft_type = '{{var("tipo_de_avion")}}' AND 
+          airline IS NOT NULL 
+LIMIT {{var('maximos_registros')}}
+```
+
+# SI SE QUIERE USAR EL on-run-start Y EL on-run-end
+# EDITAR EL ARCHIVO dbt_project.yaml Y ADICIONAR LA SECCION HOOKS
+```yaml
+...
+...
+...
+# variables personalizadas
+vars:
+  tipo_de_avion : 'Embraer E190'
+  maximos_registros: 3
+
+# hooks
+on-run-start:
+  - "{{ hook_preprocesamiento() }}"
+
+on-run-end:
+  - "{{ hook_postprocesamiento() }}"
+```
+
+# SON EQUIVALENTES USAR EL MODELO Y LA CONFIGURACION, O EDITAR EL dbt_project.yaml 
+# EJECUTAR RUN PARA ACTIVAR LOS HOOKS
+```yaml
+(venv) jorge@cardona/dbt_poc:~$ dbt run -m modelo_1_vista_query_directo
+
+- models.dbt_poc.example
+05:10:07  Found 8 models, 7 tests, 2 snapshots, 1 analysis, 313 macros, 2 operations, 1 seed file, 4 sources, 0 exposures, 0 metrics, 0 groups
+05:10:07  Running 1 on-run-start hook
+HOOK PRE PROCESAMIENTO, Inicio de ejecución de DBT a las
+05:10:07  1 of 1 START hook: dbt_poc.on-run-start.0 ...................................... [RUN]        
+05:10:07  1 of 1 OK hook: dbt_poc.on-run-start.0 ......................................... [OK in 0.00s]
+05:10:07  Concurrency: 1 threads (target='dev')
+05:10:07  1 of 1 START sql view model public.modelo_1_vista_query_directo ................ [RUN]
+05:10:07  1 of 1 OK created sql view model public.modelo_1_vista_query_directo ........... [CREATE VIEW in 0.15s]
+05:10:07  Running 1 on-run-end hook
+HOOK POST PROCESAMIENTO,Finaliza ejecución de DBT a las
+05:10:07  1 of 1 START hook: dbt_poc.on-run-end.0 ........................................ [RUN]
+05:10:07  1 of 1 OK hook: dbt_poc.on-run-end.0 ........................................... [OK in 0.00s]
+05:10:07  Finished running 1 view model, 2 hooks in 0 hours 0 minutes and 0.64 seconds (0.64s).
+05:10:07  Completed successfully
+05:10:07  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+```
 
 # DOCUMENTACION
 # GENERAR EL JSON DE LA DOCUMENTACION
