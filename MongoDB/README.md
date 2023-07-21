@@ -1,3 +1,6 @@
+# copiar el conector para conectarse con pyspark
+cp postgresql-42.6.0.jar /usr/local/spark/jars
+
 # PYSPARK CON POSTGRESQL
 ### https://www.machinelearningplus.com/pyspark/pyspark-connect-to-postgresql/
 
@@ -39,6 +42,18 @@
 # ACCEDER A LA CONSOLA DE MONGO DENTRO DE MONGODB COMPASS
 <img src="imagenes\00_mongosh.png">
 
+# CREAR UN USUARIO
+
+```sql
+local > use admin
+db.createUser({
+   user: "mongodb",
+   pwd: "12345678",
+   roles: ["root"]
+})
+
+{ ok: 1 }
+```
 
 # LISTAR LAS BASES DE DATOS EXISTENTES
 ```sql
