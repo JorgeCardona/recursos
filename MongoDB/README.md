@@ -57,6 +57,16 @@ local    40.00 KiB
 test_mongo > db.createCollection("vuelos")
 { ok: 1 }
 ```
+
+# LISTAR LAS BASES DE DATOS EXISTENTES
+```sql
+> show dbs
+admin        40.00 KiB
+config      116.00 KiB
+local        40.00 KiB
+test_mongo    8.00 KiB
+```
+
 # VERIFICAR LAS COLECCIONES EXISTENTES
 ```sql
 test_mongo > show collections
