@@ -1,3 +1,12 @@
+# PYSPARK CON POSTGRESQL
+### https://www.machinelearningplus.com/pyspark/pyspark-connect-to-postgresql/
+
+# PYSPARK CON MONGODB
+### https://www.mongodb.com/docs/spark-connector/current/python-api/
+
+# DOCUMENTACION EJEMPLO MONGODB
+# https://sparkbyexamples.com/mongodb/mongodb-sql-join-with-examples/?expand_article=1
+
 # TIPOS DE DATOS
 
 | Tipo de Datos            | Descripción                                                                                                                      | Ejemplo                                         |
