@@ -39,6 +39,70 @@ cp postgresql-42.6.0.jar /usr/local/spark/jars
 | MaxKey                  | Representa el valor máximo en un índice y se utiliza para comparar e identificar el valor máximo en un rango.                    | MaxKey                                         |
 | RegExp (Expresión Regular) | Patrón de búsqueda utilizado en consultas.                                                                                     | /patrón/                                       |
 
+# LISTA DE COMANDOS MAS USADOS
+
+Claro, a continuación, agregaré una columna de ejemplo a la tabla con los 50 comandos más utilizados en MongoDB:
+
+| Comando                                   | Descripción                                                                                      | Ejemplo                                                                                                                     |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `use NOMBRE_DB`                           | Cambia al contexto de la base de datos `NOMBRE_DB`. Permite trabajar en una base de datos específica. | `use mi_basededatos`                                                                                                       |
+| `show databases`  o `show dbs`                                | Muestra una lista de todas las bases de datos disponibles en el servidor.                           | `show dbs`                                                                                                                |
+| `show collections`                        | Muestra una lista de todas las colecciones en la base de datos actual.                               | `show collections`                                                                                                        |
+| `db.collection.find()`                    | Recupera documentos de la colección `collection` que satisfacen los criterios de consulta especificados. | `db.mis_documentos.find({ campo: "valor" })`                                                                              |
+| `db.collection.insertOne()`               | Inserta un nuevo documento en la colección `collection`.                                          | `db.mis_documentos.insertOne({ campo1: "valor1", campo2: "valor2" })`                                                     |
+| `db.collection.updateOne()`               | Actualiza un documento en la colección `collection` que cumpla con los criterios de filtro especificados. | `db.mis_documentos.updateOne({ _id: ObjectId("documento_id") }, { $set: { campo: "nuevo_valor" } })`                       |
+| `db.collection.deleteOne()`               | Elimina un documento de la colección `collection` que cumpla con los criterios de filtro especificados. | `db.mis_documentos.deleteOne({ campo: "valor" })`                                                                         |
+| `db.collection.aggregate()`               | Realiza una agregación en la colección `collection` para realizar operaciones de agregación avanzadas.  | `db.mis_documentos.aggregate([ { $match: { campo: "valor" } }, { $group: { _id: "$campo", total: { $sum: 1 } } } ])`      |
+| `db.collection.createIndex()`             | Crea un índice en la colección `collection` para mejorar el rendimiento de las consultas.            | `db.mis_documentos.createIndex({ campo: 1 })`                                                                            |
+| `db.collection.drop()`                    | Elimina la colección `collection` y todos sus documentos.                                         | `db.mis_documentos.drop()`                                                                                                |
+| `db.dropDatabase()`                       | Elimina la base de datos actual y todas sus colecciones.                                          | `db.dropDatabase()`                                                                                                       |
+| `db.collection.countDocuments()`          | Cuenta el número de documentos en la colección `collection`.                                       | `db.mis_documentos.countDocuments()`                                                                                      |
+| `db.collection.distinct()`                | Devuelve una lista de valores distintos para un campo específico en la colección `collection`.       | `db.mis_documentos.distinct("campo")`                                                                                     |
+| `db.collection.findOne()`                 | Recupera un solo documento de la colección `collection` que cumpla con los criterios de consulta especificados. | `db.mis_documentos.findOne({ campo: "valor" })`                                                                           |
+| `db.collection.find().sort()`             | Ordena los resultados de una consulta en la colección `collection` en función de un campo específico. | `db.mis_documentos.find().sort({ campo: 1 })`                                                                            |
+| `db.collection.find().limit()`            | Limita el número de documentos devueltos por una consulta en la colección `collection`.            | `db.mis_documentos.find().limit(10)`                                                                                     |
+| `db.collection.find().skip()`             | Omite los primeros documentos devueltos por una consulta en la colección `collection`.             | `db.mis_documentos.find().skip(5)`                                                                                        |
+| `db.collection.find().project()`          | Proyecta solo los campos específicos de los documentos devueltos por una consulta en la colección `collection`. | `db.mis_documentos.find({}, { campo1: 1, campo2: 1, _id: 0 })`                                                             |
+| `db.collection.find().count()`            | Cuenta el número de documentos devueltos por una consulta en la colección `collection`.            | `db.mis_documentos.find().count()`                                                                                        |
+| `db.collection.bulkWrite()`               | Realiza múltiples operaciones de escritura en la colección `collection` en una sola solicitud.      | Ver ejemplo en la documentación oficial de MongoDB.                                                                       |
+| `db.collection.replaceOne()`              | Reemplaza un documento en la colección `collection` que cumpla con los criterios de filtro especificados. | `db.mis_documentos.replaceOne({ _id: ObjectId("documento_id") }, { campo: "nuevo_valor" })`                              |
+| `db.collection.insertMany()`              | Inserta varios documentos en la colección `collection` a la vez.                                   | `db.mis_documentos.insertMany([{ campo1: "valor1" }, { campo2: "valor2" }])`                                              |
+| `db.collection.updateMany()`              | Actualiza múltiples documentos en la colección `collection` que cumplan con los criterios de filtro especificados. | `db.mis_documentos.updateMany({ campo: "valor" }, { $set: { campo: "nuevo_valor" } })`                                    |
+| `db.collection.deleteMany()`              | Elimina múltiples documentos de la colección `collection` que cumplan con los criterios de filtro especificados. | `db.mis_documentos.deleteMany({ campo: "valor" })`                                                                        |
+| `db.collection.distinct().count()`        | Cuenta el número de valores distintos para un campo específico en la colección `collection`.        | `db.mis_documentos.distinct("campo").length`                                                                             |
+| `db.collection.find().explain()`          | Proporciona información sobre cómo MongoDB ejecutó una consulta en la colección `collection`.       | `db.mis_documentos.find().explain()`                                                                                     |
+| `db.collection.find().hint()`             | Indica a MongoDB qué índice utilizar para una consulta en la colección `collection`.               | `db.mis_documentos.find().hint({ campo: 1 })`                                                                            |
+| `db.collection.aggregate().match()`       | Filtra los documentos que cumplan con los criterios de filtro especificados en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $match: { campo: "valor" } } ])`                                                        |
+| `db.collection.aggregate().group()`       | Agrupa los documentos en una operación de agregación en la colección `collection`.                  | `db.mis_documentos.aggregate([ { $group: { _id: "$campo", total: { $sum: 1 } } } ])`                                    |
+| `db.collection.aggregate().project()`     | Proyecta solo los campos específicos de los documentos en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $project: { campo1: 1, campo2: 1, _id: 0 } } ])`                                       |
+| `db.collection.aggregate().sort()`        | Ordena los documentos en una operación de agregación en la colección `collection`.                  | `db.mis_documentos.aggregate([ { $sort: { campo: 1 } } ])`                                                               |
+| `db.collection.aggregate().limit()`       | Limita el número de documentos devueltos por una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $limit: 10 } ])`                                                                        |
+| `db.collection.aggregate().skip()`        | Omite los primeros documentos devueltos por una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $skip: 5 } ])`                                                                          |
+| `db.collection.aggregate().unwind()`      | Descompone un campo de matriz en varios documentos en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $unwind: "$campo" } ])`                                                                 |
+| `db.collection.aggregate().lookup()`      | Realiza una operación de unión (join) entre dos colecciones en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $lookup: { from: "otra_coleccion", localField: "campo", foreignField: "campo", as: "resultado" } } ])` |
+| `db.collection.aggregate().out()`         | Escribe los resultados de una operación de agregación en otra colección.                            | `db.mis_documentos.aggregate([ { $out: "resultados_agregacion" } ])`                                                     |
+| `db.collection.aggregate().facet()`       | Divide los resultados de una operación de agregación en múltiples subconjuntos.                     | `db.mis_documentos.aggregate([ { $facet: { subconjunto1: [ { $match: { campo: "valor1" } } ], subconjunto2: [ { $match: { campo: "valor2" } } ] } } ])` |
+| `db.collection.aggregate().bucket()`      | Agrupa los documentos en intervalos específicos en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $bucket: { groupBy: "$campo", boundaries: [0, 100, 200], default: "Otros", output: { "total": { $sum: 1 } } } } ])` |
+| `db.collection.aggregate().sortByCount()` | Agrupa los documentos por su valor y devuelve el recuento de cada grupo en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $sortByCount: "$campo" } ])`                                                            |
+| `db.collection.aggregate().facet().project()` | Proyecta solo los campos específicos de los subconjuntos en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $facet: { subconjunto1: [ { $match: { campo: "valor1" } } ], subconjunto2: [ { $match: { campo: "valor2" } } ] } }, { $project: { subconjunto1: 1 } } ])` |
+| `db.collection.aggregate().unwind().group()` | Agrupa los documentos después de descomponer un campo de matriz en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $unwind: "$campo" }, { $group: { _id: "$campo", total: { $sum: 1 } } } ])` |
+| `db.collection.aggregate().lookup().unwind()` | Descompone los documentos después de realizar una operación de unión (join) en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $lookup: { from: "otra_coleccion", localField: "campo", foreignField: "campo", as: "resultado" } }, { $unwind: "$resultado" } ])` |
+| `db.collection.aggregate().lookup().unwind().group()` | Agrupa los documentos después de realizar una operación de unión (join) y descomponer un campo de matriz en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $lookup: { from: "otra_coleccion", localField: "campo", foreignField: "campo", as: "resultado" }}])`|
+
+# ROLES EN MONGODB
+
+| Rol              | Descripción                                                                                       |
+|------------------|---------------------------------------------------------------------------------------------------|
+| read             | Permite leer datos en una base de datos o colección.                                             |
+| readWrite        | Permite leer y escribir datos en una base de datos o colección.                                 |
+| dbAdmin          | Proporciona acceso de administrador a una base de datos. Permite ejecutar comandos de administración y ver algunas estadísticas del servidor. |
+| userAdmin        | Permite administrar usuarios y roles en una base de datos.                                       |
+| clusterAdmin     | Proporciona acceso de administrador a nivel de clúster. Permite realizar operaciones de administración en todas las bases de datos. |
+| backup           | Permite realizar copias de seguridad y restauraciones de las bases de datos.                    |
+| restore          | Permite restaurar bases de datos desde copias de seguridad.                                      |
+| root             | Proporciona acceso de superusuario que puede realizar cualquier acción en cualquier base de datos. |
+
+
 # ACCEDER A LA CONSOLA DE MONGO DENTRO DE MONGODB COMPASS
 <img src="imagenes\00_mongosh.png">
 
@@ -53,6 +117,30 @@ db.createUser({
 })
 
 { ok: 1 }
+```
+
+# LISTAR USUARIOS
+
+```sql
+admin > show users
+[
+  {
+    _id: 'admin.mongodb',
+    userId: UUID("ab914c24-b538-4a73-b9e1-5895137dee64"),
+    user: 'mongodb',
+    db: 'admin',
+    roles: [
+      {
+        role: 'root',
+        db: 'admin'
+      }
+    ],
+    mechanisms: [
+      'SCRAM-SHA-1',
+      'SCRAM-SHA-256'
+    ]
+  }
+]
 ```
 
 # LISTAR LAS BASES DE DATOS EXISTENTES
@@ -140,4 +228,308 @@ local    40.00 KiB
 <img src="imagenes\05_insertar_datos.png">
 <img src="imagenes\06_insertar_datos.png">
 
-# IMPORTAR UN CSV EN MOGONDB
+# HACER UN JOIN **lookup** ENTRE 2 COLECCIONES Y TRAER SOLO EL PRIMER DOCUMENTO '$limit: 1'
+
+```sql
+# Join two collections using $lookup operator
+test_mongo > 
+db.vuelos_1.aggregate([
+   {
+      $lookup:
+         {
+           from: "vuelos_2",
+           localField: "id",
+           foreignField: "flight_id",
+           as: "VueloId"
+         }
+   },
+  {
+    $limit: 1
+  }
+])
+```
+
+```sql
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39,
+  VueloId: [
+    {
+      _id: ObjectId("64bb5eb2a21e5a2e74b36a20"),
+      flight_id: 1,
+      flight_number: 1978,
+      departure_airport: 'CFQ',
+      departure_country: 'Germany',
+      departure_time: '6/7/2023 04:42',
+      arrival_country: 'Colombia',
+      arrival_date: '27/12/2022',
+      flight_duration: 14.18,
+      passenger_age: 0,
+      passenger_nationality: 'Colombia',
+      ticket_price: 797.24,
+      baggage_weight: 43.85,
+      arrival_gate: 'E5',
+      pilot_name: 'Sunny Few',
+      cabin_crew_count: 9,
+      aircraft_registration: 'N12345',
+      flight_distance: 1400.24
+    }
+  ]
+}
+```
+
+# SI QUIERE TENER LOS VALORES SIN ANIDAR UNA DE LAS COLECCIONES
+# PRIMERO LOS CAMPOS DE LA PRIMERA COLECCION
+
+```sql
+db.vuelos_1.aggregate([
+  {
+    $lookup: {
+      from: "vuelos_2",
+      localField: "id",
+      foreignField: "flight_id",
+      as: "VueloId"
+    }
+  },
+  {
+    $unwind: {
+      path: "$VueloId",
+      preserveNullAndEmptyArrays: true
+    }
+  },
+  {
+    $replaceRoot: {
+      newRoot: {
+        $mergeObjects: ["$$ROOT","$VueloId"]
+      }
+    }
+  },
+  {
+    $project: {
+      VueloId: 0,
+	   _id: 0
+    }
+  },
+  {
+    $limit: 1
+  }
+]);
+```
+# RESPUESTA
+```sql
+{
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39,
+  flight_id: 1,
+  flight_number: 1978,
+  departure_airport: 'CFQ',
+  departure_country: 'Germany',
+  departure_time: '6/7/2023 04:42',
+  arrival_country: 'Colombia',
+  arrival_date: '27/12/2022',
+  flight_duration: 14.18,
+  passenger_age: 0,
+  passenger_nationality: 'Colombia',
+  ticket_price: 797.24,
+  baggage_weight: 43.85,
+  arrival_gate: 'E5',
+  pilot_name: 'Sunny Few',
+  cabin_crew_count: 9,
+  aircraft_registration: 'N12345',
+  flight_distance: 1400.24
+}
+```
+
+# PRIMERO LOS CAMPOS DE LA SEGUNDA COLECCION
+
+```sql
+db.vuelos_1.aggregate([
+  {
+    $lookup: {
+      from: "vuelos_2",
+      localField: "id",
+      foreignField: "flight_id",
+      as: "VueloId"
+    }
+  },
+  {
+    $unwind: {
+      path: "$VueloId",
+      preserveNullAndEmptyArrays: true
+    }
+  },
+  {
+    $replaceRoot: {
+      newRoot: {
+        $mergeObjects: ["$VueloId", "$$ROOT"]
+      }
+    }
+  },
+  {
+    $project: {
+      VueloId: 0,
+	   _id: 0
+    }
+  },
+  {
+    $limit: 1
+  }
+]);
+```
+# RESPUESTA
+```sql
+{
+  flight_id: 1,
+  flight_number: 1978,
+  departure_airport: 'CFQ',
+  departure_country: 'Germany',
+  departure_time: '6/7/2023 04:42',
+  arrival_country: 'Colombia',
+  arrival_date: '27/12/2022',
+  flight_duration: 14.18,
+  passenger_age: 0,
+  passenger_nationality: 'Colombia',
+  ticket_price: 797.24,
+  baggage_weight: 43.85,
+  arrival_gate: 'E5',
+  pilot_name: 'Sunny Few',
+  cabin_crew_count: 9,
+  aircraft_registration: 'N12345',
+  flight_distance: 1400.24,
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+```
+# ADICIONA LOS _id DE CADA COLECCION CON ALIAS
+```sql
+db.vuelos_1.aggregate([
+  {
+    $lookup: {
+      from: "vuelos_2",
+      localField: "id",
+      foreignField: "flight_id",
+      as: "coleccion_vuelos_2"
+    }
+  },
+  {
+    $unwind: {
+      path: "$coleccion_vuelos_2",
+      preserveNullAndEmptyArrays: true
+    }
+  },
+  {
+    $addFields: {
+      _id_coleccion_vuelos_1: "$_id",
+      _id_coleccion_vuelos_2: "$coleccion_vuelos_2._id"
+    }
+  },
+  {
+    $replaceRoot: {
+      newRoot: {
+        $mergeObjects: [
+          { _id_coleccion_vuelos_1: "$_id_coleccion_vuelos_1"},
+		  "$$ROOT",
+		  {_id_coleccion_vuelos_2: "$_id_coleccion_vuelos_2" },
+		  "$coleccion_vuelos_2"
+        ]
+      }
+    }
+  },
+  {
+    $project: {
+      coleccion_vuelos_2: 0,
+      _id: 0
+    }
+  },
+  {
+    $limit: 1
+  }
+]);
+```
+# RESPUESTA
+```sql
+{
+  _id_vuelos_1: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39,
+  _id_vuelos_2: ObjectId("64bb5eb2a21e5a2e74b36a20"),
+  flight_id: 1,
+  flight_number: 1978,
+  departure_airport: 'CFQ',
+  departure_country: 'Germany',
+  departure_time: '6/7/2023 04:42',
+  arrival_country: 'Colombia',
+  arrival_date: '27/12/2022',
+  flight_duration: 14.18,
+  passenger_age: 0,
+  passenger_nationality: 'Colombia',
+  ticket_price: 797.24,
+  baggage_weight: 43.85,
+  arrival_gate: 'E5',
+  pilot_name: 'Sunny Few',
+  cabin_crew_count: 9,
+  aircraft_registration: 'N12345',
+  flight_distance: 1400.24
+}
+```
