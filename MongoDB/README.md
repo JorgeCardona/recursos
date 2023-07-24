@@ -1,3 +1,8 @@
+# iniciar jupyter lab en directorio personalizado
+```
+jupyter lab --note-dir="C:\z Github\recursos\MongoDB"
+```
+
 # copiar el conector para conectarse con pyspark
 cp postgresql-42.6.0.jar /usr/local/spark/jars
 
@@ -89,6 +94,10 @@ Claro, a continuación, agregaré una columna de ejemplo a la tabla con los 50 c
 | `db.collection.aggregate().lookup().unwind()` | Descompone los documentos después de realizar una operación de unión (join) en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $lookup: { from: "otra_coleccion", localField: "campo", foreignField: "campo", as: "resultado" } }, { $unwind: "$resultado" } ])` |
 | `db.collection.aggregate().lookup().unwind().group()` | Agrupa los documentos después de realizar una operación de unión (join) y descomponer un campo de matriz en una operación de agregación en la colección `collection`. | `db.mis_documentos.aggregate([ { $lookup: { from: "otra_coleccion", localField: "campo", foreignField: "campo", as: "resultado" }}])`|
 
+
+# ACCEDER A LA CONSOLA DE MONGO DENTRO DE MONGODB COMPASS
+<img src="imagenes\00_mongosh.png">
+
 # ROLES EN MONGODB
 
 | Rol              | Descripción                                                                                       |
@@ -102,18 +111,177 @@ Claro, a continuación, agregaré una columna de ejemplo a la tabla con los 50 c
 | restore          | Permite restaurar bases de datos desde copias de seguridad.                                      |
 | root             | Proporciona acceso de superusuario que puede realizar cualquier acción en cualquier base de datos. |
 
+# LISTAR ROLES
+```sql
+local > use admin
+admin > show roles
 
-# ACCEDER A LA CONSOLA DE MONGO DENTRO DE MONGODB COMPASS
-<img src="imagenes\00_mongosh.png">
-
+[
+  {
+    role: 'clusterAdmin',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'dbAdminAnyDatabase',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'readWrite',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'directShardOperations',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'readAnyDatabase',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: '__queryableBackup',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'enableSharding',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'readWriteAnyDatabase',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'backup',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'hostManager',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'root',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'clusterManager',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'dbOwner',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: '__system',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'userAdminAnyDatabase',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'userAdmin',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'restore',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'read',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'clusterMonitor',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  },
+  {
+    role: 'dbAdmin',
+    db: 'admin',
+    isBuiltin: true,
+    roles: [],
+    inheritedRoles: []
+  }
+]
+```
 # CREAR UN USUARIO
 
 ```sql
 local > use admin
 db.createUser({
-   user: "mongodb",
+   user: "mongodb_admin",
    pwd: "12345678",
    roles: ["root"]
+}),
+db.createUser({
+   user: "mongodb_readWrite",
+   pwd: "12345678",
+   roles: ["readWrite"]
+}),
+db.createUser({
+   user: "mongodb_backup",
+   pwd: "12345678",
+   roles: ["backup"]
+}),
+db.createUser({
+   user: "mongodb_restore",
+   pwd: "12345678",
+   roles: ["restore"]
 })
 
 { ok: 1 }
@@ -125,13 +293,61 @@ db.createUser({
 admin > show users
 [
   {
-    _id: 'admin.mongodb',
-    userId: UUID("ab914c24-b538-4a73-b9e1-5895137dee64"),
-    user: 'mongodb',
+    _id: 'admin.mongodb_admin',
+    userId: UUID("99e462a2-6083-4dc7-a96f-5ccb6ad78469"),
+    user: 'mongodb_admin',
     db: 'admin',
     roles: [
       {
         role: 'root',
+        db: 'admin'
+      }
+    ],
+    mechanisms: [
+      'SCRAM-SHA-1',
+      'SCRAM-SHA-256'
+    ]
+  },
+  {
+    _id: 'admin.mongodb_backup',
+    userId: UUID("f984593d-4a0b-4746-b995-390cc7dd8a02"),
+    user: 'mongodb_backup',
+    db: 'admin',
+    roles: [
+      {
+        role: 'backup',
+        db: 'admin'
+      }
+    ],
+    mechanisms: [
+      'SCRAM-SHA-1',
+      'SCRAM-SHA-256'
+    ]
+  },
+  {
+    _id: 'admin.mongodb_readWrite',
+    userId: UUID("794c0f07-090c-4274-ba01-a862e48f5874"),
+    user: 'mongodb_readWrite',
+    db: 'admin',
+    roles: [
+      {
+        role: 'readWrite',
+        db: 'admin'
+      }
+    ],
+    mechanisms: [
+      'SCRAM-SHA-1',
+      'SCRAM-SHA-256'
+    ]
+  },
+  {
+    _id: 'admin.mongodb_restore',
+    userId: UUID("aa8c213d-3569-404b-a051-0f7bb8a9ad67"),
+    user: 'mongodb_restore',
+    db: 'admin',
+    roles: [
+      {
+        role: 'restore',
         db: 'admin'
       }
     ],
