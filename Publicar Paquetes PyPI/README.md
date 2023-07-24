@@ -763,7 +763,7 @@ pip uninstall MiPaqueteDePrueba -y
 ```
 
 # Publicar el paquete en PyPI oficial
-## Crear una cuenta enhttps://pypi.org/account/register/
+## Crear una cuenta en https://pypi.org/account/register/
 ```bash
 python -m twine upload dist/* --verbose
 ```
