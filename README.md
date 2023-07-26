@@ -1,3 +1,18 @@
+# INSTALAR UN PAQUETE SI NO EXISTE
+```python
+import importlib
+
+def install_package_if_not_exists(package_name):
+    try:
+        importlib.import_module(package_name)
+    except ImportError:
+        import subprocess
+        subprocess.check_call(['pip', 'install', package_name])
+
+# Uso del método
+package_name = 'pandas'
+install_package_if_not_exists(package_name)
+```
 | Configuración | PostgreSQL     | MySQL |
 |---------------|-----------|------------------------------|
 | Host          | localhost | localhost                    |
