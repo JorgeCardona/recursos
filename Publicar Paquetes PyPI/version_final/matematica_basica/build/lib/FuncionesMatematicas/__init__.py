@@ -1,2 +1,0 @@
-from .elementales.funciones_basicas import CalculosMatematicosElementales
-from .compuestos.funciones_avanzadas import CalculosMatematicosCompuestos
