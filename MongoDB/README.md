@@ -111,11 +111,27 @@ Claro, a continuación, agregaré una columna de ejemplo a la tabla con los 50 c
 | restore          | Permite restaurar bases de datos desde copias de seguridad.                                      |
 | root             | Proporciona acceso de superusuario que puede realizar cualquier acción en cualquier base de datos. |
 
+# CREAR ROL
+`use admin`
+```mongodb
+db.createRole(
+   {
+     role: "mongo_test_role",
+     privileges: [
+       { resource: { cluster: true }, actions: [ "addShard" ] },
+       { resource: { db: "mongo_test", collection: "vuelos_1" }, actions: [ "find", "update", "insert", "remove" ] }
+     ],
+     roles: [
+       { role: "read", db: "admin" }
+     ]
+   },
+   { w: "majority" , wtimeout: 5000 }
+)
+```
 # LISTAR ROLES
-```sql
-local > use admin
-admin > show roles
+`show roles`
 
+```mongodb
 [
   {
     role: 'clusterAdmin',
@@ -256,13 +272,31 @@ admin > show roles
     isBuiltin: true,
     roles: [],
     inheritedRoles: []
+  },
+  {
+    _id: 'admin.mongo_test_role',
+    role: 'mongo_test_role',
+    db: 'admin',
+    roles: [
+      {
+        role: 'read',
+        db: 'admin'
+      }
+    ],
+    isBuiltin: false,
+    inheritedRoles: [
+      {
+        role: 'read',
+        db: 'admin'
+      }
+    ]
   }
 ]
 ```
 # CREAR UN USUARIO
+`use admin`
 
-```sql
-local > use admin
+```mongodb
 db.createUser({
    user: "mongodb_admin",
    pwd: "12345678",
@@ -289,8 +323,11 @@ db.createUser({
 
 # LISTAR USUARIOS
 
-```sql
-admin > show users
+```
+show users
+```
+
+```mongodb
 [
   {
     _id: 'admin.mongodb_admin',
@@ -360,8 +397,11 @@ admin > show users
 ```
 
 # LISTAR LAS BASES DE DATOS EXISTENTES
+```mongodb
+show dbs
+```
+
 ```sql
-> show dbs
 admin    40.00 KiB
 config  108.00 KiB
 local    40.00 KiB
@@ -369,26 +409,33 @@ local    40.00 KiB
 # CREAR UNA BASE DE DATOS
 
 ```sql
-> use test_mongo
+use test_mongo
 ```
 
 # SI NO HAY COLECCIONES NO MUESTRA LA BASE DE DATOS
-```sql
-test_mongo > show dbs
+`show dbs`
+
+```mongodb
 admin    40.00 KiB
 config  108.00 KiB
 local    40.00 KiB
 ```
 
 # CREAR UNA COLECCION
-```sql
-test_mongo > db.createCollection("vuelos")
+```mongodb
+db.createCollection("vuelos")
+```
+
+```mongodb
 { ok: 1 }
 ```
 
 # LISTAR LAS BASES DE DATOS EXISTENTES
-```sql
-> show dbs
+```mongodb
+show dbs
+```
+
+```mongodb
 admin        40.00 KiB
 config      116.00 KiB
 local        40.00 KiB
@@ -396,35 +443,47 @@ test_mongo    8.00 KiB
 ```
 
 # VERIFICAR LAS COLECCIONES EXISTENTES
-```sql
-test_mongo > show collections
+
+```mongodb
+show collections
+```
+
+```mongodb
 vuelos
 ```
 
-# CONSULTAR TODOS LOS DOCUMENTOS DE UNA COLECCION
-```
-test_mongo > db.vuelos.find()
-
-```
-
 # ELIMINAR UNA COLECCION
-```sql
+```mongodb
 db.vuelos.drop()
+```
+
+```mongodb
 true
+```
 
-test_mongo > show collections
+# VALIDAR COLECCIONES
+```mongodb
+show collections
+```
 
+```mongodb
 ```
 
 # ELIMINAR UNA BASE DE DATOS
-```sql
-test_mongo > db.dropDatabase()
+```mongodb
+db.dropDatabase()
+```
+
+```mongodb
 { ok: 1, dropped: 'test_mongo'}
 ```
 
 # VALIDANDO LAS BASES DE DATOS EXISTENTES
+```mongodb
+show databases
 ```
-test_mongo > show databases
+
+```mongodb
 admin    40.00 KiB
 config  108.00 KiB
 local    40.00 KiB
@@ -444,11 +503,228 @@ local    40.00 KiB
 <img src="imagenes\05_insertar_datos.png">
 <img src="imagenes\06_insertar_datos.png">
 
-# HACER UN JOIN **lookup** ENTRE 2 COLECCIONES Y TRAER SOLO EL PRIMER DOCUMENTO '$limit: 1'
+# VALIDAR EN QUE BASE DE DATOS SE ESTA TRABAJANDO
+```mongodb
+db
+```
+```mongodb
+test_mongo
+```
+
+# ESTADISTICAS DE LA BASE DE DATOS
+```mongodb
+db.stats()
+```
+
+```mongodb
+{
+  db: 'test_mongo',
+  collections: 2,
+  views: 0,
+  objects: 10000,
+  avgObjSize: 474.2158,
+  dataSize: 4742158,
+  storageSize: 1531904,
+  indexes: 2,
+  indexSize: 131072,
+  totalSize: 1662976,
+  scaleFactor: 1,
+  fsUsedSize: 487334268928,
+  fsTotalSize: 510770802688,
+  ok: 1
+}
+```
+
+# LISTAR LOS CAMPOS DE UNA COLECCION
+```mongodb
+Object.keys(db.vuelos_1.findOne())
+```
+
+```mongodb
+[
+  '_id',              'id',
+  'secure_code',      'airline',
+  'departure_city',   'departure_date',
+  'arrival_airport',  'arrival_city',
+  'arrival_time',     'passenger_name',
+  'passenger_gender', 'seat_number',
+  'currency',         'departure_gate',
+  'flight_status',    'co_pilot_name',
+  'aircraft_type',    'fuel_consumption'
+]
+```
+
+# DECLARAR VARIABLES Y HACER USO DE ELLAS
+# LISTAR LOS CAMPOS Y LOS TIPOS DE DATOS DE LOS CAMPOS DE UNA COLECCION
+```mongodb
+const coleccion = db.getCollection('vuelos_1');
+
+const documento = coleccion.findOne()
+
+# FORMA 1, entries -> contiene clave valor
+Object.entries(documento).forEach(([clave, valor]) => {
+  print(`${clave}: ${typeof valor}`);
+});
+
+# FORMA 2, keys -> contiene solo la clave
+Object.keys(documento).forEach((campo) => {
+  print(`${campo}: ${typeof documento[campo]}`);
+});
+```
+
+```mongodb
+_id: object
+id: number
+secure_code: string
+airline: string
+departure_city: string
+departure_date: string
+arrival_airport: string
+arrival_city: string
+arrival_time: string
+passenger_name: string
+passenger_gender: string
+seat_number: string
+currency: string
+departure_gate: string
+flight_status: string
+co_pilot_name: string
+aircraft_type: string
+fuel_consumption: number
+```
+
+# VER LOS INDICES DE UNA COLECCION
+```mongodb
+db.vuelos_1.getIndices()
+```
+
+```mongodb
+[ { v: 2, key: { _id: 1 }, name: '_id_' } ]
+```
+
+# CONSULTAR TODOS LOS DOCUMENTOS DE UNA COLECCION
+```mongodb
+use test_mongo
+```
+
+```mongodb
+db.vuelos_1.find()
+```
+
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f4"),
+  id: 2,
+  secure_code: '01H4EEMGMYP8GX4GRC4Y2MPYH5',
+  airline: 'Delta',
+  departure_city: "Les Sables-d'Olonne",
+  departure_date: '4/1/2022',
+  arrival_airport: 'YHU',
+  arrival_city: 'Westport',
+  arrival_time: '6/7/2023 06:53',
+  passenger_name: 'Willie Childrens',
+  passenger_gender: 'Female',
+  seat_number: 'B2',
+  currency: 'EUR',
+  departure_gate: 'A1',
+  flight_status: 'Delayed',
+  co_pilot_name: 'Leanor Gribbins',
+  aircraft_type: 'Airbus A320',
+  fuel_consumption: 9666.36
+}
+...
+...
+...
+```
 
 ```sql
+db.vuelos_2.find()
+```
+
+```mongodb
+{
+  _id: ObjectId("64bb5eb2a21e5a2e74b36a20"),
+  flight_id: 1,
+  flight_number: 1978,
+  departure_airport: 'CFQ',
+  departure_country: 'Germany',
+  departure_time: '6/7/2023 04:42',
+  arrival_country: 'Colombia',
+  arrival_date: '27/12/2022',
+  flight_duration: 14.18,
+  passenger_age: 0,
+  passenger_nationality: 'Colombia',
+  ticket_price: 797.24,
+  baggage_weight: 43.85,
+  arrival_gate: 'E5',
+  pilot_name: 'Sunny Few',
+  cabin_crew_count: 9,
+  aircraft_registration: 'N12345',
+  flight_distance: 1400.24
+}
+{
+  _id: ObjectId("64bb5eb2a21e5a2e74b36a21"),
+  flight_id: 2,
+  flight_number: 2337,
+  departure_airport: 'ONG',
+  departure_country: 'France',
+  departure_time: '6/7/2023 17:31',
+  arrival_country: 'New Zealand',
+  arrival_date: '23/12/2022',
+  flight_duration: 13.54,
+  passenger_age: 29,
+  passenger_nationality: 'Sweden',
+  ticket_price: 383.63,
+  baggage_weight: 35.78,
+  arrival_gate: 'D4',
+  pilot_name: 'Donielle Strut',
+  cabin_crew_count: 4,
+  aircraft_registration: 'N12345',
+  flight_distance: 465.84
+}
+...
+...
+...
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# HACER UN JOIN **lookup** ENTRE 2 COLECCIONES Y TRAER SOLO EL PRIMER DOCUMENTO '$limit: 1'
+
+```mongodb
 # Join two collections using $lookup operator
-test_mongo > 
+ 
 db.vuelos_1.aggregate([
    {
       $lookup:
@@ -465,7 +741,7 @@ db.vuelos_1.aggregate([
 ])
 ```
 
-```sql
+```mongodb
 {
   _id: ObjectId("64ba0cea510b21bfe34b54f3"),
   id: 1,
@@ -510,10 +786,46 @@ db.vuelos_1.aggregate([
 }
 ```
 
+
+# OBTENER SOLO EL PRIMER DOCUMENTO DE UNA COLECCION
+`db.vuelos_1.findOne()`
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+```
+
+# VER EL ULTIMO ELEMENTO DE UNA COLECCION
+```mongodb
+collection.find_one({}, sort=[('_id', -1)])
+```
+
+```mongodb
+
+```
+
+------------------------
 # SI QUIERE TENER LOS VALORES SIN ANIDAR UNA DE LAS COLECCIONES
 # PRIMERO LOS CAMPOS DE LA PRIMERA COLECCION
 
-```sql
+```mongodb
 db.vuelos_1.aggregate([
   {
     $lookup: {
@@ -548,7 +860,7 @@ db.vuelos_1.aggregate([
 ]);
 ```
 # RESPUESTA
-```sql
+```mongodb
 {
   id: 1,
   secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
@@ -589,7 +901,7 @@ db.vuelos_1.aggregate([
 
 # PRIMERO LOS CAMPOS DE LA SEGUNDA COLECCION
 
-```sql
+```mongodb
 db.vuelos_1.aggregate([
   {
     $lookup: {
@@ -624,7 +936,7 @@ db.vuelos_1.aggregate([
 ]);
 ```
 # RESPUESTA
-```sql
+```mongodb
 {
   flight_id: 1,
   flight_number: 1978,
@@ -663,7 +975,7 @@ db.vuelos_1.aggregate([
 }
 ```
 # ADICIONA LOS _id DE CADA COLECCION CON ALIAS
-```sql
+```mongodb
 db.vuelos_1.aggregate([
   {
     $lookup: {
@@ -709,7 +1021,7 @@ db.vuelos_1.aggregate([
 ]);
 ```
 # RESPUESTA
-```sql
+```mongodb
 {
   _id_vuelos_1: ObjectId("64ba0cea510b21bfe34b54f3"),
   id: 1,
