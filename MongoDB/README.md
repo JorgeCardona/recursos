@@ -128,6 +128,11 @@ db.createRole(
    { w: "majority" , wtimeout: 5000 }
 )
 ```
+
+# CURSOR
+Es una estructura iterable, similar a una lista de diccionarios en python. donde se almacenan los resultados de las consultas.
+
+
 # LISTAR ROLES
 `show roles`
 
