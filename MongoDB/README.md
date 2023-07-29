@@ -2,6 +2,52 @@ PAQUETE COLLECIONES
 ```
  # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
 from collections import deque
+lista_valores = [0,1,2,7,3,7,7,4,5,6,7,8,9,7]
+lista_2 = [13,31,1978,12,27]
+
+
+queue = deque(lista_valores)
+queue.reverse()
+print(f'{list(queue)}, deque orden inverso') # [7, 9, 8, 7, 6, 5, 4, 7, 7, 3, 7, 2, 1, 0]
+
+queue = deque(lista_valores)
+print(f'{list(queue)}, deque orden normal') # [0,1,2,7,3,7,7,4,5,6,7,8,9,7]
+
+queue = deque(lista_valores)
+queue.rotate(3)
+print(f'{list(queue)}, deque orden rotado 3 posiciones') # [8, 9, 7, 0, 1, 2, 7, 3, 7, 7, 4, 5, 6, 7]
+print()
+
+queue = deque(lista_valores)
+print(f'{list(queue)}, deque orden actual') # [0,1,2,7,3,7,7,4,5,6,7,8,9,7]
+queue = deque(lista_valores)
+print(f'{queue.pop()}, deque recupera el ultimo elemento de la derecha') # 7
+print(f'{queue.popleft()}, deque recupera el primer elemento de la izquierda') # 0
+print()
+
+print(f'{queue.append(5)}, deque adiciona el ultimo elemento de la derecha 5') # 5
+print(f'{queue.appendleft(9)}, deque adiciona el primer elemento de la izquierda 9') # 9
+print()
+
+print(f'{queue.count(7)} veces, deque recupera la cantidad de veces que aparece el elemento 7')
+print(f'{queue.insert(5, 99)}, inserta el 99 en el indice 5')
+print(f'{queue.extend(lista_2)}, deque adiciona una lista {lista_2} el ultimo elemento de la derecha')
+print(f'{queue.extendleft(lista_2)}, deque adiciona una lista {lista_2} como el primer elemento de la izquierda, de manera invertida')
+print(f'indice {queue.index(31)}, deque obtiene el indice de la primera aparicion del numero 31') # indice 3
+print(f'indice {queue.remove(1978)}, deque elimina la primera aparicion del numero 1978')
+print(f'{list(queue)}, deque recupera los elementos restantes de la deque') # [27, 12, 31, 13, 9, 1, 2, 7, 3, 99, 7, 7, 4, 5, 6, 7, 8, 9, 5, 13, 31, 1978, 12, 27]
+
+
+# Crear un deque con un tamaño máximo de 5 elementos
+maxlen_deque = deque(maxlen=3)
+maxlen_deque.extend(lista_2)
+print(f'{list(maxlen_deque)}, deque recupera los elementos de la list {lista_2} definidos como el maximo tamano de la deque en este caso') # [1978, 12, 27] de [13, 31, 1978, 12, 27]
+```
+
+
+```
+ # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
+from collections import deque
 queue = deque([9, 8, 1, 2, 3, 4, 5, 6, 7])
 print(queue.pop()) # 9, recupera el elemento de la DERECHA de la cola
 print(queue.popleft()) # 7, recupera el elemento de la IZQUIERDA de la cola
