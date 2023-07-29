@@ -1,6 +1,16 @@
 PAQUETE COLLECIONES
-
-Claro, aquí tienes la tabla actualizada mencionando todos los métodos disponibles para cada estructura de datos:
+```
+ # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
+from collections import deque
+queue = deque([9, 8, 1, 2, 3, 4, 5, 6, 7])
+print(queue.pop()) # 9
+print(queue.popleft()) # 7
+queue.append(5)
+queue.appendleft(8)
+print(queue.pop()) # 5
+print(queue.popleft()) # 8
+list(queue) # [8, 1, 2, 3, 4, 5, 6]
+```
 
 | Estructura   | Descripción                                            | Aplicación                                                                                           | Implementación                                         | Métodos Disponibles                                                                         | Uso                                | Valor de Retorno                     |
 |--------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------------------------------------------|------------------------------------|-------------------------------------|
