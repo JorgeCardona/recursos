@@ -3,10 +3,10 @@ PAQUETE COLLECIONES
  # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
 from collections import deque
 queue = deque([9, 8, 1, 2, 3, 4, 5, 6, 7])
-print(queue.pop()) # 9
-print(queue.popleft()) # 7
-queue.append(5)
-queue.appendleft(8)
+print(queue.pop()) # 9, recupera el elemento de la DERECHA de la cola
+print(queue.popleft()) # 7, recupera el elemento de la IZQUIERDA de la cola
+queue.append(5) # inserta un elemento a la DERECHA de la cola
+queue.appendleft(8) # inserta un elemento a la IZQUIERDA de la cola
 print(queue.pop()) # 5
 print(queue.popleft()) # 8
 list(queue) # [8, 1, 2, 3, 4, 5, 6]
