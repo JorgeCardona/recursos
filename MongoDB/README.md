@@ -1,3 +1,17 @@
+PAQUETE COLLECIONES
+
+Claro, aquí tienes la tabla actualizada mencionando todos los métodos disponibles para cada estructura de datos:
+
+| Estructura   | Descripción                                            | Aplicación                                                                                           | Implementación                                         | Métodos Disponibles                                                                         | Uso                                | Valor de Retorno                     |
+|--------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------------------------------------------|------------------------------------|-------------------------------------|
+| namedtuple   | Una tupla con campos con nombre.                       | Ideal para representar registros o datos inmutables con campos específicos.                        | `from collections import namedtuple`<br>`Person = namedtuple('Person', ['name', 'age'])` | `_fields`, `_asdict()`, `_replace()`, `._make()`, `_asdict()`, `._fields`, `.name`, `.age`  | `person = Person('John', 30)`     | `Person(name='John', age=30)`       |
+| deque        | Una cola doblemente terminada.                         | Útil para implementar colas y pilas eficientes que requieran inserciones y eliminaciones en ambos extremos. | `from collections import deque`<br>`queue = deque([1, 2, 3, 4])`                   | `append()`, `appendleft()`, `extend()`, `extendleft()`, `pop()`, `popleft()`, `rotate()`    | `queue.append(5)`<br>`queue.popleft()`  | `None`<br>`1`                       |
+| ChainMap     | Agrupa múltiples diccionarios como una sola entidad.   | Excelente para combinar múltiples diccionarios y realizar búsquedas en ellos de manera eficiente.         | `from collections import ChainMap`<br>`dict1 = {'a': 1, 'b': 2}`<br>`dict2 = {'c': 3, 'd': 4}`<br>`chain_map = ChainMap(dict1, dict2)`  | `keys()`, `values()`, `items()`, `new_child()`, `parents`, `maps`                           | `chain_map['a']`<br>`chain_map['d']`    | `1`<br>`4`                           |
+| Counter      | Cuenta el número de ocurrencias de elementos.          | Útil para contar elementos en una lista o secuencia y realizar análisis de datos.                    | `from collections import Counter`<br>`counter = Counter('abracadabra')`              | `elements()`, `most_common()`, `subtract()`, `update()`, `.items()`, `.keys()`, `.values()`  | `counter['a']`<br>`counter['b']`        | `5`<br>`2`                           |
+| defaultdict | Un diccionario con valores predeterminados.            | Ideal para contadores o acumuladores, donde el valor predeterminado es útil para acumular datos.    | `from collections import defaultdict`<br>`default_dict = defaultdict(int)`<br>`default_dict['a'] += 1` | `clear()`, `copy()`, `default_factory`, `get()`, `items()`, `keys()`, `values()`, `update()`   | `default_dict['a']`<br>`default_dict['b']` | `2`<br>`0`                           |
+
+
+
 # iniciar jupyter lab en directorio personalizado
 ```
 jupyter lab --note-dir="C:\z Github\recursos\MongoDB"
