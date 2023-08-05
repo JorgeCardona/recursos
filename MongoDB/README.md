@@ -782,16 +782,526 @@ db.vuelos_2.find()
 ...
 ```
 
+# OBTENER SOLO EL PRIMER DOCUMENTO DE UNA COLECCION
+`db.vuelos_1.findOne()`
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+```
+
+# VER EL ULTIMO DOCUMENTO DE UNA COLECCION
+```mongodb
+db.vuelos_1.find().sort({_id: -1}).limit(1)
+```
+
+```mongodb
+{
+  _id: ObjectId("64ba0ceb510b21bfe34b687a"),
+  id: 5000,
+  secure_code: '01H4EEN2EGF42MW38WSMVFQKJF',
+  airline: 'United',
+  departure_city: 'Pueblo',
+  departure_date: '11/7/2022',
+  arrival_airport: 'GBM',
+  arrival_city: 'Örbyhus',
+  arrival_time: '6/7/2023 06:15',
+  passenger_name: 'Huntington MacNeil',
+  passenger_gender: 'Male',
+  seat_number: 'C3',
+  currency: 'USD',
+  departure_gate: 'B2',
+  flight_status: 'Delayed',
+  co_pilot_name: 'Mandel Navarre',
+  aircraft_type: 'Boeing 737',
+  fuel_consumption: 1632.85
+}
+```
+
+# INCLUIR SOLO LOS CAMPOS QUE SE QUIEREN DEL DOCUMENTO 1, 0 PARA EVITAR ESE CAMPO
+```mongodb
+db.vuelos_1.find({}, { _id: 0, arrival_city:1, passenger_name: 1 })
+```
+```mongodb
+{
+  arrival_city: 'Pereira',
+  passenger_name: 'Nathalie Cardona'
+}
+...
+...
+...
+{
+  arrival_city: 'Örbyhus',
+  passenger_name: 'Huntington MacNeil'
+}
+```
+
+# EXCLUIR LOS CAMPOS QUE NO SE NECESITAN
+```mongodb
+db.vuelos_1.find({}, { _id: 0, secure_code:0,  departure_gate:0, flight_status:0, co_pilot_name:0, aircraft_type:0, fuel_consumption:0, passenger_gender:0, departure_date:0, seat_number:0})
+```
+```mongodb
+{
+  id: 1,
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  currency: 'EUR'
+}
+...
+...
+...
+{
+  id: 5000,
+  airline: 'United',
+  departure_city: 'Pueblo',
+  arrival_airport: 'GBM',
+  arrival_city: 'Örbyhus',
+  arrival_time: '6/7/2023 06:15',
+  passenger_name: 'Huntington MacNeil',
+  currency: 'USD'
+}
+```
 
 
+# VER LIMITE DE n DOCUMENTOS DE UNA COLECCION
+```mongodb
+var n = 3
+db.vuelos_1.find().limit(n)
+```
 
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f4"),
+  id: 2,
+  secure_code: '01H4EEMGMYP8GX4GRC4Y2MPYH5',
+  airline: 'Delta',
+  departure_city: "Les Sables-d'Olonne",
+  departure_date: '4/1/2022',
+  arrival_airport: 'YHU',
+  arrival_city: 'Westport',
+  arrival_time: '6/7/2023 06:53',
+  passenger_name: 'Willie Childrens',
+  passenger_gender: 'Female',
+  seat_number: 'B2',
+  currency: 'EUR',
+  departure_gate: 'A1',
+  flight_status: 'Delayed',
+  co_pilot_name: 'Leanor Gribbins',
+  aircraft_type: 'Airbus A320',
+  fuel_consumption: 9666.36
+}
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f5"),
+  id: 3,
+  secure_code: '01H4EEMGN3BZJ9RR779KDEB2WG',
+  airline: 'United',
+  departure_city: 'Oyo',
+  departure_date: '3/4/2022',
+  arrival_airport: 'KWJ',
+  arrival_city: 'Jabon',
+  arrival_time: '6/7/2023 03:44',
+  passenger_name: 'Fifine Luten',
+  passenger_gender: 'Female',
+  seat_number: 'B2',
+  currency: 'NGN',
+  departure_gate: 'C3',
+  flight_status: 'On Time',
+  co_pilot_name: 'Christie Wakeley',
+  aircraft_type: 'Boeing 737',
+  fuel_consumption: 8047.44
+}
+```
 
+# VER LIMITE DE LOS ULTIMOS n DOCUMENTOS DE UNA COLECCION, ORDENADO DESDE EL MENOR AL ULTIMO
+```mongodb
+var n = 3
+db.vuelos_1.find().sort({_id: -1}).limit(n).toArray().reverse()
+```
 
+```mongodb
+[
+  {
+    _id: ObjectId("64ba0ceb510b21bfe34b6878"),
+    id: 4998,
+    secure_code: '01H4EEN2E852X2Q243QKGY8K6X',
+    airline: 'United',
+    departure_city: 'Kazo',
+    departure_date: '12/10/2022',
+    arrival_airport: 'FKL',
+    arrival_city: 'Glazov',
+    arrival_time: '6/7/2023 08:34',
+    passenger_name: 'Elisabet Halbeard',
+    passenger_gender: 'Female',
+    seat_number: 'A1',
+    currency: 'JPY',
+    departure_gate: 'B2',
+    flight_status: 'Delayed',
+    co_pilot_name: 'Ardisj Lembke',
+    aircraft_type: 'Airbus A320',
+    fuel_consumption: 9120.71
+  },
+  {
+    _id: ObjectId("64ba0ceb510b21bfe34b6879"),
+    id: 4999,
+    secure_code: '01H4EEN2ECWBYQ6CZ3GP31Q61B',
+    airline: 'Delta',
+    departure_city: 'Dallas',
+    departure_date: '15/11/2022',
+    arrival_airport: 'KVB',
+    arrival_city: 'Boychinovtsi',
+    arrival_time: '6/7/2023 05:31',
+    passenger_name: 'Allard Milligan',
+    passenger_gender: 'Male',
+    seat_number: 'C3',
+    currency: 'USD',
+    departure_gate: 'C3',
+    flight_status: 'On Time',
+    co_pilot_name: 'Jarid Jonson',
+    aircraft_type: 'Airbus A320',
+    fuel_consumption: 8674.24
+  },
+  {
+    _id: ObjectId("64ba0ceb510b21bfe34b687a"),
+    id: 5000,
+    secure_code: '01H4EEN2EGF42MW38WSMVFQKJF',
+    airline: 'United',
+    departure_city: 'Pueblo',
+    departure_date: '11/7/2022',
+    arrival_airport: 'GBM',
+    arrival_city: 'Örbyhus',
+    arrival_time: '6/7/2023 06:15',
+    passenger_name: 'Huntington MacNeil',
+    passenger_gender: 'Male',
+    seat_number: 'C3',
+    currency: 'USD',
+    departure_gate: 'B2',
+    flight_status: 'Delayed',
+    co_pilot_name: 'Mandel Navarre',
+    aircraft_type: 'Boeing 737',
+    fuel_consumption: 1632.85
+  }
+]
+```
 
+# VER LIMITE DE LOS PRIMEROS n DOCUMENTOS DE UNA COLECCION, DESPUES DE x DOCUMENTOS OFFSET
+```mongodb
+var n = 3
+var x = 10
+db.vuelos_1.find().skip(x).limit(n)
+```
 
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54fd"),
+  id: 11,
+  secure_code: '01H4EEMGPGM90HM7BKHTEME44X',
+  airline: 'Delta',
+  departure_city: 'Forninho',
+  departure_date: '15/1/2022',
+  arrival_airport: 'PRM',
+  arrival_city: 'Kornyn',
+  arrival_time: '6/7/2023 08:00',
+  passenger_name: 'Hoebart Fruchon',
+  passenger_gender: 'Male',
+  seat_number: 'C3',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'Delayed',
+  co_pilot_name: 'Cesare Janovsky',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 6868.05
+}
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54fe"),
+  id: 12,
+  secure_code: '01H4EEMGPP9H8CR43QP3J6PW42',
+  airline: 'American',
+  departure_city: 'Lomboy',
+  departure_date: '16/3/2022',
+  arrival_airport: 'DMU',
+  arrival_city: 'Ballinteer',
+  arrival_time: '6/7/2023 00:25',
+  passenger_name: 'Rockie Huett',
+  passenger_gender: 'Male',
+  seat_number: 'C3',
+  currency: 'PHP',
+  departure_gate: 'B2',
+  flight_status: 'Cancelled',
+  co_pilot_name: 'Zerk Le Hucquet',
+  aircraft_type: 'Boeing 737',
+  fuel_consumption: 5346.91
+}
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54ff"),
+  id: 13,
+  secure_code: '01H4EEMGPVCXFW2VZ66JBD7Q4M',
+  airline: 'United',
+  departure_city: 'Essang',
+  departure_date: '23/10/2022',
+  arrival_airport: 'WLA',
+  arrival_city: 'Três Passos',
+  arrival_time: '6/7/2023 16:28',
+  passenger_name: 'Lorrin Armit',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'IDR',
+  departure_gate: 'B2',
+  flight_status: 'Cancelled',
+  co_pilot_name: 'Inessa Bradnock',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7185.9
+}
+```
 
+# VER LIMITE DE LOS ULTIMOS n DOCUMENTOS DE UNA COLECCION, COMENZANDO DESDE x DOCUMENTOS OFFSET
+```mongodb
+db.vuelos_1.find().sort({_id: -1}).skip(x).limit(n).toArray().reverse()
+```
 
+```mongodb
+[
+  {
+    _id: ObjectId("64ba0ceb510b21bfe34b686e"),
+    id: 4988,
+    secure_code: '01H4EEN2CYJJKKSFZ3MD328Z7M',
+    airline: 'American',
+    departure_city: 'Cotorra',
+    departure_date: '15/11/2022',
+    arrival_airport: 'ZRJ',
+    arrival_city: 'Azurva',
+    arrival_time: '6/7/2023 06:55',
+    passenger_name: 'Nicolea Darnell',
+    passenger_gender: 'Female',
+    seat_number: 'B2',
+    currency: 'COP',
+    departure_gate: 'B2',
+    flight_status: 'Cancelled',
+    co_pilot_name: 'Tedda Surgison',
+    aircraft_type: 'Airbus A320',
+    fuel_consumption: 6868.56
+  },
+  {
+    _id: ObjectId("64ba0ceb510b21bfe34b686f"),
+    id: 4989,
+    secure_code: '01H4EEN2D2JNYTDHCS7XYESGH8',
+    airline: 'United',
+    departure_city: 'Karuk',
+    departure_date: '13/9/2022',
+    arrival_airport: 'GRH',
+    arrival_city: 'Chumpi',
+    arrival_time: '6/7/2023 18:54',
+    passenger_name: 'Kellyann Joinsey',
+    passenger_gender: 'Female',
+    seat_number: 'C3',
+    currency: 'IDR',
+    departure_gate: 'B2',
+    flight_status: 'Cancelled',
+    co_pilot_name: 'Delly Horsted',
+    aircraft_type: 'Boeing 737',
+    fuel_consumption: 2467.74
+  },
+  {
+    _id: ObjectId("64ba0ceb510b21bfe34b6870"),
+    id: 4990,
+    secure_code: '01H4EEN2D7Q1D03WJ07Y9DQ0Y9',
+    airline: 'United',
+    departure_city: 'Małdyty',
+    departure_date: '9/9/2022',
+    arrival_airport: 'TMG',
+    arrival_city: 'Besuki',
+    arrival_time: '6/7/2023 05:58',
+    passenger_name: 'Modestine Labusch',
+    passenger_gender: 'Female',
+    seat_number: 'A1',
+    currency: 'PLN',
+    departure_gate: 'A1',
+    flight_status: 'Cancelled',
+    co_pilot_name: 'Essy Jebb',
+    aircraft_type: 'Embraer E190',
+    fuel_consumption: 7818.02
+  }
+]
+```
 
+# VER DOCUMENTOS DE UNA COLECCION, QUE COINCIDAN CON UNA CONSULTA DE UNA LLAVE
+```mongodb
+db.vuelos_1.find({seat_number: 'A1'}).limit(2)
+```
+
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f7"),
+  id: 5,
+  secure_code: '01H4EEMGNFX6T41V6RSST9YVPF',
+  airline: 'Delta',
+  departure_city: 'Ko Pha Ngan',
+  departure_date: '10/7/2022',
+  arrival_airport: 'QUB',
+  arrival_city: 'Sovetskaya Gavan’',
+  arrival_time: '6/7/2023 16:55',
+  passenger_name: 'Norman Crosen',
+  passenger_gender: 'Male',
+  seat_number: 'A1',
+  currency: 'THB',
+  departure_gate: 'A1',
+  flight_status: 'On Time',
+  co_pilot_name: 'Barn Timmes',
+  aircraft_type: 'Boeing 737',
+  fuel_consumption: 7584.07
+}
+```
+
+# CONTAR TODOS LOS DOCUMENTOS DE UNA COLECCION
+```mongodb
+db.vuelos_1.find().count()
+5000
+```
+
+# CONTAR CUANTOS DOCUMENTOS COINCIDEN CON LA CONSULTA
+```mongodb
+db.vuelos_1.find({seat_number: 'A1'}).count()
+1683
+```
+
+# LISTAR LOS VALORES UNICOS QUE HAY EN UN CAMPO EN UNA COLECCION
+```mongodb
+db.vuelos_1.distinct('seat_number').count()
+```
+
+```mongodb
+[ 'A1', 'B2', 'C3' ]
+```
+
+# CONTAR CUANTOS VALORES UNICOS TIENE UN CAMPO EN UNA COLECCION
+```mongodb
+db.vuelos_1.distinct('seat_number').length
+3
+```
+
+# VER EL PLAN DE EJECUCION DE UNA CONSULTA
+```mongodb
+db.vuelos_1.find({seat_number: 'A1'}).limit(2).explain()
+```
+
+```mongodb
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test_mongo.vuelos_1',
+    indexFilterSet: false,
+    parsedQuery: {
+      seat_number: {
+        '$eq': 'A1'
+      }
+    },
+    queryHash: '3054E2EB',
+    planCacheKey: '3054E2EB',
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    winningPlan: {
+      stage: 'LIMIT',
+      limitAmount: 2,
+      inputStage: {
+        stage: 'COLLSCAN',
+        filter: {
+          seat_number: {
+            '$eq': 'A1'
+          }
+        },
+        direction: 'forward'
+      }
+    },
+    rejectedPlans: []
+  },
+  command: {
+    find: 'vuelos_1',
+    filter: {
+      seat_number: 'A1'
+    },
+    limit: 2,
+    '$db': 'test_mongo'
+  },
+  serverInfo: {
+    host: 'Paradigma',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+```
 
 
 
@@ -862,39 +1372,6 @@ db.vuelos_1.aggregate([
 ```
 
 
-# OBTENER SOLO EL PRIMER DOCUMENTO DE UNA COLECCION
-`db.vuelos_1.findOne()`
-```mongodb
-{
-  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
-  id: 1,
-  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
-  airline: 'EasyFly',
-  departure_city: 'Berlin',
-  departure_date: '25/12/2022',
-  arrival_airport: 'PEI',
-  arrival_city: 'Pereira',
-  arrival_time: '27/12/2022 14:13',
-  passenger_name: 'Nathalie Cardona',
-  passenger_gender: 'Female',
-  seat_number: 'A1',
-  currency: 'EUR',
-  departure_gate: 'B2',
-  flight_status: 'On Time',
-  co_pilot_name: 'Hart Blunkett',
-  aircraft_type: 'Embraer E190',
-  fuel_consumption: 7916.39
-}
-```
-
-# VER EL ULTIMO ELEMENTO DE UNA COLECCION
-```mongodb
-collection.find_one({}, sort=[('_id', -1)])
-```
-
-```mongodb
-
-```
 
 ------------------------
 # SI QUIERE TENER LOS VALORES SIN ANIDAR UNA DE LAS COLECCIONES
