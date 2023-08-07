@@ -807,9 +807,15 @@ db.vuelos_2.find()
 }
 ```
 
-# VER EL ULTIMO DOCUMENTO DE UNA COLECCION
+# VER EL ULTIMO DOCUMENTO DE UNA COLECCION ORDENANDOLO POR LA LLAVE PRIMARIA
 ```mongodb
-db.vuelos_1.find().sort({_id: -1}).limit(1)
+db.vuelos_1.find()
+           .sort(
+                  {
+                    _id: -1
+                  }
+                 )
+                 .limit(1)
 ```
 
 ```mongodb
@@ -835,9 +841,16 @@ db.vuelos_1.find().sort({_id: -1}).limit(1)
 }
 ```
 
-# INCLUIR SOLO LOS CAMPOS QUE SE QUIEREN DEL DOCUMENTO 1, 0 PARA EVITAR ESE CAMPO
+# INCLUIR SOLO LOS CAMPOS QUE SE QUIEREN DEL DOCUMENTO 1 PARA INCLUIR EL CAMPO, 0 PARA EVITAR ESE CAMPO
 ```mongodb
-db.vuelos_1.find({}, { _id: 0, arrival_city:1, passenger_name: 1 })
+db.vuelos_1.find(
+  {},
+  {
+    _id: 0,
+    arrival_city:1,
+    passenger_name: 1
+  }
+)
 ```
 ```mongodb
 {
@@ -853,9 +866,23 @@ db.vuelos_1.find({}, { _id: 0, arrival_city:1, passenger_name: 1 })
 }
 ```
 
-# EXCLUIR LOS CAMPOS QUE NO SE NECESITAN
+# EXCLUIR TODOS LOS CAMPOS QUE NO SE NECESITAN
 ```mongodb
-db.vuelos_1.find({}, { _id: 0, secure_code:0,  departure_gate:0, flight_status:0, co_pilot_name:0, aircraft_type:0, fuel_consumption:0, passenger_gender:0, departure_date:0, seat_number:0})
+db.vuelos_1.find(
+  {},
+  {
+    _id: 0,
+    secure_code:0,
+    departure_gate:0,
+    flight_status:0,
+    co_pilot_name:0,
+    aircraft_type:0,
+    fuel_consumption:0,
+    passenger_gender:0,
+    departure_date:0,
+    seat_number:0
+  }
+)
 ```
 ```mongodb
 {
@@ -887,7 +914,8 @@ db.vuelos_1.find({}, { _id: 0, secure_code:0,  departure_gate:0, flight_status:0
 # VER LIMITE DE n DOCUMENTOS DE UNA COLECCION
 ```mongodb
 var n = 3
-db.vuelos_1.find().limit(n)
+db.vuelos_1.find()
+           .limit(n)
 ```
 
 ```mongodb
@@ -956,7 +984,15 @@ db.vuelos_1.find().limit(n)
 # VER LIMITE DE LOS ULTIMOS n DOCUMENTOS DE UNA COLECCION, ORDENADO DESDE EL MENOR AL ULTIMO
 ```mongodb
 var n = 3
-db.vuelos_1.find().sort({_id: -1}).limit(n).toArray().reverse()
+db.vuelos_1.find()
+           .sort(
+                  {
+                    _id: -1
+                  }
+                )
+            .limit(n)
+            .toArray()
+            .reverse()
 ```
 
 ```mongodb
@@ -1028,7 +1064,9 @@ db.vuelos_1.find().sort({_id: -1}).limit(n).toArray().reverse()
 ```mongodb
 var n = 3
 var x = 10
-db.vuelos_1.find().skip(x).limit(n)
+db.vuelos_1.find()
+            .skip(x)
+            .limit(n)
 ```
 
 ```mongodb
@@ -1096,7 +1134,15 @@ db.vuelos_1.find().skip(x).limit(n)
 
 # VER LIMITE DE LOS ULTIMOS n DOCUMENTOS DE UNA COLECCION, COMENZANDO DESDE x DOCUMENTOS OFFSET
 ```mongodb
-db.vuelos_1.find().sort({_id: -1}).skip(x).limit(n).toArray().reverse()
+db.vuelos_1.find().sort(
+  {
+    _id: -1
+  }
+)
+.skip(x)
+.limit(n)
+.toArray()
+.reverse()
 ```
 
 ```mongodb
@@ -1166,7 +1212,12 @@ db.vuelos_1.find().sort({_id: -1}).skip(x).limit(n).toArray().reverse()
 
 # VER DOCUMENTOS DE UNA COLECCION, QUE COINCIDAN CON UNA CONSULTA DE UNA LLAVE
 ```mongodb
-db.vuelos_1.find({seat_number: 'A1'}).limit(2)
+db.vuelos_1.find(
+  {
+    seat_number: 'A1'
+  }
+)
+.limit(2)
 ```
 
 ```mongodb
@@ -1220,30 +1271,454 @@ db.vuelos_1.find().count()
 
 # CONTAR CUANTOS DOCUMENTOS COINCIDEN CON LA CONSULTA
 ```mongodb
-db.vuelos_1.find({seat_number: 'A1'}).count()
+db.vuelos_1.find(
+  {
+    seat_number: 'A1'
+  }
+)
+.count()
+```
+
+```mongodb
 1683
 ```
 
 # LISTAR LOS VALORES UNICOS QUE HAY EN UN CAMPO EN UNA COLECCION
 ```mongodb
-db.vuelos_1.distinct('seat_number').count()
+db.vuelos_1.distinct('seat_number')
 ```
 
 ```mongodb
 [ 'A1', 'B2', 'C3' ]
 ```
 
-# CONTAR CUANTOS VALORES UNICOS TIENE UN CAMPO EN UNA COLECCION
+# CONTAR CUANTOS VALORES UNICOS TIENE UNA LLAVE EN UNA COLECCION
 ```mongodb
 db.vuelos_1.distinct('seat_number').length
 3
 ```
 
-# VER EL PLAN DE EJECUCION DE UNA CONSULTA
+# MOSTRAR TODOS LOS DOCUMENTOS DE UNA COLECCION DONDE LA LLAVE TENGA UN VALOR IGUAL AL SOLICITADO
 ```mongodb
-db.vuelos_1.find({seat_number: 'A1'}).limit(2).explain()
+db.vuelos_1.find(
+  {
+    fuel_consumption:{ $eq:7916.39 }
+  }
+)
 ```
 
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+```
+
+# MOSTRAR TODOS LOS DOCUMENTOS DE UNA COLECCION DONDE LA LLAVE TENGA UN VALOR DIFERENTE (NO IGUAL) AL CONSULTADO
+```mongodb
+db.vuelos_1.find(
+  {
+    fuel_consumption:{ $ne:7916.39 }
+  }
+)
+.count()
+4999
+```
+
+# MOSTRAR TODOS LOS DOCUMENTOS DE UNA COLECCION DONDE LA LLAVE TENGA UN VALOR MENOR (<), MENOR O IGUAL(<=) AL CONSULTADO
+```mongodb
+db.vuelos_1.find(
+  {
+    fuel_consumption:{ $lt:7916.39 }
+  }
+)
+.count()
+```
+
+```mongodb
+db.vuelos_1.find(
+  {
+    fuel_consumption:{ $lte:7916.39 }
+  }
+)
+.count()
+```
+
+# MOSTRAR TODOS LOS DOCUMENTOS DE UNA COLECCION DONDE LA LLAVE TENGA UN VALOR MAYOR (>), MAYOR O IGUAL(>=) AL CONSULTADO
+```mongodb
+db.vuelos_1.find(
+  {
+    fuel_consumption:{ $gt:7916.39 }
+  }
+)
+.count()
+```
+
+```mongodb
+db.vuelos_1.find(
+  {
+    fuel_consumption:{ $gte:7916.39 }
+  }
+)
+.count()
+```
+
+# USAR EL OPERADOR OR
+```mongodb
+db.vuelos_1.find({
+  $or: [
+        { 
+          fuel_consumption: { $eq: 7916.39 } 
+        },
+        { 
+          passenger_gender: { $eq:'Female' } 
+        }
+      ]
+})
+.count()
+```
+
+```mongodb
+2257
+```
+
+# USAR EL OPERADOR AND, CALCULANDO UN RANGO DE VALORES
+```mongodb
+db.vuelos_1.find({
+  $and: [
+          {
+            fuel_consumption: { $gte:7915 } 
+          },
+          {
+            fuel_consumption: { $lte:7917}
+          }
+        ]
+})
+```
+
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+
+{
+  _id: ObjectId("64ba0cea510b21bfe34b5ee7"),
+  id: 2549,
+  secure_code: '01H4EEMT9WC5W3CZP84SBRXX6T',
+  airline: 'American',
+  departure_city: 'Inglewood',
+  departure_date: '3/2/2022',
+  arrival_airport: 'TEO',
+  arrival_city: 'Kebon',
+  arrival_time: '6/7/2023 12:40',
+  passenger_name: 'Rudie Dunkerley',
+  passenger_gender: 'Non-binary',
+  seat_number: 'B2',
+  currency: 'USD',
+  departure_gate: 'A1',
+  flight_status: 'On Time',
+  co_pilot_name: 'Jozef Phillpotts',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.91
+}
+```
+
+# CONSULTAR DOCUMENTOS QUE EN UN CAMPO INCLUYAN UN VALOR ESPECIFICO
+```mongodb
+db.vuelos_1.find({
+  seat_number: { $in: ['A1','B1','C1']}
+})
+.count()
+```
+
+```
+1683
+```
+
+# CONSULTAR DOCUMENTOS QUE EN UN CAMPO NO INCLUYAN UN VALOR ESPECIFICO
+```mongodb
+db.vuelos_1.find({
+  seat_number: { $nin: ['A1','B1','C1']}
+})
+.count()
+```
+
+```
+3317
+```
+
+# CONSULTAR DOCUMENTOS QUE EN UN CAMPO NO INCLUYAN UN VALOR ESPECIFICO
+```mongodb
+db.vuelos_1.find({
+  $nor: [
+    { 
+		fuel_consumption: { $gte: 7915, $lte: 7917 } 
+	},
+    { 
+		seat_number: { $nin: ['A1','B1','C1']}
+	}
+  ]
+})
+.count()
+```
+
+# VALIDAR EN QUE DOCUMENTOS EXISTE UN CAMPO ESPECIFICO
+```mongodb
+db.vuelos_1.find({
+  arrival_city: { $exists: true}
+})
+.count()
+```
+
+```mongodb
+5000
+```
+
+# VALIDAR EN QUE DOCUMENTOS EXISTE UN TIPO DE DATO ESPECIFICO
+
+```mongodb
+db.vuelos_1.find({
+  id: { $type: 'number'}
+})
+.count()
+```
+
+```mongodb
+5000
+```
+
+# BUSCAR BASADO EN TEXTO
+### CREAR UN INDICE EN LA COLUMNA A BUSCAR
+```mongodb
+// Crear un índice de texto en el campo "arrival_city", con palabra exacta
+db.vuelos_1.createIndex(
+  { arrival_city: "text" },
+  { name: "index_arrival_city" }
+);
+
+# Indice con busqueda en el camppo passenger_name con expresion Regular
+db.vuelos_1.createIndex(
+  { passenger_name: 1 },
+  {
+    name: "index_passenger_name",
+    collation: { locale: "en", strength: 2 },
+    partialFilterExpression: { passenger_name: { $type: "string" } }
+  }
+);
+```
+
+# LISTAR LOS INDICES
+
+```mongodb
+db.vuelos_1.getIndexes()
+```
+
+```mongodb
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  {
+    v: 2,
+    key: { passenger_name: 1 },
+    name: 'index_passenger_name',
+    partialFilterExpression: { passenger_name: [Object] },
+    collation: {
+      locale: 'en',
+      caseLevel: false,
+      caseFirst: 'off',
+      strength: 2,
+      numericOrdering: false,
+      alternate: 'non-ignorable',
+      maxVariable: 'punct',
+      normalization: false,
+      backwards: false,
+      version: '57.1'
+    }
+  },
+  {
+    v: 2,
+    key: { _fts: 'text', _ftsx: 1 },
+    name: 'index_arrival_city',
+    weights: { arrival_city: 1 },
+    default_language: 'english',
+    language_override: 'language',
+    textIndexVersion: 3
+  }
+]
+```
+
+# BUSCAR USANDO EL INDICE
+```mongodb
+// Realizar una consulta de búsqueda de texto
+db.vuelos_1.find(
+                  {
+                    $text: { $search: "pereira" }
+                  }
+                )
+```
+
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+{
+  _id: ObjectId("64ba0cea510b21bfe34b5729"),
+  id: 567,
+  secure_code: '01H4EEMKDEJC60KWB8C9VB3126',
+  airline: 'American',
+  departure_city: 'Bajos de Haina',
+  departure_date: '13/9/2022',
+  arrival_airport: 'SAR',
+  arrival_city: 'Pereira',
+  arrival_time: '6/7/2023 19:41',
+  passenger_name: 'Dunc Dumsday',
+  passenger_gender: 'Genderfluid',
+  seat_number: 'B2',
+  currency: 'DOP',
+  departure_gate: 'C3',
+  flight_status: 'On Time',
+  co_pilot_name: 'Dexter Poskitt',
+  aircraft_type: 'Airbus A320',
+  fuel_consumption: 1066.7
+}
+```
+
+# USO DEL INDICE CON EXPRESION REGULAR
+```mongodb
+db.vuelos_1.find(
+                  { 
+                    passenger_name: /^Nathalie/ 
+                  }
+                );
+```
+
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+```
+
+# BUSQUEDA NO SENSIBLE AL CASO
+```mongodb
+db.vuelos_1.find(
+                  { 
+                    passenger_name: { 
+                                      $regex: 'thalie', 
+                                      $options: 'i' 
+                                    } 
+                  }
+                );
+```
+
+```mongodb
+{
+  _id: ObjectId("64ba0cea510b21bfe34b54f3"),
+  id: 1,
+  secure_code: '01H4EEMGMG9VADVF06JZGJJGN0',
+  airline: 'EasyFly',
+  departure_city: 'Berlin',
+  departure_date: '25/12/2022',
+  arrival_airport: 'PEI',
+  arrival_city: 'Pereira',
+  arrival_time: '27/12/2022 14:13',
+  passenger_name: 'Nathalie Cardona',
+  passenger_gender: 'Female',
+  seat_number: 'A1',
+  currency: 'EUR',
+  departure_gate: 'B2',
+  flight_status: 'On Time',
+  co_pilot_name: 'Hart Blunkett',
+  aircraft_type: 'Embraer E190',
+  fuel_consumption: 7916.39
+}
+```
+
+# ELIMINAR UN INDICE
+
+```mongodb
+db.vuelos_1.dropIndexes(['index_passenger_name', 'index_arrival_city'])
+```
+
+```mongodb
+{ nIndexesWas: 2, ok: 1 }
+```
+
+
+
+
+
+# VER EL PLAN DE EJECUCION DE UNA CONSULTA
+```mongodb
+db.vuelos_1.find({seat_number: 'A1'})
+           .limit(2)
+           .explain()
+```
 ```mongodb
 {
   explainVersion: '1',
