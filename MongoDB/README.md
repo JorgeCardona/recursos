@@ -199,10 +199,6 @@ db.createRole(
 )
 ```
 
-# CURSOR
-Es una estructura iterable, similar a una lista de diccionarios en python. donde se almacenan los resultados de las consultas.
-
-
 # LISTAR ROLES
 `show roles`
 
@@ -676,6 +672,9 @@ db.vuelos_1.getIndices()
 ```mongodb
 [ { v: 2, key: { _id: 1 }, name: '_id_' } ]
 ```
+
+# CURSOR
+Es una estructura iterable, similar a una lista de diccionarios en python. donde se almacenan los resultados de las consultas. se genera al hacer uso del metodo **.find()**
 
 # CONSULTAR TODOS LOS DOCUMENTOS DE UNA COLECCION
 ```mongodb
@@ -1709,16 +1708,381 @@ db.vuelos_1.dropIndexes(['index_passenger_name', 'index_arrival_city'])
 { nIndexesWas: 2, ok: 1 }
 ```
 
+# INSERTAR DOCUMENTOS
 
+# EL METODO INSERT
+```mongodb
+db.vuelos_1.insert({
+  id: 9998,
+  secure_code: 'XYZ456',
+  airline: 'FlyAway Airlines',
+  departure_city: 'London',
+  departure_date: '2023-08-15',
+  arrival_airport: 'CDG',
+  arrival_city: 'Paris',
+  arrival_time: '2023-08-15 18:45',
+  passenger_name: 'Emily Brown',
+  passenger_gender: 'Female',
+  seat_number: 'A3',
+  currency: 'EUR',
+  departure_gate: 'C2',
+  flight_status: 'Delayed',
+  co_pilot_name: 'David Wilson',
+  aircraft_type: 'Airbus A320',
+  fuel_consumption: 7200.00
+});
+```
 
+# INSERT ONE
+```mongodb
+db.vuelos_1.insertOne({
+  id: 9999,
+  secure_code: 'ABC123',
+  airline: 'AirTravel Inc.',
+  departure_city: 'New York',
+  departure_date: '2023-07-25',
+  arrival_airport: 'LAX',
+  arrival_city: 'Los Angeles',
+  arrival_time: '2023-07-25 14:30',
+  passenger_name: 'John Smith',
+  passenger_gender: 'Male',
+  seat_number: 'C5',
+  currency: 'USD',
+  departure_gate: 'B4',
+  flight_status: 'On Time',
+  co_pilot_name: 'Jane Johnson',
+  aircraft_type: 'Boeing 737',
+  fuel_consumption: 8500.00
+});
+```
 
+# INSERTAR MULTIPLES DOCUMENTO
+
+```mongodb
+var lista_documentos = [
+  {
+    id: 10001,
+    secure_code: 'DEF456',
+    airline: 'AirConnect',
+    departure_city: 'Tokyo',
+    departure_date: '2023-08-25',
+    arrival_airport: 'ICN',
+    arrival_city: 'Seoul',
+    arrival_time: '2023-08-25 10:15',
+    passenger_name: 'Aiko Tanaka',
+    passenger_gender: 'Female',
+    seat_number: 'C1',
+    currency: 'JPY',
+    departure_gate: 'D3',
+    flight_status: 'On Time',
+    co_pilot_name: 'Takashi Suzuki',
+    aircraft_type: 'Boeing 777',
+    fuel_consumption: 9500.00
+  },
+  {
+    id: 10002,
+    secure_code: 'GHI789',
+    airline: 'FlyNow',
+    departure_city: 'London',
+    departure_date: '2023-09-10',
+    arrival_airport: 'CDG',
+    arrival_city: 'Paris',
+    arrival_time: '2023-09-10 18:45',
+    passenger_name: 'Sophie Dupont',
+    passenger_gender: 'Female',
+    seat_number: 'D5',
+    currency: 'EUR',
+    departure_gate: 'B4',
+    flight_status: 'Delayed',
+    co_pilot_name: 'Jean-Pierre Martin',
+    aircraft_type: 'Airbus A320',
+    fuel_consumption: 7000.00
+  },
+  {
+    id: 10003,
+    secure_code: 'JKL012',
+    airline: 'OceanAir',
+    departure_city: 'Sydney',
+    departure_date: '2023-09-15',
+    arrival_airport: 'AKL',
+    arrival_city: 'Auckland',
+    arrival_time: '2023-09-15 08:00',
+    passenger_name: 'Liam Johnson',
+    passenger_gender: 'Male',
+    seat_number: 'E3',
+    currency: 'AUD',
+    departure_gate: 'G2',
+    flight_status: 'On Time',
+    co_pilot_name: 'Emma Wilson',
+    aircraft_type: 'Airbus A380',
+    fuel_consumption: 11000.00
+  },
+  {
+    id: 10004,
+    secure_code: 'MNO345',
+    airline: 'SunAir',
+    departure_city: 'Rio de Janeiro',
+    departure_date: '2023-09-20',
+    arrival_airport: 'BUE',
+    arrival_city: 'Buenos Aires',
+    arrival_time: '2023-09-20 12:30',
+    passenger_name: 'Sofia Martinez',
+    passenger_gender: 'Female',
+    seat_number: 'F2',
+    currency: 'BRL',
+    departure_gate: 'E1',
+    flight_status: 'On Time',
+    co_pilot_name: 'Carlos Ramirez',
+    aircraft_type: 'Embraer E195',
+    fuel_consumption: 6800.00
+  },
+  {
+  id: 10005,
+  secure_code: 'PQR678',
+  airline: 'ColombiaAir',
+  departure_city: 'Bogotá',
+  departure_date: '2023-09-25',
+  arrival_airport: 'MDE',
+  arrival_city: 'Medellín',
+  arrival_time: '2023-09-25 14:00',
+  passenger_name: 'Andrés Gómez',
+  passenger_gender: 'Male',
+  seat_number: 'A3',
+  currency: 'COP',
+  departure_gate: 'B1',
+  flight_status: 'On Time',
+  co_pilot_name: 'Laura Rodríguez',
+  aircraft_type: 'Airbus A319',
+  fuel_consumption: 6000.00
+ },
+]
+
+db.vuelos_1.insertMany(lista_documentos);
+```
+
+```mongodb
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64d16c4d63e205aadb7039a9"),
+    '1': ObjectId("64d16c4d63e205aadb7039aa"),
+    '2': ObjectId("64d16c4d63e205aadb7039ab"),
+    '3': ObjectId("64d16c4d63e205aadb7039ac"),
+    '4': ObjectId("64d16c4d63e205aadb7039ad")
+  }
+}
+```
+
+# BULKWRITE
+Este método se utiliza para realizar operaciones en masa, como inserciones, actualizaciones y eliminaciones en una sola llamada.
+
+Recibe como argumento un arreglo de operaciones, donde cada operación es un objeto que especifica qué acción realizar en un documento.
+
+Puede realizar operaciones en diferentes colecciones y tipos de operaciones en la misma llamada.
+Retorna un objeto con información sobre las operaciones ejecutadas.
+
+```mongodb
+db.vuelos_1.bulkWrite([
+  {
+    insertOne: {
+      document: {
+        id: 10006,
+        secure_code: 'ABC123',
+        airline: 'ExampleAir',
+        departure_city: 'New York',
+        departure_date: '2023-07-20',
+        arrival_airport: 'JFK',
+        arrival_city: 'Los Angeles',
+        arrival_time: '2023-07-20 12:00',
+        passenger_name: 'John Doe',
+        passenger_gender: 'Male',
+        seat_number: 'B2',
+        currency: 'USD',
+        departure_gate: 'A2',
+        flight_status: 'Delayed',
+        co_pilot_name: 'Jane Smith',
+        aircraft_type: 'Boeing 737',
+        fuel_consumption: 7500.00
+      }
+    }
+  },
+  {
+    insertOne: {
+      document: {
+        id: 10007,
+        secure_code: 'XYZ789',
+        airline: 'TravelAir',
+        departure_city: 'London',
+        departure_date: '2023-07-21',
+        arrival_airport: 'LHR',
+        arrival_city: 'Paris',
+        arrival_time: '2023-07-21 15:30',
+        passenger_name: 'Maria Gonzalez',
+        passenger_gender: 'Female',
+        seat_number: 'C1',
+        currency: 'EUR',
+        departure_gate: 'C3',
+        flight_status: 'On Time',
+        co_pilot_name: 'Carlos Ramirez',
+        aircraft_type: 'Airbus A320',
+        fuel_consumption: 6800.00
+      }
+    }
+  },
+  {
+    insertOne: {
+      document: {
+        id: 10008,
+        secure_code: 'LMN456',
+        airline: 'FlyNow',
+        departure_city: 'Tokyo',
+        departure_date: '2023-07-22',
+        arrival_airport: 'HND',
+        arrival_city: 'Sydney',
+        arrival_time: '2023-07-22 18:45',
+        passenger_name: 'Emily Brown',
+        passenger_gender: 'Female',
+        seat_number: 'D4',
+        currency: 'JPY',
+        departure_gate: 'D5',
+        flight_status: 'Cancelled',
+        co_pilot_name: 'David Johnson',
+        aircraft_type: 'Boeing 777',
+        fuel_consumption: 9000.00
+      }
+    }
+  }
+]);
+```
+
+```mongodb
+{
+  acknowledged: true,
+  insertedCount: 3,
+  insertedIds: {
+    '0': ObjectId("64d1711863e205aadb7039b6"),
+    '1': ObjectId("64d1711863e205aadb7039b7"),
+    '2': ObjectId("64d1711863e205aadb7039b8")
+  },
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {}
+}
+```
+
+# VALIDAR DOCUMENTOS INSERTADOS
+```mongodb
+db.vuelos_1.find(
+  {
+    id:{ $gt:9997 }
+  }
+)
+.count()
+```
+
+# ACTUALIZAR MULTIPLES DOCUMENTOS, MULTIPLICADO SU id POR 100
+```mongodb
+db.vuelos_1.bulkWrite([
+  {
+    updateMany: {
+      filter: { id: { $gt: 9997 } },
+      update: { $mul: { id: 100 } }
+    }
+  }
+]);
+```
+
+# VALIDAR DOCUMENTOS ACTUALIZADOS
+```mongodb
+db.vuelos_1.find(
+  {id:{$gt:9997}},
+  {
+    _id: 1,
+	 id: 1
+  }
+)
+```
+
+# ELIMINAR MULTIPLES DOCUMENTOS
+
+```mongodb
+db.vuelos_1.bulkWrite([
+  {
+    deleteMany: {
+      filter: { id: { $gt: 9997 } }
+    }
+  }
+]);
+```
+
+```mongodb
+{
+  acknowledged: true,
+  insertedCount: 0,
+  insertedIds: {},
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 13,
+  upsertedCount: 0,
+  upsertedIds: {}
+}
+```
+
+# INSERCION, ACTUALIZACION Y ELIMINACION, SENCILLA
+```mongodb
+const bulkOps = [
+  // Inserción
+  { insertOne: { document: { id: 10006, name: "Documento 10006" } } },
+
+  // Actualización
+  { updateOne: { filter: { id: { $gt: 9997 } }, update: { $set: { name: "Actualizado" } } } },
+
+  // Eliminación
+  { deleteOne: { filter: { id: { $gt: 9997 } } } }
+];
+
+db.collection.bulkWrite(bulkOps);
+```
+
+# INSERCION, ACTUALIZACION Y ELIMINACION, MULTIPLE
+```mongodb
+// Crear el array de operaciones
+var bulkOps = [
+  { insertOne: { document: { id: 10006, campo: 'valor1' } } },
+  { insertOne: { document: { id: 10007, campo: 'valor2' } } },
+  { insertOne: { document: { id: 10008, campo: 'valor3' } } },
+  { insertOne: { document: { id: 10009, campo: 'valor4' } } },
+  { insertOne: { document: { id: 10010, campo: 'valor5' } } },
+  { updateMany: { filter: { id: { $gte: 10006, $lte: 10010 } }, update: { $set: { campo: 'nuevo_valor' } } } },
+  { deleteMany: { filter: { id: { $gte: 10006, $lte: 10010 } } } }
+];
+
+// Ejecutar las operaciones con bulkWrite
+db.collection.bulkWrite(bulkOps);
+
+```
 
 # VER EL PLAN DE EJECUCION DE UNA CONSULTA
+
+| Tipo de Explicación           | Descripción                                                                                                                             | Uso                                                  |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
+| "queryPlanner"                | Proporciona detalles sobre cómo el optimizador de consultas planifica la ejecución de la consulta.                                   | db.collection.find(query).explain("queryPlanner")  |
+| "executionStats"              | Ofrece información sobre cómo se ejecutó la consulta, incluidos los tiempos y estadísticas de rendimiento.                         | db.collection.find(query).explain("executionStats")|
+| "allPlansExecution"           | Proporciona información sobre todos los planes de ejecución considerados por el optimizador y cómo se ejecutaron.                   | db.collection.find(query).explain("allPlansExecution")|
+
 ```mongodb
 db.vuelos_1.find({seat_number: 'A1'})
            .limit(2)
            .explain()
 ```
+```mongodb
+db.vuelos_1.find({seat_number: 'A1'})
+           .limit(2)
+           .explain("allPlansExecution")
+```
+
 ```mongodb
 {
   explainVersion: '1',
@@ -1778,6 +2142,11 @@ db.vuelos_1.find({seat_number: 'A1'})
 }
 ```
 
+
+# Validación de documentos
+```mongodb
+
+```
 
 
 # HACER UN JOIN **lookup** ENTRE 2 COLECCIONES Y TRAER SOLO EL PRIMER DOCUMENTO '$limit: 1'
