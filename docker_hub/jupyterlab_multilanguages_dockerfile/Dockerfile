@@ -55,6 +55,9 @@ RUN pip install apache-beam[interactive]==2.48.0
 RUN pip install Faker==18.11.1 
 RUN pip install itables==1.5.3 
 RUN pip install panel==1.1.1
+RUN pip install mysql-connector-python==8.1.0
+RUN pip install psycopg2==2.9.7
+RUN pip install pymongo==4.4.1
 
 ARG VERSION_JAVA_KERNEL=1.3.0
 # Install kernel for Java in JupyterLab
@@ -78,6 +81,12 @@ RUN curl -Lo coursier https://git.io/coursier-cli
 RUN chmod +x coursier
 RUN ./coursier launch --fork almond -- --install
 RUN rm -f coursier
+RUN pip install --upgrade pip
+
+# COPIA LOS CONECTORES DE MONGO, POSTGRES Y MySQL para usar con SPARK
+COPY ./mongo-spark-connector_2.13-10.2.0.jar /usr/local/spark/jars
+COPY ./postgresql-42.6.0.jar /usr/local/spark/jars
+COPY ./mysql-connector-j-8.0.33.jar /usr/local/spark/jars
 
 # Configurar variables de entorno
 ENV SPARK_HOME=/usr/local/spark
@@ -96,5 +105,5 @@ CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-r
 
 # docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
 
-# docker build -t jorgecardona/jupyterlabmultilanguages:v1 .
+# docker build -t jorgecardona/jupyterlabmultilanguages:v2 .
 # docker push jorgecardona/jupyterlabmultilanguages:v1
