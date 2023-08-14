@@ -26,7 +26,6 @@ RUN apt-get install r-base -y
 # Instala R Jupyter Kernel
 RUN echo 'install.packages(c("IRkernel"),repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R && Rscript /tmp/packages.R
 
-
 # actualiza los repositorios para instalar NODEJS
 RUN apt-get update
 
@@ -36,14 +35,15 @@ RUN apt-get install nodejs npm -y
 # instala el paquete de nodejs para ejecutar aplicaciones que necesiten de la maquina virtual de nodejs
 RUN npm install -g ijavascript 
 
-	
-ARG VERSION_SPARK_HADOOP=spark-3.4.1-bin-hadoop3-scala2.13
-
-RUN wget https://downloads.apache.org/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3-scala2.13.tgz && \
-    tar xvf spark-3.4.1-bin-hadoop3-scala2.13.tgz && \
-    mv spark-3.4.1-bin-hadoop3-scala2.13 /usr/local/spark && \
+# Install Spark
+ARG VERSION_SPARK_KERNEL=spark-3.4.1
+ARG VERSION_SCALA_KERNEL=scala2.13
+ARG VERSION_SPARK_HADOOP=${VERSION_SPARK_KERNEL}-bin-hadoop3-${VERSION_SCALA_KERNEL}
+RUN wget https://downloads.apache.org/spark/${VERSION_SPARK_KERNEL}/${VERSION_SPARK_HADOOP}.tgz && \
+    tar xvf ${VERSION_SPARK_HADOOP}.tgz && \
+    mv ${VERSION_SPARK_HADOOP} /usr/local/spark && \
     ln -s /usr/local/spark /spark && \
-    rm spark-3.4.1-bin-hadoop3-scala2.13.tgz
+    rm ${VERSION_SPARK_HADOOP}.tgz
 	
 	
 # Install JupyterLab and PySpark
