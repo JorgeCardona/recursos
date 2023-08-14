@@ -37,19 +37,19 @@ RUN apt-get install nodejs npm -y
 RUN npm install -g ijavascript 
 
 	
-ARG VERSION_SPARK_HADOOP=spark-3.4.0-bin-hadoop3-scala2.13
+ARG VERSION_SPARK_HADOOP=spark-3.4.1-bin-hadoop3-scala2.13
 
-RUN wget https://downloads.apache.org/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3-scala2.13.tgz && \
-    tar xvf spark-3.4.0-bin-hadoop3-scala2.13.tgz && \
-    mv spark-3.4.0-bin-hadoop3-scala2.13 /usr/local/spark && \
+RUN wget https://downloads.apache.org/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3-scala2.13.tgz && \
+    tar xvf spark-3.4.1-bin-hadoop3-scala2.13.tgz && \
+    mv spark-3.4.1-bin-hadoop3-scala2.13 /usr/local/spark && \
     ln -s /usr/local/spark /spark && \
-    rm spark-3.4.0-bin-hadoop3-scala2.13.tgz
+    rm spark-3.4.1-bin-hadoop3-scala2.13.tgz
 	
 	
 # Install JupyterLab and PySpark
 RUN pip install jupyterlab==3.6.4
 RUN pip install jupyterlab-git==0.41.0 
-RUN pip install pyspark==3.4.0 
+RUN pip install pyspark==3.4.1
 RUN pip install pandas==1.5.3 
 RUN pip install apache-beam[interactive]==2.48.0 
 RUN pip install Faker==18.11.1 
@@ -105,5 +105,5 @@ CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-r
 
 # docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
 
-# docker build -t jorgecardona/jupyterlabmultilanguages:v2 .
+# docker build -t jorgecardona/jupyterlabmultilanguages:v1 .
 # docker push jorgecardona/jupyterlabmultilanguages:v1
