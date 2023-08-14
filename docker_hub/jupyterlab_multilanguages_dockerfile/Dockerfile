@@ -9,17 +9,16 @@ ARG VERSION_JAVA=openjdk-17-jdk
 # Install OpenJDK 17
 RUN apt-get update && apt-get install -y ${VERSION_JAVA}
 
-	
-ARG VERSION_SCALA=2.13.6
 # Download and install Scala
-RUN curl -O https://downloads.lightbend.com/scala/2.13.6/scala-2.13.6.tgz && \
-    tar -xzf scala-2.13.6.tgz && \
-    mv scala-2.13.6 /usr/local/share/scala && \
+ARG VERSION_SCALA=2.13.10
+ARG VERSION_SCALA_KERNEL=scala-${VERSION_SCALA}
+RUN curl -O https://downloads.lightbend.com/scala/${VERSION_SCALA}/${VERSION_SCALA_KERNEL}.tgz && \
+    tar -xzf ${VERSION_SCALA_KERNEL}.tgz && \
+    mv ${VERSION_SCALA_KERNEL} /usr/local/share/scala && \
     ln -s /usr/local/share/scala/bin/scala /usr/local/bin/scala && \
     ln -s /usr/local/share/scala/bin/scalac /usr/local/bin/scalac && \
-    rm scala-2.13.6.tgz
+    rm ${VERSION_SCALA_KERNEL}.tgz
 	
-
 # Instala lenguaje R
 RUN apt-get install r-base -y
 
@@ -37,8 +36,8 @@ RUN npm install -g ijavascript
 
 # Install Spark
 ARG VERSION_SPARK_KERNEL=spark-3.4.1
-ARG VERSION_SCALA_KERNEL=scala2.13
-ARG VERSION_SPARK_HADOOP=${VERSION_SPARK_KERNEL}-bin-hadoop3-${VERSION_SCALA_KERNEL}
+ARG VERSION_SCALA_KERNEL_SPARK=scala2.13
+ARG VERSION_SPARK_HADOOP=${VERSION_SPARK_KERNEL}-bin-hadoop3-${VERSION_SCALA_KERNEL_SPARK}
 RUN wget https://downloads.apache.org/spark/${VERSION_SPARK_KERNEL}/${VERSION_SPARK_HADOOP}.tgz && \
     tar xvf ${VERSION_SPARK_HADOOP}.tgz && \
     mv ${VERSION_SPARK_HADOOP} /usr/local/spark && \
