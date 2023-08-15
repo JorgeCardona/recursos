@@ -4,7 +4,7 @@ FROM python:3.11.4
 # etiqueta creador de la imagen
 LABEL maintainer="Jorge Cardona"
 
-
+# Instala Java
 ARG VERSION_JAVA=openjdk-17-jdk
 # Install OpenJDK 17
 RUN apt-get update && apt-get install -y ${VERSION_JAVA}
@@ -57,6 +57,7 @@ RUN pip install panel==1.1.1
 RUN pip install mysql-connector-python==8.1.0
 RUN pip install psycopg2==2.9.7
 RUN pip install pymongo==4.4.1
+RUN pip install --upgrade pip
 
 ARG VERSION_JAVA_KERNEL=1.3.0
 # Install kernel for Java in JupyterLab
@@ -80,7 +81,6 @@ RUN curl -Lo coursier https://git.io/coursier-cli
 RUN chmod +x coursier
 RUN ./coursier launch --fork almond -- --install
 RUN rm -f coursier
-RUN pip install --upgrade pip
 
 # COPIA LOS CONECTORES DE MONGO, POSTGRES Y MySQL para usar con SPARK
 COPY ./mongo-spark-connector_2.13-10.2.0.jar /usr/local/spark/jars
