@@ -46,14 +46,14 @@ RUN wget https://downloads.apache.org/spark/${VERSION_SPARK_KERNEL}/${VERSION_SP
 	
 	
 # Install JupyterLab and PySpark
-RUN pip install jupyterlab==3.6.4
-RUN pip install jupyterlab-git==0.41.0 
+RUN pip install jupyterlab==4.0.5
+RUN pip install jupyterlab-git==0.42.0 
 RUN pip install pyspark==3.4.1
 RUN pip install pandas==1.5.3 
 RUN pip install apache-beam[interactive]==2.48.0 
-RUN pip install Faker==18.11.1 
+RUN pip install Faker==19.3.0 
 RUN pip install itables==1.5.3 
-RUN pip install panel==1.1.1
+RUN pip install panel==1.2.1
 RUN pip install mysql-connector-python==8.1.0
 RUN pip install psycopg2==2.9.7
 RUN pip install pymongo==4.4.1

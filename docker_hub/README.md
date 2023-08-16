@@ -2,13 +2,13 @@
 
 | Package | Version|
 |-------------|--------|
-| jupyterlab | 3.6.4 |
-| jupyterlab-git | 0.41.0 |
+| jupyterlab | 4.0.5 |
+| jupyterlab-git | 0.42.0 |
 | pyspark | 3.4.1 |
 | pandas | 1.5.3 |
 | apache-beam[interactive] | 2.48.0 |
-| panel| 1.1.1|
-| Faker | 18.11.1 |
+| panel| 1.2.1 |
+| Faker | 19.3.0 |
 | itables | 1.5.3 |
 | mysql-connector-python | 8.1.0|
 | psycopg2 | 2.9.7 |
@@ -97,7 +97,7 @@ init_notebook_mode(all_interactive=True)
 <img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/running_spark.png?raw=true"/>
 
 ## 🐍access to sparkUI Running directly Apache Spark ```http://localhost:4040```  <a href=" http://localhost:4040" target="_blank">CLICK HERE </a>🐍
-<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/soark_ui.png?raw=true"/>
+<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/spark_ui.png?raw=true"/>
 
 ### ADDED SUPPORT TO CONNECT SPARK FOR EXTRACTION DATA FROM MySQL, MongoDB, AND PostgreSQL
 # PING to databases MySQL, MongoDB, PostgreSQL
