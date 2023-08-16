@@ -294,32 +294,10 @@ def get_database_configuration(database_type = 'mysql', host = None, port = None
     }
     
     return databases.get(database_type.lower(), databases.get('mysql'))
+```
 
-
-def read_data_from_database(database_type = 'mysql', host = None, port = None, database = None, table = None, user = None, password = None, input_collection = None, output_collection = None):
-    
-    database_configuration = get_database_configuration(database_type = database_type, host = host, port = port, database = database, table = table, user = user, password = password, input_collection = input_collection, output_collection = output_collection)
-    
-    spark_instance = database_configuration.get('spark_session_read')
-    properties = database_configuration.get('properties')
-    spark = database_configuration.get('spark_session')
-    url = database_configuration.get('url')
-    
-    table = database_configuration.get('table')
-    
-    if database_configuration.get('schema'):
-        table = f"{database_configuration.get('schema')}.{database_configuration.get('table')}"
-
-    
-    spark_dataframe = spark_instance.read.jdbc(url=url, table=table, properties=properties)
-    
-    result = spark_dataframe.toPandas()
-    
-    spark_instance.stop()
-    
-    return result
-
-
+# TEST DATABASES INSERT DATA
+```
 def insert_data_to_database(database_configuration):
     
     app_name = database_configuration.get('app_name')
@@ -359,7 +337,7 @@ def insert_data_to_database(database_configuration):
     
     return 'Records Inserted Successfully in {app_name}'.format(app_name=app_name)
 ```
-# TEST DATABASES INSERT DATA
+
 ## MYSQL
 ```
 # GET DATABASE CONFIGURATION
@@ -379,6 +357,32 @@ insert_data_to_database(postgres_configuration)
 ```
 
 # TEST DATABASES READ DATA
+
+```
+def read_data_from_database(database_type = 'mysql', host = None, port = None, database = None, table = None, user = None, password = None, input_collection = None, output_collection = None):
+    
+    database_configuration = get_database_configuration(database_type = database_type, host = host, port = port, database = database, table = table, user = user, password = password, input_collection = input_collection, output_collection = output_collection)
+    
+    spark_instance = database_configuration.get('spark_session_read')
+    properties = database_configuration.get('properties')
+    spark = database_configuration.get('spark_session')
+    url = database_configuration.get('url')
+    
+    table = database_configuration.get('table')
+    
+    if database_configuration.get('schema'):
+        table = f"{database_configuration.get('schema')}.{database_configuration.get('table')}"
+
+    
+    spark_dataframe = spark_instance.read.jdbc(url=url, table=table, properties=properties)
+    
+    result = spark_dataframe.toPandas()
+    
+    spark_instance.stop()
+    
+    return result
+```
+
 ## MYSQL
 ```
 read_data_from_database(database_type = 'mysql')
