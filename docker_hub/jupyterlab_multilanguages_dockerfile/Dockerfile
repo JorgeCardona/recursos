@@ -46,7 +46,7 @@ RUN wget https://downloads.apache.org/spark/${VERSION_SPARK_KERNEL}/${VERSION_SP
 	
 	
 # Install JupyterLab and PySpark
-RUN pip install jupyterlab==4.0.5
+RUN pip install jupyterlab==3.6.5
 RUN pip install jupyterlab-git==0.42.0 
 RUN pip install pyspark==3.4.1
 RUN pip install pandas==1.5.3 

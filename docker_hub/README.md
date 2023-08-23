@@ -2,7 +2,7 @@
 
 | Package | Version|
 |-------------|--------|
-| jupyterlab | 4.0.5 |
+| jupyterlab | 3.6.5 |
 | jupyterlab-git | 0.42.0 |
 | pyspark | 3.4.1 |
 | pandas | 1.5.3 |
@@ -17,21 +17,15 @@
 |  <a href=" https://mvnrepository.com/artifact/org.postgresql/postgresql" target="_blank">JDBC postgresql.jar</a> |42.6.0|
 |  <a href=" https://mvnrepository.com/artifact/com.mysql/mysql-connector-j" target="_blank">JDBC mysql-connector-j.jar</a> |8.0.33|
 
-
-**to enable itables**
- ```
-from itables import init_notebook_mode
-init_notebook_mode(all_interactive=True)
- ```
-
 # EXAMPLES OF INSTALLED PACKAGES
 ## You can use the following examples for testing, just copy and paste the following code to test each package.
 
 | Package       | Description                                               | Advantages                                                   | Disadvantages                                               | Example                                                     |
 |---------------|-----------------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
-| pyspark       | Library for distributed processing with Apache Spark       | - Distributed and scalable processing                        | - Complex configuration and management                      | from pyspark.sql import SparkSession<br><br># Create a SparkSession<br>spark = SparkSession.builder.appName("JorgeCardonaSpark").getOrCreate()<br><br># Perform a simple DataFrame operation<br>data = [("Lucia", 10),("Tatiana", 15),("Angela", 20),("Alice", 25), ("Bob", 30), ("Charlie", 35)]<br>df = spark.createDataFrame(data, ["Name", "Age"])<br>df.show() <br>spark.stop()|
-| pandas        | Library for data manipulation and analysis                | - Efficient data manipulation and analysis functions         | - Limitations in handling large volumes of data              | `import pandas as pd`<br>`data = {'Name': ['Nathalie','Gabriela','John', 'Jane', 'Mike', 'Ana', 'Cecilia', 'Diana'], 'Age': [0, 5, 10, 15, 20, 25, 30, 35]}`<br>`df = pd.DataFrame(data)`<br>`print(df)` |
-| apache-beam   | Programming model for data processing                     | - High-level abstraction for data processing                 | - Requires knowledge of parallel programming                 | import apache_beam as beam<br><br>def to_uppercase(element):<br>&nbsp;&nbsp;&nbsp;&nbsp;return element.upper()<br><br>def calculate_length(element):<br>&nbsp;&nbsp;&nbsp;&nbsp;return len(element)<br><br>def calculate_square(element):<br>&nbsp;&nbsp;&nbsp;&nbsp;return element ** 2<br><br>with beam.Pipeline() as pipeline:<br>&nbsp;&nbsp;&nbsp;&nbsp;data = pipeline \| beam.Create(["hello", "world", "apache", "beam"])<br>&nbsp;&nbsp;&nbsp;&nbsp;uppercase_data = data \| beam.Map(to_uppercase)<br>&nbsp;&nbsp;&nbsp;&nbsp;length_data = data \| beam.Map(calculate_length)<br>&nbsp;&nbsp;&nbsp;&nbsp;square_data = length_data \| beam.Map(calculate_square)<br>&nbsp;&nbsp;&nbsp;&nbsp;uppercase_data \| "Show_Uppercase" >> beam.Map(print)<br>&nbsp;&nbsp;&nbsp;&nbsp;length_data \| "Show_Length" >> beam.Map(print)<br>&nbsp;&nbsp;&nbsp;&nbsp;square_data \| "Show_Square" >> beam.Map(print) |
+| itables | Library for tabular data manipulation in Python. | SQL-like syntax for querying.<br>- Integration with Python and pandas.<br>- Efficient handling of large datasets.<br>- Simplified tabular data manipulation. | May be less efficient for advanced operations compared to specialized libraries.<br>- Documentation can be limited.<br>- Less optimized than traditional databases.|# **to enable itables**<br>from itables import init_notebook_mode<br>init_notebook_mode(all_interactive=True)|
+| pyspark       | Library for distributed processing with Apache Spark       | - Distributed and scalable processing                        | - Complex configuration and management                      | from pyspark.sql import SparkSession<br><br># Create a SparkSession<br>spark = SparkSession.builder.appName("JorgeCardonaSpark").getOrCreate()<br><br># Perform a simple DataFrame operation<br>data = [('Nathalie', 0), ('Ana', 3), ('Diana', 7), ('Lucia', 10), ('Tatiana', 13), ('Angela', 17), ('Cecilia', 25), ('Alice', 31), ('Kristin', 35), ('Carolina', 37), ('Lina', 39), ('Marcela', 40), ('Maria', 42)]<br><br># Create a Dataframe<br>df = spark.createDataFrame(data, ["Name", "Age"])<br>df.show() <br>spark.stop()|
+| pandas        | Library for data manipulation and analysis                | - Efficient data manipulation and analysis functions         | - Limitations in handling large volumes of data              | import pandas as pd<br><br>data = {<br>&nbsp;&nbsp;&nbsp;&nbsp;'Name': ["Nathalie", "Ana", "Diana", "Lucia", "Tatiana", "Angela", "Cecilia", "Alice", "Kristin", "Carolina", "Lina", "Marcela", "Maria"],<br>&nbsp;&nbsp;&nbsp;&nbsp;'Age': [0, 3, 7, 10, 13, 17, 25, 31, 35, 37, 39, 40, 42]<br>}<br>df = pd.DataFrame(data)<br>df |
+| apache-beam   | Programming model for data processing                     | - High-level abstraction for data processing                 | - Requires knowledge of parallel programming                 | import apache_beam as beam<br><br>def regular_case_function(element):<br>&nbsp;&nbsp;&nbsp;&nbsp;return element.lower()<br><br>def to_uppercase_function(element):<br>&nbsp;&nbsp;&nbsp;&nbsp;return element.upper()<br><br>def calculate_length_function(element):<br>&nbsp;&nbsp;&nbsp;&nbsp;return len(element)<br><br>def calculate_square_function(element):<br>&nbsp;&nbsp;&nbsp;&nbsp;return element ** 2<br><br># Create a pipeline<br>with beam.Pipeline() as pipeline:<br>&nbsp;&nbsp;&nbsp;&nbsp;# Prepare a list of names to be processed<br>&nbsp;&nbsp;&nbsp;&nbsp;names_list = ["Nathalie", "Ana", "Diana", "Lucia", "Tatiana", "Angela", "Cecilia", "Alice", "Kristin", "Carolina", "Lina", "Marcela", "Maria"]<br><br>&nbsp;&nbsp;&nbsp;&nbsp;# Create a PCollection with the given data<br>&nbsp;&nbsp;&nbsp;&nbsp;data = pipeline \| beam.Create(names_list)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;# Apply transformation functions to the data<br>&nbsp;&nbsp;&nbsp;&nbsp;regular_case_data = data \| beam.Map(regular_case_function)  # Transform to lowercase<br>&nbsp;&nbsp;&nbsp;&nbsp;uppercase_data = data \| beam.Map(to_uppercase_function)  # Transform to uppercase<br>&nbsp;&nbsp;&nbsp;&nbsp;length_data = data \| beam.Map(calculate_length_function)  # Apply transformation to calculate the length of each name<br>&nbsp;&nbsp;&nbsp;&nbsp;square_data = length_data \| beam.Map(calculate_square_function)  # Apply transformation to calculate the square<br><br>&nbsp;&nbsp;&nbsp;&nbsp;# Print the results of each transformation<br>&nbsp;&nbsp;&nbsp;&nbsp;length_data \| "Show_Length" >> beam.Map(print)  # Print length results<br>&nbsp;&nbsp;&nbsp;&nbsp;regular_case_data \| "Show_Lowercase" >> beam.Map(print)  # Print lowercase results<br>&nbsp;&nbsp;&nbsp;&nbsp;uppercase_data \| "Show_Uppercase" >> beam.Map(print)  # Print uppercase results<br>&nbsp;&nbsp;&nbsp;&nbsp;square_data \| "Show_Square" >> beam.Map(print)  # Print square results |
 | Faker         | Library for generating simulated data                      | - Easy generation of simulated data                          | - Not suitable for production environments                   | `from faker import Faker`<br>`fake = Faker()`<br>`name = fake.name()`<br>`print(name)` |
 | Panel         | Library for creating interactive dashboards and apps       | - Powerful dashboard and app creation capabilities           | - Requires learning the Panel library                        | import panel as pn<br><br>def model(n=5):<br>&nbsp;&nbsp;&nbsp;&nbsp;return "⭐"*n<br><br>pn.extension()<br><br>slider = pn.widgets.IntSlider(value=5, start=1, end=5)<br><br>interactive_model = pn.bind(model, n=slider)<br><br>layout = pn.Column(slider, interactive_model)<br><br>app = pn.serve(layout, port=5006, show=True)<br><br> #app.stop() <br><br> # ✨ Panel UI APP ```http://localhost:5006```  <a href=" http://localhost:5006" target="_blank">CLICK HERE </a>✨
 |
@@ -71,7 +65,7 @@ init_notebook_mode(all_interactive=True)
 | Aplication| Port|
 |-------------|--------|
 | JupyterLab  | 8888   |
-| Apache Spark| 4040   |
+| Apache Spark UI| 4040   |
 | Panel       | 5006   |
 | Node.js     | 3000   |
 
