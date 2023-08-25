@@ -1,5 +1,7 @@
 # Base image
-FROM python:3.11.4
+# FROM python:3.11.4
+# FROM python:3.9.17
+FROM python:3.10.12
 
 # etiqueta creador de la imagen
 LABEL maintainer="Jorge Cardona"
