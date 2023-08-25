@@ -1,4 +1,4 @@
-# INSTALAR UN PAQUETE SI NO EXISTE.
+# INSTALAR UN PAQUETE SI NO EXISTE
 ```python
 import importlib
 
