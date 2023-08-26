@@ -1,5 +1,7 @@
 # Base image
-FROM python:3.11.4
+# FROM python:3.11.4
+# FROM python:3.9.17
+FROM python:3.10.13
 
 # etiqueta creador de la imagen
 LABEL maintainer="Jorge Cardona"
@@ -102,7 +104,7 @@ EXPOSE 8888 4040 5006 3000
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
+# docker run --name labmultilanguage1 --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
 
 # docker build -t jorgecardona/jupyterlabmultilanguages:v1 .
 # docker push jorgecardona/jupyterlabmultilanguages:v1
