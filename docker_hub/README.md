@@ -1,3 +1,30 @@
+# Available Kernels and Languages
+
+<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/jupyterlab%20multilenguajes.png?raw=true"/>
+
+## Here is a table with the version of tools from previous Image:
+
+| Tool | Version|
+|-------------|--------|
+| Python | 3.11.4 |
+| Java | 17.0.8 |
+| Scala | 2.13.10 |
+| GIT | 2.39.2 |
+| Node.js | 18.13.0 |
+| Kotlin | 1.3.31 |
+| Apache Spark| 3.4.1|
+| R | 4.2.2 |
+
+# EXAMPLES BY LANGUAGE
+
+| Language   | Example                                                                                     |
+|-----------|---------------------------------------------------------------------------------------------|
+| Java      | public class Main {<br>&nbsp;&nbsp;&nbsp;&nbsp;public static void greeting() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello, Java!");<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br> Main.greeting();|
+| Node.js   |const http = require('http');<br><br>// Create the server<br>const server = http.createServer((req, res) => {<br>&nbsp;&nbsp;&nbsp;&nbsp;// Configure the server response<br>&nbsp;&nbsp;&nbsp;&nbsp;res.statusCode = 200;<br>&nbsp;&nbsp;&nbsp;&nbsp;res.setHeader('Content-Type', 'text/plain');<br>&nbsp;&nbsp;&nbsp;&nbsp;res.end('Hello, from JupyterLab Container!');<br>});<br><br>// Define the port on which the server will run<br>const port = 3000;<br><br>// Start the server<br>server.listen(port, () => {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Node.js server is running at http://localhost:' + port + '/');<br>});<br> |
+| Kotlin    |fun main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;// Print "Hello, Kotlin!"<br>&nbsp;&nbsp;&nbsp;&nbsp;println("Hello, Kotlin!")<br><br>&nbsp;&nbsp;&nbsp;&nbsp;// Define a function to calculate the square of a number<br>&nbsp;&nbsp;&nbsp;&nbsp;fun calculateSquare(number: Int): Int {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number * number<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;// Use the function to calculate the square of 5<br>&nbsp;&nbsp;&nbsp;&nbsp;val result = calculateSquare(5)<br>&nbsp;&nbsp;&nbsp;&nbsp;println("Square of 5: \$result")<br>}<br> main()|
+| R         |# Print "Hello, R!"<br>cat("Hello, R!\n")<br><br># Define a function to calculate the square of a number<br>calculateSquare <- function(number) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return (number * number)<br>}<br><br># Use the function to calculate the square of 5<br>result <- calculateSquare(5)<br>cat("Square of 5: ", result, "\n")<br> |
+| Scala     | // Print "Hello, Scala!"<br>println("Hello, Scala!")<br><br>// Define a function to calculate the square of a number<br>def calculateSquare(number: Int): Int = {<br>&nbsp;&nbsp;&nbsp;&nbsp;number * number<br>}<br><br>// Use the function to calculate the square of 5<br>val result = calculateSquare(5)<br><br>// Print the result<br>println("The square of 5 is: " + result)<br> |
+
 # Packages Installed
 
 | Package | Version|
@@ -29,33 +56,6 @@
 | Faker         | Library for generating simulated data                      | - Easy generation of simulated data                          | - Not suitable for production environments                   | `from faker import Faker`<br>`fake = Faker()`<br>`name = fake.name()`<br>`print(name)` |
 | Panel         | Library for creating interactive dashboards and apps       | - Powerful dashboard and app creation capabilities           | - Requires learning the Panel library                        | import panel as pn<br><br>def model(n=5):<br>&nbsp;&nbsp;&nbsp;&nbsp;return "⭐"*n<br><br>pn.extension()<br><br>slider = pn.widgets.IntSlider(value=5, start=1, end=5)<br><br>interactive_model = pn.bind(model, n=slider)<br><br>layout = pn.Column(slider, interactive_model)<br><br>app = pn.serve(layout, port=5006, show=True)<br><br> #app.stop() <br><br> # ✨ Panel UI APP ```http://localhost:5006```  <a href=" http://localhost:5006" target="_blank">CLICK HERE </a>✨
 |
-
-# Available Kernels and Languages
-
-<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/jupyterlab%20multilenguajes.png?raw=true"/>
-
-## Here is a table with the version of tools from previous Image:
-
-| Tool | Version|
-|-------------|--------|
-| Python | 3.11.4 |
-| Java | 17.0.8 |
-| Scala | 2.13.10 |
-| GIT | 2.39.2 |
-| Node.js | 18.13.0 |
-| Kotlin | 1.3.31 |
-| Apache Spark| 3.4.1|
-| R | 4.2.2 |
-
-# EXAMPLES BY LANGUAGE
-
-| Language   | Example                                                                                     |
-|-----------|---------------------------------------------------------------------------------------------|
-| Java      | public class Main {<br>&nbsp;&nbsp;&nbsp;&nbsp;public static void greeting() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello, Java!");<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br> Main.greeting();|
-| Node.js   |const http = require('http');<br><br>// Create the server<br>const server = http.createServer((req, res) => {<br>&nbsp;&nbsp;&nbsp;&nbsp;// Configure the server response<br>&nbsp;&nbsp;&nbsp;&nbsp;res.statusCode = 200;<br>&nbsp;&nbsp;&nbsp;&nbsp;res.setHeader('Content-Type', 'text/plain');<br>&nbsp;&nbsp;&nbsp;&nbsp;res.end('Hello, from JupyterLab Container!');<br>});<br><br>// Define the port on which the server will run<br>const port = 3000;<br><br>// Start the server<br>server.listen(port, () => {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Node.js server is running at http://localhost:${port}/');<br>});<br> |
-| Kotlin    |fun main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;// Print "Hello, Kotlin!"<br>&nbsp;&nbsp;&nbsp;&nbsp;println("Hello, Kotlin!")<br><br>&nbsp;&nbsp;&nbsp;&nbsp;// Define a function to calculate the square of a number<br>&nbsp;&nbsp;&nbsp;&nbsp;fun calculateSquare(number: Int): Int {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number * number<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;// Use the function to calculate the square of 5<br>&nbsp;&nbsp;&nbsp;&nbsp;val result = calculateSquare(5)<br>&nbsp;&nbsp;&nbsp;&nbsp;println("Square of 5: \$result")<br>}<br> main()|
-| R         |# Print "Hello, R!"<br>cat("Hello, R!\n")<br><br># Define a function to calculate the square of a number<br>calculateSquare <- function(number) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return (number * number)<br>}<br><br># Use the function to calculate the square of 5<br>result <- calculateSquare(5)<br>cat("Square of 5: ", result, "\n")<br> |
-| Scala     | // Print "Hello, Scala!"<br>println("Hello, Scala!")<br><br>// Define a function to calculate the square of a number<br>def calculateSquare(number: Int): Int = {<br>&nbsp;&nbsp;&nbsp;&nbsp;number * number<br>}<br><br>// Use the function to calculate the square of 5<br>val result = calculateSquare(5)<br><br>// Print the result<br>println("The square of 5 is: " + result)<br> |
 
 # ⚠️ For this image, it is **not necessary to use the token** to access the notebooks ⚠️
 # How to run the image.
@@ -105,6 +105,13 @@
 
 # DOCKER FOR MongoDB
 ###  `docker run --name jorgecardona-mongodb --rm -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=12345678 mongodb/mongodb-community-server:6.0.7-ubuntu2204-20230812T065949Z`
+
+# TEST databases Access using ClouDBeaver
+# DOCKER FOR ClouDBeaver
+###  `docker run --name jorgecardona-cloudbeaver --rm -ti -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver:23.2.0`
+
+<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/running_spark.png?raw=true"/>
+
 
 # STRING CONNECTION FOR MONGO DB
 # `mongodb://admin:12345678@localhost:27017`
@@ -389,9 +396,9 @@ read_data_from_database(database_type = 'postgres')
 
 ## stop the container
 docker stop CONTAINER_ID or NAME
-## docker stop labmultilanguage  jorgecardona-postgres  jorgecardona-mysql  jorgecardona-mongodb
+## docker stop labmultilanguage  jorgecardona-postgres  jorgecardona-mysql  jorgecardona-mongodb jorgecardona-cloudbeaver
 
- ## re start stopped container or NAME
+## re start stopped container or NAME
 docker start -i CONTAINER_ID
 # docker start -i labmultilanguage 
 
