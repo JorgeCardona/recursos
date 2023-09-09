@@ -110,7 +110,7 @@
 # DOCKER FOR ClouDBeaver
 ###  `docker run --name jorgecardona-cloudbeaver --rm -ti -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver:23.2.0`
 
-<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/running_spark.png?raw=true"/>
+<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/CloudBeaver.png?raw=true"/>
 
 
 # STRING CONNECTION FOR MONGO DB
