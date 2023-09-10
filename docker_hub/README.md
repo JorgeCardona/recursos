@@ -106,10 +106,12 @@
 # DOCKER FOR MongoDB
 ###  `docker run --name jorgecardona-mongodb --rm -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=12345678 mongodb/mongodb-community-server:6.0.7-ubuntu2204-20230812T065949Z`
 
-# DOCKER FOR ClouDBeaver
+# TEST databases Access using ClouDBeaver
+## DOCKER FOR ClouDBeaver Enterprise Edition NoSQL and SQL ⌛license trial 14 days <a href="https://dbeaver.com/trial" target="_blank">CLICK HERE </a>⌛
+### `docker run --name jorgecardona-cloudbeaver -ti -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver-ee:23.1.0`
+# DOCKER FOR ClouDBeaver Comunity Edition does not require a license
 ###  `docker run --name jorgecardona-cloudbeaver --rm -ti -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver:23.2.0`
 
-# 👓 TEST databases Access using ClouDBeaver http://localhost:8978 CLICK HERE 👓
 <img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/CloudBeaver.png?raw=true"/>
 
 
