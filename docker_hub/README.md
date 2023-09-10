@@ -74,13 +74,13 @@
 
 
 ## 🔥If you want to just test the image and do not keep the container when you finish running the container use the next command:
-#### ``` docker run --name labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000  jorgecardona/jupyterlabmultilanguages:v1```
+#### ``` docker run --name jorgecardona-labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000  jorgecardona/jupyterlabmultilanguages:v1```
 
 # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PERSISTENT CONTAINER
 
 
 ## 💦If you want to keep the container, save the notebooks, and continue working on this container use the next command:💦
-#### ``` docker run --name labmultilanguage -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1```
+#### ``` docker run --name jorgecardona-labmultilanguage -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1```
 
 # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACCESS TO JUPYTER LAB AND SPARK UI 
 
@@ -108,12 +108,12 @@
 
 # TEST databases Access using ClouDBeaver
 ## DOCKER FOR ClouDBeaver Enterprise Edition NoSQL and SQL ⌛license trial 14 days <a href="https://dbeaver.com/trial" target="_blank">CLICK HERE </a>⌛
-### `docker run --name jorgecardona-cloudbeaver -ti -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver-ee:23.1.0`
+### `docker run --name jorgecardona-cloudbeaver --rm -d -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver-ee:23.1.0`
 
 <img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/CloudBeaver.png?raw=true"/>
 
 # DOCKER FOR ClouDBeaver Comunity Edition does not require a license
-###  `docker run --name jorgecardona-cloudbeaver --rm -ti -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver:23.2.0`
+###  `docker run --name jorgecardona-cloudbeaver --rm -d -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver:23.2.0`
 
 # STRING CONNECTION FOR MONGO DB
 # `mongodb://admin:12345678@localhost:27017`
@@ -398,15 +398,15 @@ read_data_from_database(database_type = 'postgres')
 
 ## stop the container
 docker stop CONTAINER_ID or NAME
-## docker stop labmultilanguage  jorgecardona-postgres  jorgecardona-mysql  jorgecardona-mongodb jorgecardona-cloudbeaver
+## docker stop jorgecardona-labmultilanguage  jorgecardona-postgres  jorgecardona-mysql  jorgecardona-mongodb jorgecardona-cloudbeaver
 
 ## re start stopped container or NAME
 docker start -i CONTAINER_ID
-# docker start -i labmultilanguage 
+# docker start -i jorgecardona-labmultilanguage 
 
 ## remove container
 docker rm CONTAINER_ID
-# docker rm labmultilanguage 
+# docker rm jorgecardona-labmultilanguage 
 
 
 ## 🐳 ```Original Dockerfile for this image```  <a href=" https://raw.githubusercontent.com/JorgeCardona/recursos/main/docker_hub/jupyterlab_multilanguages_dockerfile/Dockerfile" target="_blank">CLICK HERE </a>🐳
