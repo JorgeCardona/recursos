@@ -97,26 +97,25 @@
 # PING to databases MySQL, MongoDB, PostgreSQL
 # USE TEMPORAL DOCKER IMAGES FOR TESTING,  delete  *--rm* on docker command to do persistent databases
 
-# DOCKER FOR PostgreSQL
+# DOCKER FOR PostgreSQL, MySQL, MongoDB
 ##  `docker run --name jorgecardona-postgres --rm -e POSTGRES_DB=spark -e POSTGRES_PASSWORD=12345678 -e POSTGRES_USER=admin -d -p 5432:5432 postgres:15.4`
 
-# DOCKER FOR MySQL
 ##  `docker run --name jorgecardona-mysql --rm -e MYSQL_DATABASE=spark -e MYSQL_PASSWORD=12345678 -e MYSQL_USER=admin -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3306 mysql:8.1.0`
 
-# DOCKER FOR MongoDB
 ###  `docker run --name jorgecardona-mongodb --rm -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=12345678 mongodb/mongodb-community-server:6.0.7-ubuntu2204-20230812T065949Z`
 
 # TEST databases Access using ClouDBeaver
 ## DOCKER FOR ClouDBeaver Enterprise Edition NoSQL and SQL ⌛license trial 14 days <a href="https://dbeaver.com/trial" target="_blank">CLICK HERE </a>⌛
 ### `docker run --name jorgecardona-cloudbeaver --rm -d -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver-ee:23.1.0`
 
+# 🎧 Access to ClouDBeaver Interface Enterprise Edition or Comunity Edition <a href="http://localhost:8978" target="_blank">CLICK HERE </a> 🎧
+
 <img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/CloudBeaver.png?raw=true"/>
 
 # DOCKER FOR ClouDBeaver Comunity Edition does not require a license
 ###  `docker run --name jorgecardona-cloudbeaver --rm -d -p 8978:8978 -v /var/cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver:23.2.0`
 
-# STRING CONNECTION FOR MONGO DB
-# `mongodb://admin:12345678@localhost:27017`
+# STRING CONNECTION FOR MONGO DB -> `mongodb://admin:12345678@localhost:27017`
 
 # CODE FOR TESTING CONNECTION TO DATABASES
 ```
@@ -407,6 +406,5 @@ docker start -i CONTAINER_ID
 ## remove container
 docker rm CONTAINER_ID
 # docker rm jorgecardona-labmultilanguage 
-
 
 ## 🐳 ```Original Dockerfile for this image```  <a href=" https://raw.githubusercontent.com/JorgeCardona/recursos/main/docker_hub/jupyterlab_multilanguages_dockerfile/Dockerfile" target="_blank">CLICK HERE </a>🐳
