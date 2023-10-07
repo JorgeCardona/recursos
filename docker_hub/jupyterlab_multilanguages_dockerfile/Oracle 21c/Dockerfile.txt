@@ -1,0 +1,6 @@
+# Construye la imagen usando el repositorio de Oracle
+./buildContainerImage.sh -v 21.3.0 -x -t jorgecardona/oracle21c:xe
+
+# Corre la imagen Temporal
+# docker run -d --name jorgecardona-oracle --rm -e ORACLE_PASSWORD=12345678 -p 1521:1521 jorgecardona/oracle21c:xe
+
