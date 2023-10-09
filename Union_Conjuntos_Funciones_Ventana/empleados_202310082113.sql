@@ -20,7 +20,7 @@ FROM Empleados
 ORDER BY APELLIDO;
 */
 
-CREATE TABLE public.empleados (
+CREATE TABLE empleados (
 	id int4 NOT NULL,
 	nombre varchar(255) NOT NULL,
 	apellido varchar(255) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE public.empleados (
 	CONSTRAINT empleados_pkey PRIMARY KEY (id)
 );
 
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (12,'Elena','Gómez',35,2,'azul',2),
 	 (13,'Fernando','Sánchez',49,3,'rosado',3),
 	 (14,'Patricia','Martínez',22,4,'amarillo',4),
@@ -42,7 +42,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (20,'Andrea','López',44,5,'rojo',5),
 	 (21,'Luisa','González',31,1,'verde',1),
 	 (22,'Raúl','Hernández',30,2,'azul',2);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (23,'Cecilia','Martínez',20,3,'rosado',3),
 	 (25,'Laura','Sánchez',34,5,'rojo',5),
 	 (26,'Pablo','Gómez',23,1,'verde',1),
@@ -53,7 +53,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (31,'Natalia','Torres',34,1,'verde',1),
 	 (32,'Eduardo','Sánchez',41,2,'azul',2),
 	 (33,'Lucía','López',23,3,'rosado',3);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (35,'Paula','Gómez',27,5,'rojo',5),
 	 (36,'Francisco','Hernández',25,1,'verde',1),
 	 (37,'Sara','Ramírez',34,2,'azul',2),
@@ -64,7 +64,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (42,'Diana','Ramírez',26,2,'azul',2),
 	 (43,'Héctor','Fernández',34,3,'rosado',3),
 	 (44,'Lorena','Sánchez',46,4,'amarillo',4);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (45,'Federico','López',40,5,'rojo',5),
 	 (46,'Inés','González',46,1,'verde',1),
 	 (47,'Rafael','Martínez',34,2,'azul',2),
@@ -75,7 +75,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (52,'Beatriz','Ramírez',49,2,'azul',2),
 	 (53,'Oscar','Sánchez',27,3,'rosado',3),
 	 (54,'Valeria','Martínez',36,4,'amarillo',4);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (55,'Joaquín','López',42,5,'rojo',5),
 	 (56,'Camila','González',49,1,'verde',1),
 	 (57,'Lorenzo','Hernández',36,2,'azul',2),
@@ -86,7 +86,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (62,'Diana','Gómez',42,2,'azul',2),
 	 (63,'Héctor','Martínez',26,3,'rosado',3),
 	 (64,'Lorena','Fernández',43,4,'amarillo',4);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (65,'Federico','García',29,5,'rojo',5),
 	 (66,'Inés','López',20,1,'verde',1),
 	 (67,'Rafael','Ramírez',42,2,'azul',2),
@@ -97,7 +97,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (73,'Oscar','Fernández',41,3,'rosado',3),
 	 (74,'Valeria','Sánchez',25,4,'amarillo',4),
 	 (75,'Joaquín','García',37,5,'rojo',5);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (76,'Camila','López',32,1,'verde',1),
 	 (77,'Lorenzo','Ramírez',21,2,'azul',2),
 	 (78,'Paulina','Sánchez',38,3,'rosado',3),
@@ -108,7 +108,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (83,'Héctor','Sánchez',20,3,'rosado',3),
 	 (84,'Lorena','García',47,4,'amarillo',4),
 	 (85,'Federico','Martínez',29,5,'rojo',5);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (87,'Rafael','González',23,2,'azul',2),
 	 (88,'Adela','Hernández',24,3,'rosado',3),
 	 (89,'Mateo','Sánchez',45,4,'amarillo',4),
@@ -119,7 +119,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (94,'Valeria','Fernández',38,4,'amarillo',4),
 	 (95,'Joaquín','Sánchez',49,5,'rojo',5),
 	 (96,'Camila','García',45,1,'verde',1);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (97,'Lorenzo','Ramírez',47,2,'azul',2),
 	 (98,'Paulina','Hernández',25,3,'rosado',3),
 	 (99,'Manuel','Gómez',49,4,'amarillo',4),
@@ -130,7 +130,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (34,'Manuel','Fernández',22,4,'amarillo',4),
 	 (70,'Cristina','Fernández',22,5,'rojo',5),
 	 (86,'Inés','Díaz',30,1,'verde',1);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (1,'Juan','Pérez',39,1,'amarillo',1),
 	 (2,'María','Rodríguez',45,2,'azul',2),
 	 (3,'Carlos','González',49,3,'rojo',3),
@@ -141,7 +141,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (9,'Sergio','Ruiz',26,4,'verde',4),
 	 (10,'Ana','Torres',46,5,'rosado',5),
 	 (11,'David','López',39,1,'verde',1);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (7,'Pedro','Díaz',44,2,'azul',2),
 	 (102,'María','Rodríguez',46,2,'azul',2),
 	 (103,'Carlos','González',48,3,'rosado',3),
@@ -152,7 +152,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (109,'Sergio','Ruiz',33,4,'amarillo',4),
 	 (110,'Ana','Torres',22,5,'rojo',5),
 	 (111,'David','López',45,1,'verde',1);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (112,'Elena','Gómez',37,2,'azul',2),
 	 (113,'Fernando','Sánchez',40,3,'rosado',3),
 	 (114,'Patricia','Martínez',47,4,'amarillo',4),
@@ -163,7 +163,7 @@ INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favo
 	 (119,'Diego','Torres',41,4,'amarillo',4),
 	 (120,'Andrea','López',27,5,'rojo',5),
 	 (121,'Luisa','González',26,1,'verde',1);
-INSERT INTO public.empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
+INSERT INTO empleados (id,nombre,apellido,edad,id_departamento,color_favorito,id_region) VALUES
 	 (122,'Raúl','Hernández',35,2,'azul',2),
 	 (123,'Cecilia','Martínez',31,3,'rosado',3),
 	 (108,'Gabrilela','Díaz',22,3,'rosado',3);
