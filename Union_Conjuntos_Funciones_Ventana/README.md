@@ -42,6 +42,10 @@ db.tabla_uno.aggregate([
 ]);
 ```
 
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
+
 # LEFT JOIN
 ```mongodb
 const fieldMapping = {
@@ -83,6 +87,10 @@ db.tabla_uno.aggregate([
     projection
 ]);
 ```
+
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
 
 # ANTI LEFT JOIN
 ```mongodb
@@ -130,6 +138,9 @@ db.tabla_uno.aggregate([
 ]);
 ```
 
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
 
 # RIGHT JOIN
 ```mongodb
@@ -173,6 +184,9 @@ db.tabla_dos.aggregate([
 ]);
 ```
 
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
 
 # ANTI RIGHT JOIN
 ```mongodb
@@ -215,6 +229,9 @@ db.tabla_dos.aggregate([
 ]);
 ```
 
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
 
 # FULL JOIN
 ```mongodb
@@ -284,6 +301,10 @@ const fullJoinResult = leftJoin.concat(rightJoin);
 // Muestra o utiliza los resultados del FULL JOIN según sea necesario
 printjson(fullJoinResult);
 ```
+
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
 
 # ANTI FULL JOIN
 ```mongodb
@@ -355,6 +376,10 @@ const antiFullJoinResult = antileftJoin.toArray().concat(antirightJoin.toArray()
 printjson(antiFullJoinResult);
 ```
 
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
+
 # CROSS JOIN
 ```mongodb
 db.tabla_uno.aggregate([
@@ -385,6 +410,10 @@ db.tabla_uno.aggregate([
   }
 ]);
 ```
+
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
 
 # SELF JOIN
 ```mongodb
@@ -429,10 +458,9 @@ db.tabla_uno.aggregate([
 ]);
 ```
 
-# UNION
-```mongodb
-
-```
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
 
 # UNION ALL
 ```mongodb
