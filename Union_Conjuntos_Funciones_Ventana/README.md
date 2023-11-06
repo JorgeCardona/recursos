@@ -1,3 +1,4 @@
+# <center> MONGO DB JOINS
 # INNER JOIN
 ```mongodb
 const fieldMapping = {
