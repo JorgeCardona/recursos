@@ -1,4 +1,8 @@
 # <center> MONGO DB JOINS <center>
+<p align="center">
+  <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
+</p>
+
 # INNER JOIN
 ```mongodb
 const fieldMapping = {
