@@ -3,6 +3,16 @@
   <img src="./tablas.png" alt="Tablas base para Ejemplos Join">
 </p>
 
+# CREAR PIPELINE PASO A PASO
+<p align="center">
+  <img src="./mongodb_1.png" alt="Como crear pipeline pasao a paso">
+</p>
+
+# CREAR PIPELINE DIRECTAMENTE CON CODIGO
+<p align="center">
+  <img src="./mongodb_1.png" alt="Como creaar pipeline con codigo">
+</p>
+
 # INNER JOIN
 ```mongodb
 const fieldMapping = {
