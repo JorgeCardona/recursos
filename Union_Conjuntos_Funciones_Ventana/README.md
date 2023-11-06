@@ -5,7 +5,7 @@
 
 # CREAR PIPELINE PASO A PASO
 <p align="center">
-  <img src="./mongodb_1.png" alt="Como crear pipeline pasao a paso">
+  <img src="./mongodb_2.png" alt="Como crear pipeline pasao a paso">
 </p>
 
 # CREAR PIPELINE DIRECTAMENTE CON CODIGO
