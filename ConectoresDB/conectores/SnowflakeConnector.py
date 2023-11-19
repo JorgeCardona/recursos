@@ -1,32 +1,33 @@
-#pip install mysql-connector-python
+# pip install snowflake-connector-python
+from interfaces import IDataBaseSQLConnector
+import snowflake.connector
 
-from IDataBaseConnector import IDataBaseConnector
-import mysql.connector
-
-class MySQLConnector(IDataBaseConnector):
+class SnowflakeConnector(IDataBaseSQLConnector):
     
     def __init__(self, **connection_params):
         self.user = connection_params.get('user')
         self.password = connection_params.get('password')
-        self.host = connection_params.get('host')
-        self.port = connection_params.get('port', 3306)
+        self.account = connection_params.get('account')
+        self.warehouse = connection_params.get('warehouse')
         self.database = connection_params.get('database')
+        self.schema = connection_params.get('schema')
         self.connection = None
         self.cursor = None
     
     def initialize_connection(self):
         try:
-            self.connection = mysql.connector.connect(
+            self.connection = snowflake.connector.connect(
                 user=self.user,
                 password=self.password,
-                host=self.host,
-                port=self.port,
-                database=self.database
+                account=self.account,
+                warehouse=self.warehouse,
+                database=self.database,
+                schema=self.schema
             )
             self.cursor = self.connection.cursor()
             return self.connection
 
-        except mysql.connector.Error as error:
+        except snowflake.connector.errors.DatabaseError as error:
             print(f"Error connecting to the database: {error}")
             if self.cursor is not None:
                 self.cursor.close()
@@ -40,26 +41,16 @@ class MySQLConnector(IDataBaseConnector):
             if self.connection is not None:
                 self.connection.close()
                 
-        except mysql.connector.Error as error:
+        except snowflake.connector.errors.DatabaseError as error:
             print(f"Error closing the connection to the database: {error}")
             if self.cursor is not None:
                 self.cursor.close()
             if self.connection is not None:
                 self.connection.close()
 
-# Ejemplo de uso
-if __name__ == "__main__":
-    # Proporciona los parámetros al constructor
-    connection_params_mysql = {
-        'user': 'your_user',
-        'password': 'your_password',
-        'host': 'your_host',
-        'port': 3306,  # Puerto por defecto para MySQL
-        'database': 'your_database'
-    }
-    mysql_connector = MySQLConnector(**connection_params_mysql)
-    connection_mysql = mysql_connector.initialize_connection()
-    # Realizar operaciones con la conexión utilizando mysql_connector.connection y mysql_connector.cursor...
-    
-    # Cerrar la conexión cuando sea necesario
-    mysql_connector.close_connection()
+    def get_connection_url(self):
+        # Snowflake utiliza una URL de conexión en lugar de parámetros individuales
+        connection_url = (
+            f"snowflake://{self.user}:{self.password}@{self.account}"
+        )
+        return connection_url

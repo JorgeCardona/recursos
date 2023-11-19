@@ -1,9 +1,8 @@
-#pip install pyodbc
+#pip install pymssql
+from interfaces import IDataBaseSQLConnector
+import pymssql
 
-from IDataBaseConnector import IDataBaseConnector
-import pyodbc
-
-class SQLServerConnector(IDataBaseConnector):
+class SQLServerConnector(IDataBaseSQLConnector):
     
     def __init__(self, **connection_params):
         self.server = connection_params.get('server')
@@ -41,18 +40,5 @@ class SQLServerConnector(IDataBaseConnector):
             if self.connection is not None:
                 self.connection.close()
 
-# Ejemplo de uso
-if __name__ == "__main__":
-    # Proporciona los parámetros al constructor
-    connection_params_sql_server = {
-        'server': 'your_server',
-        'database': 'your_database',
-        'user': 'your_user',
-        'password': 'your_password'
-    }
-    sql_server_connector = SQLServerConnector(**connection_params_sql_server)
-    connection_sql_server = sql_server_connector.initialize_connection()
-    # Realizar operaciones con la conexión utilizando sql_server_connector.connection y sql_server_connector.cursor...
-    
-    # Cerrar la conexión cuando sea necesario
-    sql_server_connector.close_connection()
+    def get_connection_url(self, dialect="mssql+pymssql"):
+        return f"{dialect}://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}"

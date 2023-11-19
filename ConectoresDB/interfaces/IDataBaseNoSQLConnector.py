@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class IDataBaseConnector(ABC):
+class IDataBaseSQLConnector(ABC):
     
     @abstractmethod
     def initialize_connection(self):
@@ -8,4 +8,8 @@ class IDataBaseConnector(ABC):
     
     @abstractmethod
     def close_connection(self):
+        pass
+    
+    @abstractmethod
+    def get_connection_url(self):
         pass

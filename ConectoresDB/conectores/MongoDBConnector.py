@@ -1,10 +1,8 @@
 #pip install pymongo
-
-from IDataBaseConnector import IDataBaseConnector
-from abc import ABC, abstractmethod
+from interfaces import IDataBaseNoSQLConnector
 from pymongo import MongoClient
 
-class MongoDBConnector(IDataBaseConnector):
+class MongoDBConnector(IDataBaseNoSQLConnector):
     
     def __init__(self, **connection_params):
         self.host = connection_params.get('host')
@@ -40,19 +38,8 @@ class MongoDBConnector(IDataBaseConnector):
         except Exception as error:
             print(f"Error closing the connection to MongoDB: {error}")
 
-# Ejemplo de uso
-if __name__ == "__main__":
-    # Proporciona los parámetros al constructor
-    connection_params_mongodb = {
-        'host': 'your_host',
-        'port': 27017,  # Puerto por defecto para MongoDB
-        'user': 'your_user',
-        'password': 'your_password',
-        'database': 'your_database'
-    }
-    mongodb_connector = MongoDBConnector(**connection_params_mongodb)
-    connection_mongodb = mongodb_connector.initialize_connection()
-    # Realizar operaciones con la conexión utilizando mongodb_connector.connection y mongodb_connector.cursor...
-    
-    # Cerrar la conexión cuando sea necesario
-    mongodb_connector.close_connection()
+    def get_connection_url(self):
+        if self.user and self.password:
+            return f"mongodb+srv://{self.user}:{self.password}@{self.host}/{self.database}"
+        else:
+            return f"mongodb+srv://{self.host}/{self.database}"
