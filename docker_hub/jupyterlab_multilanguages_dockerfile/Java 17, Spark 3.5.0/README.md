@@ -57,12 +57,12 @@
 
 
 ## 🔥If you want to just test the image and do not keep the container when you finish running the container use the next command:
-#### ``` docker run --name jorgecardona-labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000  jorgecardona/jupyterlabmultilanguages:v1```
+#### ``` docker run --name jorgecardona-labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000  jorgecardona/jupyterlabmultilanguages:v2```
 
 # PERSISTENT CONTAINER
 
 ## 💦If you want to keep the container, save the notebooks, and continue working on this container use the next command:💦
-#### ``` docker run --name jorgecardona-labmultilanguage -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1```
+#### ``` docker run --name jorgecardona-labmultilanguage -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v2```
 
 #  ACCESS TO JUPYTER LAB AND SPARK UI 
 
