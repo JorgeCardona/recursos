@@ -371,4 +371,4 @@ read_data_from_database(database_type = 'postgres')
 ## remove container CONTAINER_ID or NAME
 # `docker rm jorgecardona-labmultilanguage`
 
-## 🐳 ```Original Dockerfile for this image```  <a href=" https://raw.githubusercontent.com/JorgeCardona/recursos/main/docker_hub/jupyterlab_multilanguages_dockerfile/Java%2017%2C%20Spark%203.5.0/Dockerfile" target="_blank">CLICK HERE </a>🐳
+## 🐳 ```Original Dockerfile for this image```  <a href=" https://github.com/JorgeCardona/recursos/blob/main/docker_hub/jupyterlab_multilanguages_dockerfile/Java%2017%2C%20Spark%203.5.0%20-%20Python%203.11.7/Dockerfile" target="_blank">CLICK HERE </a>🐳
