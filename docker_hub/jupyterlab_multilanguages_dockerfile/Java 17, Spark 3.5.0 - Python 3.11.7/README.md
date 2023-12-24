@@ -1,6 +1,6 @@
 # Available Kernels and Languages
 
-<img src="https://github.com/JorgeCardona/recursos/blob/main/docker_hub/jupyterlab%20multilenguajes%20python3.11.7.png?raw=true"/>
+<img src="https://raw.githubusercontent.com/JorgeCardona/recursos/main/docker_hub/jupyterlab%20multilenguajes%20python3.11.7.png"/>
 
 | Aplication| Port|
 |-------------|--------|
