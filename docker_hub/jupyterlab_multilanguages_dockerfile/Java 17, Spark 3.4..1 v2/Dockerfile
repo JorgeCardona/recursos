@@ -1,5 +1,5 @@
 # Base image
-FROM python:3.11.7
+FROM python:3.10.13
 
 # etiqueta creador de la imagen
 LABEL maintainer="Jorge Cardona"
@@ -36,20 +36,19 @@ RUN apt-get install nodejs npm -y
 RUN npm install -g ijavascript 
 
 # Install Spark
-ARG VERSION_SPARK_KERNEL=spark-3.5.0
+ARG VERSION_SPARK_KERNEL=spark-3.4.1
 ARG VERSION_SCALA_KERNEL_SPARK=scala2.13
 ARG VERSION_SPARK_HADOOP=${VERSION_SPARK_KERNEL}-bin-hadoop3-${VERSION_SCALA_KERNEL_SPARK}
-RUN wget https://downloads.apache.org/spark/${VERSION_SPARK_KERNEL}/${VERSION_SPARK_HADOOP}.tgz && \
+RUN wget https://archive.apache.org/dist/spark/${VERSION_SPARK_KERNEL}/${VERSION_SPARK_HADOOP}.tgz && \
     tar xvf ${VERSION_SPARK_HADOOP}.tgz && \
     mv ${VERSION_SPARK_HADOOP} /usr/local/spark && \
     ln -s /usr/local/spark /spark && \
     rm ${VERSION_SPARK_HADOOP}.tgz
-	
 
 # Install JupyterLab and PySpark
 RUN pip install install jupyterlab==4.0.9
 RUN pip install jupyterlab-git==0.50.0
-RUN pip install pyspark==3.5.0
+RUN pip install pyspark==3.4.1
 RUN pip install pandas==1.5.3 
 RUN pip install apache-beam[interactive]==2.48.0 
 RUN pip install Faker==21.0.0 
@@ -85,6 +84,9 @@ RUN rm -f coursier
 
 # COPIA LOS CONECTORES DE MONGO, POSTGRES Y MySQL para usar con SPARK
 COPY ./mongo-spark-connector_2.13-10.2.1.jar /usr/local/spark/jars
+COPY ./bson-4.11.1.jar /usr/local/spark/jars
+COPY ./mongodb-driver-core-4.11.1.jar /usr/local/spark/jars
+COPY ./mongodb-driver-sync-4.11.1.jar /usr/local/spark/jars
 COPY ./postgresql-42.7.1.jar /usr/local/spark/jars
 COPY ./mysql-connector-j-8.2.0.jar /usr/local/spark/jars
 
@@ -103,7 +105,7 @@ EXPOSE 8888 4040 5006 3000
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguagespython3117:v1
+# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
 
-# docker build -t jorgecardona/jupyterlabmultilanguagespython3117:v1 .
-# docker push jorgecardona/jupyterlabmultilanguagespython3117:v1
+# docker build -t jorgecardona/jupyterlabmultilanguages:v2 .
+# docker push jorgecardona/jupyterlabmultilanguages:v2
