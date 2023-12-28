@@ -25,7 +25,7 @@
 |-------------|--------|
 | jupyterlab | 4.0.9 |
 | jupyterlab-git | 0.50.0 |
-| pyspark | 3.5.0 |
+| pyspark | 3.4.1 |
 | pandas | 1.5.3 |
 | apache-beam[interactive] | 2.48.0 |
 | panel| 1.3.5 |
@@ -34,8 +34,11 @@
 | mysql-connector-python | 8.2.0|
 | psycopg2 | 2.9.9 |
 | pymongo | 4.6.1 |
-|  <a href=" https://mvnrepository.com/artifact/org.postgresql/postgresql" target="_blank">JDBC postgresql.jar</a> |42.6.0|
-|  <a href=" https://mvnrepository.com/artifact/com.mysql/mysql-connector-j" target="_blank">JDBC mysql-connector-j.jar</a> |8.0.33|
+|  <a href="https://mvnrepository.com/artifact/org.postgresql/postgresql" target="_blank">JDBC postgresql.jar</a> |42.6.0|
+|  <a href="https://mvnrepository.com/artifact/com.mysql/mysql-connector-j" target="_blank">JDBC mysql-connector-j.jar</a> |8.0.33|
+|  <a href="https://mvnrepository.com/artifact/org.mongodb" target="_blank">bson, mongodb-driver-sync, mongodb-driver-core</a> |4.11.1|
+|  <a href="https://mvnrepository.com/artifact/org.mongodb.spark/mongo-spark-connector" target="_blank">mongo-spark-connector.jar</a> |2.13-10.2.1|
+
 
 # EXAMPLES OF INSTALLED PACKAGES
 ## You can use the following examples for testing, just copy and paste the following code to test each package.
@@ -88,8 +91,11 @@
 # DOCKER FOR MongoDB
 ###  `docker run --name jorgecardona-mongodb --rm -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=12345678 mongodb/mongodb-community-server:6.0.7-ubuntu2204-20230812T065949Z`
 
-# STRING CONNECTION FOR MONGO DB
-# `mongodb://admin:12345678@localhost:27017`
+# STRING CONNECTION FOR SPECIFIC MONGO DB HOST
+# `mongodb://admin:12345678@localhost:27017` 
+
+# STRING CONNECTION FOR LOCAL DOCKER MONGO DB
+# `mongodb://admin:12345678@host.docker.internal:27017`
 
 # CODE FOR TESTING CONNECTION TO DATABASES
 ```
@@ -111,13 +117,11 @@ def test_mongo_connection(host, port, database, collection, user=None, password=
     """
     
     from pymongo import MongoClient
-    
     try:
         # Try to connect to the MongoDB server if have an user and password
         client = MongoClient(host, port, username=user, password=password)
 
         # Try to connect to the MongoDB server if you do not have an user and password
-        
         if not user or not password:
             client = MongoClient(host, port)
 
@@ -151,7 +155,6 @@ def test_postgres_connection(host, port, database, user, password):
     test_postgres_connection(host, port, database, user, password)
     """
     import psycopg2
-    
     try:
         # Try to connect to the database
         connection = psycopg2.connect(
@@ -179,7 +182,6 @@ def test_mysql_connection(host, port, database, user, password):
     test_mysql_connection(host, port, database, user, password)
     """    
     import mysql.connector
-    
     try:
         # Try to connect to the MySQL database
         connection = mysql.connector.connect(
@@ -199,30 +201,22 @@ def test_mysql_connection(host, port, database, user, password):
 # INSERT AND LOAD DATA FROM DATABASES USING SPARK
 ```
 def get_database_configuration(database_type = 'mysql', host = None, port = None, database = None, table = None, user = None, password = None, input_collection = None, output_collection = None):
-    
     from pyspark.sql import SparkSession
     
     databases = {
         'mongodb': {
             'app_name': 'MongoDB_Connector',
-            'format_type':'mongo',
+            'format_type':'mongodb',
             'host': host if database_type == 'mongodb' and host else 'host.docker.internal',
             'port': port if database_type == 'mongodb' and port else 27017,
             'user': user if database_type == 'mongodb' and user else 'admin',
             'password': password if database_type == 'mongodb' and password else '12345678',
             'database': database if database_type == 'mongodb' and database else 'spark',
-            'input_collection':  input_collection if database_type == 'mongodb' and table else 'users_in',
-            'output_collection': output_collection if database_type == 'mongodb' and table else 'users_out',
-            'spark_jars': '/usr/local/spark/jars/mongo-spark-connector_2.13-10.2.0.jar',
-            'spark.mongodb.input.uri': f'mongodb://{host}/{database}.{input_collection}' if database_type == 'mongodb' and table else 'mongodb://host.docker.internal.users_in',
-            'spark.mongodb.output.uri': f'mongodb://{host}/{database}.{output_collection}' if database_type == 'mongodb' and table else 'mongodb://host.docker.internal.users_out',
+            'input_collection':  input_collection if database_type == 'mongodb' and table else 'users',
+            'output_collection': output_collection if database_type == 'mongodb' and table else 'users',
             'driver': 'com.mongodb.spark.sql.DefaultSource',
-            'spark_session_read': SparkSession.builder.master('local') \
-                                                 .appName("MongoDB_Connector") \
-                                                 .config("spark.mongodb.input.uri", f'mongodb://{host}/{database}.{input_collection}' if database_type == 'mongodb' and table else 'mongodb://host.docker.internal.users_in') \
-                                                 .config("spark.mongodb.input.uri", f'mongodb://{host}/{database}.{output_collection}' if database_type == 'mongodb' and table else 'mongodb://host.docker.internal.users_out') \
-                                                 .config("spark.jars", '/usr/local/spark/jars/mongo-spark-connector_2.13-10.2.1.jar') \
-                                                 .getOrCreate()
+            'url': f"mongodb://{user}:{password}@{host}:{port}" if database_type == 'mongodb' and host and port else 'mongodb://admin:12345678@host.docker.internal:27017',
+            'spark_session': SparkSession.builder.master('local').appName("MongoDB_Connector").getOrCreate()
             },
         'postgres': {
             'app_name': 'PostgreSQL_Connector',
@@ -242,7 +236,7 @@ def get_database_configuration(database_type = 'mysql', host = None, port = None
                 'password': password if database_type == 'postgres' and password else '12345678',
                 'driver': 'org.postgresql.Driver'
             },
-            'spark_session_read': SparkSession.builder.master('local').appName("PostgreSQL_Connector").config("spark.jars", '/usr/local/spark/jars/postgresql-42.6.0.jar').getOrCreate()
+            'spark_session': SparkSession.builder.master('local').appName("PostgreSQL_Connector").config("spark.jars", '/usr/local/spark/jars/postgresql-42.6.0.jar').getOrCreate()
             },
         'mysql': {
             'app_name': 'MySQL_Connector',
@@ -260,9 +254,8 @@ def get_database_configuration(database_type = 'mysql', host = None, port = None
                             'user': user if database_type == 'mysql' and user else 'admin', 
                             'password': password if database_type == 'mysql' and password else '12345678', 
                             'driver': 'com.mysql.cj.jdbc.Driver'
-                
             },
-            'spark_session_read': SparkSession.builder.master('local').appName("MySQL_Connector").config("spark.jars", '/usr/local/spark/jars/mysql-connector-j-8.0.33.jar').getOrCreate()
+            'spark_session': SparkSession.builder.master('local').appName("MySQL_Connector").config("spark.jars", '/usr/local/spark/jars/mysql-connector-j-8.0.33.jar').getOrCreate()
             }
     }
     return databases.get(database_type.lower(), databases.get('mysql'))
@@ -270,44 +263,52 @@ def get_database_configuration(database_type = 'mysql', host = None, port = None
 
 # TEST DATABASES INSERT DATA
 ```
-def insert_data_to_database(database_configuration):
-    
-    app_name = database_configuration.get('app_name')
-    format_type = database_configuration.get('format_type')
-    driver = database_configuration.get('driver')
-    url = database_configuration.get('url')
-    dbtable = database_configuration.get('table')
-    user = database_configuration.get('user')
-    password = database_configuration.get('password')    
-    
-    from pyspark.sql import SparkSession
+def insert_data_to_database(database_configuration, database_type):
     from pyspark.sql.functions import monotonically_increasing_id
     
-    spark_session_write = SparkSession.builder.appName("WriteToDatabase").getOrCreate()
+    spark_session = database_configuration.get('spark_session')
+    app_name = database_configuration.get('app_name')
+    format_type = database_configuration.get('format_type')
+    url = database_configuration.get('url')
 
-    # Crear un DataFrame de ejemplo
     data = [(1, "Ana"), (2, "Cecilia"), (3, "Nathalie"), (4, "Diana"), (5, "Gabriela"), (6, "Angela"), (7, "Tatiana"), (8, "Lucia"), (9, "Maria")]
     columns = ["Id", "Name"]
-    sampleDF = spark_session_write.createDataFrame(data, columns)
+    sampleDF = spark_session.createDataFrame(data, columns) # sample dataframe
 
-    # Agregar una columna 'id' al DataFrame
-    sampleDF_with_id = sampleDF.withColumn("id", monotonically_increasing_id())
-
-    sampleDF.write \
-        .format(format_type) \
-        .option("driver", driver) \
-        .option("url", url) \
-        .option("dbtable", dbtable) \
-        .option("user", user) \
-        .option("password", password) \
-        .mode("ignore") \
-        .mode("append") \
-        .save()
-
-    # Detener la sesión de Spark
-    spark_session_write.stop()
-    
-    return 'Records Inserted Successfully in {app_name}'.format(app_name=app_name)
+    try:
+        message = f'Records Inserted Successfully in {app_name}'
+        if database_type == 'mongodb':
+            sampleDF_with_id = sampleDF.withColumn("id", monotonically_increasing_id()) # add column 'id' to DataFrame
+        
+            database = database_configuration.get('database')
+            collection = database_configuration.get('output_collection')
+            sampleDF_with_id.write.format("mongodb") \
+            .option("connection.uri", url) \
+            .option("database", database) \
+            .option("collection", collection) \
+            .mode("append") \
+            .save()
+        else: 
+            driver = database_configuration.get('driver')
+            dbtable = database_configuration.get('table')
+            user = database_configuration.get('user')
+            password = database_configuration.get('password')    
+        
+            sampleDF.write \
+                .format(format_type) \
+                .option("driver", driver) \
+                .option("url", url) \
+                .option("dbtable", dbtable) \
+                .option("user", user) \
+                .option("password", password) \
+                .mode("ignore") \
+                .mode("append") \
+                .save()
+    except Exception as e:
+        message = f"Error inserting data: {str(e)}"
+    finally:
+        spark_session.stop() # stop Spark session
+        return message
 ```
 
 ## MYSQL
@@ -328,28 +329,47 @@ postgres_configuration = get_database_configuration(database_type = 'postgres')
 insert_data_to_database(postgres_configuration)
 ```
 
+## MONGODB
+```
+# GET DATABASE CONFIGURATION
+mongodb_configuration = get_database_configuration(database_type = 'mongodb')
+
+# INSERT DATA INTO DATABASE AND CREATES THE COLLECTION
+insert_data_to_database(mongodb_configuration)
+```
+
 # TEST DATABASES READ DATA
 
 ```
-def read_data_from_database(database_type = 'mysql', host = None, port = None, database = None, table = None, user = None, password = None, input_collection = None, output_collection = None):
+def read_data_from_database(database_type='mysql', host=None, port=None, database=None, table=None, user=None, password=None, input_collection=None, output_collection=None):
     
-    database_configuration = get_database_configuration(database_type = database_type, host = host, port = port, database = database, table = table, user = user, password = password, input_collection = input_collection, output_collection = output_collection)
-    
-    spark_instance = database_configuration.get('spark_session_read')
+    database_configuration = get_database_configuration(database_type=database_type, host=host, port=port, database=database, table=table, user=user, password=password, input_collection=input_collection, output_collection=output_collection)
+    spark_dataframe = database_configuration.get('spark_session')
     properties = database_configuration.get('properties')
-    spark = database_configuration.get('spark_session')
     url = database_configuration.get('url')
     
-    table = database_configuration.get('table')
-    
-    if database_configuration.get('schema'):
-        table = f"{database_configuration.get('schema')}.{database_configuration.get('table')}"
+    try:
+        if database_type == 'mongodb':
+            database = database_configuration.get('database')
+            collection = database_configuration.get('input_collection')
 
-    spark_dataframe = spark_instance.read.jdbc(url=url, table=table, properties=properties)
-    result = spark_dataframe.toPandas()
-    spark_instance.stop()
-    
-    return result
+            result = spark_dataframe.read.format("mongodb").option("connection.uri", url).option("database", database).option("collection", collection).load()
+        else:
+            table = database_configuration.get('table')
+            
+            if database_configuration.get('schema'):
+                table = f"{database_configuration.get('schema')}.{database_configuration.get('table')}"
+            result = spark_dataframe.read.jdbc(url=url, table=table, properties=properties)
+    except Exception as e:
+        # Handle the specific MongoDB exception in Spark
+        print(f"Error reading data: {str(e)}")
+        result = None  # Another action you may want to take in case of an exception
+    finally:
+        result.printSchema()  # Print schema
+        result.show()  # Show rows
+        df = result.toPandas() # converts to pandas
+        spark_dataframe.stop()
+        return df
 ```
 
 ## MYSQL
@@ -362,6 +382,11 @@ read_data_from_database(database_type = 'mysql')
 read_data_from_database(database_type = 'postgres')
 ```
 
+## MONGODB
+```
+read_data_from_database(database_type = 'mongodb')
+```
+
 ## stop the container CONTAINER_ID or NAME
 ## `docker stop jorgecardona-labmultilanguage  jorgecardona-postgres  jorgecardona-mysql  jorgecardona-mongodb`
 
@@ -371,4 +396,4 @@ read_data_from_database(database_type = 'postgres')
 ## remove container CONTAINER_ID or NAME
 # `docker rm jorgecardona-labmultilanguage`
 
-## 🐳 ```Original Dockerfile for this image```  <a href="https://raw.githubusercontent.com/JorgeCardona/recursos/main/docker_hub/jupyterlab_multilanguages_dockerfile/Java%2017%2C%20Spark%203.5.0%20-%20Python%203.11.7/Dockerfile" target="_blank">CLICK HERE </a>🐳
+## 🐳 ```Original Dockerfile for this image```  <a href=" https://raw.githubusercontent.com/JorgeCardona/recursos/main/docker_hub/jupyterlab_multilanguages_dockerfile/Java%2017%2C%20Spark%203.5.0%20-%20Python%203.11.7/Dockerfile" target="_blank">CLICK HERE </a>🐳
