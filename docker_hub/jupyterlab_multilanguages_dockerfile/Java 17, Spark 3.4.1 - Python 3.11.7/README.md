@@ -114,6 +114,7 @@ def test_mongo_connection(host, port, database, collection, user=None, password=
     
     # test the connection
     test_mongo_connection(host, port, database, collection)
+    test_mongo_connection(host, port, database, collection, user, password)
     """
     
     from pymongo import MongoClient
@@ -198,7 +199,7 @@ def test_mysql_connection(host, port, database, user, password):
         print(f"Error connecting to the database: {e}")
 ```
 
-# INSERT AND LOAD DATA FROM DATABASES USING SPARK
+# DATABASES CONFIGURATION USING SPARK SESSION
 ```
 def get_database_configuration(database_type = 'mysql', host = None, port = None, database = None, table = None, user = None, password = None, input_collection = None, output_collection = None):
     from pyspark.sql import SparkSession
@@ -261,7 +262,7 @@ def get_database_configuration(database_type = 'mysql', host = None, port = None
     return databases.get(database_type.lower(), databases.get('mysql'))
 ```
 
-# TEST DATABASES INSERT DATA
+# INSERT DATA - TEST DATABASES
 ```
 def insert_data_to_database(database_configuration, database_type=None):
     from pyspark.sql.functions import monotonically_increasing_id
@@ -338,7 +339,7 @@ mongodb_configuration = get_database_configuration(database_type = 'mongodb')
 insert_data_to_database(database_configuration=mongodb_configuration, database_type = 'mongodb')
 ```
 
-# TEST DATABASES READ DATA
+# READ DATA - TEST DATABASES 
 
 ```
 def read_data_from_database(database_type='mysql', host=None, port=None, database=None, table=None, user=None, password=None, input_collection=None, output_collection=None):
