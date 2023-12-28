@@ -263,7 +263,7 @@ def get_database_configuration(database_type = 'mysql', host = None, port = None
 
 # TEST DATABASES INSERT DATA
 ```
-def insert_data_to_database(database_configuration, database_type):
+def insert_data_to_database(database_configuration, database_type=None):
     from pyspark.sql.functions import monotonically_increasing_id
     
     spark_session = database_configuration.get('spark_session')
@@ -335,7 +335,7 @@ insert_data_to_database(postgres_configuration)
 mongodb_configuration = get_database_configuration(database_type = 'mongodb')
 
 # INSERT DATA INTO DATABASE AND CREATES THE COLLECTION
-insert_data_to_database(mongodb_configuration)
+insert_data_to_database(database_configuration=mongodb_configuration, database_type = 'mongodb')
 ```
 
 # TEST DATABASES READ DATA
