@@ -105,7 +105,7 @@ EXPOSE 8888 4040 5006 3000
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguages:v1
+# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguagespython31013:v1
 
-# docker build -t jorgecardona/jupyterlabmultilanguages:v2 .
-# docker push jorgecardona/jupyterlabmultilanguages:v2
+# docker build -t jorgecardona/jupyterlabmultilanguagespython31013:v1 .
+# docker push jorgecardona/jupyterlabmultilanguagespython31013:v1
