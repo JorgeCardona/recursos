@@ -1,16 +1,14 @@
 # Available Kernels and Languages
-
 <img src="https://raw.githubusercontent.com/JorgeCardona/recursos/main/docker_hub/jupyterlab%20multilenguajes%20python3.11.7.png"/>
 
 | Aplication| Port|
 |-------------|--------|
 | JupyterLab  | 8888   |
-| Apache Spark UI| 4040   |
+| Apache Spark UI| 4040|
 | Panel       | 5006   |
 | Node.js     | 3000   |
 
 # EXAMPLES BY LANGUAGE
-
 | Language   | Example                                                                                     |
 |-----------|---------------------------------------------------------------------------------------------|
 | Java      | public class Main {<br>&nbsp;&nbsp;&nbsp;&nbsp;public static void greeting() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello, Java!");<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br> Main.greeting();|
@@ -20,7 +18,6 @@
 | Scala     | // Print "Hello, Scala!"<br>println("Hello, Scala!")<br><br>// Define a function to calculate the square of a number<br>def calculateSquare(number: Int): Int = {<br>&nbsp;&nbsp;&nbsp;&nbsp;number * number<br>}<br><br>// Use the function to calculate the square of 5<br>val result = calculateSquare(5)<br><br>// Print the result<br>println("The square of 5 is: " + result)<br> |
 
 # Packages Installed
-
 | Package | Version|
 |-------------|--------|
 | jupyterlab | 4.0.9 |
@@ -39,10 +36,8 @@
 |  <a href="https://mvnrepository.com/artifact/org.mongodb" target="_blank">bson, mongodb-driver-sync, mongodb-driver-core</a> |4.11.1|
 |  <a href="https://mvnrepository.com/artifact/org.mongodb.spark/mongo-spark-connector" target="_blank">mongo-spark-connector.jar</a> |2.13-10.2.1|
 
-
 # EXAMPLES OF INSTALLED PACKAGES
 ## You can use the following examples for testing, just copy and paste the following code to test each package.
-
 | Package       | Description                                               | Advantages                                                   | Disadvantages                                               | Example                                                     |
 |---------------|-----------------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
 | itables | Library for tabular data manipulation in Python. | SQL-like syntax for querying.<br>- Integration with Python and pandas.<br>- Efficient handling of large datasets.<br>- Simplified tabular data manipulation. | May be less efficient for advanced operations compared to specialized libraries.<br>- Documentation can be limited.<br>- Less optimized than traditional databases.|# **to enable itables**<br>from itables import init_notebook_mode<br>init_notebook_mode(all_interactive=True)|
@@ -57,18 +52,14 @@
 # How to run the image.
 
 #  TEMPORAL CONTAINER
-
-
 ## 🔥If you want to just test the image and do not keep the container when you finish running the container use the next command:
 #### ``` docker run --name jorgecardona-labmultilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000  jorgecardona/jupyterlabmultilanguagespython3117:v1```
 
 # PERSISTENT CONTAINER
-
 ## 💦If you want to keep the container, save the notebooks, and continue working on this container use the next command:💦
 #### ``` docker run --name jorgecardona-labmultilanguage -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguagespython3117:v1```
 
 #  ACCESS TO JUPYTER LAB AND SPARK UI 
-
 ##  🐱 access to JUPYTERLAB ```http://localhost:8888```  <a href=" http://localhost:8888" target="_blank">CLICK HERE </a> 🐱
 ## 🐶access to sparkUI with pySpark  ```http://localhost:4040```  <a href=" http://localhost:4040" target="_blank">CLICK HERE </a>🐶
 
@@ -101,7 +92,6 @@
 ```
 def test_mongo_connection(host, port, database, collection, user=None, password=None):
     """
-    # Configure MongoDB credentials
     host = "host.docker.internal"  # Replace with the IP address or hostname of your MongoDB server
     port = 27017  # Default port for MongoDB
     database = "spark"  # Name of the database you want to connect to
@@ -116,36 +106,26 @@ def test_mongo_connection(host, port, database, collection, user=None, password=
     test_mongo_connection(host, port, database, collection)
     test_mongo_connection(host, port, database, collection, user, password)
     """
-    
+
     from pymongo import MongoClient
     try:
-        # Try to connect to the MongoDB server if have an user and password
         client = MongoClient(host, port, username=user, password=password)
-
-        # Try to connect to the MongoDB server if you do not have an user and password
         if not user or not password:
             client = MongoClient(host, port)
-
-        # Select the database
         db = client[database]
-
-        # Perform a simple read operation to verify the connection
         # You can use any query here; for example, count_documents({})
         collection_loaded = db[collection]
         result = collection_loaded.find_one()
-
         if result:
             print("Connection successful. MongoDB server is accessible.", result)
         else:
             print("Connection successful, but no data was found in the database.")
-        
         client.close()
     except Exception as e:
         print(f"Error connecting to the database: {e}")
                 
 def test_postgres_connection(host, port, database, user, password):
     """
-    # Configure PostgreSQL credentials
     host = "host.docker.internal"  # Replace with the IP address or hostname of your PostgreSQL server
     port = 5432  # Default port for PostgreSQL
     database = "spark"  # Name of the database you want to connect to
@@ -157,14 +137,7 @@ def test_postgres_connection(host, port, database, user, password):
     """
     import psycopg2
     try:
-        # Try to connect to the database
-        connection = psycopg2.connect(
-            host=host,
-            port=port,
-            database=database,
-            user=user,
-            password=password
-        )
+        connection = psycopg2.connect(host=host, port=port, database=database, user=user, password=password)
         connection.close()
         print("Connection successful. PostgreSQL server is accessible.")
     except Exception as e:
@@ -172,7 +145,6 @@ def test_postgres_connection(host, port, database, user, password):
                 
 def test_mysql_connection(host, port, database, user, password):
     """
-    # Configure MySQL credentials
     host = "host.docker.internal"  # Replace with the IP address or hostname of your MySQL server
     port = 3306  # Default port for MySQL
     database = "spark"  # Name of the database you want to connect to
@@ -184,17 +156,9 @@ def test_mysql_connection(host, port, database, user, password):
     """    
     import mysql.connector
     try:
-        # Try to connect to the MySQL database
-        connection = mysql.connector.connect(
-            host=host,
-            port=port,
-            database=database,
-            user=user,
-            password=password
-        )
+        connection = mysql.connector.connect(host=host, port=port, database=database, user=user, password=password)
         connection.close()
         print("Connection successful. MySQL server is accessible.")
-        
     except Exception as e:
         print(f"Error connecting to the database: {e}")
 ```
@@ -312,35 +276,25 @@ def insert_data_to_database(database_configuration, database_type=None):
         return message
 ```
 
-## MYSQL
+## MYSQL, GET DATABASE CONFIGURATION - INSERT DATA INTO DATABASE AND CREATES THE TABLE
 ```
-# GET DATABASE CONFIGURATION
 mysql_configuration = get_database_configuration(database_type = 'mysql')
-
-# INSERT DATA INTO DATABASE AND CREATES THE TABLE
 insert_data_to_database(mysql_configuration)
 ```
 
-## POSTGRESQL
+## POSTGRESQL, GET DATABASE CONFIGURATION - INSERT DATA INTO DATABASE AND CREATES THE TABLE
 ```
-# GET DATABASE CONFIGURATION
 postgres_configuration = get_database_configuration(database_type = 'postgres')
-
-# INSERT DATA INTO DATABASE AND CREATES THE TABLE
 insert_data_to_database(postgres_configuration)
 ```
 
-## MONGODB
+## MONGODB, , GET DATABASE CONFIGURATION - INSERT DATA INTO DATABASE AND CREATES THE COLLECTION
 ```
-# GET DATABASE CONFIGURATION
 mongodb_configuration = get_database_configuration(database_type = 'mongodb')
-
-# INSERT DATA INTO DATABASE AND CREATES THE COLLECTION
 insert_data_to_database(database_configuration=mongodb_configuration, database_type = 'mongodb')
 ```
 
 # READ DATA - TEST DATABASES 
-
 ```
 def read_data_from_database(database_type='mysql', host=None, port=None, database=None, table=None, user=None, password=None, input_collection=None, output_collection=None):
     
@@ -362,7 +316,6 @@ def read_data_from_database(database_type='mysql', host=None, port=None, databas
                 table = f"{database_configuration.get('schema')}.{database_configuration.get('table')}"
             result = spark_dataframe.read.jdbc(url=url, table=table, properties=properties)
     except Exception as e:
-        # Handle the specific MongoDB exception in Spark
         print(f"Error reading data: {str(e)}")
         result = None  # Another action you may want to take in case of an exception
     finally:
