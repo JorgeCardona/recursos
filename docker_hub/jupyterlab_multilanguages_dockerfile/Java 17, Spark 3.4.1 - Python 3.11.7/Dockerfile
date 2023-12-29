@@ -57,6 +57,10 @@ RUN pip install panel==1.3.5
 RUN pip install mysql-connector-python==8.2.0
 RUN pip install psycopg2==2.9.9
 RUN pip install pymongo==4.6.1
+RUN pip install dbt-core==1.7.4
+RUN pip install dbt-postgres==1.7.4
+RUN pip install apache-airflow==2.8.0
+RUN pip install pytest==7.4.3
 RUN pip install --upgrade pip
 
 ARG VERSION_JAVA_KERNEL=1.3.0
@@ -82,6 +86,9 @@ RUN chmod +x coursier
 RUN ./coursier launch --fork almond -- --install
 RUN rm -f coursier
 
+# Set the working directory
+WORKDIR /notebooks
+
 # COPIA LOS CONECTORES DE MONGO, POSTGRES Y MySQL para usar con SPARK
 COPY ./mongo-spark-connector_2.13-10.2.1.jar /usr/local/spark/jars
 COPY ./bson-4.11.1.jar /usr/local/spark/jars
@@ -95,17 +102,19 @@ ENV SPARK_HOME=/usr/local/spark
 ENV PATH=$PATH:$SPARK_HOME/bin
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
+# Expose ports for JupyterLab, Spark UI, PANEL, NodeJS, DBT, Airflow
+EXPOSE 8888 4040 5006 3000 8080 8081
 
-# Set the working directory
-WORKDIR /notebooks
-
-# Expose ports for JupyterLab, Spark UI, PANEL, NodeJS
-EXPOSE 8888 4040 5006 3000
+# Start Airflow when the container launches
+RUN airflow db init
+RUN airflow users create --role Admin --username admin --email admin@jorgecardona.com --firstname jorge --lastname cardona --password 12345678
+#RUN airflow webserver -p 8081
+#RUN airflow scheduler
 
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 jorgecardona/jupyterlabmultilanguagespython3117:v1
+# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 -p 8080:8080 -p 8081:8081 jorgecardona/jupyterlabmultilanguagespython3117:v1
 
 # docker build -t jorgecardona/jupyterlabmultilanguagespython3117:v1 .
 # docker push jorgecardona/jupyterlabmultilanguagespython3117:v1
