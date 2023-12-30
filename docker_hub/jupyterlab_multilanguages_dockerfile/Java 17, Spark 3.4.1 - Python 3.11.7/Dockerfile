@@ -108,13 +108,18 @@ EXPOSE 8888 4040 5006 3000 8080 8081
 # Start Airflow when the container launches
 RUN airflow db init
 RUN airflow users create --role Admin --username admin --email admin@jorgecardona.com --firstname jorge --lastname cardona --password 12345678
-#RUN airflow webserver -p 8081
+RUN rm /usr/local/lib/python3.11/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+RUN rm /usr/local/lib/python3.11/site-packages/airflow/example_dags/example_branch_operator.py
+RUN mkdir /root/airflow/dags
+RUN mv /usr/local/lib/python3.11/site-packages/airflow/example_dags/*.py /root/airflow/dags
+
 #RUN airflow scheduler
+#RUN airflow webserver -p 8081
 
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 -p 8080:8080 -p 8081:8081 jorgecardona/jupyterlabmultilanguagespython3117:v1
+# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 -p 8080:8080 -p 8081:8081 jorgecardona/jupyterlabmultilanguagespython3117:latest
 
-# docker build -t jorgecardona/jupyterlabmultilanguagespython3117:v1 .
-# docker push jorgecardona/jupyterlabmultilanguagespython3117:v1
+# docker build -t jorgecardona/jupyterlabmultilanguagespython3117:latest .
+# docker push jorgecardona/jupyterlabmultilanguagespython3117:latest
