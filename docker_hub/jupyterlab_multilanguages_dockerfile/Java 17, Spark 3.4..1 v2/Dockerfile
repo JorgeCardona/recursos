@@ -96,8 +96,7 @@ COPY ./mongodb-driver-core-4.11.1.jar /usr/local/spark/jars
 COPY ./mongodb-driver-sync-4.11.1.jar /usr/local/spark/jars
 COPY ./postgresql-42.7.1.jar /usr/local/spark/jars
 COPY ./mysql-connector-j-8.2.0.jar /usr/local/spark/jars
-COPY ./without_decorator_example.py ./
-COPY ./decorator_example.py ./
+COPY ./dbt_airflow.py ./
 
 # Configurar variables de entorno
 ENV SPARK_HOME=/usr/local/spark
@@ -115,8 +114,7 @@ RUN airflow users create --role Admin --username admin --email admin@jorgecardon
 RUN rm /usr/local/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator_decorator.py
 RUN rm /usr/local/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator.py
 RUN mkdir /root/airflow/dags
-RUN mv ./without_decorator_example.py /root/airflow/dags
-RUN mv ./decorator_example.py /root/airflow/dags
+RUN mv ./dbt_airflow.py /root/airflow/dags
 
 #RUN airflow scheduler
 #RUN airflow webserver -p 8081
