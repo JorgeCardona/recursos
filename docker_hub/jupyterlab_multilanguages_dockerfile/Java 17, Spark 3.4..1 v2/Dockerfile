@@ -45,6 +45,19 @@ RUN wget https://archive.apache.org/dist/spark/${VERSION_SPARK_KERNEL}/${VERSION
     ln -s /usr/local/spark /spark && \
     rm ${VERSION_SPARK_HADOOP}.tgz
 
+# Install Kafka
+ARG VERSION_KAFKA_KERNEL=3.5.0
+ARG VERSION_KAFKA=kafka_2.13-3.5.0
+ARG KAFKA_HOME=/usr/local/kafka
+
+RUN wget https://archive.apache.org/dist/kafka/${VERSION_KAFKA_KERNEL}/${VERSION_KAFKA}.tgz && \
+    tar xvf ${VERSION_KAFKA}.tgz && \
+    mv ${VERSION_KAFKA} ${KAFKA_HOME} && \
+    ln -s ${KAFKA_HOME} /kafka && \
+	mkdir -p ${KAFKA_HOME}/data/logs && \
+	mkdir -p ${KAFKA_HOME}/data/zookeeper && \
+    rm ${VERSION_KAFKA}.tgz
+
 # Install JupyterLab and PySpark
 RUN pip install install jupyterlab==4.0.9
 RUN pip install jupyterlab-git==0.50.0
@@ -98,13 +111,53 @@ COPY ./postgresql-42.7.1.jar /usr/local/spark/jars
 COPY ./mysql-connector-j-8.2.0.jar /usr/local/spark/jars
 COPY ./dbt_airflow.py ./
 
-# Configurar variables de entorno
-ENV SPARK_HOME=/usr/local/spark
-ENV PATH=$PATH:$SPARK_HOME/bin
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+# copia archivos kafka
+COPY ./zookeeper.properties /usr/local/kafka/config
+COPY ./server1.properties /usr/local/kafka/config
+COPY ./server2.properties /usr/local/kafka/config
+COPY ./server3.properties /usr/local/kafka/config
+COPY ./server4.properties /usr/local/kafka/config
 
-# Expose ports for JupyterLab, Spark UI, PANEL, NodeJS, DBT, Airflow
-EXPOSE 8888 4040 5006 3000 8080 8081
+RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_1
+RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_2
+RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_3
+RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_4
+
+# Configurar variables de entorno, en la terminal
+# export KAFKA_HOME=/usr/local/kafka
+# export PATH=$PATH:$KAFKA_HOME/bin
+# export PATH=$PATH:$KAFKA_HOME/config
+# export SPARK_HOME=/usr/local/spark
+# export PATH=$PATH:$SPARK_HOME/bin
+# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+# . ~/.bashrc
+
+# EJECUTAR ZOOKEPER PAAR PODER INICIAR KAFKA
+# /usr/local/kafka/bin/zookeeper-server-start.sh /usr/local/kafka/config/zookeeper.properties
+# INICIAR BROKERS DE KAFKA
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server1.properties
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server2.properties
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server3.properties
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server4.properties
+
+# LISTAR LOS BROKERS
+#/usr/local/kafka/bin/zookeeper-shell.sh localhost:2181 ls /brokers/ids
+
+# CREAR UN TOPIC
+# /usr/local/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 2 --partitions 3 --topic tema-topic
+
+# LISTAR LOS TOPICS
+#/usr/local/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+# ENVIAR UN MENSAJE AL TOPIC
+#echo "Mensaje de ejemplo" | /usr/local/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic tema-topic
+
+# VER TODOS LOS MENSAJES
+#/usr/local/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic tema-topic --from-beginning
+
+
+# Expose ports for JupyterLab, Spark UI, PANEL, NodeJS, DBT, Airflow, Zookeeper, Brokers Kafka
+EXPOSE 8888 4040 5006 3000 8080 8081 9091 9092 9093 9094
 
 # Start Airflow when the container launches
 # avoid loading all DAG examples
@@ -122,7 +175,7 @@ RUN mv ./dbt_airflow.py /root/airflow/dags
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
-# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 -p 8080:8080 -p 8081:8081 jorgecardona/jupyterlabmultilanguagespython31013:latest
+# docker run --name jorgecardona-multilanguage --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 -p 8080:8080 -p 8081:8081 -p 9091:9091 -p 9092:9092 -p 9093:9093  -p 9094:9094 jorgecardona/jupyterlabmultilanguagespython31013:latest
 
 # docker build -t jorgecardona/jupyterlabmultilanguagespython31013:latest .
 # docker push jorgecardona/jupyterlabmultilanguagespython31013:latest
