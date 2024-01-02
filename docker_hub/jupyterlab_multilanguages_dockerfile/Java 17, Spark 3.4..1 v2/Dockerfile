@@ -46,8 +46,8 @@ RUN wget https://archive.apache.org/dist/spark/${VERSION_SPARK_KERNEL}/${VERSION
     rm ${VERSION_SPARK_HADOOP}.tgz
 
 # Install Kafka
-ARG VERSION_KAFKA_KERNEL=3.5.0
-ARG VERSION_KAFKA=kafka_2.13-3.5.0
+ARG VERSION_KAFKA_KERNEL=3.6.1
+ARG VERSION_KAFKA=kafka_2.13-3.6.1
 ARG KAFKA_HOME=/usr/local/kafka
 
 RUN wget https://archive.apache.org/dist/kafka/${VERSION_KAFKA_KERNEL}/${VERSION_KAFKA}.tgz && \
@@ -103,58 +103,17 @@ RUN rm -f coursier
 WORKDIR /notebooks
 
 # COPIA LOS CONECTORES DE MONGO, POSTGRES Y MySQL para usar con SPARK
-COPY ./mongo-spark-connector_2.13-10.2.1.jar /usr/local/spark/jars
-COPY ./bson-4.11.1.jar /usr/local/spark/jars
-COPY ./mongodb-driver-core-4.11.1.jar /usr/local/spark/jars
-COPY ./mongodb-driver-sync-4.11.1.jar /usr/local/spark/jars
-COPY ./postgresql-42.7.1.jar /usr/local/spark/jars
-COPY ./mysql-connector-j-8.2.0.jar /usr/local/spark/jars
-COPY ./dbt_airflow.py ./
+COPY ./jars/*.jar /usr/local/spark/jars
+COPY ./airflow_files/*.py ./
 
 # copia archivos kafka
-COPY ./zookeeper.properties /usr/local/kafka/config
-COPY ./server1.properties /usr/local/kafka/config
-COPY ./server2.properties /usr/local/kafka/config
-COPY ./server3.properties /usr/local/kafka/config
-COPY ./server4.properties /usr/local/kafka/config
+COPY ./kafka_files /*.properties /usr/local/kafka/config
 
+# crea los directorios para los logs de los brokers de kafka
 RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_1
 RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_2
 RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_3
 RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_4
-
-# Configurar variables de entorno, en la terminal
-# export KAFKA_HOME=/usr/local/kafka
-# export PATH=$PATH:$KAFKA_HOME/bin
-# export PATH=$PATH:$KAFKA_HOME/config
-# export SPARK_HOME=/usr/local/spark
-# export PATH=$PATH:$SPARK_HOME/bin
-# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-# . ~/.bashrc
-
-# EJECUTAR ZOOKEPER PAAR PODER INICIAR KAFKA
-# /usr/local/kafka/bin/zookeeper-server-start.sh /usr/local/kafka/config/zookeeper.properties
-# INICIAR BROKERS DE KAFKA
-# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server1.properties
-# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server2.properties
-# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server3.properties
-# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server4.properties
-
-# LISTAR LOS BROKERS
-#/usr/local/kafka/bin/zookeeper-shell.sh localhost:2181 ls /brokers/ids
-
-# CREAR UN TOPIC
-# /usr/local/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 2 --partitions 3 --topic tema-topic
-
-# LISTAR LOS TOPICS
-#/usr/local/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-
-# ENVIAR UN MENSAJE AL TOPIC
-#echo "Mensaje de ejemplo" | /usr/local/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic tema-topic
-
-# VER TODOS LOS MENSAJES
-#/usr/local/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic tema-topic --from-beginning
-
 
 # Expose ports for JupyterLab, Spark UI, PANEL, NodeJS, DBT, Airflow, Zookeeper, Brokers Kafka
 EXPOSE 8888 4040 5006 3000 8080 8081 9091 9092 9093 9094
@@ -164,8 +123,8 @@ EXPOSE 8888 4040 5006 3000 8080 8081 9091 9092 9093 9094
 ENV AIRFLOW__CORE__LOAD_EXAMPLES=False 
 RUN airflow db init
 RUN airflow users create --role Admin --username admin --email admin@jorgecardona.com --firstname jorge --lastname cardona --password 12345678
-RUN rm /usr/local/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator_decorator.py
-RUN rm /usr/local/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator.py
+RUN rm /usr/local/lib/python3.11/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+RUN rm /usr/local/lib/python3.11/site-packages/airflow/example_dags/example_branch_operator.py
 RUN mkdir /root/airflow/dags
 RUN mv ./dbt_airflow.py /root/airflow/dags
 
@@ -179,3 +138,62 @@ CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-r
 
 # docker build -t jorgecardona/jupyterlabmultilanguagespython31013:latest .
 # docker push jorgecardona/jupyterlabmultilanguagespython31013:latest
+
+######################################################################################################################################
+########################################################## UTILIDADES ################################################################
+######################################################################################################################################
+# COPIA ARCHIVOS A LA IMAGEN
+#COPY ./mongo-spark-connector_2.13-10.2.1.jar /usr/local/spark/jars
+#COPY ./bson-4.11.1.jar /usr/local/spark/jars
+#COPY ./mongodb-driver-core-4.11.1.jar /usr/local/spark/jars
+#COPY ./mongodb-driver-sync-4.11.1.jar /usr/local/spark/jars
+#COPY ./postgresql-42.7.1.jar /usr/local/spark/jars
+#COPY ./mysql-connector-j-8.2.0.jar /usr/local/spark/jars
+#COPY ./dbt_airflow.py ./
+#COPY ./zookeeper.properties /usr/local/kafka/config
+#COPY ./server1.properties /usr/local/kafka/config
+#COPY ./server2.properties /usr/local/kafka/config
+#COPY ./server3.properties /usr/local/kafka/config
+#COPY ./server4.properties /usr/local/kafka/config
+
+# Configurar variables de entorno, en la terminal
+# export KAFKA_HOME=/usr/local/kafka
+# export PATH=$PATH:$KAFKA_HOME/bin
+# export PATH=$PATH:$KAFKA_HOME/config
+# export SPARK_HOME=/usr/local/spark
+# export PATH=$PATH:$SPARK_HOME/bin
+# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+# . ~/.bashrc
+
+# EJECUTAR ZOOKEPER PAAR PODER INICIAR KAFKA
+# /usr/local/kafka/bin/zookeeper-server-start.sh /usr/local/kafka/config/zookeeper.properties
+
+# INICIAR BROKERS DE KAFKA
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server1.properties
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server2.properties
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server3.properties
+# /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server4.properties
+
+# LISTAR LOS BROKERS DISPONIBLES
+# /usr/local/kafka/bin/zookeeper-shell.sh localhost:2181 ls /brokers/ids
+
+# CREAR UN TOPIC
+# /usr/local/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 2 --partitions 3 --topic animals-topic-batch
+# /usr/local/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 2 --partitions 3 --topic animals-topic-streaming
+
+
+# LISTAR LOS TOPICS
+#/usr/local/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+# ENVIAR UN MENSAJE AL TOPIC
+# echo "Mensaje de ejemplo" | /usr/local/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic animals-topic-streaming
+
+# VER TODOS LOS MENSAJES
+# /usr/local/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic animals-topic-streaming --from-beginning
+
+# ELIMINA UN TOPIC
+# /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic animals-topic-batch
+# /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic animals-topic-streaming
+
+# VER LA VERSION DE KAFKA
+#/usr/local/kafka/bin/kafka-topics.sh --version
