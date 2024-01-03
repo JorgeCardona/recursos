@@ -1,0 +1,1001 @@
+id,secure_code,airline,departure_city,departure_date,arrival_airport,arrival_city,arrival_time,passenger_name,passenger_gender,seat_number,currency,departure_gate,flight_status,co_pilot_name,aircraft_type,fuel_consumption
+2001,01H4EEMR8K4ZX4H7GB8ZF3N0DH,United,Ust’-Isha,21/10/2022,UVL,Kristinehamn,6/7/2023 19:03,Othello Spittall,Genderfluid,C3,RUB,C3,Delayed,Carson Ayres,Embraer E190,4841.93
+2002,01H4EEMR8PFBCHHYEQ66E2F6JN,United,Khoyniki,17/10/2022,MPG,Miracema,6/7/2023 17:53,Fletch Pendlington,Male,C3,BYR,B2,Cancelled,Grantley Rozea,Airbus A320,3779.14
+2003,01H4EEMR8SKKFFPJA4K9ZBQE3C,United,Osório,29/7/2022,LNA,Vilar do Pinheiro,6/7/2023 06:38,Susie Presidey,Female,C3,BRL,A1,Delayed,Philly Franzettoini,Embraer E190,9311.26
+2004,01H4EEMR8VBDBCEB4NH9RTFTNN,United,Trới,10/4/2022,CMC,Nanger,6/7/2023 22:19,Dunn Steel,Male,A1,VND,B2,On Time,Hunt Soles,Airbus A320,9448.42
+2005,01H4EEMR8Y8QZB4EBTF76V8FD3,Delta,La Esmeralda,2/1/2022,NOM,Calebasses,6/7/2023 13:25,Mischa Rihosek,Male,B2,VEF,B2,Delayed,Car Sams,Embraer E190,9137.93
+2006,01H4EEMR91N5YZBW4437S57QYZ,American,Obihiro,21/4/2022,WGN,Vihāri,6/7/2023 04:40,Markos Jancic,Male,A1,JPY,B2,On Time,Allard Dewdeny,Boeing 737,5775.05
+2007,01H4EEMR94CV09C1GRAJ5VXGTE,American,Hotsk,28/6/2022,OHO,Masjid,6/7/2023 04:04,Loretta Duggleby,Female,A1,BYR,B2,Cancelled,Perri Faucett,Embraer E190,9162.91
+2008,01H4EEMR99RHGGY8SH9B4CVVW9,Delta,Ujar,21/3/2022,NRT,Yanghuxiang,6/7/2023 14:33,Dory Proud,Female,B2,AZN,A1,Delayed,Bobbee Voller,Airbus A320,3349.44
+2009,01H4EEMR9CM89ZM8F8V0TPRE8N,American,Linshui,30/3/2022,JUI,Maluanluan,6/7/2023 17:19,Selie Lanston,Female,A1,CNY,A1,Cancelled,Caresse McGaugie,Boeing 737,2628.44
+2010,01H4EEMR9F1SCQSJYXC5R053PG,American,Modot,5/5/2022,BBH,Uyo,6/7/2023 16:42,Charil Cullinan,Genderfluid,C3,MNT,C3,On Time,Myron Ayrton,Embraer E190,4374.83
+2011,01H4EEMR9J3B21X0QKTVKJCBMR,United,Jaraguá do Sul,16/6/2022,EBW,Dobřany,6/7/2023 19:15,Donna Strass,Female,A1,BRL,A1,Cancelled,Gretel Caulcott,Airbus A320,1689.77
+2012,01H4EEMR9NRFARRFRFF4GK2Y12,United,Campo Quijano,12/11/2022,BIL,As Sukhnah,6/7/2023 09:24,Flinn Petti,Male,B2,ARS,B2,Delayed,Pavel Ivanov,Embraer E190,8201.46
+2013,01H4EEMR9RWAPHP7Y6Y8SYH65A,Delta,Krajan Tegalombo,28/8/2022,THA,Dorp Antriol,6/7/2023 06:49,Corrine Marty,Bigender,A1,IDR,B2,On Time,Petr Vautrey,Boeing 737,7475.08
+2014,01H4EEMR9V9N9MEKZ5C79S9WZZ,American,Casa Quemada,18/7/2022,NJA,Saki,6/7/2023 11:53,Mella Durdle,Female,A1,HNL,A1,Delayed,Sal Samme,Embraer E190,6494.78
+2015,01H4EEMR9XD3JVK7NCFPQD7G6P,United,Juvisy-sur-Orge,15/8/2022,DBY,Shangcheng Chengguanzhen,6/7/2023 11:31,Glori Todeo,Genderfluid,C3,EUR,B2,Delayed,Walden Runnalls,Embraer E190,4656.42
+2016,01H4EEMRA04BRM4YYN2RAM43AF,Delta,Mesa,24/9/2022,ATG,Gōdo,6/7/2023 06:06,Clim Durrington,Male,C3,USD,B2,Cancelled,Cullin Shergold,Boeing 737,2315.39
+2017,01H4EEMRA3XKBXCQ7D33EQC3X1,Delta,Vanderbijlpark,12/11/2022,VAK,Lindavista,6/7/2023 13:03,Brandy Traves,Female,B2,ZAR,B2,On Time,Barbi Robillard,Embraer E190,2619.94
+2018,01H4EEMRA6F41VYECAJXT96HC1,American,Cachoeira do Sul,27/5/2022,SCV,Chapultepec,6/7/2023 08:29,Isabel Purchall,Female,B2,BRL,B2,On Time,Gail Giacomuzzo,Embraer E190,3407.78
+2019,01H4EEMRA9QNK333TRJZMKS1TA,American,Kotatengah,3/1/2022,YXL,Arcueil,6/7/2023 06:04,Lita Burrell,Female,A1,IDR,A1,Delayed,Kimmie Regitz,Boeing 737,1660.32
+2020,01H4EEMRACD95JMMZNAZSN23Z8,American,Gandara,19/10/2022,KRC,Abadiânia,6/7/2023 00:33,Doralynne Eversley,Female,B2,EUR,C3,Delayed,Agnese Bertlin,Boeing 737,7780.92
+2021,01H4EEMRAEPGMD3Z4150PNKV62,Delta,Tadou,7/6/2022,EVX,Lingda,6/7/2023 09:34,Stafani Townes,Female,A1,CNY,C3,On Time,Binnie Edwinson,Embraer E190,1843.84
+2022,01H4EEMRAHTXQ4EFDYMX2AJZZ3,American,Haveluloto,6/4/2022,KJU,Morelos,6/7/2023 10:25,Rycca Wanderschek,Female,C3,TOP,B2,Cancelled,Flori Gilstin,Airbus A320,9903.39
+2023,01H4EEMRAMEC7FJ3G7ZGRATEJ1,United,Samara,12/1/2022,SNS,Sambonggede,6/7/2023 21:17,Immanuel Cramphorn,Male,B2,RUB,C3,Delayed,Krisha Northrop,Airbus A320,7731.51
+2024,01H4EEMRAQTTA9M0PG6E4S77BE,Delta,Feijó,28/9/2022,YDJ,Kertapura,6/7/2023 12:34,Jacenta Hassett,Female,C3,BRL,B2,Cancelled,Rania Comusso,Boeing 737,4811.27
+2025,01H4EEMRAT3KNK472K6S95H5VY,United,Hīsh,4/4/2022,BCK,Zhuangbian,6/7/2023 18:33,Maurice Galilee,Male,C3,SYP,C3,Delayed,Virgie Wyche,Airbus A320,2675.73
+2026,01H4EEMRAX45E2DFEJSWK8TCCE,American,Yanino Vtoroye,28/9/2022,DIW,Portachuelo,6/7/2023 05:29,Maiga Latty,Female,C3,RUB,A1,Delayed,Dorisa Etherson,Boeing 737,3786.2
+2027,01H4EEMRAZ83YS8GS6NHVDZ9M4,United,Cunha,20/1/2022,CUC,Palmira,6/7/2023 04:44,Dwayne Volleth,Male,B2,BRL,C3,Delayed,Huberto Brimham,Boeing 737,1644.09
+2028,01H4EEMRB2SX235NKA5CBZHRVE,American,Angkup,25/11/2022,KBH,Rouen,6/7/2023 03:25,Peyton Freckingham,Male,C3,IDR,A1,Cancelled,Rourke Ketteridge,Embraer E190,3750.86
+2029,01H4EEMRB5Z3VXCDC1VTJZK2JT,American,João Monlevade,26/10/2022,HSJ,Babakankadu,6/7/2023 12:26,Elsa Croker,Genderfluid,C3,BRL,C3,Delayed,Avivah Ray,Boeing 737,5488.48
+2030,01H4EEMRB81G94TFKXANPGBRP2,United,Daraitan,18/8/2022,TCY,Dianzi,6/7/2023 21:54,Jonas Risebrow,Male,A1,PHP,B2,Cancelled,Vaughan Olley,Airbus A320,2971.84
+2031,01H4EEMRBBCKT5716CW649KA6D,Delta,Konakridee,10/7/2022,PRR,Kajiki,6/7/2023 14:00,Tamara Hourstan,Non-binary,C3,SLL,B2,On Time,Mannie Audley,Boeing 737,7236.39
+2032,01H4EEMRBE2MPTATGT6K7BAAXB,United,Iradan,22/10/2022,GRC,Villaba,6/7/2023 17:05,Isabelita Grundon,Female,C3,KGS,A1,Cancelled,Nancie Westgarth,Embraer E190,1967.1
+2033,01H4EEMRBH023HA60KDDNXQP5K,United,Mutum Biyu,28/2/2022,DBB,Néos Oropós,6/7/2023 19:10,Frazer Clawsley,Male,B2,NGN,A1,Delayed,Ingar Karppi,Boeing 737,4940.53
+2034,01H4EEMRBKCSB4A4A7YQAHRKER,United,Trbovlje,29/1/2022,DCM,Cikabuyutan Barat,6/7/2023 00:33,Krista Reditt,Female,A1,EUR,C3,On Time,Faythe Wickins,Boeing 737,5108.9
+2035,01H4EEMRBPNX6W0APABA49EFDM,United,Dongjingcheng,30/3/2022,VBA,Mahīn,6/7/2023 03:53,Sigismondo Cheeld,Male,A1,CNY,A1,Delayed,Patric Perone,Embraer E190,6520.8
+2036,01H4EEMRBSW6MM4J06ZJ10BZ0X,United,Basar,28/9/2022,MYZ,Songshan,6/7/2023 02:25,Ileane Jordan,Female,B2,CNY,B2,Delayed,Stefania Coronado,Embraer E190,8730.71
+2037,01H4EEMRBWPK8D6N7HVNPTFW0A,American,Várzea da Serra,5/9/2022,SXW,Thị Trấn Quảng Uyên,6/7/2023 20:09,Michelina Bosward,Female,C3,EUR,A1,Cancelled,Marylou Ferrulli,Boeing 737,5505.63
+2038,01H4EEMRBZ7HZAY20CVZWX4BYJ,Delta,Abu Dhabi,6/10/2022,LFQ,Vitebsk,6/7/2023 05:32,Valaria Climance,Female,C3,AED,C3,On Time,Jobina Terrey,Boeing 737,4285.76
+2039,01H4EEMRC2PGS6WRNQD5JF13RP,United,Tukan,23/1/2022,EST,Chhātak,6/7/2023 19:40,Corbin Tweede,Male,C3,RUB,A1,Cancelled,Spenser Floris,Airbus A320,8599.3
+2040,01H4EEMRC5F4422SN6EK70NDA3,American,Zizhao,21/5/2022,PPL,Zombo,6/7/2023 15:19,Abran Wemes,Male,A1,CNY,A1,Delayed,Wittie Pracy,Airbus A320,8437.84
+2041,01H4EEMRC8KH8SS2G6CN5ZQJK1,American,Cipicung,26/9/2022,KIL,Gaio,6/7/2023 10:08,Clarita Wiffill,Female,C3,IDR,A1,On Time,Katuscha Perell,Embraer E190,5000.38
+2042,01H4EEMRCB3SRVM8YQ6B0KRPVA,Delta,Merik,19/11/2022,DOH,Kista,6/7/2023 04:59,Farrel Kernes,Male,A1,IDR,B2,Cancelled,Roman Mannin,Boeing 737,7075.68
+2043,01H4EEMRCDNST4K69NFSPPTFQ4,American,Houmt Souk,31/3/2022,YVQ,Santa Maria da Vitória,6/7/2023 09:18,Edd Ramelot,Male,A1,TND,C3,On Time,Elia Ianne,Airbus A320,7042.66
+2044,01H4EEMRCGWS8GY5PDT52ESHV5,United,Shah Alam,19/2/2022,MBI,Cabano,6/7/2023 19:28,Michaelina Castagne,Female,B2,MYR,B2,On Time,Alma Cutridge,Boeing 737,7085.79
+2045,01H4EEMRCKJAX9R2FH1MGF0XV8,American,Krousón,27/3/2022,NVI,Gävle,6/7/2023 01:43,Mikol Covendon,Male,C3,EUR,C3,On Time,Sol Ferry,Embraer E190,4627.05
+2046,01H4EEMRCPY64WEH9V65PMTHJT,Delta,Chaem Luang,31/5/2022,YGZ,Bungabon,6/7/2023 18:10,Papagena Stiller,Female,A1,THB,B2,Cancelled,Kelcie Hebdon,Boeing 737,7336.69
+2047,01H4EEMRCSFPN3WT20Q5MYW47K,Delta,Toulouse,20/6/2022,GKH,Kogon,6/7/2023 08:08,Ritchie Layne,Male,C3,EUR,C3,On Time,Raymund Cadden,Boeing 737,1853.58
+2048,01H4EEMRCWKPTCF4B7K7DR9S47,Delta,Liutan,26/9/2022,MDH,Laliki,6/7/2023 06:25,Chancey Culpan,Male,A1,CNY,C3,On Time,Ezequiel Catherick,Embraer E190,4630.6
+2049,01H4EEMRCZM1D8WYA1E38EKJ79,United,Benguela,22/3/2022,GED,Guanay,6/7/2023 20:03,Tybie Gieves,Female,C3,AOA,A1,Delayed,Flore Postgate,Boeing 737,6358.18
+2050,01H4EEMRD2HFHEDS61KG6BCMYN,American,Dŭstí,18/1/2022,KRJ,Ḩakamā,6/7/2023 22:43,Alena Kerrane,Female,A1,TJS,C3,Delayed,Adria Froom,Boeing 737,5443.93
+2051,01H4EEMRD5TTEF5CWYN0SJAK3W,American,Suizhong,21/1/2022,ROI,Yushu,6/7/2023 17:15,Murdock Pummell,Male,B2,CNY,A1,Cancelled,Burke Folcarelli,Boeing 737,7781.15
+2052,01H4EEMRD7VB0X2YXVR361F2ZR,United,Alpatovo,4/8/2022,BAA,Venâncio Aires,6/7/2023 16:25,Shirlee Puve,Female,C3,RUB,C3,On Time,Cherise Tawse,Airbus A320,8872.53
+2053,01H4EEMRDA0MG5TZF0XBAWPRS5,Delta,Muzayri‘,8/3/2022,SIU,Antsohihy,6/7/2023 14:53,Babita Winspar,Female,B2,AED,B2,On Time,Hillary Hovert,Embraer E190,4211.06
+2054,01H4EEMRDD3B0EP6706R84XP6R,Delta,Skoútari,3/4/2022,SXK,Camacupa,6/7/2023 20:52,Burgess Bellhouse,Male,C3,EUR,A1,On Time,Donnie Peskett,Airbus A320,3228.69
+2055,01H4EEMRDG4DZ7KDE496ABFT0T,American,Dapdap,26/9/2022,TIK,Tauca,6/7/2023 20:01,Ring McIlhone,Male,B2,PHP,A1,Delayed,Far Zanetello,Embraer E190,1347.86
+2056,01H4EEMRDK9V22VYQ2DV1W5MYA,American,Shimen,9/3/2022,SRA,Kuruman,6/7/2023 14:28,Cori Cubbit,Male,B2,CNY,B2,On Time,Holt Scurrer,Boeing 737,5796.57
+2057,01H4EEMRDN1KD17GB5DKCPS7RB,United,Helsingborg,14/8/2022,FEB,Słotowa,6/7/2023 17:39,Pascale Joney,Male,B2,SEK,B2,Delayed,Shell Osburn,Embraer E190,1448.6
+2058,01H4EEMRDRDVSCWMES9SSA4117,American,Jenamas,21/11/2022,ADA,Richmond,6/7/2023 01:02,Britteny Jans,Female,C3,IDR,A1,On Time,Peria Kynvin,Airbus A320,4642.38
+2059,01H4EEMRDVZCW0BARJZ8GDVP3Z,American,Levallois-Perret,22/2/2022,GXX,Laugar,6/7/2023 15:57,Donni Shermore,Female,A1,EUR,C3,On Time,Clementine Kief,Airbus A320,1063.01
+2060,01H4EEMRDYYJQ423CDQYHZ6BP2,Delta,Şanā’,8/9/2022,OVE,Newark,6/7/2023 07:37,Dewitt Kaine,Male,B2,YER,A1,On Time,Laurens Drinkale,Embraer E190,4492.74
+2061,01H4EEMRE155RD17TQZK5V776Q,Delta,Kobuleti,26/9/2022,RZA,Извор,6/7/2023 22:10,Brigit Fillimore,Female,B2,GEL,B2,Delayed,Britney Lesser,Embraer E190,7163.72
+2062,01H4EEMRE4EJH4K3RRD169CRZC,American,Cafe,14/6/2022,OKL,Āsasa,6/7/2023 08:29,Ara Giorgielli,Female,B2,PHP,A1,Cancelled,Ardath Cromleholme,Airbus A320,8286.69
+2063,01H4EEMRE78T2FSATAM9R3Z47X,United,Zalewo,2/6/2022,MPV,Zhaxirabdain,6/7/2023 22:35,Marcy Ashingden,Female,C3,PLN,B2,On Time,Cindi Grinsdale,Embraer E190,6377.63
+2064,01H4EEMREBMT2BYHQ72J7212GB,United,Lons-le-Saunier,30/9/2022,KBQ,Yuejin,6/7/2023 10:54,Maia Kadwallider,Female,A1,EUR,C3,Delayed,Sabina Coales,Airbus A320,4129.36
+2065,01H4EEMREFMDNAN7BX8Q160HD4,American,Shangcheng Chengguanzhen,11/1/2022,LRS,Lodan Wetan,6/7/2023 12:57,Arni Mummery,Male,B2,CNY,A1,On Time,Burch Threlkeld,Airbus A320,5367.52
+2066,01H4EEMREKNWXVEA3MP68B1YNZ,American,Sharga,11/1/2022,TEX,Hobaramachi,6/7/2023 06:44,Amil Benardeau,Female,C3,MNT,A1,Cancelled,Miguelita Catonne,Airbus A320,7902.47
+2067,01H4EEMREPK3AYBF0NXAYAQKVF,American,Luocun,3/4/2022,LEF,Ishurdi,6/7/2023 02:03,Alaric Goodrick,Male,A1,CNY,A1,On Time,Alexandro Buggs,Embraer E190,1259.81
+2068,01H4EEMRET64MXWRE6FZDJWFN3,Delta,Mostovskoy,23/5/2022,ZLO,Pohang,6/7/2023 00:04,Jillayne Gilford,Female,A1,RUB,B2,Cancelled,Perl Ceyssen,Airbus A320,7226.78
+2069,01H4EEMREYDNCJT3D2G94J4WEW,United,Sophia Antipolis,7/11/2022,KEF,Paris 08,6/7/2023 13:32,Heindrick Audus,Male,A1,EUR,A1,Delayed,Jules Cutress,Embraer E190,3119.56
+2070,01H4EEMRF2K20SQRZ10NE80VZ6,United,Vancouver,22/2/2022,TAL,Batanghari,6/7/2023 21:52,Sharyl Websdale,Female,B2,USD,C3,Delayed,Mellie Keeri,Embraer E190,7550.25
+2071,01H4EEMRF62RQ74Z7S3A6BXN3P,United,Alexandria,28/12/2022,LLH,Strängnäs,6/7/2023 01:32,Brock Dykes,Male,C3,USD,C3,On Time,Carver Kohnen,Boeing 737,8651.45
+2072,01H4EEMRF9W7G61Q2W8C3AFV25,United,Tomaševac,30/9/2022,OKQ,Yangzhuang,6/7/2023 17:36,Ilario Cloy,Male,A1,RSD,C3,On Time,Merill Ollie,Boeing 737,9231.93
+2073,01H4EEMRFCWNXECC61A9TG2TZ8,American,Paris 13,15/11/2022,EGX,Grand-Bassam,6/7/2023 07:03,Kelcy Lapree,Female,C3,EUR,C3,Delayed,Lorry Strotton,Airbus A320,6555.47
+2074,01H4EEMRFFJ7QSPGEN89E9BCRE,Delta,Greytown,29/5/2022,SLX,Argotirto Krajan,6/7/2023 22:27,Filmore Deek,Male,B2,ZAR,A1,On Time,Hobart Gillman,Airbus A320,8244.0
+2075,01H4EEMRFJMQSB6E3GBMZSXME2,American,Orahovica,17/7/2022,SQH,Chornoliztsi,6/7/2023 04:00,Almira Killigrew,Female,A1,HRK,B2,Cancelled,Etheline Brownsea,Airbus A320,5382.19
+2076,01H4EEMRFNC6NA2HX8CA9Y9JR7,American,Dalkey,30/3/2022,BQS,Komysh-Zorya,6/7/2023 06:29,Cynthie Jacomb,Female,C3,EUR,B2,Cancelled,Ynes O'Neil,Embraer E190,5150.48
+2077,01H4EEMRFQFJN7BGFANNAJK131,United,Leran Wetan,8/5/2022,YFO,Sosnovka,6/7/2023 15:01,Elana Lathee,Female,B2,IDR,B2,Delayed,Clarice Statter,Airbus A320,3625.1
+2078,01H4EEMRFVHPV8RDNJRJJABQSG,American,San Diego,19/1/2022,NOR,Si Racha,6/7/2023 06:19,Foss Slad,Male,A1,USD,B2,Delayed,Justinian McCarver,Boeing 737,2306.61
+2079,01H4EEMRFY3T7JA00867JCX5KC,American,Piúma,25/3/2022,RAL,Charopó,6/7/2023 15:48,Gene Jarman,Male,A1,BRL,B2,On Time,Ali Lethibridge,Embraer E190,7295.46
+2080,01H4EEMRG141WMP69CZ8636A21,American,Areado,2/8/2022,OPF,Orong,6/7/2023 22:06,Germain McQuilty,Female,C3,BRL,C3,Cancelled,Lenee Tremlett,Embraer E190,5939.68
+2081,01H4EEMRG364C0XFM315DMG7XT,United,Qulaybīyah,21/2/2022,SQW,Jönköping,6/7/2023 06:28,Lonny Kelberer,Male,B2,TND,B2,Delayed,Curtice Villa,Airbus A320,2742.6
+2082,01H4EEMRG6P5Y70BHB421G40VZ,American,Torre de Moncorvo,14/3/2022,AGK,Hanjia,6/7/2023 02:25,Pip Baelde,Male,B2,EUR,C3,Delayed,Shurlock Kebell,Airbus A320,8113.66
+2083,01H4EEMRG9ZW7TSZPBKZVV56K4,Delta,Lengshuijing,18/12/2022,YQW,Serra,6/7/2023 19:09,Madonna Denisevich,Female,B2,CNY,A1,Cancelled,Kynthia Errey,Boeing 737,6748.88
+2084,01H4EEMRGDQB98NM985DMWGKAT,American,Uppsala,18/3/2022,ISC,Medveđa,6/7/2023 03:07,Orv Skellington,Male,C3,SEK,B2,Cancelled,Vin Karpf,Airbus A320,2947.32
+2085,01H4EEMRGJH9CC4XDK8Y5FP0B2,United,Aurora,8/10/2022,YLD,Moravská Třebová,6/7/2023 06:37,Aurilia Morriss,Female,C3,PHP,B2,Delayed,Sharity Semple,Airbus A320,4735.17
+2086,01H4EEMRGQ3Y1D7DBT74ZMY40W,American,Zhouji,2/10/2022,VFA,Genting,6/7/2023 09:42,Aguistin Fossitt,Male,B2,CNY,A1,Delayed,Laurie Marguerite,Boeing 737,5014.41
+2087,01H4EEMRGWTRFRPKJ7MEKDEJJC,United,Kanungu,6/2/2022,BCA,Przewóz,6/7/2023 09:47,Torey Alldread,Genderfluid,A1,UGX,B2,Cancelled,Margaretha Waterfield,Airbus A320,2409.58
+2088,01H4EEMRH2ZDPXAYN8XTDDM13K,American,Al Midyah,14/5/2022,TBE,Xinshan,6/7/2023 03:56,Mohandas Ferne,Male,C3,ILS,A1,Delayed,Bertrando Owthwaite,Embraer E190,9644.47
+2089,01H4EEMRH74C23R60S12QTATRA,Delta,Mādārīpur,26/9/2022,CIS,Roshal’,6/7/2023 21:27,Magnum Mullany,Male,A1,BDT,B2,Cancelled,Ciro Berre,Airbus A320,4294.63
+2090,01H4EEMRHDEJRWAAV0VSTR7E7B,American,Zhongling,8/3/2022,MLQ,Meizhuang,6/7/2023 19:10,Rosana Farguhar,Female,B2,CNY,B2,Delayed,Romonda Grinikhin,Airbus A320,7900.6
+2091,01H4EEMRHJHD5KDS6DMZQZREBM,United,Zhongzhai,5/12/2022,SBL,Jistebnice,6/7/2023 01:04,Cyrus Tsar,Male,C3,CNY,B2,Cancelled,Reynolds Haggish,Boeing 737,3856.99
+2092,01H4EEMRHQS05M8Z2Z4JPFRHBJ,United,Cacoal,19/5/2022,SXW,Petrovsk,6/7/2023 01:28,Ancell Meert,Male,C3,BRL,B2,On Time,Sigismundo Skone,Embraer E190,1252.33
+2093,01H4EEMRHXXYM4NN3XCA5WYNS7,United,Haukipudas,7/8/2022,EXM,Ryazhsk,6/7/2023 18:12,Ced Oxborough,Male,A1,EUR,C3,Delayed,Levey Burgoine,Boeing 737,6589.94
+2094,01H4EEMRHZ5ESXCHM4CCS9R5TZ,United,Medellin,12/4/2022,EFL,Huizhou,6/7/2023 21:07,Archibaldo Cartmael,Male,A1,PHP,B2,Delayed,Vick Reeks,Airbus A320,8927.57
+2095,01H4EEMRJ26D2ESPQS8Q08T1FZ,Delta,Dallas,2/6/2022,PPY,Montalvão,6/7/2023 16:01,Wallace Lalor,Male,C3,USD,C3,Delayed,Jordon Cullingworth,Boeing 737,7032.75
+2096,01H4EEMRJ50QT7G82XNXDB5JE4,Delta,Kazanlŭk,2/10/2022,DMB,Comandante Luis Piedra Buena,6/7/2023 12:10,Rodolfo McGarahan,Genderqueer,A1,BGN,B2,On Time,Gertie Gillon,Airbus A320,7336.41
+2097,01H4EEMRJ8G03VQ3BTBW9YSKF9,United,São Domingos do Maranhão,14/2/2022,KLV,Benito Juarez,6/7/2023 19:08,April Millberg,Female,B2,BRL,C3,On Time,Nonna Baseke,Airbus A320,5768.41
+2098,01H4EEMRJBEYTBPQNJVTG2MCJ3,American,Soroca,3/8/2022,BTN,Mayapusi,6/7/2023 12:49,Carri Walesby,Female,A1,MDL,A1,Cancelled,Blakeley Fear,Airbus A320,2990.5
+2099,01H4EEMRJE1RDJV3FAFH7AW48J,Delta,Ruixi,6/3/2022,BFO,Des Moines,6/7/2023 22:53,Donnie Huyton,Polygender,B2,CNY,B2,Cancelled,Isidro Labusquiere,Embraer E190,2713.07
+2100,01H4EEMRJH4C2RK7Q2A34DHQ9B,American,Xidajie,16/2/2022,CYF,Yulin,6/7/2023 18:34,Robena O'Gorman,Female,C3,CNY,A1,Cancelled,Adelind Oxford,Boeing 737,2721.34
+2101,01H4EEMRJMS8JGTPKDCH7NEBMP,Delta,Żywiec,1/4/2022,MKY,Haicheng,6/7/2023 13:42,Prince Flitcroft,Male,A1,PLN,A1,Delayed,Thaxter McGinley,Airbus A320,4830.33
+2102,01H4EEMRJQBZZ680YA22FDE64T,American,Oslo,12/5/2022,UTG,Mufumbwe,6/7/2023 03:12,Murdoch Werrit,Male,A1,NOK,A1,On Time,Silvano Tilson,Embraer E190,7539.71
+2103,01H4EEMRJTVMEQGDHDEJC2D0T2,Delta,Repušnica,21/7/2022,BBV,Hīrna,6/7/2023 21:13,Kenton Rojas,Male,A1,HRK,B2,On Time,Grover Dietmar,Boeing 737,6388.14
+2104,01H4EEMRJX58DZD15Z9EX0N01Z,Delta,Papatowai,2/6/2022,AHT,Tunbao,6/7/2023 00:32,Quinn Clearley,Female,A1,NZD,C3,Delayed,Jeana Rasmus,Embraer E190,5103.69
+2105,01H4EEMRJZH73CX6DVYRH2Y2MV,American,Uddiawan,2/8/2022,NKD,Tampekan,6/7/2023 05:41,Jereme Burnage,Male,B2,PHP,A1,On Time,Sayres Willard,Airbus A320,1616.71
+2106,01H4EEMRK2YDFJ2W2Z99EZJXDQ,Delta,Pantenan,18/3/2022,KEZ,Daqingshan,6/7/2023 23:34,Chelsea Ruggles,Female,C3,IDR,B2,Delayed,Ora Anyene,Airbus A320,1571.72
+2107,01H4EEMRK53KSANSHAY511HCHF,Delta,Karak City,20/12/2022,YDJ,New Bedford,6/7/2023 21:37,Mikkel Tabbitt,Male,B2,JOD,C3,Cancelled,Vernon Skingle,Airbus A320,4075.65
+2108,01H4EEMRK8XMZENJC8QE00QXE8,United,Stockholm,12/4/2022,YAZ,Bestöbe,6/7/2023 04:04,Hurley Hare,Male,A1,SEK,C3,On Time,Frasier Geroldi,Airbus A320,3604.85
+2109,01H4EEMRKBA5J87QJ2BXKSA280,Delta,Angered,4/4/2022,ORA,Imperatriz,6/7/2023 01:39,Eddie Novello,Male,C3,SEK,B2,Delayed,Parrnell Kummerlowe,Embraer E190,2157.77
+2110,01H4EEMRKEZ2K3EQM2XG20R1QT,American,Budapest,20/10/2022,LUW,Mitsukaidō,6/7/2023 21:42,Shawn McGreal,Female,B2,HUF,C3,Cancelled,Frayda Minchinden,Boeing 737,1367.42
+2111,01H4EEMRKGVNK3QB6K49Q90RCD,Delta,Bantarpanjang,5/10/2022,SEX,Kalijeruk,6/7/2023 02:29,Timmie Steers,Female,C3,IDR,B2,On Time,Randy Linfitt,Embraer E190,1167.6
+2112,01H4EEMRKKQJF27630Z58K2AVY,Delta,Qīr Moāv,27/11/2022,FVM,Maulavi Bāzār,6/7/2023 15:21,Hillary Ball,Male,C3,JOD,A1,On Time,Griffie Zohrer,Embraer E190,2813.96
+2113,01H4EEMRKP06HJGPP27KJS7CMY,American,Oinoússes,10/7/2022,PGU,Hepingjie,6/7/2023 23:41,Amalee McMychem,Bigender,B2,EUR,C3,Delayed,Mariann Mitroshinov,Embraer E190,5438.49
+2114,01H4EEMRKSSHGDQNZCE678D7TF,Delta,Tepal,22/12/2022,SEQ,Sendung,6/7/2023 04:23,Myrah Guirardin,Genderqueer,C3,IDR,B2,Delayed,Hewett Grimbaldeston,Embraer E190,3950.31
+2115,01H4EEMRKXTH2QHPXGSFXW6EK3,Delta,Gia Ray,1/9/2022,OSN,Carman,6/7/2023 02:44,Liz Cufflin,Female,C3,VND,C3,On Time,Delila Sprankling,Embraer E190,7743.9
+2116,01H4EEMRM2QJQZTPRVRP8AFFHB,Delta,Orlu,5/12/2022,BAS,Changchun,6/7/2023 21:44,Caitlin Sunner,Female,A1,NGN,C3,Delayed,Layne Joseff,Boeing 737,4272.86
+2117,01H4EEMRM5E9WBRTB3AYCY6T8B,Delta,Agat Village,10/12/2022,EKO,Temryuk,6/7/2023 04:48,Jorey Gillmore,Female,B2,USD,A1,On Time,Ruby Lamprey,Airbus A320,9466.78
+2118,01H4EEMRM8ZD176DJMXK53MHGX,United,Voyinka,10/11/2022,QJD,Casal do Sapo,6/7/2023 17:22,Kattie Mytton,Female,B2,UAH,A1,Cancelled,Dyanne Claye,Boeing 737,6934.17
+2119,01H4EEMRMA1V52RBNFXP167NJV,Delta,Kashima,18/2/2022,QSI,Longtan,6/7/2023 17:37,Caleb Mannie,Male,B2,JPY,A1,Cancelled,Jarib Aveson,Airbus A320,9214.99
+2120,01H4EEMRMDDX92VGE4DFS714AB,American,Mat-i,1/1/2022,UBP,Dawang,6/7/2023 08:59,Emmalynn Ebbing,Female,C3,PHP,B2,Cancelled,Elora MacIllrick,Boeing 737,3209.28
+2121,01H4EEMRMGQ4R8BRGNHQYP70A5,Delta,Caballococha,12/4/2022,ADR,Tomsk,6/7/2023 01:26,Ingrim Itzchaki,Polygender,A1,PEN,B2,Delayed,Chicky Omrod,Boeing 737,1747.2
+2122,01H4EEMRMKDW639W63B9CF3C6Q,Delta,Union,31/10/2022,TMW,Wutan,6/7/2023 18:47,Radcliffe Westall,Male,B2,PHP,B2,Delayed,Sonnie Gibby,Embraer E190,2244.27
+2123,01H4EEMRMPW8JKMW7QDT2DZ56E,Delta,Villa Nueva,1/7/2022,ALT,Delft,6/7/2023 15:31,Idalia Talmadge,Female,A1,ARS,C3,Delayed,Chicky Downes,Airbus A320,5815.24
+2124,01H4EEMRMSPSDSEBE8SYCWW89E,Delta,Roanoke,8/6/2022,CPB,Wuyang,6/7/2023 13:08,Cris Domm,Female,C3,USD,B2,On Time,Callida Figgess,Boeing 737,7975.52
+2125,01H4EEMRMWE2B3RXKSK3QN5X9Y,Delta,Colonias Unidas,2/3/2022,ADU,Tobi Village,6/7/2023 07:04,Johan Raddon,Male,A1,ARS,B2,Delayed,Brice Beynon,Embraer E190,2189.86
+2126,01H4EEMRMYCZJK382SD1P9Z3VP,American,Hudai,27/5/2022,EDK,Shigutang,6/7/2023 15:18,Erinna Sahlstrom,Female,C3,CNY,B2,Cancelled,Moyna Mallon,Embraer E190,4551.23
+2127,01H4EEMRN1AXC34YB3Y12N0EB8,United,Nowshera Cantonment,16/1/2022,JNA,Banyliv,6/7/2023 21:23,Wainwright Notman,Male,B2,PKR,C3,On Time,Nikolaus Gumley,Airbus A320,3143.45
+2128,01H4EEMRN4670ENHXX5HGQG4N0,United,Turgun,22/1/2022,SHX,Zhendu,6/7/2023 16:58,Jodi Rickard,Female,B2,CNY,A1,On Time,Bobine Hanwright,Embraer E190,7601.18
+2129,01H4EEMRN79PN3YP08WTYTQ4JE,American,Antíparos,6/5/2022,KTO,Kakanj,6/7/2023 09:31,Babette Yersin,Female,A1,EUR,A1,On Time,Emeline Mattei,Airbus A320,9993.37
+2130,01H4EEMRNAA3A4373CFXA9W74K,American,São Marcos,1/6/2022,DOD,Kalengwa,6/7/2023 11:39,Oliver Grimshaw,Male,C3,BRL,B2,Cancelled,Buiron Bahlmann,Boeing 737,7537.64
+2131,01H4EEMRNDE7EEK3X8Z3YJ05RS,Delta,Biga,24/3/2022,XBB,Pierreville,6/7/2023 04:13,Madison Fidge,Male,A1,PHP,B2,Cancelled,Felicio Elcox,Airbus A320,1615.31
+2132,01H4EEMRNF2RYC6N2F8DTE4GVQ,Delta,Parnaíba,27/6/2022,MSV,Bratsigovo,6/7/2023 15:09,Noah Lurcock,Male,A1,BRL,A1,On Time,Krishnah Mattielli,Airbus A320,2292.86
+2133,01H4EEMRNJ47AVNC962JTVREJJ,Delta,Mansa,28/10/2022,YIK,Santa Magdalena,6/7/2023 17:30,Wesley Curnock,Male,B2,ZMW,A1,Delayed,Jaimie Victoria,Airbus A320,1696.8
+2134,01H4EEMRNNRYG9DCQ07G4P4FJF,American,Wenquan,14/7/2022,VRI,Uzda,6/7/2023 01:23,Carolyn Biers,Female,B2,CNY,C3,Delayed,Emmeline Roskams,Airbus A320,6483.18
+2135,01H4EEMRNRJHBET08GWMBP7KJ0,American,Shenshu,28/4/2022,YDG,Vrbas,6/7/2023 23:28,Katherine Henfre,Female,B2,CNY,C3,Delayed,Maegan Redparth,Airbus A320,6980.83
+2136,01H4EEMRNVN8BKZZ4YZB0C700V,Delta,Margasari,12/12/2022,AUX,Pattani,6/7/2023 10:44,Sabrina Hucknall,Polygender,A1,IDR,B2,Delayed,Susan Adolf,Embraer E190,5591.67
+2137,01H4EEMRNY1MRP5VPEQZDR6WSC,United,Stockholm,22/12/2022,PNR,Albany,6/7/2023 16:09,Krisha Portinari,Male,C3,SEK,A1,Cancelled,Farris Reglar,Embraer E190,4611.64
+2138,01H4EEMRP19PEHE547V2B3X0WD,United,Trần Văn Thời,19/7/2022,UEO,Sannikovo,6/7/2023 10:21,Eddi Pankettman,Female,C3,VND,B2,Cancelled,Elinor Havile,Airbus A320,8278.07
+2139,01H4EEMRP3PZSTFPPQ6M3E09RS,American,Hongqi,14/4/2022,YER,Sukorambi,6/7/2023 21:44,Evin Foley,Male,A1,CNY,C3,On Time,Ernest Quinton,Embraer E190,9782.11
+2140,01H4EEMRP6YHAJHMJFJ0127T1A,Delta,Vales,12/5/2022,KNP,Gereykhanovskoye,6/7/2023 06:20,Boyd Ghilardi,Male,A1,EUR,B2,On Time,Porty Pocknoll,Embraer E190,8583.27
+2141,01H4EEMRP98E581XC1NDW0VZZK,United,Enköping,20/11/2022,ADX,Formosa,6/7/2023 09:05,Upton Maxwell,Male,B2,SEK,A1,Delayed,Roland Egarr,Airbus A320,4783.67
+2142,01H4EEMRPCY0MEFBSC270HN1J7,American,Oktyabr’skiy,17/11/2022,MOZ,Ia Kha,6/7/2023 12:03,Effie Ponde,Female,C3,RUB,B2,Delayed,Rebbecca Throssell,Boeing 737,6478.0
+2143,01H4EEMRPFWKW2DVKRJGSG49A4,United,Hägersten,3/6/2022,KZI,Nyinqug,6/7/2023 03:25,Davie Ondrusek,Male,C3,SEK,A1,Cancelled,Burnard Gentric,Boeing 737,6627.21
+2144,01H4EEMRPJDMTA9SE6QWANTN2A,Delta,Chamical,22/3/2022,JCH,Yongdong,6/7/2023 08:26,Bendix Acland,Male,B2,ARS,B2,On Time,Piggy Adshed,Embraer E190,5910.43
+2145,01H4EEMRPNTW1HN2F7TX112EXN,Delta,Palmital,4/9/2022,PAL,Xiuying,6/7/2023 00:54,Charline Briant,Polygender,A1,BRL,B2,On Time,Josiah Quayle,Embraer E190,3015.16
+2146,01H4EEMRPQ76Q6G0WZ4BXYN5D7,Delta,Haghartsin,7/5/2022,KCH,Mae Wang,6/7/2023 20:14,Davida Isaksen,Female,C3,AMD,C3,Cancelled,Devi Jagiela,Embraer E190,1238.86
+2147,01H4EEMRPTVH5EC6JBFE6E6K98,American,Sembakung,29/8/2022,KDJ,Yedun,6/7/2023 01:10,Lebbie Leslie,Female,A1,IDR,B2,Cancelled,Claudelle Leabeater,Airbus A320,7933.82
+2148,01H4EEMRPXW4Q7Z8V6M02HZW47,Delta,Amargosa,13/6/2022,YQB,Bilshivtsi,6/7/2023 04:18,Armstrong Olliar,Non-binary,B2,BRL,A1,On Time,Waite Camis,Embraer E190,2490.27
+2149,01H4EEMRQ0RBFQTB733DA7MZ1Z,American,Pertunmaa,5/1/2022,HSI,Karpacz,6/7/2023 19:44,Ruperta Sole,Female,C3,EUR,C3,Cancelled,Ginny Lucken,Airbus A320,5110.44
+2150,01H4EEMRQ3W09B02D71R1Y6NA8,Delta,Nunbaundelha,29/7/2022,OSI,Nglengkong,6/7/2023 15:45,Bronson Pentycross,Male,C3,IDR,A1,Cancelled,Gearard Elsay,Airbus A320,3080.8
+2151,01H4EEMRQ6QWK1MR3R5SRQE36A,American,Estique,25/2/2022,GMO,Coishco,6/7/2023 02:13,Fowler Gilder,Male,A1,PEN,A1,On Time,Boigie McGorman,Airbus A320,6364.67
+2152,01H4EEMRQ8NZSHCFQHF80R7YR8,Delta,Jieyang,11/7/2022,BTC,Paagahan,6/7/2023 04:19,Buiron Joreau,Male,B2,CNY,B2,On Time,Andros Giorgielli,Boeing 737,6930.25
+2153,01H4EEMRQBATFZ2SNQX9KPYA0Z,American,Grenoble,5/8/2022,0,Uppsala,6/7/2023 12:41,Vita Coursor,Female,C3,EUR,C3,Delayed,Stepha Goffe,Embraer E190,8250.21
+2154,01H4EEMRQE9DFNGWN15CY0A7GF,American,Beitan,6/1/2022,SLK,Krajan Nglinggis,6/7/2023 17:35,Leshia Hardwidge,Non-binary,A1,CNY,A1,On Time,Clementius Theml,Airbus A320,8815.85
+2155,01H4EEMRQHWKT4B30JQVPEMJ0Z,Delta,Lampa,15/1/2022,LEA,Bulag,6/7/2023 13:56,Janis Malmar,Female,B2,PEN,C3,Cancelled,Lilla Haverty,Embraer E190,6396.12
+2156,01H4EEMRQMWD67DRGSVK0150MM,American,Wydminy,28/5/2022,IKL,Hövsan,6/7/2023 23:57,Kevon Click,Male,B2,PLN,A1,On Time,Cross McIndrew,Embraer E190,7341.75
+2157,01H4EEMRQQYK3NACQ1RRK0QE7R,Delta,Monastir,20/3/2022,IUA,Minneapolis,6/7/2023 23:01,Kelsey Brazier,Female,B2,TND,A1,Cancelled,Pattie Thurlby,Airbus A320,7751.89
+2158,01H4EEMRQS73XBEC7461NY5D8H,Delta,Teodoro Sampaio,5/12/2022,CCN,Montenegro,6/7/2023 00:30,Avictor Birchill,Male,C3,BRL,A1,On Time,Frederico Boken,Airbus A320,1911.59
+2159,01H4EEMRQWQSYQFRVRXER9RTX6,American,San Jose,16/11/2022,DCY,Beolgyo,6/7/2023 08:22,Luci Attock,Female,B2,USD,A1,On Time,Milena O'Sheilds,Boeing 737,6785.84
+2160,01H4EEMRQZRNKERJEGTH3Z463D,Delta,Selizharovo,3/8/2022,TOS,Bendosari,6/7/2023 07:43,Zebulon Allsopp,Male,A1,RUB,A1,On Time,Mattheus Pestell,Airbus A320,5640.09
+2161,01H4EEMRR21HM0XQE094K09WV4,Delta,Taen Tengah,1/9/2022,0,Rancaerang,6/7/2023 17:13,Perl Lembke,Female,A1,IDR,C3,Delayed,Rhona Budibent,Airbus A320,3442.15
+2162,01H4EEMRR5E4V4D2ZAKYSN952A,American,Sungsang,23/7/2022,PSW,Barreiro,6/7/2023 02:13,Cass Llop,Genderfluid,C3,IDR,A1,On Time,Udell Worling,Airbus A320,5493.52
+2163,01H4EEMRR7851D46Q6AVZ5RDSF,American,Jinhe,30/9/2022,GIU,Živinice,6/7/2023 10:59,Rowen Stanfield,Male,C3,CNY,C3,Delayed,Reynolds Harlow,Airbus A320,8899.9
+2164,01H4EEMRRAWBXZWCN8895F5JPN,United,Shorapani,2/2/2022,DPE,Ożarowice,6/7/2023 20:31,Silvain Burchnall,Male,B2,GEL,A1,Cancelled,Aylmer Riguard,Airbus A320,8568.64
+2165,01H4EEMRRDSF5ZA7KCQZ3M8J9H,United,Huanoquite,15/11/2022,YBL,Moca,6/7/2023 01:34,Melicent Gladdish,Female,B2,PEN,A1,Delayed,Liz Yandle,Boeing 737,6166.44
+2166,01H4EEMRRG4AVXSD9EVFNAAZZH,American,Pathum Ratchawongsa,11/8/2022,EPH,Yesan,6/7/2023 02:20,Matthew Carvell,Male,B2,THB,C3,On Time,Alonzo Columbine,Boeing 737,7019.46
+2167,01H4EEMRRKT8QDY2FCH7C3D6VS,United,Vassouras,4/11/2022,PMT,Turkestan,6/7/2023 06:36,Laraine Lemmanbie,Female,B2,BRL,A1,On Time,Bunni Skym,Airbus A320,6881.13
+2168,01H4EEMRRPHFG1D3279BWKWBD2,United,Pinggan,30/8/2022,IST,Andoany,6/7/2023 03:46,Blair Longson,Male,B2,IDR,B2,On Time,Pen Eidelman,Boeing 737,6178.77
+2169,01H4EEMRRS6Y0NCB0Q4NYP0386,United,Dongen,16/12/2022,CDV,Isawa,6/7/2023 01:24,Aime De Bellis,Bigender,B2,EUR,C3,Delayed,Salome Reddan,Boeing 737,9197.56
+2170,01H4EEMRRXS6SWMXS1Q3810R39,American,Limbaži,18/3/2022,ESC,Kuching,6/7/2023 10:17,Jonathon Surmon,Male,C3,EUR,B2,Delayed,Dom Taggert,Embraer E190,8719.54
+2171,01H4EEMRS09RS84RAV3TKVA34E,Delta,Capâo Bonito,22/12/2022,DOM,San Nicolas,6/7/2023 11:05,Miranda Samsin,Female,B2,BRL,A1,Delayed,Mandie Borkett,Embraer E190,6341.48
+2172,01H4EEMRS3RZVBDK8S18W8ECBF,United,Konggar,12/1/2022,CPX,Castlerea,6/7/2023 00:11,Dare McCallister,Non-binary,C3,CNY,B2,Cancelled,Alvira Dunbobbin,Airbus A320,7465.92
+2173,01H4EEMRS6YDXDPGXV0WMD71MM,United,Huayang,18/7/2022,AKS,Shixian,6/7/2023 10:36,Kissee Izakov,Female,B2,CNY,A1,Delayed,Helen-elizabeth Carmo,Airbus A320,4386.24
+2174,01H4EEMRS8773Q825XJY443STW,Delta,Rovira,15/3/2022,LPL,Mîndreşti,6/7/2023 20:21,Paulita Covendon,Female,C3,COP,B2,On Time,Lyda Mazzia,Boeing 737,5177.45
+2175,01H4EEMRSBQDESC47R2Q52SWFJ,Delta,Tallahassee,11/7/2022,PWE,Velventós,6/7/2023 20:41,Koren Halford,Female,A1,USD,B2,On Time,Koral Beldon,Embraer E190,2950.36
+2176,01H4EEMRSECHPYMP4KVZZKBY5T,American,Pavia,22/4/2022,CKR,Yiyang,6/7/2023 08:05,Ron Handforth,Polygender,C3,EUR,B2,Cancelled,Del Thackray,Boeing 737,3045.48
+2177,01H4EEMRSHFZEXYGMZ887MAT3Q,American,Ajax,1/10/2022,XMN,Polazna,6/7/2023 20:05,Royall Parish,Male,B2,CAD,A1,On Time,Yulma Treagus,Airbus A320,8281.55
+2178,01H4EEMRSMT0QVMAQB5XPP63TP,United,Quatro Barras,7/7/2022,KMS,Balkh,6/7/2023 00:31,Joyous Back,Female,A1,BRL,A1,Delayed,Evy Valens-Smith,Embraer E190,7174.09
+2179,01H4EEMRSQGP4ZC81RHZ9ATWGN,Delta,Banepa,22/10/2022,LTU,Pakel,6/7/2023 00:14,Elia Rosterne,Male,A1,NPR,A1,On Time,Reuven Escalante,Airbus A320,4224.47
+2180,01H4EEMRSVT6XC9ABT813PNAZA,United,Belém,15/8/2022,HKN,Lang Suan,6/7/2023 10:47,Maddy Wilcott,Female,C3,BRL,B2,On Time,Arline Iorizzo,Airbus A320,6151.85
+2181,01H4EEMRSYSBS0BJ4WYQNAGYSN,American,Santa Elena de Uairén,28/9/2022,TMH,San Enrique,6/7/2023 11:07,Felice Prickett,Agender,C3,VEF,A1,On Time,Rici Harpur,Boeing 737,5358.3
+2182,01H4EEMRT1JJFARSK9HHVKAJMS,United,Matinha,22/9/2022,OKC,Jingjiao,6/7/2023 02:40,Tod Corney,Male,A1,BRL,A1,Cancelled,Erhart Abazi,Boeing 737,7953.15
+2183,01H4EEMRT4SAVF9E7K69265X3R,Delta,Admiralteisky,24/3/2022,OGA,Dumbéa,6/7/2023 16:13,Agathe Greenroad,Female,B2,RUB,C3,Delayed,Aaren Pooley,Boeing 737,1148.87
+2184,01H4EEMRT7696Y5ACFPPX5NGHN,Delta,HanHuang,13/10/2022,KIZ,Guantang,6/7/2023 21:17,Farrel Carvilla,Male,B2,CNY,A1,Cancelled,Reamonn Stallard,Airbus A320,7264.57
+2185,01H4EEMRTAWWXH1HFTXWEE2DH6,Delta,Podsineye,28/6/2022,BTS,Soko,6/7/2023 16:18,Cherish Figge,Female,C3,RUB,A1,On Time,Micaela Scrimgeour,Embraer E190,5098.4
+2186,01H4EEMRTDD8MFP386HXANCQ58,Delta,San Jerónimo,6/3/2022,ISA,Seixas,6/7/2023 09:43,Maddie MacKeogh,Male,C3,PEN,A1,On Time,Nye Roston,Airbus A320,1913.68
+2187,01H4EEMRTFR1J375QHEPHCH0M1,Delta,Apoya,2/1/2022,AZZ,Sumuranyar,6/7/2023 10:20,Mae Hammerich,Female,C3,PHP,B2,Delayed,Theodosia Room,Boeing 737,2218.17
+2188,01H4EEMRTJ0GVRTT1HZ1PE1RVC,Delta,Ilagan,27/4/2022,BQT,Marco de Canaveses,6/7/2023 19:04,Dorree Goodhand,Female,C3,PHP,A1,On Time,Enid Garlett,Embraer E190,2587.58
+2189,01H4EEMRTNZS098X8XXN2FNNNW,United,Mambago,8/12/2022,YND,Nonohonis,6/7/2023 14:24,Palmer Popescu,Agender,B2,PHP,C3,Delayed,Pansie Dearman,Boeing 737,5395.32
+2190,01H4EEMRTRKA62A736H891BW76,American,Baltimore,26/6/2022,EJN,Yong’an,6/7/2023 11:21,Hal Haldane,Male,C3,USD,C3,Cancelled,Sheff Juggings,Boeing 737,8790.07
+2191,01H4EEMRTVQSVKVW4KSFZ9C566,Delta,Nancheng,4/5/2022,YZG,Zhuangke,6/7/2023 12:01,Kathy Forcer,Female,C3,CNY,C3,Delayed,Evanne Jeary,Embraer E190,1938.45
+2192,01H4EEMRTY3P9M74NR953SX5RA,United,São Domingos,13/2/2022,WAE,Ongandjera,6/7/2023 01:25,Evered Bice,Male,C3,CVE,A1,Delayed,Rad Rozsa,Airbus A320,9790.15
+2193,01H4EEMRV1RQEXSM9NG38CHG63,United,Ourinhos,22/10/2022,USR,Changzhou,6/7/2023 06:13,Eddy Pitchford,Female,A1,BRL,B2,Delayed,Gussi Hallas,Airbus A320,3938.65
+2194,01H4EEMRV3S91VC5T7G1ETPRM1,United,Marabá,6/11/2022,KVE,Tashanta,6/7/2023 13:59,Colette Hincham,Female,C3,BRL,B2,Delayed,Rozalin Maleby,Airbus A320,5845.52
+2195,01H4EEMRV6Y6EJZP8ZRFWHQRE5,Delta,Tayāsīr,20/1/2022,JUO,Yinyang,6/7/2023 01:45,Zebulen Bellenger,Male,B2,ILS,C3,Cancelled,Brett McAteer,Embraer E190,9722.86
+2196,01H4EEMRV9CVN1HPJ6CAREFW41,American,Sillamäe,21/8/2022,WUH,Šumperk,6/7/2023 11:02,Georgia Hammon,Female,C3,EUR,C3,Delayed,Arlena Jiggins,Embraer E190,7831.56
+2197,01H4EEMRVCGDZQ6Q8GSYJSA4JT,United,Huakoulongtan,30/10/2022,HUA,Al Khirāb,6/7/2023 15:20,Magnum Ibbs,Male,A1,CNY,B2,Delayed,Jephthah Bottby,Airbus A320,2106.14
+2198,01H4EEMRVF62FJXN4NMK0VZG5N,American,Surulangun Rawas,10/9/2022,IEG,Gabrovo,6/7/2023 22:13,Forbes Dennitts,Male,C3,IDR,A1,Cancelled,Vasili Joselevitz,Boeing 737,1180.84
+2199,01H4EEMRVHJ2B88YJMB4HZ0C1H,Delta,Santa Inês,20/10/2022,WOW,Cala,6/7/2023 03:11,Gideon McLanaghan,Male,C3,BRL,B2,Delayed,Herbert Maruska,Airbus A320,6294.61
+2200,01H4EEMRVMMEVX3AZFR8YKNTWJ,American,Płońsk,16/7/2022,KVE,Huacrachuco,6/7/2023 21:17,Wainwright Moynham,Male,B2,PLN,A1,Delayed,Nealy Wardrop,Airbus A320,5022.69
+2201,01H4EEMRVQ1KW22K18D29H0TSZ,United,Deder,29/5/2022,RHV,Suntar,6/7/2023 13:15,Carine Mault,Female,B2,ETB,C3,Cancelled,Katerine Pesak,Boeing 737,4231.22
+2202,01H4EEMRVTWGQ812N1XN3AXE90,American,Bigaan,27/2/2022,PDS,Pondokunyur,6/7/2023 01:47,Zolly Domeny,Male,B2,PHP,B2,Cancelled,Gabriello Borrott,Embraer E190,1831.38
+2203,01H4EEMRVXNN2AAM00CR0PXNNN,Delta,Khokhryaki,5/1/2022,JAS,Kinalaglagan,6/7/2023 23:53,Marlowe Haining,Male,C3,RUB,B2,On Time,Spencer Fidoe,Airbus A320,3979.0
+2204,01H4EEMRW0NGPWPX42K5PFKZAW,United,Purificación,16/12/2022,NRC,Qingkenpao,6/7/2023 10:46,Lind Hoopper,Male,B2,COP,A1,Cancelled,Buddie Humber,Embraer E190,2155.93
+2205,01H4EEMRW27K0RQTGAZGNS3APJ,United,Kefar Shemaryahu,18/2/2022,LNL,Marks,6/7/2023 18:58,Andra Shorto,Female,B2,ILS,C3,Delayed,Tish Dallander,Embraer E190,6041.36
+2206,01H4EEMRW5W4M2W3NQ2A8SQEPK,Delta,Nerokoúros,24/7/2022,SCC,Petrovice u Karviné,6/7/2023 22:43,Sheryl Jancso,Female,B2,EUR,B2,Cancelled,Angel Blazi,Boeing 737,5455.94
+2207,01H4EEMRW8JMJBEYKNP2YZ6VTR,United,Luxia,8/2/2022,YIF,Pacaraos,6/7/2023 17:17,Bette Mattheeuw,Female,C3,CNY,C3,On Time,Harriette Schulz,Airbus A320,1568.36
+2208,01H4EEMRWBYBTJG0W1DFQ4XX0W,United,Huangling,12/9/2022,LQM,Strogino,6/7/2023 03:45,Felicle Mates,Female,A1,CNY,B2,Delayed,Frannie Hercules,Airbus A320,4723.8
+2209,01H4EEMRWEYKK3G8ZF7RJBT7ZC,Delta,Tanggulangin,13/9/2022,0,Shijing,6/7/2023 13:18,Wilburt Skirrow,Male,B2,IDR,C3,On Time,Weidar Wadforth,Embraer E190,8570.19
+2210,01H4EEMRWHYSAN4XTFAB4B1CFH,United,Skövde,2/7/2022,ISO,Potok Złoty,6/7/2023 21:33,Augusta Hounsom,Female,A1,SEK,C3,Cancelled,Vannie Belfield,Embraer E190,9615.07
+2211,01H4EEMRWM5H0YWYFA0BQG1EQV,American,Xinhua,12/11/2022,JHQ,Daxin,6/7/2023 20:03,Traver Camelli,Male,A1,CNY,C3,On Time,Meade Syrie,Embraer E190,7371.44
+2212,01H4EEMRWQSKB242Y0Y79ESXWP,American,Heshang,2/11/2022,SHT,Dhī as Sufāl,6/7/2023 18:35,Guntar Gowing,Male,B2,CNY,A1,On Time,Diego Tims,Embraer E190,9078.09
+2213,01H4EEMRWT7EZNPFZM0JFG19D5,Delta,Los Andes,16/5/2022,VPE,Kuta,6/7/2023 18:43,Lethia Constantinou,Female,B2,COP,C3,Delayed,Dolley Niesing,Airbus A320,8629.78
+2214,01H4EEMRWXEBC5XQF3NYMXA3EH,Delta,Obršani,18/11/2022,LMO,Rožna Dolina,6/7/2023 02:15,Elbertina Creffield,Female,A1,MKD,B2,Cancelled,Janessa Daynter,Boeing 737,8497.31
+2215,01H4EEMRWZM00YJXJCBSCP39YE,United,Rennes,11/2/2022,WBA,Bang Yai,6/7/2023 15:46,Yolane Mauro,Genderqueer,B2,EUR,A1,Delayed,Cordi Arkow,Boeing 737,4505.88
+2216,01H4EEMRX287XCYDPRQ0RQNJ0K,United,Lupon,31/10/2022,DOU,Phrae,6/7/2023 16:10,Lindy Knightly,Male,C3,PHP,B2,On Time,Colet Dunbobbin,Airbus A320,9741.14
+2217,01H4EEMRX5AHGSJVZXR6R4ZGBX,American,Rączna,23/8/2022,MFB,Býšť,6/7/2023 18:05,Ulrike Comsty,Female,A1,PLN,A1,On Time,Lin Kivlehan,Embraer E190,6008.49
+2218,01H4EEMRX81W74MNEBJ0Q422SQ,United,Binhe,23/5/2022,MTR,San Antonio,6/7/2023 11:10,Consalve Evensden,Male,B2,CNY,C3,On Time,Cornelius Pook,Embraer E190,5198.43
+2219,01H4EEMRXBR6MAVW12SJ0NNV3D,American,Staryye Atagi,5/4/2022,DQH,Paranavaí,6/7/2023 04:54,Kirby Korpal,Female,B2,RUB,A1,Delayed,Christie Jarvie,Airbus A320,7715.5
+2220,01H4EEMRXDWCD0AMGJNRF4F78H,Delta,Bazha,16/3/2022,ABF,Labo,6/7/2023 14:14,Kerby Hew,Male,B2,CNY,C3,On Time,Winfred Nizet,Boeing 737,2947.65
+2221,01H4EEMRXGVBXDXXK3T2KFFBV6,United,Chitungwiza,13/3/2022,YNS,Longonjo,6/7/2023 09:51,Powell Folling,Male,A1,ZWL,A1,Cancelled,Cesare Chasteney,Embraer E190,5757.7
+2222,01H4EEMRXK92MBRR5D95CZQ45K,Delta,Ochojno,23/3/2022,BQB,Urbano Noris,6/7/2023 18:29,Courtney Loveman,Male,B2,PLN,A1,Cancelled,Derrick Kike,Boeing 737,9480.83
+2223,01H4EEMRXPX0TARGGKJZEXKNGG,United,18 de Marzo,27/9/2022,PHC,Mitsukaidō,6/7/2023 06:08,Shelia Vogel,Genderqueer,B2,MXN,C3,On Time,Elfrieda Carrabott,Airbus A320,5870.43
+2224,01H4EEMRXSBYHF3JKWK6TWEF0V,Delta,Asamboka,6/9/2022,OKT,Shishang,6/7/2023 04:12,Elaine Nobbs,Female,A1,IDR,A1,Cancelled,Laetitia Gurr,Airbus A320,2614.07
+2225,01H4EEMRXWCRBAHRM24Y2W8KDC,United,Nashville,24/9/2022,NAA,Kaduheuleut,6/7/2023 01:18,Cynthy Shaudfurth,Female,A1,USD,A1,Delayed,Joye Innocenti,Airbus A320,3437.41
+2226,01H4EEMRXY7MV1Q48G23FM5YE2,Delta,Tabuny,15/3/2022,DSE,Santai,6/7/2023 15:41,Heywood Rylatt,Male,A1,RUB,C3,On Time,Cobbie Duckerin,Airbus A320,4533.84
+2227,01H4EEMRY2J8EMW11CM5VBJ9X3,Delta,San Pablo,19/1/2022,YUS,Stockholm,6/7/2023 04:45,Shina Pocklington,Female,C3,CRC,B2,On Time,Willette Bonas,Airbus A320,3640.39
+2228,01H4EEMRY6N6XV54ZJ83XY5GP5,United,Babakanbungur,12/6/2022,JKG,Jiantou,6/7/2023 17:10,Delilah Vanyarkin,Female,B2,IDR,C3,Delayed,Anetta Spraggon,Embraer E190,8250.93
+2229,01H4EEMRY9AFR3R9DGD8KKZ6S4,American,Zabrat,30/7/2022,MND,New Glasgow,6/7/2023 05:48,Hanson Franzman,Male,C3,AZN,B2,Cancelled,Manolo Minto,Boeing 737,3570.21
+2230,01H4EEMRYCDJ3TFFE8Z4032Z14,American,Inhambupe,11/5/2022,EBA,Mampong,6/7/2023 08:46,Kristo Blasdale,Male,B2,BRL,C3,Cancelled,Terence Aucoate,Airbus A320,5339.34
+2231,01H4EEMRYFMR0BT693ZQ5YFN63,United,Muladbucad,3/11/2022,NTX,Kalinovskaya,6/7/2023 01:16,Abdul Edgeworth,Male,C3,PHP,B2,On Time,Sayre Finney,Boeing 737,1211.34
+2232,01H4EEMRYJHE49D8DPDT5MFTY0,Delta,Codó,23/7/2022,EIH,Marne-la-Vallée,6/7/2023 14:30,Julina Verling,Female,A1,BRL,B2,Cancelled,Daveta Tyrer,Boeing 737,4961.63
+2233,01H4EEMRYNA5WBBTBJ1R90NPMT,American,Skore,19/12/2022,SAB,Kukuluk,6/7/2023 19:26,Howey Southerell,Male,A1,ALL,C3,On Time,Mose Daouse,Embraer E190,4577.52
+2234,01H4EEMRYQ8GVW8SYPJKYJ94N4,United,Hägersten,21/7/2022,INF,Caomiao,6/7/2023 08:14,Birgit Blake,Female,A1,SEK,C3,On Time,Aleen Littleton,Embraer E190,2037.14
+2235,01H4EEMRYTJ84J6VCPXJA58ACH,American,Yantang,17/6/2022,HAV,Jianyi,6/7/2023 07:35,Myrilla Malden,Female,B2,CNY,C3,On Time,Lorrayne Bilbery,Boeing 737,4248.32
+2236,01H4EEMRYXPJN8X7G1MDK2VF9Y,Delta,Mabuttal East,7/6/2022,BKM,Jiuting,6/7/2023 10:33,Hyman O'Lunny,Male,B2,PHP,C3,Cancelled,Phillip Eliasen,Embraer E190,9660.18
+2237,01H4EEMRZ0WH7N2Y9FDCXAJP2G,United,Kubachi,5/10/2022,LOH,Caldas,6/7/2023 14:51,Ave Sture,Male,A1,RUB,B2,On Time,Reider Vannah,Embraer E190,9001.36
+2238,01H4EEMRZ45ZFV9YNVXHKR2JET,Delta,Barrunchal,25/4/2022,CAW,Kertosari,6/7/2023 04:19,Neala Van Salzberger,Female,B2,EUR,C3,Cancelled,Codee Hulles,Boeing 737,6246.4
+2239,01H4EEMRZ8H1FKGV5WFRYDQ5KR,American,Tajur,27/8/2022,TLX,San Jorge,6/7/2023 07:20,Thornton Scholes,Male,B2,IDR,C3,On Time,Merrel Grgic,Embraer E190,4954.45
+2240,01H4EEMRZBKNJQT7P97N3F6GYK,Delta,Piotrków Trybunalski,17/1/2022,OBL,Chernomorskiy,6/7/2023 04:38,Rickie Motherwell,Male,A1,PLN,B2,Cancelled,Scotti Kubicki,Airbus A320,5735.65
+2241,01H4EEMRZETE5PN43E07B93FQX,Delta,Catende,9/9/2022,MMO,Bayanaūyl,6/7/2023 19:04,Cristie Macellar,Female,C3,BRL,B2,Cancelled,Camellia Kochl,Airbus A320,8054.91
+2242,01H4EEMRZGRSP4G07RS63HSSZH,Delta,Trawniki,24/3/2022,SWD,Manique,6/7/2023 18:08,Rosalind Haslock,Genderqueer,C3,PLN,B2,On Time,Gradey Jagoe,Embraer E190,8472.28
+2243,01H4EEMRZKWNN0KAXTN0ZNAKPQ,United,Gempol,13/4/2022,NOO,Karney Shomron,6/7/2023 23:04,Merrilee Pinwell,Female,A1,IDR,A1,Delayed,Annmarie Lawford,Embraer E190,8983.38
+2244,01H4EEMRZP1FNYV0S2277Z72B2,Delta,Sibbo,30/7/2022,PEQ,Zhangping,6/7/2023 18:14,Fremont d' Eye,Male,C3,EUR,B2,Delayed,Gherardo Bowdler,Airbus A320,5570.93
+2245,01H4EEMRZSXQ8888RQR7N9DWJA,American,Kratovo,9/8/2022,SHC,Jiantianjie,6/7/2023 22:02,Marcelle Trainor,Female,C3,RUB,B2,On Time,Paule Petrillo,Boeing 737,8637.62
+2246,01H4EEMRZVD5WN4SGCARTZ0V4W,Delta,Arraga,28/5/2022,YYZ,Shanghuang,6/7/2023 21:41,Jeanie Jirik,Agender,B2,ARS,A1,Cancelled,Killy Scotfurth,Airbus A320,1606.3
+2247,01H4EEMRZY13Y69HYYDCK324QW,Delta,Shāhdādkot,20/12/2022,ERH,Yongfeng,6/7/2023 03:41,Burr Kesper,Male,B2,PKR,B2,On Time,Bevon Dawney,Embraer E190,6638.79
+2248,01H4EEMS018XRPQY0WNQQ61JXM,United,Basicao Coastal,8/8/2022,PLV,Semirara,6/7/2023 23:19,Lethia Fisher,Female,B2,PHP,B2,Cancelled,Linea Hurton,Airbus A320,2301.6
+2249,01H4EEMS04ESNWKK09K5FBZPAV,American,Längelmäki,19/5/2022,MNO,Älmhult,6/7/2023 03:03,Christye Dubble,Agender,B2,EUR,B2,Cancelled,Tierney Perford,Airbus A320,3477.53
+2250,01H4EEMS071VYASSF9AR0Q3AK7,Delta,Kungsbacka,12/3/2022,LLA,Solomenskoye,6/7/2023 08:55,Berkley Sarjent,Male,B2,SEK,B2,Delayed,Ad Gammett,Embraer E190,2771.27
+2251,01H4EEMS0ANHJG0CP8QSA654W7,Delta,Trieste,23/3/2022,SPZ,Ganlin,6/7/2023 10:34,Lezley Larchier,Male,C3,EUR,A1,Cancelled,Robers Lande,Airbus A320,3127.94
+2252,01H4EEMS0DJ3DP55J40ZT53PXG,United,Jinhua,14/5/2022,ITQ,General Santos,6/7/2023 23:58,Conny Mowbury,Male,A1,CNY,A1,Delayed,Ingrim Axelbee,Embraer E190,2660.18
+2253,01H4EEMS0FAA3AZPAD9B94YFF3,United,Aurora,1/10/2022,CTK,Medovene,6/7/2023 02:23,Barty Jovanovic,Non-binary,C3,USD,B2,Delayed,Marylinda Goodsell,Embraer E190,6377.1
+2254,01H4EEMS0J6CGK8CWDKT02KYB7,American,Mariposa,21/5/2022,ZKP,L'Aigle,6/7/2023 07:10,Tildy Prester,Female,A1,PEN,B2,Delayed,Jacynth Cramp,Embraer E190,8586.46
+2255,01H4EEMS0Z84TR95MBC8WS6Y20,American,Kotsyubyns’ke,12/1/2022,KIX,Xiachu,6/7/2023 11:41,Reuven Hugonnet,Male,A1,UAH,A1,On Time,Gayelord Sendall,Embraer E190,4250.38
+2256,01H4EEMS13144C6E38ZH4GFJMV,American,Bulahblangaro,26/2/2022,GWO,Luoyuan,6/7/2023 02:29,Gayle Secrett,Male,C3,IDR,C3,Cancelled,Yard Gumley,Boeing 737,3955.2
+2257,01H4EEMS16PHG0G1WK3ESEJBX9,American,Tola,3/11/2022,BSP,Piedrancha,6/7/2023 13:32,Krystal Norgate,Female,B2,NIO,C3,Delayed,Sandi Vertigan,Embraer E190,1565.52
+2258,01H4EEMS19MW81393BCBDZA9RA,Delta,Charleston,28/12/2022,SXS,L'Union,6/7/2023 11:33,Ingmar Sackett,Non-binary,A1,USD,C3,Cancelled,Carissa Yesinov,Airbus A320,6588.56
+2259,01H4EEMS1D5Z6R79T2TRQBEQNM,United,Gaotian,29/1/2022,BOH,Arinos,6/7/2023 14:07,Kristofor Fitchett,Male,A1,CNY,C3,Cancelled,Wat Braunes,Embraer E190,5741.64
+2260,01H4EEMS1G2KWG65K7ZZ7KQH2Z,Delta,Parnaíba,25/12/2022,PEK,Prilep,6/7/2023 11:50,Augustine Wildash,Female,B2,BRL,A1,On Time,Jobina Culp,Boeing 737,7804.93
+2261,01H4EEMS1K1DVMTPF4B8310HEE,Delta,Log,17/6/2022,SKW,Dietaisi,6/7/2023 15:29,Merv Arkill,Male,A1,RUB,C3,On Time,Errick Torvey,Boeing 737,1583.78
+2262,01H4EEMS1PQ0PVQ1RYQBZVENCC,American,Gulbene,20/11/2022,BAQ,Andamui,6/7/2023 19:07,Dudley Malpas,Male,B2,EUR,A1,On Time,Hugo McNirlan,Boeing 737,9766.23
+2263,01H4EEMS1TBPP7V3V1GRK7H2RQ,Delta,Prigrevica,29/5/2022,TBJ,Isfara,6/7/2023 09:23,Chad Janos,Male,A1,RSD,B2,Cancelled,Gran Kubicek,Embraer E190,9559.04
+2264,01H4EEMS1XBPN65FA03VZDBT2F,Delta,Duobaoshan,7/3/2022,DZN,Jin’an,6/7/2023 08:11,Terry Winscomb,Male,B2,CNY,B2,On Time,Muhammad Feldstern,Airbus A320,8196.76
+2265,01H4EEMS20Z5XNA5DP29K7FRKG,United,Ar Riqāmā,5/2/2022,SBZ,Saguing,6/7/2023 22:26,Hanni Kaesmans,Female,B2,SYP,B2,Cancelled,Breena Luchelli,Boeing 737,3961.48
+2266,01H4EEMS23CV9ETEHZG8CZ0MRX,Delta,Nong Khae,6/4/2022,MLY,Cabungan,6/7/2023 09:20,Blanche Sivills,Female,C3,THB,B2,On Time,Quintana Loade,Boeing 737,7870.02
+2267,01H4EEMS26DA6R8QRVC06DNSTS,Delta,Nevesinje,13/2/2022,CVI,Wolonio,6/7/2023 14:26,Holly Durdy,Female,C3,BAM,B2,On Time,Pearle Coffelt,Airbus A320,5227.29
+2268,01H4EEMS29VVPJ7W377KR9RS4R,Delta,Rokytnice,4/3/2022,BUB,Mugango,6/7/2023 04:28,Barr Birdall,Male,B2,CZK,C3,Delayed,Raffarty Dealey,Boeing 737,9442.72
+2269,01H4EEMS2CZWCDN4ZJRH9MPGXD,United,Binhe,7/11/2022,HRS,Əhmədbəyli,6/7/2023 14:07,Bord Skerratt,Male,C3,CNY,A1,Delayed,Maximilianus Buffery,Airbus A320,4012.0
+2270,01H4EEMS2F255PAN5BC741KNRX,United,Piojó,13/7/2022,FMH,Oxelösund,6/7/2023 19:15,Waring Snaddin,Male,B2,COP,B2,On Time,Greggory Ricciardo,Airbus A320,4116.35
+2271,01H4EEMS2JR3G94Z3RF5VXD3Y6,American,Anastácio,9/11/2022,LYK,Xiadian,6/7/2023 04:45,Star O'Brien,Female,B2,BRL,C3,On Time,Deeann Austing,Boeing 737,6876.62
+2272,01H4EEMS2NBKZFAMJYDWN6CBWG,Delta,Jianghu,7/4/2022,WEM,Pointe-à-Pitre,6/7/2023 10:00,Leann Salzberg,Female,A1,CNY,B2,Cancelled,Corette Barfoot,Airbus A320,2953.48
+2273,01H4EEMS2S6ND5ESNM4Q73Q9HY,United,Rozkishne,17/9/2022,EMP,Mekkaw,6/7/2023 03:17,Avigdor Corzon,Genderqueer,A1,UAH,A1,Delayed,Cherry Brounsell,Boeing 737,3650.13
+2274,01H4EEMS2WA43HJ9Q78W01PZSY,United,Balbalan,25/9/2022,KYD,Shahr-e Şafā,6/7/2023 12:29,Igor Guiduzzi,Male,C3,PHP,C3,Delayed,Sayre Chawner,Boeing 737,3643.98
+2275,01H4EEMS2Z8BQ18FHBHXQ6975H,United,Jiazi,1/5/2022,ULG,Abucayan,6/7/2023 12:35,Kathrine Gusney,Female,A1,CNY,A1,Delayed,Carolee Paulig,Embraer E190,2115.08
+2276,01H4EEMS320N2ZKZ3M9PWNZN72,American,Ban Khok,28/3/2022,TUQ,Glencoe,6/7/2023 10:33,Isabel Fender,Agender,C3,THB,B2,On Time,Valry Bidewell,Embraer E190,2988.0
+2277,01H4EEMS36DZN9AF9ZSSBMTAQW,American,Zheleznodorozhnyy,27/7/2022,TLF,Caibarién,6/7/2023 18:07,Hasty Hickinbottom,Male,A1,RUB,C3,Cancelled,Baldwin Pinnell,Boeing 737,6051.4
+2278,01H4EEMS39GA0VHP6CZ71QY0XA,American,Chengyang,17/10/2022,HII,Duanjia,6/7/2023 11:07,Humberto Warbeys,Male,C3,CNY,B2,Delayed,Wit Mussalli,Boeing 737,9758.02
+2279,01H4EEMS3CK2NGD24XAAXAQVSH,Delta,Rietavas,11/5/2022,IXH,Songshan,6/7/2023 19:38,Dalila Babcock,Female,C3,LTL,C3,Cancelled,Viviyan Aire,Embraer E190,5291.83
+2280,01H4EEMS3FPN4CFQR41HJR3PB1,Delta,Sulahan,10/5/2022,LIN,Rantaupanjangkiri,6/7/2023 07:38,Carmelia Cuthbert,Female,B2,IDR,A1,Delayed,Kirsti Belk,Embraer E190,2283.15
+2281,01H4EEMS3JF90F43J84PWD60XW,American,Blumenau,24/7/2022,WOE,Kozloduy,6/7/2023 04:29,Henri Elsbury,Male,A1,BRL,B2,Delayed,Errick Stovold,Airbus A320,3023.3
+2282,01H4EEMS3NTFJRRB0454BBB12M,United,Hŭngnam,19/4/2022,CWX,Inderka,6/7/2023 07:06,Christen Rosander,Female,B2,KPW,C3,On Time,Willetta Hartegan,Embraer E190,7993.98
+2283,01H4EEMS3SSQWETKDNM593HPYV,United,Tirana,23/5/2022,TBB,Preobrazhenka,6/7/2023 07:06,Rickie Onians,Male,A1,ALL,C3,On Time,Alley Yes,Boeing 737,3321.69
+2284,01H4EEMS3WXDJ69274FK25HYZQ,Delta,Calamba,12/1/2022,DRV,Cutral-Có,6/7/2023 17:38,Wayland Caton,Male,B2,PHP,A1,On Time,Terrance Burnhill,Embraer E190,7109.3
+2285,01H4EEMS3Z3VCMNGNZ3RDZBZ76,Delta,Ratíškovice,2/11/2022,ZNC,Kuta,6/7/2023 11:07,Carolyn Lockyer,Female,A1,CZK,A1,Delayed,Afton Whitehurst,Embraer E190,4240.19
+2286,01H4EEMS42B1F2TKZ185DH89CY,Delta,Agusan,1/6/2022,BUT,Arsen’yev,6/7/2023 00:35,Kelila Saltern,Female,A1,PHP,C3,Delayed,Antonietta Caldicott,Airbus A320,8077.72
+2287,01H4EEMS45T1R83JHWJ8XN3M8V,Delta,Kadugede,30/7/2022,FEP,Velille,6/7/2023 17:43,Chickie Shinner,Male,C3,IDR,A1,Delayed,Darrick Urien,Airbus A320,2117.97
+2288,01H4EEMS48WQMK67GSN25RDHNJ,American,Heshui,9/10/2022,GGL,Nunbaundelha,6/7/2023 01:53,Pail Dudden,Male,B2,CNY,C3,Delayed,Timofei Hrachovec,Airbus A320,9341.64
+2289,01H4EEMS4CCJME0AB54CP03XA3,Delta,Fort Smith,1/1/2022,GAV,Antanhol,6/7/2023 11:41,Ninnette Asquez,Female,B2,USD,B2,On Time,Tawsha Ferry,Boeing 737,6895.14
+2290,01H4EEMS4F2W2GF1CT88NQ3Y5M,American,Oji River,16/3/2022,WBA,Houk,6/7/2023 02:59,Jule Ovenell,Male,C3,NGN,C3,Cancelled,Son Fishly,Embraer E190,8562.41
+2291,01H4EEMS4JPMAKNKSJYXS1C18X,Delta,Neochóri,23/8/2022,PBJ,Zhoujia,6/7/2023 21:12,Siusan Kubach,Female,B2,EUR,B2,On Time,Flossi Alloway,Boeing 737,3742.0
+2292,01H4EEMS4NRVGW8NZ4BCCYC1NR,American,Daegu,4/12/2022,MAK,Shangyu,6/7/2023 01:23,Opalina Chander,Agender,C3,KRW,A1,Delayed,Fabe Pymm,Embraer E190,2273.02
+2293,01H4EEMS4R4KYR60S7719PMCDH,United,Nizhneivkino,16/3/2022,OBY,Freetown,6/7/2023 08:44,Dione Beet,Genderfluid,C3,RUB,C3,Delayed,Jori Yabsley,Boeing 737,2362.35
+2294,01H4EEMS4W02E7X822W8FCDN18,United,Moissy-Cramayel,28/12/2022,OPS,Besançon,6/7/2023 10:02,Angelina Jodlkowski,Female,B2,EUR,C3,Cancelled,Gabrielle Fossey,Embraer E190,8714.31
+2295,01H4EEMS4ZRT65RAHZX9YKPM25,United,Ymittos,11/7/2022,GHT,Asprángeloi,6/7/2023 09:11,Archer Trodden,Male,A1,EUR,A1,Cancelled,Zacharie Shillum,Boeing 737,2573.05
+2296,01H4EEMS52XW1MD9R42PK2H3A9,Delta,Shuanghe,8/10/2022,CZM,Cisownica,6/7/2023 10:17,Timotheus Whiskin,Male,A1,CNY,C3,Cancelled,Clare Growcock,Airbus A320,7388.24
+2297,01H4EEMS564NR41XS21P1H24MS,United,Donetsk,10/6/2022,TNA,Pácora,6/7/2023 09:37,Carolynn Hearmon,Female,C3,RUB,A1,On Time,Rori Ashmole,Embraer E190,1626.77
+2298,01H4EEMS598AMNA3QPX7Y2X1XV,American,Jiumen,16/7/2022,SBN,Even Yehuda,6/7/2023 10:24,Gerladina Merrgen,Female,C3,CNY,B2,Delayed,Aurore Biford,Embraer E190,7953.56
+2299,01H4EEMS5C3QJ3S76TD3DTA9JS,American,Kampong Thom,30/9/2022,MRG,Chadiza,6/7/2023 06:23,Gracia Honack,Female,B2,KHR,C3,Cancelled,Bethena Newbury,Airbus A320,4621.11
+2300,01H4EEMS5FDSW04XF8C9YXEPMF,American,Pisan,6/2/2022,LPB,Shengci,6/7/2023 12:51,Cointon Noseworthy,Male,A1,IDR,B2,Delayed,Irwinn Roblou,Boeing 737,6934.29
+2301,01H4EEMS5K8TCV6QERJECHJRJT,United,Versailles,3/11/2022,PIV,Chicacao,6/7/2023 18:49,Kasey Ulster,Female,B2,EUR,A1,Delayed,Loleta Newlands,Boeing 737,5738.95
+2302,01H4EEMS5PF9XTQ6WWHNGZBZ0Y,Delta,Évreux,6/2/2022,LRT,Santo Tomas,6/7/2023 15:24,Godfrey Shreve,Male,C3,EUR,A1,Delayed,Wang Leale,Airbus A320,2328.46
+2303,01H4EEMS5SFSR1QDWBS65YE758,United,Uk,31/3/2022,AKE,Kalbugan,6/7/2023 21:16,Cathie Pilbury,Genderqueer,C3,RUB,C3,Delayed,Ricki Shadfourth,Boeing 737,1757.27
+2304,01H4EEMS5WH399HWJRT4X8ZATY,American,Yermish’,15/9/2022,HIP,Nor Gyugh,6/7/2023 18:16,Arlen Polotti,Male,C3,RUB,A1,Cancelled,Hersh Roalfe,Embraer E190,8050.84
+2305,01H4EEMS60F3JJJE18AAW27EMC,Delta,Straszyn,10/1/2022,BND,Cabugao,6/7/2023 11:00,Bevin Masarrat,Male,C3,PLN,A1,On Time,Gil Southorn,Embraer E190,2897.07
+2306,01H4EEMS636V58A2BFN28PBBA7,United,Maqbanah,16/6/2022,MNF,Wangqinzhuang,6/7/2023 07:45,Branden Brisland,Male,B2,YER,C3,Delayed,Edgard Castelletti,Embraer E190,6175.37
+2307,01H4EEMS66856GKENTB6CKRSAA,American,Puncaksempur,1/10/2022,SFS,Sannikovo,6/7/2023 07:36,Lazare Duley,Male,A1,IDR,A1,On Time,Bobby Lesley,Boeing 737,9081.34
+2308,01H4EEMS69292TG0PR7ARBXWGH,United,Baturaja,19/9/2022,AVX,Yambol,6/7/2023 05:03,Joeann Crotty,Female,A1,IDR,C3,Delayed,Merilee Lemmon,Embraer E190,7223.89
+2309,01H4EEMS6C0H10BN7B941ZMPM3,Delta,Apt,3/10/2022,MJD,Bechyně,6/7/2023 05:01,Kelvin Ginman,Male,A1,EUR,A1,On Time,Dani Roizn,Airbus A320,2788.52
+2310,01H4EEMS6GMEY00PH1K7P955QT,Delta,Casais,2/6/2022,GOG,Vale da Pedra,6/7/2023 04:32,Ezri Fain,Male,B2,EUR,B2,Cancelled,Bran Libbey,Airbus A320,8997.08
+2311,01H4EEMS6K7B0C1JMAAFZQ2A8T,Delta,Ludishan,30/10/2022,FLD,Yasinya,6/7/2023 14:30,Vikky Blunden,Female,C3,CNY,A1,Delayed,Philipa Ales0,Embraer E190,5783.26
+2312,01H4EEMS6PSQ99R9D0205GQT11,American,São João da Boa Vista,19/2/2022,DLR,Chuncheon,6/7/2023 19:40,Wyatt Tulloch,Polygender,A1,BRL,B2,On Time,Rees Kondrat,Embraer E190,2441.79
+2313,01H4EEMS6STXT15E8BH292NZHN,Delta,Amsterdam Nieuw West,10/11/2022,LTA,Chignayhua,6/7/2023 20:29,Neille Coppins,Polygender,B2,EUR,B2,Delayed,Dayna Jaimez,Embraer E190,6558.7
+2314,01H4EEMS6XX6FGPX4YHX1JFBN2,United,Xuri,24/12/2022,OZH,San Isidro,6/7/2023 18:35,Andie Wreight,Bigender,B2,CNY,C3,On Time,Lila Foote,Embraer E190,2900.3
+2315,01H4EEMS700GV4MZC1XTCHVMM7,American,Lengor,25/9/2022,LIO,Ibotirama,6/7/2023 08:47,Hedvig Barringer,Female,C3,IDR,C3,Cancelled,Stacee Rubenczyk,Embraer E190,8551.38
+2316,01H4EEMS73GAVMF02ZXQK6H1K9,United,Sundumbili,10/9/2022,WYE,Oeleon,6/7/2023 18:59,Hildagarde Keer,Female,B2,ZAR,B2,Cancelled,Cherin Laterza,Embraer E190,3994.01
+2317,01H4EEMS76R7SVXKJSZ3HAZ8XC,Delta,Souziqiu,21/4/2022,ADJ,Bol,6/7/2023 21:14,Fred Lanphier,Male,C3,CNY,B2,On Time,Wood Alyokhin,Boeing 737,1511.57
+2318,01H4EEMS79C3PPCYR18G1BMVWJ,American,Zakan-Yurt,7/3/2022,TWU,Cabay,6/7/2023 22:54,Gerladina Stockings,Female,C3,RUB,A1,Delayed,Katlin Klambt,Embraer E190,8062.36
+2319,01H4EEMS7D6QQSQH59PMABWGVE,Delta,Tours,4/2/2022,HZV,Jelbuk,6/7/2023 09:40,Sheri Christauffour,Female,B2,EUR,B2,On Time,Leigha De Ferraris,Embraer E190,3827.79
+2320,01H4EEMS7GR5H4TNB344G5R3NW,United,Bourges,16/7/2022,MPP,Mirsk,6/7/2023 06:09,Frederick Agron,Male,B2,EUR,A1,Cancelled,Warde Hymer,Embraer E190,2708.85
+2321,01H4EEMS7KADNDJQ9G4FFBC9QG,Delta,Niono,13/12/2022,JLA,Bełchatów,6/7/2023 13:11,Herbert Van Eeden,Male,C3,XOF,A1,Cancelled,Skippie Peres,Embraer E190,2445.02
+2322,01H4EEMS7P1TWAZNBBBP768PCA,Delta,Tomice,2/11/2022,LHA,Shashemenē,6/7/2023 12:13,Inness Stanger,Male,B2,PLN,A1,On Time,Raynard Dowsey,Boeing 737,9615.68
+2323,01H4EEMS7T9NSNJVGDHPX4Q8P5,American,Moluo,2/2/2022,CZU,Jiulong,6/7/2023 05:28,Sarina Barnsdall,Female,A1,CNY,C3,On Time,Anthea Balden,Airbus A320,9230.11
+2324,01H4EEMS7XMMJEH2S2WCXZ4FPH,United,Wukeshu,4/3/2022,DUK,São João dos Inhamuns,6/7/2023 06:52,Erhart Daintier,Male,B2,CNY,C3,On Time,Innis Fishley,Boeing 737,8728.51
+2325,01H4EEMS80WJ9M6NXJ8NQBJG17,United,Paseh,14/10/2022,KSA,Ambulong,6/7/2023 18:20,Hilario Cousins,Male,B2,IDR,A1,Cancelled,Kerr Bolles,Airbus A320,5867.22
+2326,01H4EEMS83MVX18CZVMQ1E24TZ,United,Canchaque,3/2/2022,SNN,Mueang Nonthaburi,6/7/2023 06:44,Monti Dart,Genderqueer,C3,PEN,A1,Delayed,Holmes Chell,Airbus A320,3683.71
+2327,01H4EEMS872SMGJ6B87354RR2A,Delta,"Palmas De Gran Canaria, Las",21/6/2022,KDT,Abashiri,6/7/2023 04:16,Leontyne Lorie,Agender,C3,EUR,C3,On Time,Alvinia Weiss,Embraer E190,4238.84
+2328,01H4EEMS8AEXXR2GPP6Q9Q6AJH,Delta,Varkaus,6/7/2022,LRF,Angers,6/7/2023 07:35,Emmye Siward,Female,C3,EUR,B2,On Time,Corissa Koppe,Boeing 737,5639.94
+2329,01H4EEMS8DQVDP730CYJ67CVBD,American,Ettal,21/5/2022,CIP,Sapeken,6/7/2023 03:29,Amie Ather,Female,A1,USD,B2,Cancelled,Florentia Laffan,Embraer E190,6164.92
+2330,01H4EEMS8GPHQ5RWGQV7DEZYCX,Delta,Guadalupe,26/4/2022,PQQ,Lagoa de Albufeira,6/7/2023 08:22,Delainey Whate,Male,A1,MXN,B2,Cancelled,Dall Leinweber,Airbus A320,5919.45
+2331,01H4EEMS8K21MZZHA9X6XN2FWW,Delta,Shunyi,7/9/2022,ART,Longjie,6/7/2023 20:31,Eben Myall,Male,B2,CNY,C3,Delayed,Gustavus Fullard,Airbus A320,4103.67
+2332,01H4EEMS8QSMG04RF0ZPG2AM1G,Delta,Honghualiangzi,20/11/2022,LBB,Budaka,6/7/2023 22:44,Selig Woodberry,Male,C3,CNY,C3,Cancelled,Rollie Clowes,Embraer E190,7181.68
+2333,01H4EEMS8T5JMB8W2FN9P751GA,Delta,Baiyang,24/3/2022,RCQ,Kriel,6/7/2023 06:56,Terrijo Rosiello,Female,A1,CNY,A1,Delayed,Kaia Farrand,Embraer E190,2402.27
+2334,01H4EEMS8XFEJVC7WTANXN92SV,United,Thị Trấn Tà Lùng,25/1/2022,CUF,Qianzhou,6/7/2023 20:51,Avigdor Body,Male,C3,VND,B2,Cancelled,Raimund De Zamudio,Boeing 737,9286.77
+2335,01H4EEMS905PEBBD9MHHNG4DTA,Delta,Kalugmanan,21/11/2022,YLL,Kertasari,6/7/2023 11:53,Marion Pratchett,Male,C3,PHP,B2,Cancelled,Tobin Dorton,Boeing 737,2054.84
+2336,01H4EEMS933M29MWZ096NZG2JT,Delta,New York City,1/5/2022,KZR,Hualin,6/7/2023 20:04,Emalia Ilyenko,Female,C3,USD,A1,Cancelled,Raeann Zuanelli,Embraer E190,3593.61
+2337,01H4EEMS97MV2N1B0K8ZSTQTHC,United,Mapinrea,21/6/2022,IBA,Zalantun,6/7/2023 09:20,Xymenes Vaney,Male,C3,IDR,C3,On Time,Franny Ciubutaro,Airbus A320,8669.66
+2338,01H4EEMS9A8KP7AENEJNBVM6N1,Delta,Shangcun,6/4/2022,RZH,Bokhan,6/7/2023 00:36,Sinclair Gewer,Male,B2,CNY,A1,Delayed,Mitchael Macbane,Embraer E190,6234.58
+2339,01H4EEMS9DD52ZG1FQJFYDTPZA,American,Pukekohe East,18/11/2022,NYN,Iroquois Falls,6/7/2023 10:53,Ignazio Dunkerk,Male,A1,NZD,A1,On Time,Mathian Woolford,Boeing 737,3323.46
+2340,01H4EEMS9H5KF0E2PER5YRDKCC,United,Zbąszynek,28/4/2022,PCV,Huze,6/7/2023 21:28,Creight Waterstone,Male,A1,PLN,B2,Delayed,Pepe de Guise,Embraer E190,6985.21
+2341,01H4EEMS9M4ZE3TPKAJYNESQV7,American,Ribeira Grande,5/10/2022,NUU,Ponyri Vtoryye,6/7/2023 17:57,Mannie Schellig,Male,C3,CVE,C3,Delayed,Renaud Tarney,Embraer E190,7732.74
+2342,01H4EEMS9QRTHWFZ2MKTQWX5Y5,United,Boshkengash,20/1/2022,HOI,Habana del Este,6/7/2023 22:13,Fawn Ales,Female,C3,TJS,B2,Cancelled,Marcelia Laight,Airbus A320,6391.29
+2343,01H4EEMS9TG0D2PRSHJ68E7WR9,United,Bateria,26/11/2022,BBY,Cikubang,6/7/2023 11:03,Norton Saing,Male,C3,PHP,C3,Cancelled,Raynor Pabst,Boeing 737,7274.43
+2344,01H4EEMS9XEF63E8ADJCR7YQQ6,Delta,Farmington,16/5/2022,KBL,Prażmów,6/7/2023 10:32,Leora Wenman,Polygender,A1,USD,A1,Cancelled,Yetty Fanthome,Airbus A320,8275.25
+2345,01H4EEMSA190C55CWED5Q1RM9N,American,Pampa Hermosa,7/5/2022,DJN,Mukhen,6/7/2023 07:56,Sigfried Tabourin,Male,C3,PEN,C3,Cancelled,Elwood Fant,Airbus A320,8588.17
+2346,01H4EEMSA4YA48ZW5XXEXN3W6H,United,Sumber,22/1/2022,NER,Gandra,6/7/2023 19:54,Ernie Benediktsson,Genderfluid,B2,IDR,A1,On Time,Jerrilyn Breeton,Airbus A320,4451.44
+2347,01H4EEMSA7GGQ9N9M57745CAFM,Delta,Lubień,1/2/2022,YAL,Zhagang,6/7/2023 19:32,Griz Absolem,Male,A1,PLN,B2,On Time,Ring Loding,Embraer E190,2781.48
+2348,01H4EEMSAA6GG16PSKZB9RZCPB,American,Dillenburg,22/8/2022,TGP,Curug,6/7/2023 18:42,Aloise Ritelli,Female,B2,EUR,A1,Cancelled,Roseline Middlemiss,Boeing 737,1215.69
+2349,01H4EEMSADPYPXZ0JCKEPCXC95,United,Kanye,1/11/2022,PMW,Neklyudovo,6/7/2023 02:23,Tracee Lambert-Ciorwyn,Female,B2,BWP,A1,Cancelled,Ingeberg Calafate,Embraer E190,3373.86
+2350,01H4EEMSAH96WQNYP5HQ74F5QV,American,Rendian,9/10/2022,YKL,Sandachō,6/7/2023 05:39,Gertrude Doding,Female,C3,CNY,C3,Delayed,Shirleen Dannehl,Airbus A320,7171.64
+2351,01H4EEMSAMNQ3FT4Y12JHKCPHQ,Delta,Zhihe,16/6/2022,WSH,Trzcińsko Zdrój,6/7/2023 12:42,Valencia Annatt,Female,A1,CNY,C3,Cancelled,Georgiana Emburey,Boeing 737,8698.51
+2352,01H4EEMSAQ5X1FV0D1EK1PNKVF,Delta,Hasan,5/12/2022,GME,San Quintin,6/7/2023 09:18,Arleen English,Female,C3,ALL,A1,On Time,Mab Abotson,Airbus A320,3364.25
+2353,01H4EEMSATFB0V1HKBBWQGXMD4,United,Opaka,6/8/2022,FRE,Zevenaar,6/7/2023 23:19,Ernaline Yurenin,Female,C3,BGN,C3,Cancelled,Libbi Francesco,Airbus A320,9798.82
+2354,01H4EEMSAXW7SHZYDPYYXEC63Y,American,Dingchang,8/12/2022,NGB,Saposoa,6/7/2023 14:21,Rosanne Schruurs,Female,B2,CNY,B2,Delayed,Mehetabel Adelberg,Boeing 737,4536.09
+2355,01H4EEMSB153KGGJZCFMCH8NVV,Delta,Buenavista,4/2/2022,OCA,Xuanhua,6/7/2023 21:44,Byram Guitt,Male,C3,MXN,C3,Delayed,Sutton Papaminas,Embraer E190,1343.32
+2356,01H4EEMSB47JSB8DJ40ZF32N4F,Delta,Juli,24/9/2022,RCR,Gaoling,6/7/2023 09:25,Goraud Marco,Bigender,B2,PEN,C3,Delayed,Shell Attenborough,Boeing 737,9010.54
+2357,01H4EEMSB713PS3FRP9DAMV50N,Delta,Wang’er,9/4/2022,OUR,Payao,6/7/2023 22:26,Vivi Roony,Female,A1,CNY,B2,Delayed,Brena Sabban,Embraer E190,8991.0
+2358,01H4EEMSBAC7146RF9FJGSVS8Y,Delta,Villavicencio,18/4/2022,XMH,Fatufeto,6/7/2023 11:50,Brade Fahy,Non-binary,A1,COP,A1,Delayed,Gerrard Chestney,Embraer E190,7548.66
+2359,01H4EEMSBEN17S43WS7WR5JA2Z,American,Shanxi,30/11/2022,KIO,Waishan,6/7/2023 07:36,Trace Hartnup,Male,B2,CNY,A1,On Time,Allard Kaasmann,Embraer E190,1136.42
+2360,01H4EEMSBHHTARY70GZ129DJZQ,Delta,Zgurovka,9/6/2022,SLV,Rawawilis,6/7/2023 09:56,Layne Spittal,Female,B2,UAH,A1,Cancelled,Abigale Licciardiello,Embraer E190,4640.24
+2361,01H4EEMSBMA450A1C9NVEKK2ZZ,American,Hucun,19/3/2022,WGA,Krajan Sale,6/7/2023 19:14,Doreen McGrey,Female,C3,CNY,A1,Cancelled,Eleanore Dysert,Airbus A320,8234.2
+2362,01H4EEMSBQV2KQRP9ZFEJ5VAVT,American,Dhanot,23/7/2022,CPE,Baoxia,6/7/2023 23:16,Fulvia Crick,Female,A1,PKR,C3,Delayed,Jeanne MacSporran,Embraer E190,7195.64
+2363,01H4EEMSBTX9Y6HN1SRNKSPE4Y,Delta,Outeiro,17/4/2022,GWN,Chaloem Phra Kiat,6/7/2023 19:31,Dominic Herries,Male,C3,EUR,C3,Cancelled,Geoffrey Derrell,Embraer E190,8194.63
+2364,01H4EEMSBX9JGP93F57WY3B01T,United,Jefferson City,12/11/2022,KKW,Daping,6/7/2023 20:08,Glen Sealeaf,Female,A1,USD,B2,On Time,Pearline Aysik,Airbus A320,7775.97
+2365,01H4EEMSC1V4KCFJTYYRE6CBQZ,Delta,Brooklyn,20/10/2022,MAQ,Horred,6/7/2023 01:25,Diannne Lampard,Female,B2,USD,A1,On Time,Farrand Van der Hoeven,Embraer E190,3391.79
+2366,01H4EEMSC4RVVNN978SNZEZ6FJ,United,Luodian,19/3/2022,RRT,Ouro Preto do Oeste,6/7/2023 18:04,Hercule McCloid,Male,B2,CNY,B2,On Time,Herrick Greest,Boeing 737,4422.96
+2367,01H4EEMSC7CFQ9SVG4M8YA0XHA,American,Mierzęcice,14/5/2022,NEF,Wahang Dua,6/7/2023 02:18,Clementine Ubanks,Female,B2,PLN,C3,On Time,Kata McEnhill,Boeing 737,3412.58
+2368,01H4EEMSCB7BT78XFKP5N56RJ4,Delta,Helsingborg,8/4/2022,HKB,Verkhniy Kurkuzhin,6/7/2023 09:59,Willi Werlock,Female,C3,SEK,A1,Delayed,Shandee Thring,Embraer E190,7538.32
+2369,01H4EEMSCERYAY07EV8Y07H8HC,American,Calape,26/10/2022,BOB,Lavaur,6/7/2023 12:56,Broderic Redmond,Genderfluid,C3,PHP,C3,Delayed,Doris Janca,Boeing 737,8375.19
+2370,01H4EEMSCHYF3F54CPAVRZD6FP,American,Prabuty,5/4/2022,ARD,Sterling,6/7/2023 23:07,Terrence Ferber,Genderfluid,A1,PLN,C3,Delayed,Iseabal Coraini,Airbus A320,6816.92
+2371,01H4EEMSCNESQ95YP7N8CD22X3,United,Santulhão,30/7/2022,YFG,Tsurugi-asahimachi,6/7/2023 18:28,Lana Connealy,Female,A1,EUR,A1,On Time,Glenna Latty,Embraer E190,8392.3
+2372,01H4EEMSCRZZ5H2QFETHZBMEDT,Delta,Djibo,18/4/2022,ITO,Dunkerque,6/7/2023 13:05,Essa Jacox,Female,B2,XOF,A1,Delayed,Dedra Kunzel,Airbus A320,6314.24
+2373,01H4EEMSCVDPPVN66ES1HMWG5J,American,Cầu Giát,23/1/2022,NHK,Sidenreng,6/7/2023 17:21,Melony Garley,Female,B2,VND,A1,Cancelled,Eadith Tison,Airbus A320,6394.77
+2374,01H4EEMSCZJ2WT2MEPPHSTZW17,American,Bielawy,22/5/2022,KKI,Jandira,6/7/2023 22:35,Zachary Kerton,Male,B2,PLN,C3,On Time,Andras Maybery,Boeing 737,5654.44
+2375,01H4EEMSD2X67VFEN13MD9HZMG,Delta,Sarkand,1/5/2022,PIK,Atengmelang,6/7/2023 22:41,Hadlee Sherringham,Male,C3,KZT,A1,Cancelled,Johnnie Hustings,Embraer E190,6500.21
+2376,01H4EEMSD5ZFPB6BC6V4M3B9F7,United,Sakule,2/11/2022,CVT,Kodinsk,6/7/2023 03:24,Belia Croose,Female,B2,RSD,C3,Cancelled,Marie-jeanne Cluatt,Embraer E190,2598.24
+2377,01H4EEMSD9JTN0CRCG486DPG5H,Delta,Baran,28/2/2022,KEF,Yanglinwei,6/7/2023 07:25,Elsworth Snowding,Genderqueer,C3,IDR,B2,On Time,Ulrica Rubert,Boeing 737,3983.11
+2378,01H4EEMSDCPYJD5ANFEJ5CE1ND,Delta,Bluefields,16/9/2022,HLM,São José dos Campos,6/7/2023 03:34,Kahlil Danzey,Male,C3,NIO,B2,On Time,Judas Tommasuzzi,Embraer E190,7787.65
+2379,01H4EEMSDFMR2P42020HB3V57X,Delta,Imtarfa,4/3/2022,KEV,Tsukumiura,6/7/2023 13:50,Aldin Mohring,Male,B2,EUR,B2,On Time,Sutherland Howcroft,Airbus A320,8534.77
+2380,01H4EEMSDK5MADZK9GA257CJAK,Delta,El Progreso,30/12/2022,GZO,Huiqi,6/7/2023 09:53,Inge Croughan,Female,A1,HNL,A1,On Time,Vanya Kidston,Embraer E190,2621.28
+2381,01H4EEMSDPSAVGQM1HF2BK1JJD,Delta,Pasrukrajan Satu,15/3/2022,TVC,Abóboda,6/7/2023 14:22,Rudolfo Clutterham,Male,B2,IDR,B2,Cancelled,Kippy Mathonnet,Boeing 737,6369.25
+2382,01H4EEMSDSYZDED6KCH8WY041Q,American,Paris 16,7/7/2022,JOS,Planá,6/7/2023 13:22,Trisha Schaffler,Female,C3,EUR,B2,On Time,Maris Maudling,Boeing 737,4568.11
+2383,01H4EEMSDW5N9DY3ZKXWNABR8P,American,Qukou,24/6/2022,TNP,Huaccana,6/7/2023 10:43,Reid Stores,Male,A1,CNY,A1,Delayed,Gene Slaughter,Boeing 737,1383.85
+2384,01H4EEMSE027GVNDVFBY4BTHNB,United,Wakkanai,12/10/2022,AKD,Nossa Senhora do Socorro,6/7/2023 05:17,Felecia Mearing,Female,C3,JPY,C3,Delayed,Aloisia Pavlik,Embraer E190,2222.7
+2385,01H4EEMSE3HDQAYCGY76835SMT,American,Wentugaole,28/6/2022,EWO,Oberá,6/7/2023 18:12,Kin Di Frisco,Male,C3,CNY,C3,Delayed,Wiatt Barracks,Boeing 737,4422.09
+2386,01H4EEMSE675M88VRFQF9RK6FZ,American,Bilo,27/8/2022,SBU,Paidha,6/7/2023 16:39,Jamil Maitland,Male,B2,IDR,B2,Cancelled,Curt Kennefick,Airbus A320,8601.87
+2387,01H4EEMSE9BNDWM7BSBA78DV4V,American,Stockholm,12/5/2022,JHS,Fovissste,6/7/2023 08:11,Natal Berr,Male,B2,SEK,B2,Delayed,Heath Dignon,Airbus A320,7364.82
+2388,01H4EEMSECA6SYTK3XBNZHD6PS,Delta,Tandayag,25/8/2022,GMM,Hulín,6/7/2023 03:22,Saloma Ramsier,Female,A1,PHP,C3,Delayed,Adrian Greim,Airbus A320,7437.47
+2389,01H4EEMSEG4EZK299BZMPJ31GN,Delta,Salt Lake City,23/10/2022,PEQ,Lis,6/7/2023 01:58,Marla Lillie,Female,C3,USD,A1,On Time,Melodee Cherrison,Airbus A320,4015.53
+2390,01H4EEMSEKC5HWV9MSZG5XZNA3,Delta,Liutang,11/2/2022,USL,Hujirt,6/7/2023 05:25,Blithe Breese,Female,B2,CNY,A1,Delayed,Zahara D'Oyly,Airbus A320,4462.39
+2391,01H4EEMSEQY7TQ0QVSTX1ZVVCJ,American,Gaoling,30/4/2022,POZ,Albany,6/7/2023 04:11,Dyanna Beaves,Female,C3,CNY,A1,On Time,Lorita Dodd,Embraer E190,2769.96
+2392,01H4EEMSETTD7HWHV4292CGJQ2,American,Obeliai,24/3/2022,BYJ,San Narciso,6/7/2023 04:30,Kiley Ballaam,Male,C3,LTL,C3,On Time,Tedman Lamplugh,Airbus A320,5672.94
+2393,01H4EEMSEXAXZX24XBWXZQA6MY,American,Lagunas,16/10/2022,CEV,Nam Phong,6/7/2023 07:55,Paulita Warlton,Female,C3,PEN,C3,Delayed,Concettina Guswell,Airbus A320,2792.71
+2394,01H4EEMSF0VT3VBXX66M7T4XTG,Delta,Koga,28/7/2022,YIE,Jinping,6/7/2023 19:00,Lief Cowup,Male,A1,JPY,A1,Cancelled,Sutton Newland,Airbus A320,5947.19
+2395,01H4EEMSF4R97HW4Q9QRZGW5XC,Delta,Vyborg,5/7/2022,SBC,Słotowa,6/7/2023 09:08,Ker McCourtie,Male,B2,RUB,B2,Cancelled,Pennie Furby,Airbus A320,7815.02
+2396,01H4EEMSF768ZSRJKDCA7HTQG1,United,Wuling,1/3/2022,MRE,Rennes,6/7/2023 11:50,Tamiko Mintoff,Female,B2,CNY,A1,Cancelled,Shani Essel,Airbus A320,7281.31
+2397,01H4EEMSFA8MTRP62F6R1C9J6G,American,Xiaoshanzi,11/12/2022,BYC,Itaocara,6/7/2023 12:40,Ashil O'Reilly,Female,B2,CNY,B2,Cancelled,Lucille Patrono,Embraer E190,4881.36
+2398,01H4EEMSFD6S8WZYGSM2W4TDA9,United,Auxerre,2/9/2022,HAT,Corujeira,6/7/2023 12:23,Eileen Spini,Female,B2,EUR,A1,Cancelled,Peria Hunton,Boeing 737,9460.18
+2399,01H4EEMSFG7CFE9FQW7T5NVCVA,United,Górzno,24/12/2022,YJF,Aegela,6/7/2023 13:35,Nickie Scrogges,Female,A1,PLN,B2,Delayed,Abra Sabati,Embraer E190,2901.17
+2400,01H4EEMSFNRFMZPCGN7M6PHBNX,Delta,Alak,8/3/2022,ZGM,Buliok,6/7/2023 04:59,Lyndsay Adrian,Female,B2,IDR,A1,Cancelled,Brinna Kulic,Airbus A320,9968.66
+2401,01H4EEMSFV0XWSW5F6F1QHY5C2,Delta,Żabno,21/11/2022,CKV,Pogwizdów,6/7/2023 03:41,Isabeau Dressel,Female,C3,PLN,B2,Cancelled,Dulcy Bedenham,Embraer E190,6199.39
+2402,01H4EEMSG0MKCW1KZC3Z9GNZY8,American,Dalu,23/4/2022,LCG,Khemarat,6/7/2023 13:43,Nissy Harnell,Female,A1,CNY,B2,Cancelled,Shea Osbourne,Airbus A320,7328.9
+2403,01H4EEMSG57Z9SS263XAJCPMXB,American,Duotian,15/7/2022,NEL,Rancharia,6/7/2023 23:55,Joli Van De Cappelle,Female,C3,CNY,B2,On Time,Dalila Bonefant,Airbus A320,7417.25
+2404,01H4EEMSGA7VM00HYPP04FM8FE,United,Babah Rot,7/1/2022,WEF,Guanmiao,6/7/2023 21:26,Corabel Sargeant,Female,A1,IDR,A1,Delayed,Gena Haverty,Boeing 737,8672.14
+2405,01H4EEMSGGJXRQ09V93NVB1TQK,United,Le Port,17/2/2022,THD,Bélel,6/7/2023 11:07,Ardis Mattevi,Genderqueer,C3,EUR,A1,Cancelled,Desmond Jeune,Embraer E190,5569.64
+2406,01H4EEMSGNN7V0981J390DP8RP,Delta,Judita,26/11/2022,BJB,Kedungwringin Satu,6/7/2023 08:05,Tawsha Sunock,Genderqueer,A1,JOD,A1,Cancelled,Hussein Lancastle,Boeing 737,9914.32
+2407,01H4EEMSGTAE0DK1XENBTHTGMA,American,Rū-ye Sang,25/8/2022,SWH,Yongfeng,6/7/2023 00:51,Kennett Cargen,Male,C3,AFN,B2,Delayed,Codie Quye,Airbus A320,8219.22
+2408,01H4EEMSGZ33SSQNE9PYDJDA4N,United,Jinshi,21/2/2022,ELL,Beiyang,6/7/2023 22:00,Hort Pugh,Agender,B2,CNY,B2,Delayed,Blancha Coghlan,Airbus A320,2361.33
+2409,01H4EEMSH51DBEZXETJGARBWCF,Delta,Merton,23/1/2022,FAR,Caçador,6/7/2023 09:49,Pablo Ivanyukov,Male,B2,GBP,C3,Cancelled,Mord Darter,Airbus A320,5385.29
+2410,01H4EEMSHADMEBCY3XRQ43B0E8,American,Sop Moei,22/1/2022,PZU,Doyong,6/7/2023 09:50,Trstram Whittaker,Male,B2,THB,C3,Cancelled,Wilton Suttill,Embraer E190,9577.4
+2411,01H4EEMSHEHA3SQ9XEB0AM74R3,American,Flandes,7/4/2022,KKC,Chlumec,6/7/2023 01:02,Leelah Ruf,Female,A1,COP,A1,Delayed,Laurel Seefus,Airbus A320,4702.3
+2412,01H4EEMSHM6R21H7C7JT0NZB4R,Delta,Staraya Ladoga,17/11/2022,BBX,Chaguaní,6/7/2023 07:14,Elene Passman,Female,C3,RUB,C3,Cancelled,Merl Fradgley,Embraer E190,1976.23
+2413,01H4EEMSHSBS322X0SK08X9A1K,Delta,Paccha,30/6/2022,GDN,Brańsk,6/7/2023 10:52,Arabele Glasner,Female,C3,PEN,B2,Cancelled,Gizela Musselwhite,Boeing 737,8597.21
+2414,01H4EEMSHXXPDMMSV63TA2DD7K,American,Biting,27/5/2022,ECA,Marseille,6/7/2023 21:08,Marybelle Fausset,Female,C3,IDR,B2,On Time,Harriette Messiter,Embraer E190,2294.16
+2415,01H4EEMSJ2A1DNCKKWPP1YE2Z5,American,Murtajih,22/12/2022,NYN,Nuevo Emperador,6/7/2023 15:01,Suzann Tulloch,Female,C3,IDR,A1,Delayed,Nerta Tutton,Embraer E190,1821.58
+2416,01H4EEMSJ7KGZ8M9HG3AAF202K,American,Ijero-Ekiti,17/7/2022,DOI,Wiślica,6/7/2023 01:20,Seamus Sidle,Male,C3,NGN,B2,On Time,Kerby Critchley,Embraer E190,6864.09
+2417,01H4EEMSJCQHFGMYRX6ZA9ZFHE,American,Hantsavichy,10/11/2022,MPO,Dalmacio Vélez Sársfield,6/7/2023 18:02,Thedric Georgiev,Male,A1,BYR,A1,Delayed,Luca Scargill,Boeing 737,6038.6
+2418,01H4EEMSJH50J5Y216YB1S984W,American,Tân Kỳ,12/4/2022,ESF,San Antonio,6/7/2023 18:10,Godwin Warhurst,Male,B2,VND,B2,On Time,Gustavo Ladson,Airbus A320,3127.61
+2419,01H4EEMSJPWE9YDGFAAMTWSFYZ,Delta,Tazhuang,27/11/2022,RCU,Las Vegas,6/7/2023 11:53,Filberte Mulloch,Male,B2,CNY,B2,Cancelled,Othello O'Hederscoll,Boeing 737,9599.14
+2420,01H4EEMSJVNHQNZQX96J5AXB6N,American,Huangtang,21/2/2022,RYB,Tomsk,6/7/2023 23:04,Gayle MacFall,Female,B2,CNY,A1,On Time,Benedicta Klimek,Airbus A320,2989.1
+2421,01H4EEMSK0QT6R6CG02XA4FS6Y,Delta,Borås,15/8/2022,URY,Nantang,6/7/2023 00:38,Darda Kiehl,Non-binary,C3,SEK,A1,Cancelled,Rossie Sexti,Boeing 737,4010.03
+2422,01H4EEMSK5T26D9F3EV0Z5AZ6A,United,Guinoaliuan,12/4/2022,IOS,Nantes,6/7/2023 20:23,Alanson MacDowal,Male,C3,PHP,B2,Cancelled,Leopold Langhorne,Boeing 737,6344.34
+2423,01H4EEMSK9Y8AENGSF7TSYYY1E,American,Vinsady,14/1/2022,JOK,Selnica,6/7/2023 03:15,Lila Peer,Female,B2,RUB,B2,Cancelled,Evania Heather,Boeing 737,3510.13
+2424,01H4EEMSKE52WVV3C0X336EDE2,Delta,Heyin,7/2/2022,ASO,Tenggun Dajah,6/7/2023 19:22,Tommie Cammidge,Male,A1,CNY,B2,On Time,Townie Appleby,Airbus A320,5351.85
+2425,01H4EEMSKKV5775B165NKGW9QW,Delta,Gremyachinsk,16/3/2022,AUI,Wangping,6/7/2023 06:27,Philippine Randall,Female,A1,RUB,B2,On Time,Caron Leaman,Embraer E190,9818.93
+2426,01H4EEMSKR6BB96H2GX7Z9DM7Q,American,Caoyan,30/5/2022,DOX,Vera,6/7/2023 10:05,Hobey Attenbarrow,Male,B2,CNY,C3,On Time,Carly Dunkinson,Boeing 737,1483.36
+2427,01H4EEMSKX47FYB9A2SJ7SNW31,United,Kebonbencoy,20/9/2022,BRW,Lufang,6/7/2023 06:11,Gorden Bims,Male,A1,IDR,B2,Cancelled,Adler Wycherley,Airbus A320,6021.64
+2428,01H4EEMSM21QW9F55JHEMP5G9N,American,Dalonghua,5/9/2022,OKQ,Simpangpasir,6/7/2023 18:40,Waldemar Jervoise,Male,B2,CNY,B2,Cancelled,Ruddy Crux,Airbus A320,5897.62
+2429,01H4EEMSM644Z4N6QV7D5C34YN,American,Ust’-Ilimsk,27/5/2022,ZFA,Wilanagara,6/7/2023 04:44,Mattie Mounfield,Female,A1,RUB,A1,On Time,Lauree Werrit,Boeing 737,6786.68
+2430,01H4EEMSMAPK9KBTBGMBFJV63P,United,Munjul,12/9/2022,YBH,Pabean,6/7/2023 02:25,Kimberley Bosse,Female,B2,IDR,B2,Delayed,Ida Kops,Embraer E190,1873.54
+2431,01H4EEMSMD5YMSH4VJG490C6QA,Delta,Ishim,18/3/2022,VDZ,Cotmon,6/7/2023 22:41,Vail Matas,Male,C3,RUB,C3,On Time,Piotr Dominelli,Airbus A320,7478.63
+2432,01H4EEMSMF8CTKA213SEBKWRBC,United,Zunilito,3/2/2022,EUG,Daze,6/7/2023 15:43,Cordy Broke,Male,C3,GTQ,C3,On Time,Arty Fermer,Airbus A320,8926.13
+2433,01H4EEMSMJMWPR5NRNDPPQ72EX,American,La Libertad,27/1/2022,SEY,Kebon,6/7/2023 10:09,Avril Morrieson,Female,B2,PHP,C3,Cancelled,Britni Goodday,Embraer E190,8779.85
+2434,01H4EEMSMND4HE9K4TYPVS3PAF,Delta,Xiasi,16/2/2022,ODH,Tanahwurung,6/7/2023 05:54,Rozele Ingry,Female,A1,CNY,B2,Delayed,Jillayne Buard,Airbus A320,7376.22
+2435,01H4EEMSMRBF57KM2MK7ZW0GDS,American,Yakutsk,6/2/2022,GGL,Riosucio,6/7/2023 15:08,Augy Segar,Male,B2,RUB,B2,On Time,Bendicty Hurkett,Embraer E190,2389.95
+2436,01H4EEMSMVW4PWX9FST38J9YXN,Delta,El Sauce,19/7/2022,CEY,Vasilikón,6/7/2023 16:48,L;urette Maypowder,Female,B2,NIO,A1,Delayed,Christian Cree,Embraer E190,4227.97
+2437,01H4EEMSMY92SYVCRHBHSA9843,United,Villa Nueva,21/1/2022,DIL,Wąbrzeźno,6/7/2023 21:26,Win Vedenichev,Male,C3,HNL,A1,On Time,Justin Mathelon,Embraer E190,8157.58
+2438,01H4EEMSN0XECVE35JC911CZ45,United,Thị Trấn Yên Thế,28/6/2022,CJL,Novi Zagreb,6/7/2023 09:44,Renaldo Mansour,Male,C3,VND,C3,On Time,Walther Barfford,Embraer E190,9747.65
+2439,01H4EEMSN3674MZ383RBT6G225,Delta,Skolkovo,5/1/2022,BCL,Paris La Défense,6/7/2023 09:04,Hewitt Riddel,Male,C3,RUB,C3,On Time,Maurizio Fragino,Embraer E190,3594.55
+2440,01H4EEMSN6XK97QS3WSHKT4KTW,Delta,Suleja,4/7/2022,HRT,Prosyana,6/7/2023 15:26,Wrennie O'Donegan,Female,C3,NGN,A1,Delayed,Emalee Tapping,Boeing 737,5121.0
+2441,01H4EEMSN9EEABDS3E892FRE11,American,Hofors,3/12/2022,GFK,Cimaragas,6/7/2023 05:56,Chaddie Hoyle,Male,C3,SEK,C3,Cancelled,Raffaello Kira,Airbus A320,5955.41
+2442,01H4EEMSNCW15QKAQWTJPM80HX,Delta,Wang Nam Yen,14/2/2022,MSX,Montluel,6/7/2023 00:41,Michail Heineke,Male,C3,THB,A1,On Time,Kennedy Tredwell,Airbus A320,2396.55
+2443,01H4EEMSNF5KMTRNJ3NY3F1B10,Delta,Houston,26/10/2022,PIX,Mthatha,6/7/2023 13:47,Tuckie Darell,Male,C3,USD,A1,Cancelled,Emerson Fredi,Embraer E190,4784.07
+2444,01H4EEMSNH739BYMHGAFFZSHM7,American,Donggong,19/8/2022,KEI,Lin’an,6/7/2023 15:09,Far Cosham,Male,A1,CNY,C3,On Time,Bent Tolan,Embraer E190,2070.1
+2445,01H4EEMSNMEG2CKHHNHNE5TW7X,American,Gayle,24/8/2022,TMB,Liquica,6/7/2023 22:41,Ikey Klambt,Male,A1,JMD,A1,Cancelled,Simon Belleny,Boeing 737,1624.99
+2446,01H4EEMSNQB8XER6WPW6DG4NGF,Delta,Krasnokholm,22/9/2022,KGH,Tost,6/7/2023 11:27,Joann Flint,Female,B2,RUB,C3,Delayed,Coretta Millimoe,Embraer E190,9533.71
+2447,01H4EEMSNTT3CE4AJQBBGGFFJT,United,Tshela,24/7/2022,HSH,New York City,6/7/2023 06:02,Elsey O'dell,Female,A1,CDF,B2,Cancelled,Bibi Border,Airbus A320,3293.07
+2448,01H4EEMSNX229WBNVF2WYBKFJQ,United,Chişinău,28/1/2022,BLJ,Brka,6/7/2023 05:46,Collie Piffe,Female,C3,MDL,B2,On Time,Giovanna Hellwing,Embraer E190,4745.14
+2449,01H4EEMSP0DVPETZCYEW8QZPFX,United,Gnojnica,18/2/2022,PGZ,Krajan Jabungcandi,6/7/2023 20:12,Addie Iannitti,Male,B2,BAM,C3,Delayed,Fonzie Clery,Embraer E190,5459.77
+2450,01H4EEMSP3WG6HXHXWG0Y4F76T,American,Gontar,27/6/2022,HMT,Culianin,6/7/2023 20:23,Arluene Chaloner,Female,A1,IDR,C3,Cancelled,Francyne Hatch,Boeing 737,8670.12
+2451,01H4EEMSP6C33ZFXJMVR4TXPRJ,United,Nggelok,12/4/2022,SEM,Lishan,6/7/2023 03:39,Dominique Tawn,Male,B2,IDR,B2,On Time,Briano Dowtry,Airbus A320,7938.79
+2452,01H4EEMSP8V4EVKPKAW7VZNBWN,Delta,Nazaré,1/1/2022,ELU,Daxi,6/7/2023 19:48,Corabella Lawlee,Female,C3,BRL,A1,On Time,Clara Jansson,Boeing 737,6851.76
+2453,01H4EEMSPBB93V1XFKRESV9HKA,United,Sasovo,24/12/2022,TUA,Santo Tomas,6/7/2023 11:50,Witty Freeberne,Male,A1,RUB,C3,On Time,Darnell Wontner,Embraer E190,4866.01
+2454,01H4EEMSPEXC3Z8D60RS333HKC,Delta,Colombo,4/9/2022,KKL,Vostochnyy,6/7/2023 04:13,Keith Kuschel,Male,C3,BRL,A1,Cancelled,Valle Faraker,Embraer E190,6922.44
+2455,01H4EEMSPH4CMESW2XNHDAHZVX,United,Tatebayashi,10/8/2022,LUZ,Shanjeev Home,6/7/2023 07:58,Teddy Banck,Female,A1,JPY,C3,Delayed,Wendi Hadwick,Airbus A320,5695.99
+2456,01H4EEMSPMD0BN64AVJJ1QE62Z,American,Dankama,20/9/2022,PZO,Yubileynyy,6/7/2023 19:44,Terza Stoltz,Female,B2,NGN,C3,Cancelled,Mab Zammitt,Airbus A320,9679.91
+2457,01H4EEMSPQEHQFFW125W9NJA56,American,Kirovskiy,11/4/2022,UTU,Sumberkrajan,6/7/2023 08:18,Dalia Brevitt,Female,A1,RUB,B2,On Time,Kellie Wickie,Boeing 737,8615.01
+2458,01H4EEMSPTW020TJ60T042SG6E,Delta,Lípa,3/1/2022,RUS,Mahīn,6/7/2023 13:08,Darill O'Flaverty,Male,A1,CZK,B2,Cancelled,Cornell Kach,Embraer E190,2252.87
+2459,01H4EEMSPXHKAYRGNA6JMK6H88,American,Awsīm,3/7/2022,YLD,Zhongjiapu,6/7/2023 12:38,Jessa Tyas,Female,B2,EGP,C3,Cancelled,Gert Gwillym,Boeing 737,3150.5
+2460,01H4EEMSQ0ZF0PAH474BN8BARP,Delta,Itapuí,29/9/2022,QFO,Cradock,6/7/2023 09:57,Davon O'Doherty,Male,C3,BRL,B2,Cancelled,Tammie Bridgwood,Embraer E190,5828.91
+2461,01H4EEMSQ32ZAJSYD06X0QJPNT,American,Haveliān,22/9/2022,KWX,Canjulao,6/7/2023 01:31,Earlie Hellcat,Male,B2,PKR,B2,Delayed,Syman Aicheson,Boeing 737,8327.78
+2462,01H4EEMSQ50WRYD5F2TWWM8EBG,United,Tairan Camp,19/7/2022,KWY,Dongdong,6/7/2023 16:36,Jereme Fehely,Male,B2,PHP,C3,Cancelled,Aldric Hane,Airbus A320,8641.46
+2463,01H4EEMSQDPCCD2GZHE4SXRTMM,Delta,Shupenzë,4/4/2022,MOM,Wangchuanchang,6/7/2023 09:18,Sioux Butlin,Female,B2,ALL,B2,On Time,Amata Osgorby,Boeing 737,8732.63
+2464,01H4EEMSQG69QSK1BJDEZ834HS,Delta,Los Cedrales,16/5/2022,SLP,Ngembel,6/7/2023 23:42,Baillie Purvis,Male,B2,PYG,A1,Delayed,Obie Gorgler,Boeing 737,8276.86
+2465,01H4EEMSQK48HM9Z1SH514GRS7,American,Boliney,10/1/2022,SSG,Pingdong,6/7/2023 16:34,Reube Pattlel,Male,B2,PHP,A1,Delayed,Devin Sedgeworth,Embraer E190,6469.08
+2466,01H4EEMSQP5FCS71J4EA3K5MS5,United,Valence,12/5/2022,DNN,Guxi,6/7/2023 16:28,Gaspar Zotto,Male,A1,EUR,B2,On Time,Linc Lymbourne,Embraer E190,7095.84
+2467,01H4EEMSQSYS15M6PRMFHHV8NX,United,Kozhevnikovo,25/12/2022,ASS,Agudos,6/7/2023 14:50,Aleece Coskerry,Female,B2,RUB,B2,Delayed,Sallyanne Mouget,Boeing 737,9948.07
+2468,01H4EEMSQW8PR8AMZWKHNHXKV8,Delta,Miřetice,31/7/2022,LRF,Caja,6/7/2023 09:05,Rabi Knok,Male,B2,CZK,A1,Cancelled,Marlon Downs,Embraer E190,2618.39
+2469,01H4EEMSQZDZR1Z8MZDQXPT0N1,American,Turrialba,30/11/2022,PKZ,Pikalëvo,6/7/2023 14:46,Munmro Sprowles,Male,C3,CRC,B2,On Time,Vincent Ashborne,Boeing 737,5400.92
+2470,01H4EEMSR2GHQJBP2ZZKF7KPGC,Delta,Anzi,13/3/2022,FFD,Raglan,6/7/2023 05:57,Milton O'Doherty,Male,B2,CNY,B2,Cancelled,Rockie Ivanishin,Airbus A320,8492.07
+2471,01H4EEMSR5135ZC6RTT1YQBMRY,American,Reston,22/7/2022,AKX,Jawor,6/7/2023 08:04,Erhart Snelman,Male,C3,USD,B2,Cancelled,Tanney Wayon,Boeing 737,5093.21
+2472,01H4EEMSR7NFGYHNGGA3ERT1EA,American,Wangjiang,16/4/2022,SFR,Yabuli,6/7/2023 00:57,Milissent Frosdick,Bigender,C3,CNY,B2,Cancelled,Bernadina Decourcy,Boeing 737,3348.26
+2473,01H4EEMSRBSMK6CVMZRT6NF2ZX,United,Majunying,20/12/2022,SSX,Soure,6/7/2023 10:17,Catha Hatt,Female,B2,CNY,C3,Cancelled,Prudy Land,Boeing 737,7073.75
+2474,01H4EEMSRD5T5GRW81RDEMSD8V,American,Kedungtulup,1/6/2022,VIL,Luotuo,6/7/2023 00:06,Eddie Wanek,Non-binary,B2,IDR,A1,Delayed,Emiline Forrest,Airbus A320,6193.69
+2475,01H4EEMSRGDJ6GKVBNZ8D2WEZ9,Delta,Norberg,28/8/2022,SSH,Kamień Pomorski,6/7/2023 04:44,Lauri Thayre,Female,B2,SEK,C3,Delayed,Alex Cottie,Embraer E190,8481.07
+2476,01H4EEMSRK2ACMF0BRS0Y9R1S0,American,Savitaipale,4/8/2022,UKI,Seremban,6/7/2023 02:54,Giustina Russ,Female,B2,EUR,C3,On Time,Clari Headrick,Airbus A320,2550.5
+2477,01H4EEMSRPR2NFWR5TQFCGSZ94,Delta,Souto,25/10/2022,LWI,Jablah,6/7/2023 19:12,Neal Castagnaro,Male,A1,EUR,C3,Delayed,Sigmund Kennelly,Embraer E190,8853.73
+2478,01H4EEMSRSMB93QVESQ7WS3PD1,Delta,Pasadena,10/1/2022,LRR,Gudja,6/7/2023 01:14,Dacie Ballingal,Female,A1,USD,C3,On Time,Olympe Campos,Boeing 737,3771.51
+2479,01H4EEMSRWNEDNSSE0G2X3SY7B,United,Carvalhinho,4/7/2022,BLW,Ban Takhun,6/7/2023 20:54,Elbert Janton,Male,B2,EUR,A1,Cancelled,Hunter Varren,Boeing 737,1579.17
+2480,01H4EEMSRYKJY97EJ67PKXB2YH,United,Jinchang,14/11/2022,VCA,Essen,6/7/2023 06:49,Rachelle Woollaston,Female,B2,CNY,C3,Cancelled,Marline Weagener,Embraer E190,4078.94
+2481,01H4EEMSS2VPW1XTCC56HBBZMC,Delta,Abashiri,17/2/2022,IAH,Toledo,6/7/2023 08:18,Lenora Waddicor,Female,A1,JPY,A1,Delayed,Marsiella Lerohan,Boeing 737,1033.82
+2482,01H4EEMSS5KJ40E1MW8MBX908R,United,Bejucal,8/5/2022,ITA,Sanjwāl,6/7/2023 10:31,Katine Bebb,Female,C3,CUP,A1,On Time,Carol-jean Vasilevich,Boeing 737,8214.89
+2483,01H4EEMSS8NE6DG2PTN3KC1MTY,American,Ujiie,29/6/2022,MRE,Waiklibang,6/7/2023 16:51,Stanley Sealove,Male,C3,JPY,B2,Cancelled,Ramsay Geerdts,Airbus A320,3720.77
+2484,01H4EEMSSA0EM7K9M9XT4YB2KW,Delta,Preserje pri Radomljah,24/4/2022,MWQ,Stockholm,6/7/2023 01:17,Kassi Sydry,Female,A1,EUR,B2,On Time,Edita Vaughton,Embraer E190,9437.74
+2485,01H4EEMSSD6A9SP5TENPK2VVX2,United,Alcaria,4/10/2022,NVN,Zhonghouhe,6/7/2023 11:17,Gerty Rayman,Female,A1,EUR,B2,Cancelled,Fran Cuell,Embraer E190,2327.74
+2486,01H4EEMSSG7951ZQFZMY9990RD,Delta,Churubamba,9/1/2022,LIY,Włoszakowice,6/7/2023 15:53,Dorotea Cohrs,Female,C3,PEN,B2,On Time,Gertrud Arrigo,Boeing 737,5531.44
+2487,01H4EEMSSK6DQJEHBCERJW1C9Q,American,Mbalmayo,4/3/2022,PEM,La Plaine-Saint-Denis,6/7/2023 18:06,Roxy Noirel,Female,B2,XAF,C3,Cancelled,Chiquita Sergant,Airbus A320,2932.3
+2488,01H4EEMSSPATJRZ82HEVYM665F,Delta,Gaotuo,1/2/2022,YRD,Bundoc,6/7/2023 05:30,Daveta Ferrarin,Female,A1,CNY,B2,Cancelled,Hyacinthe Leyzell,Airbus A320,3475.44
+2489,01H4EEMSSRKC14C0MEDVWCTV9C,American,Karlovo,14/3/2022,NUW,Qingjiang,6/7/2023 09:53,Annadiana Tomovic,Female,A1,BGN,B2,Cancelled,Sabina Boole,Boeing 737,1233.24
+2490,01H4EEMSSVDTEFDCDPWRJZ2YPZ,American,Erhe,1/10/2022,XSO,Wulong,6/7/2023 18:37,Phaidra Bock,Female,A1,CNY,C3,Delayed,Ruperta Speers,Boeing 737,7845.8
+2491,01H4EEMSSYM3P6PC5YVMMFF0BH,Delta,Ostrzeszów,22/9/2022,ELF,Wang Chan,6/7/2023 22:22,Krissy Palffy,Female,B2,PLN,A1,Delayed,Sibbie Earthfield,Airbus A320,9370.65
+2492,01H4EEMST1AYFVWK2TXZTXK49P,Delta,Huangshanguan,21/11/2022,BSU,Khotiv,6/7/2023 04:26,Gregoire Whyteman,Male,B2,CNY,B2,Delayed,Pierson Hartwell,Embraer E190,8403.81
+2493,01H4EEMST4RMAD7KGXF95VFRNZ,American,Wanasari Baleran,19/2/2022,LUK,Hufang,6/7/2023 22:24,Gae Missenden,Female,B2,IDR,C3,Delayed,Myrtie Statefield,Boeing 737,8012.74
+2494,01H4EEMST684DZCC94QSYRE5TK,United,Mīzan Teferī,6/2/2022,PDK,Huangyan,6/7/2023 15:29,Kari Savill,Female,B2,ETB,C3,Delayed,Jeannette Codling,Boeing 737,6711.22
+2495,01H4EEMST9BRDAYXYYS3D6C4E8,United,Veshnyaki,11/4/2022,SMD,Ban Thai Tan,6/7/2023 22:10,Haroun Togwell,Male,A1,RUB,B2,Cancelled,Winny Chippindall,Airbus A320,3979.73
+2496,01H4EEMSTC88E6K8PDDB5G4VSE,Delta,Peski,21/10/2022,ELE,San Fernando,6/7/2023 14:36,Fancie Demkowicz,Female,C3,RUB,A1,On Time,Channa Jozsika,Embraer E190,7406.06
+2497,01H4EEMSTFAWRVTPAGVEF1GW54,United,Panyam,8/10/2022,JCR,Picoto,6/7/2023 14:32,Clari Hutt,Female,A1,NGN,C3,Cancelled,Lisa Watkiss,Boeing 737,3268.06
+2498,01H4EEMSTJRB8X42ARGJ3N1D5S,Delta,Norrköping,2/7/2022,JCH,Stockholm,6/7/2023 14:59,Florencia Dominik,Female,A1,SEK,A1,Cancelled,Selle Jobbings,Embraer E190,4551.76
+2499,01H4EEMSTM7A42P952MT6B4HWC,United,Stony Hill,2/2/2022,GYY,Cruzília,6/7/2023 19:53,Louisette Parminter,Female,B2,JMD,B2,Cancelled,Coreen Linkie,Embraer E190,1407.59
+2500,01H4EEMSTQJ3YS63SBVQJTMCTT,American,Alilem,20/4/2022,CCJ,Heemskerk,6/7/2023 03:01,Sunshine Jandourek,Female,C3,PHP,C3,Cancelled,Joli Francillo,Embraer E190,6960.48
+2501,01H4EEMSTTWSDPCXYNA9PFN3TS,United,Sokarame,20/12/2022,ABS,Uwelini,6/7/2023 21:37,Susanetta Bryson,Female,B2,IDR,B2,Cancelled,Colette Guerner,Airbus A320,2335.67
+2502,01H4EEMSTXCPH16GAKG7367W9T,Delta,Lengkeng,27/1/2022,SHY,Queimados,6/7/2023 14:16,Malchy Balm,Male,C3,CNY,A1,Delayed,Ripley Bellingham,Airbus A320,7950.9
+2503,01H4EEMSV03PE6YKSW8FAKBFKY,Delta,Vouani,30/8/2022,YYJ,Hengjie,6/7/2023 02:02,Yale Dieton,Male,B2,KMF,B2,Delayed,Octavius Askie,Boeing 737,7509.02
+2504,01H4EEMSV28NQ6FBGV7484CV38,American,Denpasar,24/2/2022,ANU,Nogent-le-Rotrou,6/7/2023 05:56,Talyah Cayley,Polygender,A1,IDR,A1,On Time,Rebecca Pitchford,Boeing 737,9215.95
+2505,01H4EEMSV7Z305Q5DP03RVJKZJ,Delta,Chojata,22/9/2022,TKE,Mwene-Ditu,6/7/2023 17:22,Demott Warricker,Male,C3,PEN,A1,Delayed,Skell Hainey,Embraer E190,4722.48
+2506,01H4EEMSVC8ARJ30FD7CYB39ED,American,Orkney,8/1/2022,FXO,Hemudu,6/7/2023 14:34,Ricky Iacopetti,Male,B2,ZAR,B2,Delayed,Woodrow Dalrymple,Airbus A320,3268.74
+2507,01H4EEMSVHNNZ7Q0WN6AP278Y6,United,Pangkalan,1/2/2022,NSM,Dugulubgey,6/7/2023 12:49,Conn Braunle,Male,C3,IDR,B2,On Time,Salim Burrett,Embraer E190,6477.04
+2508,01H4EEMSVP6CM451G54YWAP28V,Delta,Rymanów,15/9/2022,JUV,Konstantynów,6/7/2023 17:28,Gav Fairburne,Male,C3,PLN,A1,Delayed,Jeremie Warman,Boeing 737,6840.49
+2509,01H4EEMSVV02MA4GCMSKREMD37,Delta,Huamu,16/12/2022,KNQ,Maunuri,6/7/2023 05:17,Egan Duckham,Male,B2,CNY,C3,Delayed,Sammy Wimmer,Embraer E190,3400.16
+2510,01H4EEMSVZ2YD2ESSG8JBNB6PW,Delta,Katuli,24/7/2022,KBN,Beaumont,6/7/2023 15:30,Ban Dyerson,Male,C3,PHP,B2,Delayed,Consalve MacFadzan,Boeing 737,8081.01
+2511,01H4EEMSW3CRSSAG34EQ3F3AX5,Delta,Khulm,15/7/2022,SXU,Lagos,6/7/2023 05:14,Aylmer Badcock,Male,B2,AFN,C3,Delayed,Daron Whiffin,Boeing 737,2759.99
+2512,01H4EEMSW84D09TTMBJBFYRF62,American,Sopron,7/7/2022,TOX,Antequera,6/7/2023 05:23,Kynthia Woollends,Female,A1,HUF,A1,On Time,Dorothee Kuschel,Embraer E190,2672.46
+2513,01H4EEMSWCKG3H3FJB42PCJPM7,American,Sacramento,21/3/2022,MAP,Wenlin,6/7/2023 10:48,Domini Parzis,Female,B2,BRL,C3,Delayed,Kassey Cinderey,Airbus A320,3636.26
+2514,01H4EEMSWGVK05FRDHA96KBG4S,United,Medan,7/6/2022,KMB,Ajaccio,6/7/2023 18:12,Florida Shale,Female,A1,IDR,B2,Cancelled,Lanny Borsay,Boeing 737,6708.33
+2515,01H4EEMSWNFQ77FA1HD9TZ3Y0W,United,Yandev,13/8/2022,MRO,Yingjiang,6/7/2023 01:20,Chryste Fortun,Genderfluid,B2,NGN,A1,Cancelled,Alvira Degoy,Airbus A320,6517.35
+2516,01H4EEMSWT40T3ZTTPVE872876,United,Kalde Panga,3/6/2022,IFH,Kuanfatu,6/7/2023 04:19,Lonnie Margery,Male,A1,IDR,B2,Cancelled,Guilbert Wyvill,Airbus A320,6439.28
+2517,01H4EEMSWY0GQGSDV9ASEN251T,Delta,Casselman,12/4/2022,ORX,Šid,6/7/2023 00:37,Brittan Baysting,Female,A1,CAD,C3,On Time,Ernesta Penkethman,Embraer E190,8494.2
+2518,01H4EEMSX3192JKRWZZSP0VPZH,Delta,Fengshan,1/8/2022,BFM,Bludov,6/7/2023 00:33,Amalia Ezzle,Female,A1,CNY,B2,On Time,Hannie Haylor,Boeing 737,3454.57
+2519,01H4EEMSX7XSW708PZYRYC7D1V,United,Bolou,6/11/2022,SFS,Balayan,6/7/2023 05:36,Robert Longina,Male,A1,IDR,B2,Delayed,Armando Courteney,Embraer E190,3042.64
+2520,01H4EEMSXCV59P596A6X3DYC5N,United,Peterhof,16/3/2022,MEF,Munse,6/7/2023 08:37,Bink Feltham,Male,A1,RUB,A1,Cancelled,Luis McLewd,Airbus A320,4843.04
+2521,01H4EEMSXGZMAF0GP3V01SK4AY,Delta,Starobin,28/2/2022,TIY,Tanjungluar,6/7/2023 13:58,Lana Cardo,Female,B2,BYR,A1,Cancelled,Leontine Maskelyne,Embraer E190,3783.27
+2522,01H4EEMSXM0NWVEEV7TB07KDHQ,Delta,Naperville,5/2/2022,OSW,Kostyantynivka,6/7/2023 22:51,Maurits Maceur,Male,A1,USD,B2,Cancelled,Gale Dodge,Embraer E190,8614.79
+2523,01H4EEMSXR470E8SEZG301JBXY,American,Ar Rujum,28/4/2022,HNI,Nilópolis,6/7/2023 01:52,Russell Palin,Male,B2,YER,A1,Delayed,Jeffie Wofenden,Boeing 737,2519.21
+2524,01H4EEMSXYBSSB3ZXPVQNXTF67,United,Sviadnov,29/6/2022,PWA,Zhangfeng,6/7/2023 08:50,Fernanda Begley,Female,B2,CZK,A1,Delayed,Dorian Tire,Embraer E190,1942.47
+2525,01H4EEMSY1ET9PVGH9FH84791R,Delta,San Isidro,30/12/2022,LZR,Kan’onjichō,6/7/2023 06:43,Margette Pudsey,Female,A1,MXN,B2,On Time,Philippe Leschelle,Embraer E190,7181.45
+2526,01H4EEMSY6ADD39BQ7G1GKJ0E4,American,Beisijiazi,26/8/2022,IXZ,Nglengkong,6/7/2023 08:23,Abrahan Bullard,Male,A1,CNY,A1,On Time,Maddie Poppleton,Embraer E190,3384.21
+2527,01H4EEMSYB6QS7MMR8P41MM4BT,United,Yonezawa,19/11/2022,AKG,Oesapa,6/7/2023 00:13,Xymenes Champniss,Male,B2,JPY,C3,Delayed,Sigismond Connell,Airbus A320,8073.21
+2528,01H4EEMSYF36Q7539NADWQRCS8,Delta,Dornava,21/3/2022,INI,Santo Domingo Este,6/7/2023 05:54,Kathye Fissenden,Female,B2,EUR,B2,On Time,Carol-jean Thynn,Boeing 737,8694.22
+2529,01H4EEMSYM7TZKSVADSDW2HJ21,American,Pedro Leopoldo,8/8/2022,DRY,Liulin,6/7/2023 09:11,Asia Littlemore,Female,C3,BRL,B2,Cancelled,Eveline Pughe,Boeing 737,5316.23
+2530,01H4EEMSYQE4CGJXXR4RNJHYWV,Delta,Marechal Deodoro,7/10/2022,SUY,Östersund,6/7/2023 09:39,Malvina Conibear,Female,C3,BRL,C3,Delayed,Lucinda Lampett,Boeing 737,1775.9
+2531,01H4EEMT882327YZE1Z0BRGFAC,Delta,Desnogorsk,11/7/2022,UTU,Munkedal,6/7/2023 16:47,Bobby Southway,Male,B2,RUB,B2,Delayed,Bank Iacovino,Airbus A320,8384.79
+2532,01H4EEMT8BHNHGPWMMTDAJG87G,United,Yuanhou,18/9/2022,MJB,Areeiro,6/7/2023 21:43,Ileana Kitteman,Female,B2,CNY,C3,Delayed,Charis Bengle,Boeing 737,1726.03
+2533,01H4EEMT8E25KZAZ87RKFS72PM,United,Río Tercero,25/1/2022,SJO,Närpes,6/7/2023 12:50,Baxie Estabrook,Male,A1,ARS,A1,Delayed,Hendrik Sabatini,Embraer E190,5040.32
+2534,01H4EEMT8H37VAPS3TG4XQXK7H,American,Hitiaa,19/5/2022,TNC,Yanggang,6/7/2023 00:46,Smith Amy,Agender,B2,XPF,B2,Cancelled,Morrie Blyden,Airbus A320,9411.03
+2535,01H4EEMT8MRXRN6R7A72NCQVBK,Delta,New-Richmond,13/5/2022,LUK,Sofrino,6/7/2023 09:15,Hamel Dudgeon,Male,C3,CAD,C3,Cancelled,Godfree Lamb-shine,Boeing 737,7845.98
+2536,01H4EEMT8Q2WGDT9HE5KPY7A87,Delta,Warung Wetan,25/7/2022,BHB,Lagunillas,6/7/2023 19:15,Kary Ropcke,Female,A1,IDR,C3,Cancelled,Suzanne Giroldo,Boeing 737,7538.69
+2537,01H4EEMT8TZADTWSM0TXPPJ1N4,United,Znamenka,1/8/2022,VGO,Longsheng,6/7/2023 07:10,Wang Giannini,Male,C3,RUB,B2,On Time,Edik Roelofs,Boeing 737,8124.53
+2538,01H4EEMT8X8ZBVZFH29C6BB2PC,United,Bystrzyca,28/12/2022,SOU,Fort Worth,6/7/2023 14:58,Magdalen Dollman,Female,A1,PLN,C3,On Time,Latia Weighell,Airbus A320,3340.86
+2539,01H4EEMT8ZK9ZQYW09F7NNRE95,Delta,Atyrá,3/7/2022,NIS,Anserma,6/7/2023 22:36,Ty Zanni,Male,B2,PYG,A1,Cancelled,Marijn Armytage,Embraer E190,3834.18
+2540,01H4EEMT9211C4YJX6MAACT5XY,Delta,Dimitrov,9/3/2022,CKH,Walferdange,6/7/2023 13:10,Alberto Ethridge,Male,B2,AMD,B2,Cancelled,Georgie Piwell,Airbus A320,9719.53
+2541,01H4EEMT95NY115Y8YR2J383VB,Delta,Xindong,31/1/2022,SBM,Zhishan,6/7/2023 18:25,Terrie Gaylord,Female,A1,CNY,A1,Cancelled,Nelia Blincoe,Airbus A320,4321.97
+2542,01H4EEMT98TRP7H56QGSYA2ET9,Delta,Tallahassee,1/11/2022,TLY,Vsetín,6/7/2023 20:23,North Bowland,Male,B2,USD,C3,Cancelled,Kenton MacParlan,Boeing 737,2253.58
+2543,01H4EEMT9B7TAP7024P5ZZWJ2C,United,Socos,21/2/2022,GME,Ordzhonikidzevskiy,6/7/2023 15:11,Esmeralda Zorzoni,Female,B2,PEN,A1,On Time,Britte Spieck,Airbus A320,5407.2
+2544,01H4EEMT9EFZC1KZDNZD42B44J,Delta,Eshan,18/11/2022,NOJ,Yuanzhou,6/7/2023 04:42,Teriann Podd,Female,C3,CNY,A1,Cancelled,Zenia Coulter,Boeing 737,1541.22
+2545,01H4EEMT9HG6GPNZE59RXWC0VC,American,Lantapan,17/3/2022,CEQ,Edissiya,6/7/2023 13:27,Ariella Pickrill,Bigender,C3,PHP,C3,Delayed,Lauralee Bratten,Boeing 737,9684.07
+2546,01H4EEMT9KVWFBZ8CQBD0N5YZP,United,Daidaon,2/10/2022,TIC,Lajinha,6/7/2023 15:09,Jeffy Penton,Male,A1,CNY,B2,Cancelled,Ravi Kemsley,Airbus A320,4367.39
+2547,01H4EEMT9PR5V67EXPCRPCKFN4,American,Los Angeles,14/9/2022,YTP,Saurimo,6/7/2023 10:35,Kurtis Boulden,Male,B2,USD,C3,On Time,Gare Stentiford,Airbus A320,6041.23
+2548,01H4EEMT9S72NK923VF6TX88BD,American,Lugar Novo,14/2/2022,RLK,Conchal,6/7/2023 00:34,Anitra Pea,Female,C3,EUR,C3,Cancelled,Bianka Readwin,Boeing 737,1337.64
+2549,01H4EEMT9WC5W3CZP84SBRXX6T,American,Inglewood,3/2/2022,TEO,Kebon,6/7/2023 12:40,Rudie Dunkerley,Non-binary,B2,USD,A1,On Time,Jozef Phillpotts,Embraer E190,7916.91
+2550,01H4EEMT9ZP53TZJ342GXGH0YZ,American,Huimin,28/2/2022,IXG,Duayaw Nkwanta,6/7/2023 07:02,Margareta Pointin,Genderfluid,B2,CNY,C3,Delayed,Rozanne Gouldthorpe,Airbus A320,6634.13
+2551,01H4EEMTA1E2R959FR3GGR187Z,Delta,Hova,8/3/2022,PBZ,Tiechanggou,6/7/2023 05:59,Flint Bockmaster,Male,A1,SEK,A1,Delayed,Evan Rosendahl,Boeing 737,3545.61
+2552,01H4EEMTA472TQGM98NJWANGDX,Delta,Sharga,8/10/2022,GEG,Longka,6/7/2023 09:12,Jenny Carnilian,Female,A1,MNT,A1,Delayed,Lari Cockill,Embraer E190,8875.64
+2553,01H4EEMTA7414GFB4171ANTA6Y,Delta,Staroyur’yevo,18/3/2022,YTA,Aurillac,6/7/2023 17:10,Fairlie Bosley,Male,A1,RUB,A1,Delayed,Lancelot Reihill,Boeing 737,1097.95
+2554,01H4EEMTAAT82HQS1THA6TV4MC,Delta,Tyre,22/4/2022,THM,Nāḩiyat Alī ash Sharqī,6/7/2023 02:39,Amalia Jenoure,Female,A1,LBP,C3,On Time,Donnajean Varns,Airbus A320,8904.69
+2555,01H4EEMTADKVBNYC3S22QT09PP,American,Baytīn,19/7/2022,KCM,Baiyun,6/7/2023 02:48,Ginger Tynemouth,Genderqueer,C3,ILS,A1,Cancelled,Neel Blankhorn,Airbus A320,1870.52
+2556,01H4EEMTAFH9MKKGJ7FBQH5J5F,American,Sukorambi,4/6/2022,WEH,Pajak,6/7/2023 17:31,Briana Iremonger,Female,B2,IDR,B2,Cancelled,Jeana Hebble,Airbus A320,2184.53
+2557,01H4EEMTAJVTHBNHQECJD7ZMPB,American,Anticala,30/11/2022,BGV,Pará de Minas,6/7/2023 14:38,Ruddy Ponceford,Male,A1,PHP,A1,Cancelled,Hodge Biesinger,Boeing 737,6645.91
+2558,01H4EEMTAN23ZH57TCHN126XWT,American,Sevilla,8/5/2022,CRT,Moravský Krumlov,6/7/2023 12:20,Andy Imeson,Male,A1,EUR,C3,Delayed,Lon Eymer,Embraer E190,3042.9
+2559,01H4EEMTARP74PG6A4VTZSV67W,United,Brzyska,24/10/2022,MHB,Anjirserapat,6/7/2023 02:58,Joane Maso,Female,A1,PLN,B2,On Time,Cathrine Brislen,Boeing 737,7543.9
+2560,01H4EEMTAVB43KEA9JZ7R6AEWF,Delta,Johanneshov,15/11/2022,KYX,Daxing,6/7/2023 05:43,Stanislaus Farbrother,Male,A1,SEK,C3,Cancelled,Justin Brucker,Embraer E190,4090.87
+2561,01H4EEMTAXBK61MASZCBJ18P8V,United,Balbagay,21/5/2022,TOI,Piggotts,6/7/2023 14:00,Jemima Alger,Female,C3,CNY,B2,Cancelled,Lynette Groarty,Embraer E190,8250.71
+2562,01H4EEMTB0ES45AT7D11T333D3,American,Xicheng,27/8/2022,OMI,Tamboril,6/7/2023 20:13,Dasya Bradshaw,Female,B2,CNY,C3,Delayed,Kimberlee Ardley,Airbus A320,8311.28
+2563,01H4EEMTB3Y8EJ2C4SQDW2E41V,American,Gällivare,1/6/2022,UBS,Impalutao,6/7/2023 07:45,Gabriele Mayhead,Male,A1,SEK,C3,Delayed,Cooper Reeder,Boeing 737,8437.08
+2564,01H4EEMTB630S60KBJR1EWTTV0,Delta,Prakhon Chai,1/7/2022,PHI,Gryfów Śląski,6/7/2023 06:07,Joyce Giacaponi,Female,A1,THB,A1,On Time,Nariko Pirie,Embraer E190,6888.87
+2565,01H4EEMTB8H79VDRTZJQA64WY7,United,Al Hufūf,17/9/2022,EGH,Laguna Salada,6/7/2023 04:31,Aretha Dudbridge,Female,B2,SAR,C3,Delayed,Philippine Galway,Boeing 737,7612.72
+2566,01H4EEMTBBGETRB39AWWJ9ZJ6Q,American,Diourbel,20/10/2022,EOZ,Baoziba,6/7/2023 11:28,Delilah Vasentsov,Female,A1,XOF,A1,On Time,Ebonee Hacard,Boeing 737,9696.57
+2567,01H4EEMTBEXFC75PP36BSKQ4F8,American,Kota Kinabalu,24/2/2022,PYO,Dhahi,6/7/2023 20:37,Gabrila Whyler,Female,A1,MYR,A1,On Time,Roze Lodford,Embraer E190,3717.99
+2568,01H4EEMTBH98TSR9D8GGNVDDM6,Delta,Gaoqiao,4/7/2022,CEA,General Lavalle,6/7/2023 02:59,Rockwell McGuiney,Male,C3,CNY,A1,On Time,Georges Moule,Boeing 737,7696.21
+2569,01H4EEMTBK43V6G3XVNDBDW23Q,United,Minneapolis,8/11/2022,DUK,Sukorejo,6/7/2023 05:40,Brook Siburn,Male,A1,USD,A1,Cancelled,Bert Jodrellec,Boeing 737,6936.05
+2570,01H4EEMTBPASVSW4HB9TQ3E9SD,Delta,Oranjestad,14/3/2022,MER,Duhu,6/7/2023 02:16,Kalinda Exell,Female,B2,USD,B2,Cancelled,Marthe Spieck,Airbus A320,6657.71
+2571,01H4EEMTBSSVHB6CH6S48BMVRX,American,Yangdian,3/12/2022,VTN,Watublapi,6/7/2023 15:26,Gaelan Twentyman,Male,A1,CNY,B2,On Time,Carl Anneslie,Airbus A320,2138.75
+2572,01H4EEMTBWCBMYZPM8SETTT274,Delta,Marugame,16/11/2022,AWR,Kiên Lương,6/7/2023 03:46,Jasen Petworth,Male,B2,JPY,C3,Delayed,Pembroke Crinidge,Boeing 737,2693.8
+2573,01H4EEMTBY69HN37GGXMBMTZMJ,United,Oehaunu,15/3/2022,BDO,Zhaike,6/7/2023 20:11,Adamo McGrath,Male,C3,IDR,B2,On Time,Ernst Longshaw,Embraer E190,5678.8
+2574,01H4EEMTC1CBWXGZ048D1REV1V,United,Boavista,28/4/2022,BKZ,Namur,6/7/2023 20:30,Michell Maginot,Female,C3,EUR,A1,Cancelled,Paige Sangwin,Boeing 737,7081.28
+2575,01H4EEMTC42TG8YE0HE61PF23T,American,Cabanaconde,8/5/2022,DUC,Vällingby,6/7/2023 05:40,Corny Pretor,Non-binary,B2,PEN,A1,Cancelled,Willem Lumsdaine,Embraer E190,6401.41
+2576,01H4EEMTC7SHEJN00TG268Y6DJ,United,Magalalag,13/10/2022,MUY,Paradela,6/7/2023 10:41,Antoni Brind,Male,A1,PHP,C3,Delayed,Woody Arnot,Airbus A320,4814.06
+2577,01H4EEMTC9F7KF11098VVC59Q6,United,Zhabagly,6/3/2022,JRN,São Marcos,6/7/2023 02:16,Leonie Flowitt,Female,C3,KZT,A1,Cancelled,Bonni William,Airbus A320,3472.08
+2578,01H4EEMTCC53Q112K6N6W2NWFZ,United,Guimba,21/8/2022,MIS,Prokuplje,6/7/2023 13:35,Rahal Wing,Female,B2,PHP,C3,Cancelled,Hetti Spendlove,Embraer E190,7066.97
+2579,01H4EEMTCGMFEA92PM5TFT0HMY,American,Half Way Tree,25/11/2022,AXR,Mataya,6/7/2023 10:14,Roy Hayball,Male,A1,JMD,B2,On Time,Vincenty Spuner,Embraer E190,1164.63
+2580,01H4EEMTCN17EDYB5GCYE820JB,Delta,Simo Satu,14/6/2022,GMM,Linshe,6/7/2023 17:55,Audrye Scoular,Female,A1,IDR,C3,Delayed,Rhiamon Shovelin,Airbus A320,7512.13
+2581,01H4EEMTCVFSAHW7W79AJSFS6K,American,Buyun,27/7/2022,TIO,Duba,6/7/2023 10:18,Almire Petrolli,Female,C3,CNY,A1,On Time,Amandy Lokier,Embraer E190,6389.32
+2582,01H4EEMTD0A5ZY0PHVX32CCHYE,United,Varberg,15/12/2022,KTG,Ormstown,6/7/2023 20:57,Harwilll Dounbare,Male,B2,SEK,B2,Delayed,Wain Pharrow,Embraer E190,6636.1
+2583,01H4EEMTD5DT8PMT3NCXW0CTKC,American,Banjar Penyalin,10/6/2022,WBO,Sande São Martinho,6/7/2023 02:35,Tremain Camacke,Male,B2,IDR,C3,Delayed,Jodi Enrrico,Embraer E190,5208.1
+2584,01H4EEMTDBDVFPT3BPV0RV5CDW,Delta,Eling,22/3/2022,SZV,Ondores,6/7/2023 04:45,Venus Grigoriscu,Female,A1,CNY,A1,On Time,Binny Cavnor,Airbus A320,8029.84
+2585,01H4EEMTDGTW5FAM3S1WH72HDF,United,Riangbao,5/3/2022,ITO,Sandaogou,6/7/2023 15:27,Melony Easson,Female,B2,IDR,A1,Cancelled,Pepita Roos,Embraer E190,1479.04
+2586,01H4EEMTDMR4SN76W1Q55ZJ9PA,Delta,Lefortovo,7/10/2022,XCM,Wakefield,6/7/2023 23:48,Eldon Shafto,Male,C3,RUB,C3,On Time,Ky Ottam,Boeing 737,8448.02
+2587,01H4EEMTDQTNF1QH4V33N87NQ6,American,Dunhao,11/3/2022,OGA,Zhongguanyi,6/7/2023 13:57,Desirae Lamball,Polygender,B2,CNY,A1,Delayed,Verney Anthoin,Airbus A320,8789.7
+2588,01H4EEMTDTWQTBE6XRQM8T1T5J,United,Tonota,24/7/2022,KGG,Libenge,6/7/2023 23:23,Latrina Kirley,Female,A1,BWP,B2,On Time,Michaeline Beeken,Airbus A320,2567.6
+2589,01H4EEMTDWPG6YWNYYP75RCA2E,United,Bosaso,4/9/2022,CNS,Ruma,6/7/2023 17:04,Dix Goodbarr,Female,B2,SOS,A1,On Time,Kamillah Suscens,Boeing 737,1497.73
+2590,01H4EEMTDZVDBPC9E39KACEYVS,Delta,Tegalsari,13/7/2022,LAH,Morocelí,6/7/2023 17:12,Armando Lohoar,Male,B2,IDR,B2,On Time,Haskell Rushbury,Embraer E190,1175.71
+2591,01H4EEMTE2629A7J8G16FZ71PB,Delta,Romilly-sur-Seine,5/4/2022,OZC,Liantan,6/7/2023 05:54,Mikkel Gircke,Male,C3,EUR,B2,On Time,Padraic Handrok,Airbus A320,8267.19
+2592,01H4EEMTE5BK5ZG13SW4ZGVRE7,American,Jingjiao,28/12/2022,NIS,Zhishan,6/7/2023 09:25,Emerson Wolfendale,Male,C3,CNY,C3,Cancelled,Tully Barroux,Boeing 737,2537.5
+2593,01H4EEMTE7ABP5Z5MMY7GRYY9Z,American,Pulaukijang,3/7/2022,RVA,Xudat,6/7/2023 15:23,Filip Rotlauf,Male,C3,IDR,B2,On Time,Bendix Ibotson,Embraer E190,5990.24
+2594,01H4EEMTEA2WN8RKDPASEY66M0,Delta,Ishkhoy-Yurt,20/6/2022,KDE,Campos Novos,6/7/2023 06:53,Ransom Dunthorn,Male,C3,RUB,A1,Cancelled,Adler Merigon,Boeing 737,9749.11
+2595,01H4EEMTEVGEZY9VQBBN4GF7DF,United,Pangushan,2/6/2022,BRE,Pedreira,6/7/2023 14:09,Audry Corhard,Female,B2,CNY,C3,On Time,Kacie Sneaker,Boeing 737,7546.68
+2596,01H4EEMTEY6T2S9193RSQJAEJJ,United,Boyle,17/5/2022,TOP,Álimos,6/7/2023 00:29,Edythe Batisse,Female,C3,EUR,A1,Cancelled,Jobi Tapp,Boeing 737,7979.22
+2597,01H4EEMTF1GSSDTAZ67PCD7JHQ,United,Monte Leite,5/9/2022,WGB,Razan,6/7/2023 10:36,Dorolice Champley,Female,C3,EUR,A1,Cancelled,Britt Sheilds,Boeing 737,3248.17
+2598,01H4EEMTF5CSZZZH7H91VGT6JF,Delta,San Cristóbal,7/1/2022,GRW,Guadalupe,6/7/2023 14:01,Dorotea Biaggiotti,Female,C3,DOP,B2,Delayed,Randi Bigadike,Embraer E190,8341.63
+2599,01H4EEMTF8R7WGDZ9APQRSBPR2,Delta,Cincinnati,26/9/2022,HBT,Zhengdonglu,6/7/2023 17:35,Bird Kingshott,Female,A1,USD,C3,Cancelled,Ashla Tarplee,Embraer E190,5006.58
+2600,01H4EEMTFA0B0XTZQ3ACQE50D7,Delta,Donskoy,15/1/2022,QGP,Chisong,6/7/2023 18:12,Kahaleel Beceril,Male,A1,RUB,C3,On Time,Geno Sollowaye,Embraer E190,6476.86
+2601,01H4EEMTFD1F99YXANRF7MHB57,Delta,Kotanopan,9/7/2022,WUX,Bajingmeduro,6/7/2023 14:39,Frederich Streak,Male,C3,IDR,A1,On Time,Yardley Guihen,Embraer E190,5709.07
+2602,01H4EEMTFGGFA46CQBHFANP32H,American,Meshcherino,23/10/2022,SPZ,Bom Jesus da Lapa,6/7/2023 17:36,Gar Silbermann,Male,C3,RUB,A1,Cancelled,Xever Baribal,Boeing 737,5065.99
+2603,01H4EEMTFK7VTGXJKK9V85NY7X,Delta,Shuangfeng,3/9/2022,OOM,Pangkalan,6/7/2023 03:16,Reiko Crake,Female,B2,CNY,C3,Delayed,Sandy Dummett,Airbus A320,9945.57
+2604,01H4EEMTFP8ZNJ39901TWBRWNZ,United,Īz̄eh,4/9/2022,AZN,Côte-Saint-Luc,6/7/2023 17:36,Barton Petto,Male,B2,IRR,A1,On Time,Troy Dorrington,Airbus A320,7282.49
+2605,01H4EEMTFSSRQS26KW56BZCBF1,United,Balzar,27/4/2022,SLY,Joutseno,6/7/2023 08:59,Tristan Ibbison,Polygender,B2,USD,B2,Cancelled,Ricoriki Spincke,Boeing 737,9588.42
+2606,01H4EEMTFWJ0QC64V17WYHEFNZ,United,Santa Rosa de Lima,7/10/2022,ADU,Kalde Panga,6/7/2023 16:37,Skell Baudic,Male,B2,USD,B2,On Time,Spence Trundle,Embraer E190,5348.45
+2607,01H4EEMTFZ5EWX1ZHHGG5FZ2W0,Delta,El Rincón,6/12/2022,PHX,Sukaratu,6/7/2023 04:03,Daloris Tevelov,Female,C3,PAB,C3,Delayed,Devina Tomaini,Embraer E190,5725.86
+2608,01H4EEMTG2Q7Z1CTHE4SSN7TQT,American,Utsjoki,26/9/2022,RDE,Áthyra,6/7/2023 06:57,Salomo Siddall,Male,A1,EUR,A1,Cancelled,Garvy Durn,Airbus A320,9363.48
+2609,01H4EEMTG51S88Q9EYY69CHB08,United,Alqueidão,7/8/2022,TFS,Tumu,6/7/2023 17:42,Micheal Gyngyll,Male,B2,EUR,B2,On Time,Artemas Kinsey,Embraer E190,4083.12
+2610,01H4EEMTG8NB6D5T8YSV9QJ5MX,American,San Isidro de Lules,21/10/2022,OTT,Burgas,6/7/2023 05:53,Hollie Ruppeli,Female,C3,ARS,A1,Cancelled,Halli Kief,Boeing 737,5818.97
+2611,01H4EEMTGBXPE1Z5AHPW7RV6DK,United,Shuangxi,26/11/2022,LSJ,Gose,6/7/2023 18:49,Cherilynn Mawdsley,Female,A1,CNY,B2,Delayed,Cody Hearon,Boeing 737,6586.71
+2612,01H4EEMTGEKZ5V62QNET5AXKK5,Delta,Bogotá,9/5/2022,SMU,Drohiczyn,6/7/2023 20:13,Marv Klemt,Male,B2,COP,B2,Delayed,Richart Stitch,Embraer E190,5021.19
+2613,01H4EEMTGG13RXCQYC5GARJY7W,American,Yuanmen,5/2/2022,WRO,União,6/7/2023 02:21,Rosanne Bould,Female,C3,CNY,B2,On Time,Emlynne Bagenal,Embraer E190,9210.27
+2614,01H4EEMTGNNZ45VZKF5X7S6ZT1,Delta,Magoúla,25/8/2022,IBA,Novo Hamburgo,6/7/2023 10:02,Danya Goodfellow,Male,C3,EUR,B2,On Time,Morlee Tucsell,Embraer E190,4755.65
+2615,01H4EEMTGTQ137V9X15FDMG1N6,United,Shibukawa,14/10/2022,SNO,Ongi,6/7/2023 18:03,Lombard Boyfield,Male,C3,JPY,A1,Cancelled,Brendin Wharby,Airbus A320,6929.38
+2616,01H4EEMTH0KKV62A78BTH3XX2C,Delta,Carpentras,14/3/2022,BOY,Kotaagung,6/7/2023 00:07,Warner Rabier,Male,A1,EUR,A1,Cancelled,Clerc Blundin,Airbus A320,1308.56
+2617,01H4EEMTH5HNH44ZSSN7YXF8D5,United,Caujul,5/6/2022,WNN,Kulotino,6/7/2023 05:55,Lucho Abramski,Polygender,C3,PEN,C3,Delayed,Gannon Kleeborn,Airbus A320,3149.87
+2618,01H4EEMTHB99Q8GMKX5X7EYB7F,United,Huangnihe,1/6/2022,CVU,Kogon,6/7/2023 05:15,Lavina Penfold,Bigender,B2,CNY,B2,Delayed,Jourdain Elfes,Embraer E190,6630.7
+2619,01H4EEMTHGEPJ7ANJH39NPXPTK,American,Liangshuijing,19/2/2022,UAP,Khŭjand,6/7/2023 11:12,Fawnia Biaggelli,Female,A1,CNY,A1,On Time,Zaneta Hedditeh,Embraer E190,3019.15
+2620,01H4EEMTHN9SACCNMDWH9NSY16,United,Yazman,30/1/2022,NFO,Mauá,6/7/2023 20:18,Warden McDaid,Male,C3,PKR,B2,Cancelled,Bard Bollen,Airbus A320,4404.82
+2621,01H4EEMTHRJ0PZMZWWRXM155Z4,United,Melipilla,24/6/2022,CHK,Hesi,6/7/2023 22:18,Preston Yackiminie,Male,B2,CLP,A1,On Time,Gregoor Vondruska,Embraer E190,2154.63
+2622,01H4EEMTHVWMEKX2ES6FZNM7B4,Delta,Tenggina Daya,25/3/2022,TFB,Pleshanovo,6/7/2023 09:18,Ryun Narbett,Male,B2,IDR,C3,Delayed,Chrissy Itzkovsky,Airbus A320,5890.62
+2623,01H4EEMTHYXP3QVRJX2XWZ4W0R,United,Heerlen,20/1/2022,SII,Akkol’,6/7/2023 12:57,Kakalina Harvie,Female,A1,EUR,C3,On Time,Dorena Scarce,Embraer E190,3054.77
+2624,01H4EEMTJ1GW6DX59D71586AZS,American,Gislaved,16/4/2022,DGL,Sīnah,6/7/2023 21:59,Griffith Norheny,Male,A1,SEK,B2,On Time,Pepe Shurrocks,Embraer E190,8475.41
+2625,01H4EEMTJ4CSB8X9E395WVCAJC,American,Tyshkivka,10/5/2022,AIA,Heishui,6/7/2023 14:53,Sigismondo Mor,Male,B2,UAH,A1,Cancelled,Justis Calbrathe,Airbus A320,7934.8
+2626,01H4EEMTJ7NAGF9N4Z174QQH5K,Delta,Prizren,16/8/2022,NMS,Bergem,6/7/2023 08:38,Jeanette McCluskey,Female,C3,EUR,C3,Delayed,Janis Meritt,Airbus A320,3673.23
+2627,01H4EEMTJA7PBVRV6JH5C2Z9C6,Delta,Tamel,12/1/2022,ARK,Coelho Neto,6/7/2023 14:13,Retha Napper,Female,C3,EUR,A1,Cancelled,Aggie Charlot,Boeing 737,7871.2
+2628,01H4EEMTJCP5E858GH6K7PNV7T,American,Lastoursville,21/4/2022,PRO,Xianghu,6/7/2023 12:46,Arabella Clohissy,Female,A1,XAF,A1,On Time,Merrilee Vlasyev,Embraer E190,3656.22
+2629,01H4EEMTJFS30JEKH65ZFMNVVA,Delta,Tromsø,6/10/2022,KMH,Anbyŏn-ŭp,6/7/2023 20:59,Ibby Connue,Female,B2,NOK,C3,Delayed,Malissia Phillips,Airbus A320,6114.94
+2630,01H4EEMTJJWN41NSHH1F9ACWWW,American,Kadupinang,31/1/2022,IWA,Kotabaru,6/7/2023 10:41,Monti Mandre,Male,A1,IDR,B2,Cancelled,Leigh Beeston,Embraer E190,7229.48
+2631,01H4EEMTJND23VTYRGQW8RW6Y7,Delta,Karangboyo,11/10/2022,MTS,Aquidauana,6/7/2023 13:14,Granville Phayre,Polygender,C3,IDR,A1,Cancelled,Viola Hopkins,Boeing 737,8952.32
+2632,01H4EEMTJRKK36NQ865KS4KA9W,American,Đắk Song,5/3/2022,AES,Itabaiana,6/7/2023 22:50,Bambie Stanbridge,Female,B2,VND,A1,Delayed,Billye Shiel,Embraer E190,3563.64
+2633,01H4EEMTJVYTCB1H8D5F2FH5NA,Delta,Palampal,17/9/2022,EBW,Geita,6/7/2023 02:33,Danny Gammet,Male,B2,IDR,A1,Delayed,Skipton Packwood,Boeing 737,5100.01
+2634,01H4EEMTJYRSM9Y8ZEJ8FZP93A,United,Persen,17/7/2022,PMT,Zürich,6/7/2023 08:53,Tamarra Shepherdson,Female,B2,IDR,B2,On Time,Kameko Branscombe,Boeing 737,7604.19
+2635,01H4EEMTK2JPHYYA29EAN7FZWV,American,Toyama-shi,3/5/2022,SGT,Renchaoxi,6/7/2023 18:13,Giacinta Averill,Female,A1,JPY,B2,Cancelled,Cordy Corrison,Airbus A320,2246.22
+2636,01H4EEMTK5M7ASEJ55AC8BPWB5,United,Colca,19/8/2022,BMM,Pilot Butte,6/7/2023 05:11,Chester Rathbone,Male,A1,PEN,A1,On Time,Port Riseley,Airbus A320,2321.92
+2637,01H4EEMTK7XC8MKD7TN1C9J209,American,Tapera,29/4/2022,DUC,Rizal,6/7/2023 00:54,Barclay Briance,Male,C3,BRL,B2,Cancelled,Erick Pesterfield,Boeing 737,5948.63
+2638,01H4EEMTKA169RVT8QZV1BZ5PQ,American,San Jose,2/1/2022,CLB,Grati Satu,6/7/2023 05:50,Merna Bezants,Female,B2,PHP,C3,Cancelled,Cathie Urwin,Boeing 737,2937.88
+2639,01H4EEMTKDB0YVM2T5FM0F9FZN,Delta,Kommunar,3/2/2022,EJT,Douane,6/7/2023 13:34,Nelle Beeres,Female,B2,RUB,A1,Delayed,Aubree Topham,Embraer E190,4189.56
+2640,01H4EEMTKGYJZ54QSV2M6P0SF8,American,Kozlovice,1/8/2022,LEH,Dongkengkou,6/7/2023 22:34,Katharina Boeck,Female,B2,CZK,C3,On Time,Sileas Stannas,Boeing 737,3568.82
+2641,01H4EEMTKM0CJ0GNPVVX76J6T8,American,Göteborg,21/1/2022,MZI,Bankaw,6/7/2023 19:04,Dinnie Cadagan,Female,A1,SEK,B2,Delayed,Marquita Gilkison,Airbus A320,6329.65
+2642,01H4EEMTKQ0H4RHK8GZZA5MW3A,United,Yelets,1/6/2022,CPR,Abadiânia,6/7/2023 19:09,Sisely Whapham,Female,B2,RUB,B2,On Time,Francesca Burdytt,Airbus A320,9821.73
+2643,01H4EEMTKT97ZX54DDDE5FKJS3,Delta,Guozhai,19/12/2022,GAJ,Kiuola,6/7/2023 07:02,Tami Arnaldi,Female,B2,CNY,A1,Delayed,Fayette Hamly,Boeing 737,9366.31
+2644,01H4EEMTKXP0M38ZYVQDDFEJ0V,American,Katori-shi,21/11/2022,CEK,Wiang Chiang Rung,6/7/2023 11:25,Luke Sutor,Male,A1,JPY,B2,Cancelled,Pascale Dicey,Airbus A320,9625.2
+2645,01H4EEMTKZY0S96KHG5PH8FMVC,Delta,Pirava,23/5/2022,DAN,Juradó,6/7/2023 10:17,Carissa Crossgrove,Female,C3,MKD,A1,On Time,Wenda Birkbeck,Embraer E190,7569.35
+2646,01H4EEMTM22S1W9MCYJ74X2TN2,Delta,Algoz,3/2/2022,BTA,Santo Rosario,6/7/2023 00:30,Bevan Tweedie,Male,B2,EUR,B2,Delayed,Hadley Morrill,Embraer E190,2277.08
+2647,01H4EEMTM5CFQ3N198HH21VTCQ,Delta,Sakaiminato,11/11/2022,ESA,Drobin,6/7/2023 18:32,Huberto Rosenbloom,Male,B2,JPY,C3,Cancelled,Rollie Fewkes,Airbus A320,1022.5
+2648,01H4EEMTM8R5DN81AKZ324JK4H,American,Drawsko,13/12/2022,OAG,Shuyuan,6/7/2023 16:21,Murdock Frederick,Male,A1,PLN,C3,On Time,Faulkner Spurdon,Boeing 737,5971.66
+2649,01H4EEMTMB91J9MR86VZMPM8GH,United,Trąbki Wielkie,5/10/2022,REB,Pyongyang,6/7/2023 18:27,Billie Stoute,Male,C3,PLN,B2,Cancelled,Artemis Syddall,Embraer E190,1421.34
+2650,01H4EEMTMDT65FRKSA1N63MPH5,United,San Vicente,9/2/2022,RVV,Kinalansan,6/7/2023 07:35,Simmonds Frusher,Male,C3,PHP,C3,Cancelled,Jamesy Pryce,Boeing 737,9238.52
+2651,01H4EEMTMG8X0N40MNVR6DWVN8,United,Gumuk Tengah,26/1/2022,OMH,Quận Bốn,6/7/2023 21:58,Park Wale,Male,C3,IDR,A1,Delayed,Natal Hulance,Embraer E190,6722.2
+2652,01H4EEMTMKZ9S29CXV571NCEBR,United,Alua,29/11/2022,TIM,Palmas de Monte Alto,6/7/2023 08:08,Jannel Neggrini,Female,A1,PHP,C3,On Time,Wenonah Anand,Boeing 737,9748.62
+2653,01H4EEMTMPXPTQPFKBCVT06AZD,Delta,Peñaflor,10/5/2022,UKH,Mekon,6/7/2023 18:47,Clint Heskin,Male,A1,CLP,C3,On Time,Ailbert Sturdy,Boeing 737,1169.94
+2654,01H4EEMTMS8W6DSA6HV9EE92ET,Delta,Zvëzdnyy,8/7/2022,FRW,Villa del Rosario,6/7/2023 11:33,Nicoli Minichi,Female,B2,RUB,B2,Delayed,Rosette Springall,Airbus A320,8110.82
+2655,01H4EEMTMWP2D8HWFTPQKYGQD2,American,Cachan,14/12/2022,MTC,Banzão,6/7/2023 20:00,Elva Enric,Female,A1,EUR,A1,Delayed,Keelia Ropars,Airbus A320,3155.28
+2656,01H4EEMTMZ49QTYYZQ2EWXV3C5,American,Dolní Kounice,27/5/2022,BPC,Pulau Pinang,6/7/2023 11:20,Domenico Stormouth,Non-binary,A1,CZK,A1,Delayed,Daria Farquar,Embraer E190,3062.35
+2657,01H4EEMTN26SVTWKHK18WBN0X1,United,Villa Florida,18/11/2022,0,Nangang,6/7/2023 02:40,Francklin Dolder,Male,A1,PYG,C3,Cancelled,Julie Durber,Boeing 737,2107.21
+2658,01H4EEMTN4VQHTMNHJ9HW7HQ8N,American,Carenang Lor,27/12/2022,DGU,Slobodskoy,6/7/2023 08:46,Thornie Thurner,Male,C3,IDR,B2,On Time,Mitch Kehoe,Airbus A320,9485.93
+2659,01H4EEMTN76AJ0ZZB3ZCZR7P2N,United,Lembanah,2/7/2022,SXQ,Boulemane,6/7/2023 22:45,Ddene Horder,Female,A1,IDR,B2,Delayed,Tandy Christofol,Boeing 737,7884.36
+2660,01H4EEMTNAV9BEKVF0Q2NB8TF3,Delta,Navoiy,19/12/2022,GXQ,Velykoploske,6/7/2023 09:28,Delores Aikin,Female,B2,UZS,B2,Delayed,Inna Maeer,Embraer E190,4398.22
+2661,01H4EEMTNDCMCXA9S1HGK13C63,United,Čerčany,15/4/2022,LDG,Hajoho,6/7/2023 11:07,Orrin Ellins,Male,C3,CZK,C3,Delayed,Grantley Carillo,Airbus A320,1289.24
+2662,01H4EEMTNFWD170661EH6CDNMW,American,Sovetskaya Gavan’,12/2/2022,POC,Dzüünkharaa,6/7/2023 13:07,Corliss Boyn,Female,B2,RUB,C3,Delayed,Bobbie FitzGilbert,Airbus A320,2948.61
+2663,01H4EEMTNJ5WCDTGCBAFYBGPMQ,Delta,Khodasy,8/2/2022,TLP,Noenoni,6/7/2023 18:09,Torrence Powner,Male,B2,BYR,A1,Delayed,Avram Waind,Boeing 737,9770.23
+2664,01H4EEMTNNKFG9TZ6ARVSCJV5T,American,Kalungu,9/11/2022,ZAA,Norrköping,6/7/2023 17:30,Nicky Rex,Female,C3,UGX,A1,Cancelled,Perl Gaunt,Boeing 737,3328.2
+2665,01H4EEMTNRG509E76SH1KRMA1J,American,Czerwieńsk,14/5/2022,LZO,Talawi,6/7/2023 12:10,Salomone Blakeway,Male,C3,PLN,A1,Cancelled,Jaymie Shegog,Embraer E190,5172.29
+2666,01H4EEMTNTPTESMCXHS9KYD02N,United,Sacramento,6/2/2022,GWN,Guhuai,6/7/2023 22:59,Sheba Tombleson,Female,C3,USD,A1,Cancelled,Margarette Bartrop,Boeing 737,4567.56
+2667,01H4EEMTNX2QRATXS4XJJCPBY4,Delta,Vacenovice,31/8/2022,WTB,Hongjiang,6/7/2023 18:03,Dorothee Mattusov,Female,B2,CZK,B2,Delayed,Leeann Downage,Airbus A320,6085.61
+2668,01H4EEMTP02SR4SW2RNRW047C0,American,Huaqiao,24/11/2022,TOU,Muara Sabak,6/7/2023 06:22,Theda Pauleau,Female,C3,CNY,A1,On Time,Jaynell Ouslem,Embraer E190,3746.85
+2669,01H4EEMTP3KP8PZDV1HNGS5HFK,Delta,Amānzī,9/4/2022,LEW,Emiliano Zapata,6/7/2023 11:45,Xever Goley,Male,C3,AFN,A1,On Time,Lennard Stebles,Airbus A320,4178.43
+2670,01H4EEMTP52FW3SZQT20GC8VYF,Delta,Valdivia,24/1/2022,ZGR,Moneghetti,6/7/2023 19:57,Sonnie Fitchett,Male,B2,CLP,C3,Delayed,Abbott Clibbery,Airbus A320,4755.35
+2671,01H4EEMTP8GSN732PP5BK1KQ77,United,Petite Anse,14/6/2022,NJK,Envigado,6/7/2023 06:09,Dunn Greir,Male,C3,HTG,C3,Delayed,Solomon Kirkness,Airbus A320,5605.1
+2672,01H4EEMTPBM58X8MJB7Z18TDHB,United,Chaiyaphum,3/9/2022,WUH,Masḩah,6/7/2023 08:18,Arliene Dadswell,Genderfluid,C3,THB,A1,Delayed,Sascha Yansons,Airbus A320,7949.48
+2673,01H4EEMTPE7NTFZJSWB3XA616J,American,Nonghe,17/11/2022,KOH,Dobrovo,6/7/2023 17:37,Port Valentino,Male,B2,CNY,C3,Delayed,Francois Gilffillan,Embraer E190,7024.32
+2674,01H4EEMTPH7VSXBM74S7NDDZBV,American,Gujba,29/10/2022,SFL,Mīzan Teferī,6/7/2023 19:38,Torrey Beszant,Male,B2,NGN,B2,Delayed,Gerald Broadwood,Airbus A320,9183.74
+2675,01H4EEMTPK69SFTBT5XK0NZQTR,American,Hengdong Chengguanzhen,29/6/2022,CCE,Marbel,6/7/2023 22:26,Hali Tales,Female,C3,CNY,B2,On Time,Millie Peel,Boeing 737,1134.39
+2676,01H4EEMTPP59MP484RHD26DK7B,Delta,Lunang,10/10/2022,KSE,Helang,6/7/2023 05:10,Saunderson Lipscomb,Male,B2,CNY,B2,Cancelled,Giselbert Placidi,Airbus A320,8030.98
+2677,01H4EEMTPS626XAKNQ8XY8406Q,Delta,Palmeiros,30/1/2022,ALR,Bang Ban,6/7/2023 05:25,Jenni Shovlar,Female,C3,EUR,A1,Cancelled,Ilyse Shreenan,Embraer E190,1721.34
+2678,01H4EEMTPW1F2XNRPEJ7FP12FK,United,Spas-Klepiki,4/10/2022,0,Hanshou,6/7/2023 21:49,Millard Stuckes,Male,B2,RUB,A1,Delayed,Blair Chamberlayne,Boeing 737,7297.77
+2679,01H4EEMTPYX718EPMBAT4RXMSF,Delta,Francisco Villa,12/1/2022,0,Waajid,6/7/2023 19:01,Tamarra Dabbes,Female,B2,MXN,B2,Delayed,Adriaens Aldine,Boeing 737,8827.38
+2680,01H4EEMTQ1ZCT2KHB7MRYMZQPF,United,Fresno,21/5/2022,DVT,Pacasmayo,6/7/2023 00:55,Job Stoneman,Male,C3,USD,C3,Delayed,Thatcher Petruska,Boeing 737,2884.0
+2681,01H4EEMTQ5B9SDQS5SWD9WCGJX,Delta,Canedo,9/10/2022,CGE,Hanlin,6/7/2023 13:13,Leandra Covet,Female,A1,EUR,C3,On Time,Melodee Abramovic,Airbus A320,2764.5
+2682,01H4EEMTQ8NYZDT7Y5HME1Q6AX,United,Noemuti,22/5/2022,YZW,Baraya,6/7/2023 21:42,Moria Pickwell,Bigender,B2,IDR,A1,Delayed,Celene Lardeux,Embraer E190,9482.85
+2683,01H4EEMTQBXWQPE2M9T1BBS7FW,Delta,Tosontsengel,11/5/2022,AIW,Sørvágur,6/7/2023 01:18,Ulrika Malyj,Female,B2,MNT,A1,Delayed,Enid Zorzi,Boeing 737,3431.16
+2684,01H4EEMTQEHBF5ABAMEWBGDCBQ,Delta,Wiyayu Barat,21/6/2022,ALT,Caçapava,6/7/2023 09:35,Chandra Jendas,Female,B2,IDR,A1,On Time,Conny Ratke,Embraer E190,7889.51
+2685,01H4EEMTQHKTZJHN2D9HWZCJYJ,United,Headlands,19/7/2022,KWM,Wahai,6/7/2023 13:35,Shina Jeremaes,Female,A1,ZWL,C3,On Time,Tabbatha Dilland,Embraer E190,4709.72
+2686,01H4EEMTQKFG5YSFTSZ9QF5XYG,United,Junik,2/5/2022,INM,Svatava,6/7/2023 21:31,Raquel Strowger,Female,B2,EUR,A1,On Time,Freda Ohrt,Boeing 737,6135.83
+2687,01H4EEMTQPZX6A4XCRCFRYNT3F,American,Naikoten Dua,17/5/2022,AYC,Sanhui,6/7/2023 23:51,Axel Liversedge,Male,C3,IDR,B2,On Time,Arv Glenfield,Airbus A320,7542.78
+2688,01H4EEMTQSKYWV8MM7F9VSFCDA,American,Marinilla,18/10/2022,CUC,Tamuning-Tumon-Harmon Village,6/7/2023 23:56,Pippo Rawstorn,Male,A1,COP,C3,Delayed,Gordon Latey,Airbus A320,9706.18
+2689,01H4EEMTQWA0936C9QFBX850QA,Delta,Raman,17/5/2022,BVE,São Gotardo,6/7/2023 23:35,Steffie Grundon,Female,B2,THB,B2,On Time,Minnaminnie Lared,Airbus A320,4874.84
+2690,01H4EEMTQYD98QCX0KPE63TFE2,Delta,Ryjewo,6/8/2022,VGD,Nevel’,6/7/2023 09:20,Bayard Lanfare,Male,A1,PLN,A1,On Time,Keven Bowie,Boeing 737,5800.0
+2691,01H4EEMTR12GFVHQWDXS8DERE2,American,Tanggung,11/10/2022,HSJ,Sigiriya,6/7/2023 00:17,Merry Cayford,Male,A1,IDR,A1,On Time,Alonzo Melburg,Boeing 737,8027.29
+2692,01H4EEMTR49974Q9PA2XH7EW5R,United,Chalandrítsa,11/1/2022,LAE,Mombok,6/7/2023 23:27,Evyn Rechert,Male,B2,EUR,B2,Cancelled,Hobey Mityushin,Embraer E190,9966.65
+2693,01H4EEMTR70PG16WFEN3Y8V2B6,American,Pyatigorskiy,23/4/2022,HDH,Donduşeni,6/7/2023 17:00,Luisa Cloney,Female,B2,RUB,C3,Cancelled,Ashil Dorow,Boeing 737,2291.11
+2694,01H4EEMTRA6P2PPH2SN7D1GDE3,American,Tsivil’sk,30/12/2022,YLH,Songgui,6/7/2023 20:32,Jaquelin Ledrun,Female,B2,RUB,A1,Delayed,Berry Stambridge,Embraer E190,8286.25
+2695,01H4EEMTRC5E49PK019RVD7HQC,American,Säffle,28/3/2022,LNA,Camaquã,6/7/2023 14:26,Dionisio Geistbeck,Polygender,B2,SEK,A1,Cancelled,Jeromy Rosen,Boeing 737,6405.14
+2696,01H4EEMTRFMQVTWNJH4W3F786F,Delta,Všestary,27/11/2022,CMM,Kumla,6/7/2023 16:07,Tynan Colegrove,Male,A1,CZK,C3,Delayed,Ansell Roggerone,Airbus A320,1239.73
+2697,01H4EEMTRJC3AGAD5SEF7CFSXQ,American,Cape Town,19/3/2022,RRM,Boconó,6/7/2023 17:48,Thibaud Hanshawe,Male,A1,ZAR,A1,Delayed,Ody Slowgrove,Airbus A320,6613.17
+2698,01H4EEMTRNYQ7XM1QNMCWFDKX0,American,Ráječko,9/5/2022,CZT,Кондово,6/7/2023 03:19,Ferdy Tunaclift,Male,A1,CZK,C3,On Time,Braden Geroldi,Boeing 737,8749.62
+2699,01H4EEMTRQVYS2PKNE6WZ9G7NC,Delta,Mabiton,24/7/2022,SJO,Ladner,6/7/2023 15:33,Giulia Awin,Female,A1,PHP,A1,On Time,Marjorie Queenborough,Embraer E190,1481.04
+2700,01H4EEMTRT0NXR40WH4ZEGZVPC,United,Jargalant,17/9/2022,IKK,Tibro,6/7/2023 20:49,Othelia Pepperell,Female,C3,MNT,C3,On Time,Kimmy Gallichan,Boeing 737,1206.49
+2701,01H4EEMTRXV4XCY66CJF9R7G9Z,United,Quintã,4/11/2022,LKE,Weihe,6/7/2023 04:27,Nicolais Stanney,Male,A1,EUR,B2,On Time,Cyrille Couttes,Embraer E190,1271.97
+2702,01H4EEMTS0PGTRQZJWXW97FF6X,American,Ķegums,30/3/2022,MFJ,Nawābganj,6/7/2023 11:19,Lonnard Nieass,Male,B2,EUR,A1,Delayed,Jarrad Spikins,Airbus A320,3081.75
+2703,01H4EEMTS24H8ETVE8DYCEK14V,Delta,Bantay,7/4/2022,CTD,Los Angeles,6/7/2023 06:57,Tisha Yakov,Female,A1,PHP,A1,Cancelled,Grazia Kingswood,Embraer E190,8769.14
+2704,01H4EEMTS5JNQ0XYS121G0XFJ7,United,Jamundí,23/1/2022,CNE,Libertad,6/7/2023 10:59,Marsh Dalli,Male,A1,COP,B2,Cancelled,Clifford Songer,Embraer E190,7329.2
+2705,01H4EEMTS804EAJGTA1BR11K22,United,Wenfu,14/12/2022,AGI,Balabagan,6/7/2023 00:09,Mile Fotitt,Male,C3,CNY,C3,Delayed,Chrissie Westwell,Embraer E190,9195.43
+2706,01H4EEMTSBXD3JY1W5YAJ4BRMT,Delta,Poncokusumo,1/4/2022,YNA,El Refugio,6/7/2023 15:00,Sid Soutar,Male,B2,IDR,B2,On Time,Zeb Janaszkiewicz,Embraer E190,4951.6
+2707,01H4EEMTSEK2MZTF2B6BAH4WEC,American,Rongxing,17/11/2022,ITP,Banjar Tiga,6/7/2023 13:15,Leda Gorwood,Female,B2,CNY,A1,Cancelled,Konstanze Sommersett,Boeing 737,9163.12
+2708,01H4EEMTSGTGRSKK8TV4T6DZKN,American,Kamaris,20/4/2022,RSW,Naval,6/7/2023 08:54,Aggy Couronne,Female,C3,AMD,A1,Cancelled,Camile Salmen,Airbus A320,9921.86
+2709,01H4EEMTSKEBF2CWK4RNTEDX4A,Delta,Beigucheng,17/7/2022,DIK,Tver,6/7/2023 04:06,Doti Alderwick,Female,C3,CNY,A1,Delayed,Carissa Van Dalen,Airbus A320,1943.06
+2710,01H4EEMTSPAQ50D4603RTE7XPE,American,Paranaíba,9/9/2022,NFO,Hancheng,6/7/2023 10:06,Randi Copelli,Female,C3,BRL,B2,On Time,Kim Urvoy,Boeing 737,2654.63
+2711,01H4EEMTSSKERFVY05GM5RZ7KW,Delta,Adolfo Lopez Mateos,4/1/2022,NGS,Pyrzyce,6/7/2023 17:04,Michele Lancaster,Female,C3,MXN,C3,Delayed,Melina Strawbridge,Embraer E190,4951.55
+2712,01H4EEMTSVP0WA9DVAJ1Z2CTN5,American,Silodakon,18/11/2022,UAQ,Dimitrovgrad,6/7/2023 04:11,Nerte MacNeil,Female,B2,IDR,C3,Cancelled,Janot Paulley,Embraer E190,4328.34
+2713,01H4EEMTSY90C73AF8X8GKXHF0,American,Krajan Ngrambingan,11/2/2022,EGM,Naxos,6/7/2023 12:16,Steffane Styles,Female,B2,IDR,C3,Delayed,Ingeberg Ox,Airbus A320,2788.89
+2714,01H4EEMTT1JS64BXQK3XN3V4T4,American,Cabanbanan,19/10/2022,ODW,Pasirreungit,6/7/2023 07:53,Kalila Gouge,Female,C3,PHP,A1,Delayed,Tanhya Mathias,Boeing 737,5462.18
+2715,01H4EEMTT4XS8E64Y0JA4920AA,American,Amsterdam,19/5/2022,ELH,Baimi,6/7/2023 17:59,Bibbie Cantu,Female,A1,EUR,B2,Cancelled,Calli Thurstan,Boeing 737,8076.61
+2716,01H4EEMTT63Z5CEAF2PHYQX1G3,Delta,Bonabéri,18/11/2022,THW,Sirnarasa,6/7/2023 16:35,Ware Fears,Male,A1,XAF,A1,On Time,Hervey Diplock,Boeing 737,9204.44
+2717,01H4EEMTT9PE40QQ3EWQJQC103,Delta,Qilin,8/3/2022,SZM,Mizhirah,6/7/2023 03:06,Marlie Wyldbore,Female,C3,CNY,A1,On Time,Cassandry Flowerden,Airbus A320,2843.33
+2718,01H4EEMTTC1BTC071PR5JWYMZF,Delta,Barbacoas,8/4/2022,MNO,Huertas,6/7/2023 16:08,Kameko Capoun,Female,A1,VEF,B2,Cancelled,Juli Trevance,Boeing 737,4639.96
+2719,01H4EEMTTFZPEM4P0BAKV537TQ,American,Ilinden,21/10/2022,EGA,Yunxian Chengguanzhen,6/7/2023 02:43,Erastus Heaysman,Male,C3,MKD,C3,Cancelled,Shay Garbett,Boeing 737,8108.83
+2720,01H4EEMTTJ6CX230080TD8ZE7W,American,Velika,16/8/2022,MSH,Manchester,6/7/2023 18:13,Allegra Fermoy,Female,B2,HRK,B2,On Time,Reggie Phinnessy,Boeing 737,6166.95
+2721,01H4EEMTTMNSKD03JF049FW83S,United,Tikhoretsk,5/11/2022,TVI,Bestovje,6/7/2023 11:49,Guthrie Cicchillo,Male,B2,RUB,A1,Delayed,Herbie Carlyle,Embraer E190,3195.53
+2722,01H4EEMTTQY6861727TYXH2RWT,United,Mabayo,17/3/2022,MGB,Goz Beïda,6/7/2023 00:43,Rabi Polland,Male,A1,PHP,A1,On Time,August Emms,Embraer E190,7601.58
+2723,01H4EEMTTT3QCJYRCAVR0NQD6P,Delta,Peuara,3/7/2022,ASK,Nūr,6/7/2023 18:12,Brandie Rizzetti,Female,B2,IDR,B2,On Time,Ulla Pala,Boeing 737,1035.46
+2724,01H4EEMTTWVV20BAVF718ETSKX,American,Béziers,14/9/2022,AFW,Düsseldorf,6/7/2023 11:04,Denny Colbran,Female,C3,EUR,C3,Cancelled,Audry Haswall,Embraer E190,2048.58
+2725,01H4EEMTVB6S94N6YXJVKN7RKC,United,Zhaojia,15/6/2022,OXC,Al Maşdūr,6/7/2023 08:23,Kaia Watmough,Female,C3,CNY,C3,Cancelled,Dinnie Portlock,Embraer E190,3495.49
+2726,01H4EEMTVEQFMP9B7880R7V90T,Delta,Strasbourg,12/8/2022,NHT,Vermelha,6/7/2023 16:42,Almira Hyatt,Female,C3,EUR,A1,Cancelled,Brynna Boucher,Embraer E190,7010.08
+2727,01H4EEMTVHP7ST629XZN69KDQZ,American,Huayuan,14/10/2022,FNI,Lianhe,6/7/2023 13:45,Parrnell Zack,Male,A1,CNY,C3,Cancelled,Grady Troillet,Boeing 737,4047.27
+2728,01H4EEMTVMFZWKC8CDJA3CMKJ5,Delta,Huangmao,26/9/2022,DUT,Rybinsk,6/7/2023 03:11,Skyler Schall,Bigender,A1,CNY,C3,Cancelled,Garvey Lenney,Embraer E190,7246.17
+2729,01H4EEMTVQR2E7EHMNPWT7MP50,United,Kiruna,22/5/2022,FRN,Omsukchan,6/7/2023 05:31,Conney Cartner,Non-binary,A1,SEK,C3,Delayed,Chelsea Figg,Boeing 737,1789.41
+2730,01H4EEMTVTHMHFFZS594RNFKJP,American,Mentaras,28/8/2022,MHR,Yasothon,6/7/2023 10:38,Pablo Dandie,Male,C3,IDR,A1,Delayed,Giffard Washington,Embraer E190,2012.44
+2731,01H4EEMTVXTVJRZWB40B9AW08Q,American,Peredovaya,9/12/2022,NDF,Hoeryŏng,6/7/2023 21:19,Jacques Brotherick,Male,C3,RUB,C3,Delayed,Les Kleinberer,Embraer E190,1721.7
+2732,01H4EEMTVZS0TZGQ89BWZMPY55,American,Heishan,19/4/2022,CBF,Gardutanjak,6/7/2023 01:59,Eb Tavinor,Male,C3,CNY,B2,On Time,Simone Zealander,Boeing 737,5599.73
+2733,01H4EEMTW2NRHK1TM78E94K1MB,Delta,Vincennes,28/7/2022,LNO,San Luis,6/7/2023 05:18,Audie Ralls,Bigender,B2,EUR,C3,Delayed,Derk Munby,Embraer E190,3914.49
+2734,01H4EEMTW5XYEKGKNRQ52GNVVE,Delta,Xixiang,23/1/2022,KTQ,Pukkila,6/7/2023 08:45,Tully Bearcock,Male,B2,CNY,C3,Delayed,Sherlock Creese,Embraer E190,2268.64
+2735,01H4EEMTW8NXWZPE3EMC337DD6,Delta,Babug,15/1/2022,PYB,Kungsbacka,6/7/2023 06:44,Les Alywen,Male,A1,PHP,A1,Cancelled,Abdul Joutapaitis,Boeing 737,4412.38
+2736,01H4EEMTWBKC2PSV1HX60CSJH1,United,Grybów,31/8/2022,ESN,Boca Chica,6/7/2023 08:45,Truman Thorold,Male,C3,PLN,B2,Delayed,Jaime Heinrich,Boeing 737,5965.65
+2737,01H4EEMTWE4N2A7FT5XMVDEGNE,United,Gorzyczki,7/9/2022,EKI,Pitrufquén,6/7/2023 22:18,Del Dyball,Female,A1,PLN,B2,Cancelled,Evangelin Dinsmore,Boeing 737,7729.75
+2738,01H4EEMTWGHGF1Q900T852Q502,United,Capitão Poço,26/6/2022,NYN,Valongo,6/7/2023 21:38,Jorge Minett,Male,C3,BRL,B2,Delayed,Delano O'Hare,Airbus A320,6748.58
+2739,01H4EEMTWK4NN64E3F5Y32PWB8,American,Banjar Kubu,10/6/2022,CHH,Malārd,6/7/2023 15:33,Trip Elgey,Male,B2,IDR,C3,Delayed,Leroi Iles,Airbus A320,9112.98
+2740,01H4EEMTWP57T2STZ9FVCRVMND,American,Magsaysay,3/1/2022,ISU,Shangwuzhuang,6/7/2023 16:58,Pennie Coulson,Female,A1,PHP,C3,Delayed,Joleen Crumpton,Embraer E190,3650.16
+2741,01H4EEMTWS9YPM7PFXM6D7K85B,Delta,Tournai,2/12/2022,YUX,Safonovo,6/7/2023 03:49,Finlay Plail,Male,B2,EUR,C3,On Time,Trenton Hindhaugh,Airbus A320,9650.65
+2742,01H4EEMTWWBR0NB7YT3Z6ARY4S,Delta,Borås,23/9/2022,RYG,Benjamín Aceval,6/7/2023 13:56,Saxon Molnar,Male,A1,SEK,A1,Delayed,Silvanus Burdus,Boeing 737,8383.55
+2743,01H4EEMTWZ369XH185QWJCMMQQ,United,San Marcos,23/10/2022,ENK,Manzherok,6/7/2023 23:32,Conny Epinay,Male,C3,PEN,B2,On Time,Kiley Blagdon,Embraer E190,9638.98
+2744,01H4EEMTX2JD0PQ7NQF45C87RC,United,Zárkos,19/12/2022,WUN,Dalan,6/7/2023 12:10,Stanfield Florio,Male,A1,EUR,C3,Cancelled,Alanson Whittingham,Airbus A320,8586.09
+2745,01H4EEMTX5HCZZTEDQNS8HC1Y4,United,Gulrip’shi,17/3/2022,HMY,Turze Pole,6/7/2023 19:12,Jere Gall,Female,B2,GEL,A1,On Time,Val Kumaar,Boeing 737,1517.55
+2746,01H4EEMTX8YGJR42A6RW87JPAY,United,San Cristóbal Cucho,27/10/2022,PAS,Lantera,6/7/2023 09:51,Christian Breedy,Male,C3,GTQ,B2,On Time,Cristobal Obert,Embraer E190,9678.99
+2747,01H4EEMTXBGE5YT2CP6W3MA42K,Delta,Bīr Zayt,30/10/2022,GKD,Järfälla,6/7/2023 14:50,Isac Szymonwicz,Male,B2,ILS,C3,Cancelled,Germain Falcus,Embraer E190,6266.48
+2748,01H4EEMTXEGMJQXEMYFJQ8Z91E,Delta,Staropavlovskaya,26/3/2022,BQN,Nueve de Julio,6/7/2023 20:28,Renell Breazeall,Female,A1,RUB,B2,Cancelled,Rori Lissandre,Boeing 737,4428.11
+2749,01H4EEMTXHN9KEWS4M4KBS2ZPJ,American,Bunia,5/10/2022,VFA,Gaza,6/7/2023 12:13,Tremain Allcorn,Male,A1,CDF,B2,Delayed,Stefan Scampion,Airbus A320,3759.92
+2750,01H4EEMTXMKA5RCPHMJM9F152W,Delta,Rättvik,8/11/2022,ALJ,Duqu,6/7/2023 01:38,Abbott Border,Male,C3,SEK,C3,Cancelled,Armando Turbard,Embraer E190,8038.25
+2751,01H4EEMTXP42B16S01KNZVCH8X,United,Monte Santo de Minas,22/3/2022,SUA,Igreja,6/7/2023 13:29,Lorant Anstey,Male,A1,BRL,A1,On Time,Trefor Forcade,Airbus A320,4011.18
+2752,01H4EEMTXSHRN49V84PR6W5XWX,Delta,Miguel Pereira,25/1/2022,PEI,Helsingborg,6/7/2023 01:15,Karlie Simonot,Female,C3,BRL,C3,Cancelled,Trina de Cullip,Embraer E190,5653.73
+2753,01H4EEMTXW6PXCFNCF7RGQHBTH,American,Langensari,7/4/2022,CHL,Tayang,6/7/2023 20:25,Silvio Lundie,Genderqueer,A1,IDR,A1,Cancelled,Peyton Whistlecroft,Embraer E190,6216.46
+2754,01H4EEMTXZ222BP1V9DMP58D75,Delta,Palomoc,15/5/2022,QHR,Zhaowu,6/7/2023 18:51,Sisile Roskruge,Female,C3,PHP,C3,On Time,Birgitta Kareman,Airbus A320,7649.47
+2755,01H4EEMTY2WYBNPX0X4D9WPMXE,Delta,Farrokh Shahr,4/7/2022,YRG,Gokwe,6/7/2023 20:18,Gerard Brattan,Male,B2,IRR,C3,Delayed,Harlen Jellett,Embraer E190,3957.15
+2756,01H4EEMTY5HEY497GHNFC1DV16,United,Fuente de Oro,5/8/2022,BLV,Nnewi,6/7/2023 07:01,Milissent Jirousek,Female,B2,COP,C3,Cancelled,Gusta Pinsent,Airbus A320,8334.99
+2757,01H4EEMTY8V6M61JSBH18VP1WA,United,Tantu,26/4/2022,TBV,Corumbá,6/7/2023 00:32,Geoffrey Lester,Male,B2,CNY,C3,Cancelled,Udell Jilliss,Embraer E190,6080.93
+2758,01H4EEMTYB0DF3G8MQ7T2CZMDC,Delta,Birni N Konni,31/3/2022,HIE,Farriar,6/7/2023 20:20,Kale Bartoloma,Male,A1,XOF,A1,Cancelled,Nevin Bonhill,Boeing 737,8435.77
+2759,01H4EEMTYEYK4PBF7P56PXXR64,American,Xam Nua,16/6/2022,HCA,Sagae,6/7/2023 10:26,Loria Johnsee,Female,A1,LAK,C3,Delayed,Cassaundra Toomey,Airbus A320,3856.42
+2760,01H4EEMTYGY92FCNQYHYVEE2Y0,Delta,Santa Lucia,3/4/2022,HRK,Popasna,6/7/2023 03:16,Mickie Kezourec,Male,A1,PHP,B2,Delayed,Irwinn Roscoe,Embraer E190,1229.65
+2761,01H4EEMTYKN45458A9FJ128DZV,American,Pringgabaya,31/3/2022,GRW,Shangganshan,6/7/2023 21:29,Madelon Roskelly,Female,B2,IDR,B2,Delayed,Eada Delatour,Airbus A320,6801.96
+2762,01H4EEMTYP1XY6NE6FW3SB1MP0,Delta,Diré,26/5/2022,YGQ,Jiangwei,6/7/2023 02:31,Wald Towll,Male,A1,XOF,B2,On Time,Andros McAllester,Airbus A320,5347.5
+2763,01H4EEMTYSV870V9JRTQ8QK838,Delta,Al Farwānīyah,15/10/2022,BCV,Hongxi,6/7/2023 12:06,Lief Stoving,Male,C3,KWD,B2,Delayed,Howey Archdeckne,Embraer E190,1070.1
+2764,01H4EEMTYWFJQX8PZ886JWB6JJ,United,Chenglin,9/5/2022,MLK,Pondohan,6/7/2023 15:28,Vilma Posthill,Female,B2,CNY,C3,Cancelled,Kimberly Studdeard,Boeing 737,7703.05
+2765,01H4EEMTYZVCCRJQ3JYZQH1A8G,American,San Bernardino,6/8/2022,HYF,Lai Cách,6/7/2023 11:04,Alonzo Mallock,Male,C3,PYG,C3,On Time,Isadore Heyworth,Airbus A320,6733.34
+2766,01H4EEMTZ195YA6HATH693EXNC,United,Charleston,8/2/2022,MPH,Kotlovka,6/7/2023 15:07,Gardie Spittles,Male,C3,USD,B2,Cancelled,Saw Goodbanne,Airbus A320,4026.74
+2767,01H4EEMTZ4XFMVQ2ZH302MD38M,Delta,Santa Tecla,1/11/2022,LYU,Timóteo,6/7/2023 04:39,Bernice Cromwell,Female,C3,USD,B2,Delayed,Darya Rossin,Embraer E190,4840.82
+2768,01H4EEMTZ7FNNK0YFHD9FYVJ54,American,Huyang,6/2/2022,MOV,Pontes,6/7/2023 08:22,Raleigh Hartfield,Non-binary,C3,CNY,A1,Delayed,Tine Brixey,Boeing 737,1723.74
+2769,01H4EEMTZA9YCKE6PJ9DHH6FC9,Delta,Columbus,20/4/2022,SXI,Piątnica,6/7/2023 10:13,Stacy Bettam,Male,B2,USD,A1,Cancelled,Amble Spridgeon,Airbus A320,4373.2
+2770,01H4EEMTZDXFE2T5KEW8ESWF1K,Delta,Amolatar,15/4/2022,AQJ,Purwosari,6/7/2023 16:58,Jolyn Jordin,Genderfluid,A1,UGX,B2,Cancelled,Fredek Skentelbery,Airbus A320,2119.89
+2771,01H4EEMTZGFBR2MXK3EXVBW13M,Delta,Rongmei,15/10/2022,APQ,Eskilstuna,6/7/2023 07:40,Pincas Lipsett,Male,A1,CNY,A1,Cancelled,Amby Cameron,Airbus A320,6063.15
+2772,01H4EEMTZK6553K3F8EYW7JNFE,Delta,Korczyna,13/6/2022,ACD,Huyuan,6/7/2023 10:56,Crichton Polly,Male,C3,PLN,B2,Delayed,Garwin O'Cahill,Embraer E190,1273.15
+2773,01H4EEMTZN3PF99D7VH435JYCX,American,Hrádek,19/12/2022,PPP,San Sebastian,6/7/2023 19:04,Alain La Batie,Bigender,C3,CZK,B2,On Time,Sumner Ughelli,Embraer E190,3914.76
+2774,01H4EEMTZR9JCNHR2477T0V5EC,Delta,Santiago Puringla,7/11/2022,DOY,Las Matas de Farfán,6/7/2023 15:11,Kelley Lapere,Female,C3,HNL,B2,Delayed,Appolonia Mettricke,Boeing 737,8180.73
+2775,01H4EEMTZVSDDASR0GY0PY26J2,United,Tertek,2/5/2022,KPS,Mqabba,6/7/2023 09:48,Cesar Musicka,Male,C3,IDR,A1,Delayed,Sigismund Gwillim,Airbus A320,5163.31
+2776,01H4EEMTZYW9N530XMRXKHTMCW,American,Topeka,31/8/2022,DRC,Shangyu,6/7/2023 16:17,Kermit Musgrove,Male,A1,USD,A1,On Time,Ciro Chaperling,Embraer E190,1697.04
+2777,01H4EEMV018EH1MV043S22V0TK,American,Floresta,18/1/2022,SFJ,Hobart,6/7/2023 10:17,Billie Blitz,Female,C3,COP,A1,Cancelled,Billye Hollyar,Airbus A320,2919.55
+2778,01H4EEMV04FKKY37W4SSFFMT74,American,Štore,6/11/2022,JIR,Jeziora Wielkie,6/7/2023 07:56,Dido L'Episcopio,Female,C3,EUR,C3,Delayed,Kirsten Stirley,Embraer E190,5607.01
+2779,01H4EEMV07ARFP4W9MEYS2RZ5P,American,Kloangpopot,5/8/2022,GUU,Gomunice,6/7/2023 03:09,Dehlia McNelis,Female,A1,IDR,C3,Cancelled,Melonie Showen,Airbus A320,8785.69
+2780,01H4EEMV0A35BY03QP1RJREG9F,American,Floreşti,17/9/2022,CXA,Valašská Bystřice,6/7/2023 19:05,Claire Le Grove,Male,C3,MDL,C3,Cancelled,Langsdon Copes,Embraer E190,3934.33
+2781,01H4EEMV0D8HNCZHGGWAAY0WWP,American,Chifeng,25/6/2022,CLV,Lampihung,6/7/2023 23:17,Rutherford Saye,Male,C3,CNY,C3,Cancelled,Giff Casbourne,Embraer E190,6581.43
+2782,01H4EEMV0FVPTBR8842VMM3TCN,Delta,San José,30/4/2022,SOO,Hukeng,6/7/2023 01:03,Nikkie Ivanitsa,Female,A1,HNL,C3,Delayed,Robinia Allchorne,Embraer E190,9331.2
+2783,01H4EEMV0J0KTM8GJKJET0CYSA,United,Saga-shi,30/5/2022,RML,Bitanjuan,6/7/2023 21:11,Freddie Skrines,Male,A1,JPY,C3,Delayed,Robers Enderlein,Boeing 737,1944.78
+2784,01H4EEMV0NRF7W7EAZQQHHM02M,American,Villa Santa Rita,6/4/2022,SRG,Solok,6/7/2023 21:28,Joanna Mounch,Female,C3,ARS,B2,Cancelled,Emily Bissex,Embraer E190,9291.49
+2785,01H4EEMV0RX7ETHVB97VBSWWPA,Delta,Diadema,27/1/2022,PGM,Gushui,6/7/2023 07:51,Manny Lown,Male,C3,BRL,B2,Delayed,Blake Dunn,Embraer E190,4532.62
+2786,01H4EEMV0V7926E52Q6VKPWJ5Z,Delta,Rossosh’,5/12/2022,KQT,Banjar Pasekan,6/7/2023 04:57,Rutherford Kendred,Male,B2,RUB,C3,On Time,Leeland Petley,Embraer E190,6229.07
+2787,01H4EEMV0YE49NPQ7Q92Y610N4,Delta,Wuda,16/6/2022,CNX,Borabue,6/7/2023 20:30,Roscoe Chuck,Male,C3,CNY,A1,Cancelled,Goddart Rendle,Embraer E190,2071.13
+2788,01H4EEMV10XYRNGCX7KNXEN3NF,Delta,Yunlu,13/11/2022,ZCL,Chapultepec,6/7/2023 18:49,Ron Bonar,Male,B2,CNY,C3,Cancelled,Caldwell Bickerton,Embraer E190,2234.92
+2789,01H4EEMV13XQSMNPDKB1C8B34H,American,Pulosari,18/7/2022,RGE,Monaragala,6/7/2023 21:47,Fleming Bendare,Male,A1,IDR,B2,On Time,Antonio Bullivent,Embraer E190,1298.77
+2790,01H4EEMV16BJV24QF7E44GX67R,American,Batulawang,17/8/2022,SXM,Tevriz,6/7/2023 02:51,Koressa Sier,Female,C3,IDR,B2,Cancelled,Ainsley Measen,Boeing 737,3114.75
+2791,01H4EEMV19X1G93JPAC6J1T1GE,United,Hoktember,23/10/2022,KWB,Korobitsyno,6/7/2023 09:45,Zolly Borles,Male,C3,AMD,B2,On Time,Angus Bedells,Embraer E190,6562.53
+2792,01H4EEMV1CCN9A9CEHHMEKWSX3,American,Aoqiao,7/11/2022,LVO,Kamnica,6/7/2023 11:40,Darell Klemmt,Female,C3,CNY,B2,On Time,Farra Haddrell,Embraer E190,3179.28
+2793,01H4EEMV1F27E9WCTC2W1TYTWF,Delta,Margorejo,4/7/2022,POP,Bergen,6/7/2023 19:06,Lolly Bazylets,Female,B2,IDR,A1,Delayed,Lil Searchwell,Embraer E190,9806.06
+2794,01H4EEMV1JTFC5AR0VWRZFYQHH,American,Osięciny,24/3/2022,SDV,Majia,6/7/2023 17:05,Anders Walbrun,Male,B2,PLN,C3,On Time,Dani Dollimore,Airbus A320,3070.36
+2795,01H4EEMV1NCS2H3GFVPM7EGX6V,Delta,Taoyuan,2/12/2022,KGU,Wuquan,6/7/2023 01:59,Rosaline Pennetta,Female,C3,CNY,A1,Cancelled,Verine Goshawk,Airbus A320,1280.07
+2796,01H4EEMV1QETZMDXAJS31HE50M,American,Montpellier,1/9/2022,SCE,Linëvo,6/7/2023 13:42,Lucias Cumpsty,Male,A1,EUR,B2,On Time,Vincenz Kinningley,Boeing 737,6640.35
+2797,01H4EEMV1T75FBYSX1TMJHYQYY,American,Nangen,19/1/2022,AUU,Baihe,6/7/2023 00:58,Galven Lengthorn,Male,A1,KRW,C3,On Time,Erastus Wines,Airbus A320,2090.08
+2798,01H4EEMV1XR7DW77TBAQ3GXZPH,United,Monkayo,3/2/2022,PGX,Zhangdan,6/7/2023 14:13,Stan Lynett,Male,A1,PHP,C3,Delayed,Arnuad Duggen,Embraer E190,3316.11
+2799,01H4EEMV20RNRTQKDQZZQ6FNFA,Delta,Kutamangu,26/5/2022,KLK,Hekou,6/7/2023 03:42,Sigfrid Tuiller,Male,B2,IDR,B2,Cancelled,Marlo Rackham,Boeing 737,3043.96
+2800,01H4EEMV2312Z3E2WSSE8BX99F,Delta,Niutian,30/3/2022,OUH,Åby,6/7/2023 20:20,Gelya Allsup,Female,C3,CNY,A1,Delayed,Amye Marzella,Embraer E190,8704.55
+2801,01H4EEMV26Y2S2DS6Y6P03EZ9Z,American,Tongzha,7/11/2022,OBY,Perth,6/7/2023 16:04,Alfi Ilyenko,Female,C3,CNY,A1,Delayed,Chrissie Alflatt,Boeing 737,4454.74
+2802,01H4EEMV29ZZE6SP7KW0TBCGGT,United,Urho,14/12/2022,MRK,Patemon,6/7/2023 20:48,Shaylah Dosdill,Female,A1,CNY,B2,On Time,Ashleigh Stanman,Boeing 737,6339.88
+2803,01H4EEMV2BDG2BZPYQX8KCGJAN,United,Anh Son,31/3/2022,MSP,Boulemane,6/7/2023 07:25,Mina Hanscomb,Female,B2,VND,B2,Cancelled,Hortensia Minghi,Embraer E190,6998.56
+2804,01H4EEMV2E7MYFT890HW1WMDFX,Delta,Al Qarārah,13/11/2022,ECI,Longnan,6/7/2023 11:02,Dalston Callf,Male,C3,ILS,A1,On Time,Sterling Mitroshinov,Airbus A320,6499.13
+2805,01H4EEMV2J7P5ZBFDB8V10TWTA,American,Santiago,1/7/2022,ABY,Radovitskiy,6/7/2023 01:33,Emma Ballintyne,Female,A1,PHP,C3,On Time,Juline Dullard,Embraer E190,2412.39
+2806,01H4EEMV2NP1JM41FYTJMKK9BN,United,Weiwangzhuang,5/12/2022,EGA,Portela,6/7/2023 09:52,Marley Ratt,Female,A1,CNY,A1,Cancelled,Emili Bruyntjes,Airbus A320,6314.23
+2807,01H4EEMV2QHBJS35855DXH9NYH,American,Margabakti,13/1/2022,SXZ,Klishkivtsi,6/7/2023 11:17,Karlens Jobbing,Male,B2,IDR,A1,Delayed,Ken Conway,Embraer E190,2181.21
+2808,01H4EEMV2TT79CV379BV4CZAN7,Delta,Sukadana,2/1/2022,RIL,Zemun,6/7/2023 02:11,Devland Shalliker,Male,C3,IDR,B2,Cancelled,Frederik Varnals,Airbus A320,4690.97
+2809,01H4EEMV2XFQ6AAJ1G7YC8XAGY,United,Portel,24/7/2022,TNC,Grenoble,6/7/2023 00:34,Miltie Ashplant,Male,B2,BRL,C3,On Time,Moise Richardes,Boeing 737,2171.39
+2810,01H4EEMV3029AVWX8WGAST1WKJ,Delta,Ciduren,10/9/2022,MRK,Amirdzhan,6/7/2023 11:38,Marina Bysshe,Female,C3,IDR,C3,On Time,Esta Tambling,Boeing 737,6135.6
+2811,01H4EEMV33FPRKWMXF8G2ZWSDS,Delta,Xinji,12/11/2022,EVN,Unaí,6/7/2023 09:59,Delcina Fermoy,Female,B2,CNY,A1,Delayed,Mame Lie,Boeing 737,9436.18
+2812,01H4EEMV36DNDZHQX4N3QFFK2B,American,Cochabamba,22/7/2022,CVT,Jiyizhuang,6/7/2023 11:36,Consalve Skeggs,Male,A1,PEN,A1,Delayed,Mace Dasent,Boeing 737,2101.11
+2813,01H4EEMV39HB2VE4QFW6V80ZSF,Delta,Stockholm,30/4/2022,CMJ,Höshigiyn-Ar,6/7/2023 05:16,Thaine Sommerlin,Male,C3,SEK,B2,On Time,Ogdan Flaxman,Embraer E190,8667.41
+2814,01H4EEMV3CHRS51YY9DQBCYZTH,Delta,Kimaam,7/10/2022,HGO,Xinxing,6/7/2023 11:51,Tiebout Eacle,Male,A1,IDR,C3,On Time,Francklin McLean,Airbus A320,6375.99
+2815,01H4EEMV3E1CR4H5KFGF4NRRQC,American,Umag,13/7/2022,EVE,Moncton,6/7/2023 19:55,Rusty Huddle,Male,C3,HRK,B2,On Time,Lenard Nutbrown,Embraer E190,9574.85
+2816,01H4EEMV3H4QMTXQ8M960YRAA6,United,Ekimchan,30/11/2022,AKL,Tecka,6/7/2023 07:53,Bernardo Bachelar,Male,B2,RUB,C3,Cancelled,Milty Carreck,Airbus A320,6532.88
+2817,01H4EEMV3MKDSKCHM7R8S6XG5E,United,Krutja e Poshtme,11/4/2022,IEJ,Masipi West,6/7/2023 19:21,Breena Hartridge,Female,A1,ALL,B2,Delayed,Vere Syrad,Embraer E190,2489.34
+2818,01H4EEMV3QQ83NWZJ664G3EDBF,American,Buenavista,30/5/2022,YMX,Anse Boileau,6/7/2023 05:22,Solomon McGorman,Male,A1,COP,A1,Delayed,Fidel Grigoli,Boeing 737,6622.25
+2819,01H4EEMV3TQ6NSS7EJZ7XX37ZH,Delta,Kīsh,16/3/2022,LGN,Pengembur Dua,6/7/2023 15:20,Natal Engelbrecht,Genderqueer,C3,IRR,B2,Delayed,Gregg Hindrich,Boeing 737,2367.41
+2820,01H4EEMV3XCKJVRDMENDNQ697Y,American,Gaur,22/5/2022,WOE,Burgos,6/7/2023 21:14,Alayne Pimmocke,Female,C3,NPR,C3,On Time,Vale Hince,Embraer E190,4932.7
+2821,01H4EEMV3Z0BZBKWZ7SA71C5JY,American,Vale de Figueira,10/1/2022,ATV,Baga Borihe,6/7/2023 00:37,Hershel Lindenblatt,Male,A1,EUR,C3,Cancelled,Roddy Thomasset,Boeing 737,1820.61
+2822,01H4EEMV42KDZBE025SV6ZMZYV,United,Rače,14/8/2022,BKI,Xingong,6/7/2023 03:51,Massimo Harbage,Male,A1,EUR,A1,Delayed,Danny Tenman,Boeing 737,3058.97
+2823,01H4EEMV451S68EMFJYR9BWHVK,United,Bolorejo,11/9/2022,LKK,Kuanchuan,6/7/2023 14:49,Angelique Very,Female,C3,IDR,A1,Delayed,Carlene Markie,Embraer E190,5354.7
+2824,01H4EEMV48WQS3RJJXBSTADPC8,American,Porto Seguro,11/5/2022,0,La Dicha,6/7/2023 15:46,Valentine Keeler,Female,C3,BRL,B2,On Time,Kerri Reyna,Embraer E190,2686.08
+2825,01H4EEMV4B5PS3VKQ14HDYNBQW,American,Santa Vitória do Palmar,8/12/2022,ELR,Kashiwazaki,6/7/2023 13:52,Dag Alfwy,Male,A1,BRL,A1,On Time,Tyrus Yukhnin,Embraer E190,9834.12
+2826,01H4EEMV4E0EH1RTYCD2E0CPFV,Delta,Gasa,4/6/2022,WOE,Idtig,6/7/2023 10:35,Sammy Oakland,Male,C3,BTN,A1,Delayed,Erroll Rivaland,Airbus A320,2537.11
+2827,01H4EEMV4GA24H49Q756VM68B4,United,Reims,13/4/2022,JPN,Pak Phayun,6/7/2023 19:33,Edlin Airlie,Male,C3,EUR,A1,Cancelled,Camey Kaysor,Embraer E190,3401.53
+2828,01H4EEMV4K0XPK42KKAA2P8V4P,Delta,Kebunan,26/5/2022,KMN,Dubrovka,6/7/2023 23:54,Dimitry Hasty,Male,B2,IDR,B2,On Time,Omar Collingworth,Airbus A320,1399.16
+2829,01H4EEMV4PZAT0688BERXRVX1A,American,Rubirizi,10/10/2022,LSQ,Ubaté,6/7/2023 19:12,Christyna Avieson,Female,A1,UGX,C3,Cancelled,Miran Woonton,Airbus A320,6069.71
+2830,01H4EEMV4S7QDAX31EFPAPBZMQ,American,Brikcha,22/10/2022,CZJ,Shitang,6/7/2023 18:28,Obidiah Hune,Male,B2,MAD,A1,Delayed,Evelyn Simper,Boeing 737,1580.94
+2831,01H4EEMV4WVP14TXPC35D62DJT,American,Yuanquan,27/3/2022,OKT,Hernani,6/7/2023 03:28,Emiline Oswald,Agender,B2,CNY,C3,On Time,Philipa Bassingham,Embraer E190,2987.52
+2832,01H4EEMV4Y957SENE50HN80Q71,United,Barreiros,24/1/2022,YTS,Trollhättan,6/7/2023 10:25,Bernadina Paviour,Female,B2,BRL,B2,On Time,Aline Lenham,Boeing 737,4263.33
+2833,01H4EEMV518DWC39EYMK93Y68K,Delta,Vallentuna,2/4/2022,SQK,Khōshāmand,6/7/2023 00:09,Farlie Barrott,Male,A1,SEK,B2,On Time,Robin Goudman,Embraer E190,6012.63
+2834,01H4EEMV54GTHTMSNTB6Y4EVPM,American,Lundazi,14/5/2022,TEI,Reggada,6/7/2023 16:53,Emile Fricker,Male,A1,ZMW,A1,Delayed,Vern Voice,Boeing 737,7962.39
+2835,01H4EEMV578SZ68CG0M4K3F7E5,American,Al Jaghbūb,30/10/2022,KUL,Tabuating,6/7/2023 21:41,Jerad Korba,Male,A1,LYD,A1,Delayed,Augustin Skae,Embraer E190,8633.05
+2836,01H4EEMV5ACEXFEJ9FNDSD5J8A,United,Grenoble,29/11/2022,QOJ,Mala Danylivka,6/7/2023 22:54,Chad Besset,Male,C3,EUR,A1,Cancelled,Cazzie Morican,Airbus A320,9544.95
+2837,01H4EEMV5D8PKYR40JYMMRM739,United,Tanjungpecinan Utara,19/10/2022,BUP,Pontes,6/7/2023 05:52,Margarete Pharrow,Female,A1,IDR,C3,On Time,Dulci Sherville,Boeing 737,8466.32
+2838,01H4EEMV5FZSBK218S2YMH6EB6,American,Khān Shaykhūn,16/9/2022,UKS,Dowsk,6/7/2023 07:19,Chandler Dymick,Bigender,B2,SYP,B2,On Time,Grady Conrart,Airbus A320,4991.09
+2839,01H4EEMV5JGH08P6MSGVH5VYN9,United,Náklo,21/1/2022,CAN,München,6/7/2023 02:05,Dolph Seggie,Male,C3,CZK,A1,Cancelled,Jake Copson,Airbus A320,4414.47
+2840,01H4EEMV5NT84APCK9DG02GPRP,Delta,Seto,31/5/2022,SBN,Zhongcheng,6/7/2023 20:20,Don Shellard,Male,C3,JPY,B2,On Time,Elden Longshaw,Airbus A320,8701.73
+2841,01H4EEMV5R2E1KHTG6M3MRV2HE,American,Bykivka,26/11/2022,EWB,Rio Preto da Eva,6/7/2023 15:31,Freda Cracknell,Female,B2,UAH,A1,Cancelled,Yvette Stenners,Boeing 737,4555.34
+2842,01H4EEMV5VZFWRKHJ5XNYH9XW7,American,Qabaqçöl,21/4/2022,BLR,Dazhipo,6/7/2023 06:56,Saunder Logsdale,Non-binary,B2,AZN,B2,Cancelled,Angelina Trewett,Boeing 737,5881.54
+2843,01H4EEMV5YKGWG8328TK2W8XEV,American,Thị Trấn Yên Châu,12/12/2022,TJC,Nelson,6/7/2023 01:15,Towney Clousley,Male,C3,VND,C3,Delayed,Hillel Lord,Airbus A320,9229.46
+2844,01H4EEMV60FQHPVY10J8VCFXEK,Delta,San Roque,15/11/2022,APV,Janakkala,6/7/2023 00:01,Emlyn Falkinder,Male,A1,PHP,B2,On Time,Sarge Sprankling,Airbus A320,1205.33
+2845,01H4EEMV6390208QZSJFB32VNW,United,Oruro,1/11/2022,LPE,Nifuboko,6/7/2023 23:37,Steve Dudenie,Male,A1,BOB,B2,On Time,Thedric Krysztofowicz,Embraer E190,1434.26
+2846,01H4EEMV664KAF0FP4HESMKYXG,United,Évry,12/2/2022,UMI,Nagqu,6/7/2023 07:06,Yuma Filipputti,Male,B2,EUR,B2,Cancelled,Bent Thornhill,Embraer E190,1524.61
+2847,01H4EEMV69DSRX67Q79AVB1DP5,Delta,Xinhe,20/10/2022,JUJ,Kaminoyama,6/7/2023 11:24,Charo Haggish,Female,A1,CNY,C3,Delayed,Patricia Yakobowitz,Embraer E190,2864.53
+2848,01H4EEMV6CHEG6YST5Z1ECET3B,United,Stari Bohorodchany,10/6/2022,MCD,Göteborg,6/7/2023 05:01,Thomasa Miroy,Female,A1,UAH,C3,Cancelled,Pattie Trolley,Airbus A320,9116.8
+2849,01H4EEMV6EMKFEET4Q5AWH61V7,United,Zhdanov,21/9/2022,TZC,Vallegrande,6/7/2023 16:48,Alisha Penhale,Female,C3,AMD,C3,On Time,Rosetta Bushell,Boeing 737,5305.76
+2850,01H4EEMV6H0T5HPYM4V7R0MG24,American,Dindima,19/12/2022,PNU,North Side,6/7/2023 08:41,Claiborne Slatcher,Male,B2,NGN,A1,On Time,Frasco Pendlebury,Airbus A320,6769.97
+2851,01H4EEMV6M0M7GY6E3ZNWEKHRP,Delta,Liuzhuang,3/6/2022,SIT,Lumbac,6/7/2023 14:35,Agatha Brewster,Female,B2,CNY,B2,Cancelled,Hulda Kildahl,Embraer E190,7238.59
+2852,01H4EEMV6QY4BJRG7KKFKGVBPB,United,Sanrao,2/4/2022,HBR,Karangwungu Lor,6/7/2023 07:22,Ivor Schohier,Male,C3,CNY,B2,Delayed,Oberon Boden,Airbus A320,6966.07
+2853,01H4EEMV6T9TJH1DQMPCSX1FY2,Delta,Geshan,24/1/2022,SMI,Clamart,6/7/2023 07:30,Herculie Caen,Male,C3,CNY,B2,On Time,Abbe Frediani,Boeing 737,6833.28
+2854,01H4EEMV6X754E34CJYQP3Z84V,Delta,Kotikawatta,27/2/2022,ZUC,Tamahú,6/7/2023 22:55,Bengt Sherreard,Male,B2,LKR,C3,On Time,Damiano Sirrell,Airbus A320,8262.54
+2855,01H4EEMV70K54T4D3AME9Q80RY,United,Sambir,29/6/2022,ORX,Pszczyna,6/7/2023 10:40,Ralina Rowter,Female,B2,UAH,B2,On Time,Filia Cowdray,Airbus A320,8076.02
+2856,01H4EEMV726NJQGJ3MM5PGZCPQ,United,Pouso Alegre,20/1/2022,LKY,Girihieum,6/7/2023 02:31,Harv Lahrs,Male,A1,BRL,B2,Delayed,Erik Pawfoot,Airbus A320,6171.56
+2857,01H4EEMV75EY1VNV1CJWK7BBHK,United,Szczaniec,15/8/2022,BKM,Obrera,6/7/2023 19:12,Ginger Stillgoe,Bigender,A1,PLN,B2,On Time,Kanya Cropton,Embraer E190,8918.45
+2858,01H4EEMV78VTCPD83R6S717NFF,American,Ar Ramāḑīn,29/11/2022,JMJ,Virginia,6/7/2023 16:25,Rhiamon Faldo,Female,C3,ILS,B2,Delayed,Vivian Pavier,Airbus A320,1373.36
+2859,01H4EEMV7A1MCVWCMYXCWQG08Y,Delta,Magangué,4/9/2022,BAB,Sanligang,6/7/2023 22:41,Ashien Coote,Female,B2,COP,C3,Cancelled,Jasmin O'Deegan,Embraer E190,5104.23
+2860,01H4EEMV7DD9J403GJPWAET91Y,American,Mikhaylovsk,4/11/2022,ESB,Nyanza,6/7/2023 04:29,Collette Kobera,Female,A1,RUB,B2,On Time,Milli Shaw,Airbus A320,3170.98
+2861,01H4EEMV7GSD2D2ZFWZW92FAFE,Delta,Duzhou,29/3/2022,CUA,Xintaimen,6/7/2023 09:43,Dodi Dodding,Female,C3,CNY,C3,On Time,Pippy Castanares,Embraer E190,6866.3
+2862,01H4EEMV7K33G3X06M08VNEGP7,Delta,Posse,28/6/2022,PKX,Wang Thonglang,6/7/2023 23:55,Xerxes Wenban,Male,B2,BRL,C3,On Time,Humbert Hubbins,Airbus A320,8901.29
+2863,01H4EEMV7NYQT8JMTJ9ST7SKYM,Delta,Nahura,24/4/2022,ERM,Odoyev,6/7/2023 03:59,Chicky Leacy,Female,A1,IDR,A1,Cancelled,Alia Assard,Airbus A320,5306.68
+2864,01H4EEMV7RD20Z0YWXWQB17Y90,United,Rano,19/1/2022,BZZ,George Town,6/7/2023 03:13,Kathryne Bischof,Female,C3,NGN,A1,On Time,Ginnie Loggie,Embraer E190,5459.05
+2865,01H4EEMV7VJAVFSQJPCYRDJEF8,United,Olszówka,30/3/2022,TSZ,El Triunfo,6/7/2023 10:16,Cara Gobat,Agender,A1,PLN,A1,Cancelled,Druci Palmer,Airbus A320,8753.59
+2866,01H4EEMV7XV5AYTAR3WPTT4RMY,Delta,Kokhanava,28/7/2022,HEL,Nidek,6/7/2023 23:19,Reuven Cattle,Male,C3,BYR,A1,Delayed,Immanuel Cuniffe,Embraer E190,2707.1
+2867,01H4EEMV80XA05X88XXTK6CQYX,United,Kraśniczyn,9/4/2022,SID,San Vicente,6/7/2023 20:20,Luce Vargas,Female,C3,PLN,C3,Cancelled,Nisse Barajaz,Airbus A320,1532.71
+2868,01H4EEMV833E8RQQ81QQ3CKXWQ,American,Cartago,18/11/2022,MBP,Bolou,6/7/2023 00:12,Ebony Navarro,Non-binary,C3,COP,B2,Cancelled,Aurlie O'Sheils,Embraer E190,7892.16
+2869,01H4EEMV869E5S5V3PQE25EZNV,United,Knjazevac,13/10/2022,VNA,Pasirmadang,6/7/2023 16:29,Annice Grigoroni,Polygender,A1,RSD,C3,On Time,Brandise Winkworth,Airbus A320,2594.12
+2870,01H4EEMV88V87Q06KWJ5DFEG3N,United,Obollo-Afor,3/8/2022,BCD,Kajok,6/7/2023 06:03,Robbie Schulze,Male,A1,NGN,A1,On Time,Delbert Cuttles,Airbus A320,4443.78
+2871,01H4EEMV8BTGCDRAWKW689PD54,United,Kinh Môn,28/5/2022,BPA,Barberton,6/7/2023 04:34,Jarid MacCourt,Agender,C3,VND,B2,On Time,Lindy Mandrake,Embraer E190,4856.46
+2872,01H4EEMV8ESZWEGZ8D9J57V95T,United,Karangsono,27/8/2022,KQH,Temirtau,6/7/2023 10:59,Saw Tilliard,Male,C3,IDR,A1,Delayed,Ramon Langcaster,Boeing 737,7447.44
+2873,01H4EEMV8HHJDS8GRB8QZBQ231,United,Zhongfang,21/10/2022,BJE,Yingzhou,6/7/2023 21:01,Gabrila Olensby,Female,B2,CNY,C3,Delayed,Norma Lockwood,Airbus A320,5926.63
+2874,01H4EEMV8KTEJJADMW5CBPKCRH,United,Jinchang,30/8/2022,NAT,Xiachu,6/7/2023 02:53,Edna Housiaux,Female,A1,CNY,B2,On Time,Modestia Orht,Airbus A320,3310.22
+2875,01H4EEMV8PW0HM2WPX6T279YV6,United,Bāqim as Sūq,14/10/2022,KSW,Xuji,6/7/2023 22:23,Gonzalo Thirlaway,Male,A1,YER,C3,Cancelled,Valentine Giacomuzzo,Embraer E190,4849.29
+2876,01H4EEMV8S0WBB7BSRV28RYAPX,United,Sengeti,9/3/2022,PNQ,Xinghua,6/7/2023 15:59,Leroy McGorman,Male,A1,IDR,C3,On Time,Bennie Fautly,Boeing 737,7362.32
+2877,01H4EEMV8VYJ6FZM85NS9V52QV,Delta,Hancheng,16/11/2022,YTQ,Borova,6/7/2023 00:46,Kathye Binch,Female,A1,CNY,A1,Cancelled,Veronica Wisedale,Embraer E190,1665.44
+2878,01H4EEMV8Y0R7Z344GP052KZP0,United,Nagai,29/8/2022,MUK,Puor,6/7/2023 06:46,Rochester Clerke,Male,C3,JPY,B2,Delayed,Abbe Bradman,Embraer E190,2157.14
+2879,01H4EEMV9124TTA2H70JPWTFBB,American,Verkhnyaya Toyma,27/4/2022,HFA,San Jose,6/7/2023 01:23,Iorgo De Cruz,Male,C3,RUB,B2,Cancelled,Ulysses Hardway,Boeing 737,3017.56
+2880,01H4EEMV94K4B22YG70TSR64MW,American,Blang Dalam,17/5/2022,LPI,Medeiros Neto,6/7/2023 17:29,Dannye MacClay,Female,B2,IDR,A1,Delayed,Neely Viscovi,Boeing 737,5643.7
+2881,01H4EEMV9685KD3DZ91YSTQB6N,Delta,Khadan Khāk,6/2/2022,HSN,Ban Lam Luk Ka,6/7/2023 21:11,Cortney Thynne,Female,A1,PKR,A1,Cancelled,Allene Byatt,Boeing 737,9074.32
+2882,01H4EEMV99KVF5HSHVH40MXNAA,American,Xinpo,18/12/2022,MHA,Batabanó,6/7/2023 22:57,Avrom Siehard,Male,B2,CNY,C3,Delayed,Reube Cahani,Boeing 737,1944.41
+2883,01H4EEMV9C1GEK74AAKDK4XVSR,American,Talodi,13/2/2022,DJR,Kostino,6/7/2023 08:12,Scarlet Frise,Female,C3,SDG,B2,On Time,Kate Nevill,Embraer E190,3326.11
+2884,01H4EEMV9EGEG6D3WZASAQYBN2,American,Saharna,28/4/2022,FAV,Dąbrowice,6/7/2023 15:41,Annalise Matura,Female,B2,MDL,A1,On Time,Flory Videan,Boeing 737,1447.79
+2885,01H4EEMV9H5FZ52Y9H12CYDBAK,Delta,Lloydminster,5/2/2022,SSI,Alvito de São Pedro,6/7/2023 20:12,Martynne MacGruer,Genderfluid,B2,CAD,A1,Delayed,Trever Chivers,Boeing 737,6878.48
+2886,01H4EEMV9MCN81F8GV104YE9SJ,United,San Ramon,5/9/2022,GXX,Orekhovo-Borisovo,6/7/2023 12:40,Louie Lacheze,Male,B2,PHP,A1,Cancelled,Tabbie Worrall,Boeing 737,1445.72
+2887,01H4EEMV9QTNJVRW25T4C4SHWM,American,Orléans,18/8/2022,HRS,Kristianstad,6/7/2023 13:29,Mellicent Kierans,Female,C3,EUR,B2,Delayed,Dorella Crake,Airbus A320,7939.65
+2888,01H4EEMV9SX96HM04HXJ3T016Q,United,Xujiadian,2/3/2022,ERA,Tambo,6/7/2023 07:26,Anitra Vaux,Agender,C3,CNY,B2,Cancelled,Nancy McCormick,Airbus A320,5124.58
+2889,01H4EEMV9W85RYBBZH3K3G2WC8,United,Concepción,11/8/2022,LSY,Bago City,6/7/2023 20:00,Modestine Daveley,Female,C3,BOB,A1,Cancelled,Kitti Kenworthey,Boeing 737,2551.06
+2890,01H4EEMV9Z0T5XX2AW4RHJ9TGR,United,Rafael Hernandez Ochoa,23/11/2022,GUZ,Zhenziliang,6/7/2023 00:32,Shea Shurlock,Female,C3,MXN,B2,Delayed,Eadie Tellenbach,Airbus A320,9720.09
+2891,01H4EEMVA2EMNAV9ZYN9B1464G,United,Taquarituba,3/10/2022,PSK,Los Lotes,6/7/2023 23:44,Whitaker Barbary,Male,B2,BRL,C3,Delayed,Dani Smithson,Airbus A320,5036.97
+2892,01H4EEMVA5V3RXPZT8F9131GFR,American,Zhangjiayuan,17/10/2022,EJT,Ilha Solteira,6/7/2023 00:14,Garold Ryves,Male,A1,CNY,A1,Delayed,Moshe Splaven,Embraer E190,6050.33
+2893,01H4EEMVA9MJZG8W16GK46CPWW,United,Longnawang,6/8/2022,BLB,Qarāwat Banī Zayd,6/7/2023 13:26,Pete McFeat,Male,C3,IDR,B2,Delayed,Alf Baffin,Boeing 737,1951.71
+2894,01H4EEMVAE0KM5VDRXSB3C8YP4,United,Aleg,10/3/2022,PCJ,Machang,6/7/2023 15:05,Daryle Majury,Male,B2,MRO,C3,On Time,Ernestus Leinster,Airbus A320,6381.78
+2895,01H4EEMVAJTBVZ03N2ZNY4YTH7,United,Bhāi Pheru,23/11/2022,OAJ,Dongzhang,6/7/2023 13:11,Rafaello Abelovitz,Male,A1,PKR,C3,Delayed,Tades Shelsher,Boeing 737,7459.63
+2896,01H4EEMVAPVGDGPWSBPQ6V1NBY,Delta,San José de las Lajas,23/4/2022,DBU,Krzanowice,6/7/2023 05:22,Marja Willgoss,Female,A1,CUP,A1,Cancelled,Dennie Shorrock,Embraer E190,6393.49
+2897,01H4EEMVATR0225WXNBY3SGVYK,American,Sydney,15/1/2022,HLS,Shymkent,6/7/2023 19:32,Alard Noddle,Male,C3,AUD,A1,Delayed,Kalle Marham,Airbus A320,2589.39
+2898,01H4EEMVAXAJ876Y0XBG9D0PRQ,Delta,Chengguan,15/10/2022,YSJ,Shuitianhe,6/7/2023 15:51,Maible Berndsen,Female,C3,CNY,C3,Cancelled,Adrienne Benezeit,Airbus A320,3325.81
+2899,01H4EEMVB05GB1P3200JCYB8PW,United,Dabachang,7/8/2022,CLU,Nong Khaem,6/7/2023 11:47,Maxie Gooder,Male,A1,CNY,A1,Cancelled,Nicol Heiden,Boeing 737,2588.71
+2900,01H4EEMVB3D612W4DRBRBKGAHN,Delta,Oster,9/1/2022,TBC,Moneague,6/7/2023 22:59,Normie Shacklady,Male,A1,RUB,C3,Cancelled,Francklin Gasquoine,Embraer E190,9108.52
+2901,01H4EEMVB5RR6T0632Y1QBDMEX,United,Wanshi,27/9/2022,WIE,Registro,6/7/2023 22:17,Goldarina Addy,Female,A1,CNY,B2,Delayed,Shandy McTear,Airbus A320,8117.66
+2902,01H4EEMVB87PCQMZB67XWQMMRB,Delta,General José de San Martín,11/2/2022,KET,Youngstown,6/7/2023 20:54,Bran Basilotta,Male,A1,ARS,C3,Delayed,Barnabas Caren,Embraer E190,2046.45
+2903,01H4EEMVBBGRQET7GPTMJA50RB,American,Sa'dah,17/4/2022,MER,Egvekinot,6/7/2023 16:19,Mario Isacke,Male,A1,YER,C3,Cancelled,Gib Darracott,Boeing 737,3580.74
+2904,01H4EEMVBEDMZ88P2CCHMQ9T8W,United,Pombos,28/9/2022,SOI,Tamboril,6/7/2023 22:43,Osmond Kail,Male,B2,BRL,C3,Delayed,Timmie Gothliff,Embraer E190,3222.03
+2905,01H4EEMVBGRX195GWPDCH3ZRFD,United,Paramaribo,18/8/2022,GNY,Sośno,6/7/2023 02:10,Milicent Risely,Non-binary,B2,SRD,A1,On Time,Erick Rossbrooke,Embraer E190,1642.14
+2906,01H4EEMVBKVQSGEW54MFV0ZDNH,Delta,Juxing,30/6/2022,PMH,Kebon,6/7/2023 23:48,Marcellina Celler,Non-binary,C3,CNY,B2,Delayed,Kirsti Boldecke,Airbus A320,5791.03
+2907,01H4EEMVBPSEKVHPM8GCT9MHBC,United,Yamen,27/11/2022,BGN,Örebro,6/7/2023 17:10,Norman Sertin,Male,A1,CNY,C3,On Time,Roarke Heeron,Airbus A320,1981.16
+2908,01H4EEMVBSNWJPJBPJAQWFN9QG,Delta,Tsubata,23/7/2022,MLG,Khānewāl,6/7/2023 17:00,Wiley Belchem,Male,B2,JPY,A1,Delayed,Torey Zipsell,Embraer E190,8000.63
+2909,01H4EEMVBVHXAKJ2RPG4D5YK4F,United,Maués,19/6/2022,RGI,Tamaulipas,6/7/2023 21:18,Melodie Alexsandrev,Female,A1,BRL,C3,Delayed,Andi Wayman,Embraer E190,5450.36
+2910,01H4EEMVBYF1SE58BEMXB7H80S,United,Varginha,29/8/2022,CCU,Villa La Angostura,6/7/2023 13:44,Shermie Caldwall,Male,A1,BRL,A1,Delayed,Antoni Phair,Embraer E190,7389.3
+2911,01H4EEMVC23ZTRG2AAF90TT2HA,Delta,Biguaçu,24/4/2022,QSA,‘Akko,6/7/2023 20:24,Rhonda Huxley,Female,B2,BRL,A1,Delayed,Shayla Dohmer,Airbus A320,5301.15
+2912,01H4EEMVC4ZDK66RRQHGEQ8DE7,Delta,Una,5/4/2022,CBL,Santos,6/7/2023 18:47,Artie Commins,Male,C3,BRL,C3,Cancelled,Rockwell Waddy,Embraer E190,9027.43
+2913,01H4EEMVC7AP4A8NNQMQWV7QV8,Delta,Suba,28/11/2022,AMB,Huaiyuan Chengguanzhen,6/7/2023 23:47,Allsun Gircke,Female,C3,PHP,A1,Cancelled,Shanie Gohn,Airbus A320,6721.29
+2914,01H4EEMVCABTT8SZASB7NCVNCT,American,Sourotí,3/8/2022,NOC,Tianfu,6/7/2023 10:27,Cyril McKennan,Non-binary,C3,EUR,A1,Delayed,Rufus Battelle,Airbus A320,2213.84
+2915,01H4EEMVCD1D9S2N7DFCE4B84K,United,Mungkin,11/9/2022,YPM,Presidente Médici,6/7/2023 22:26,Melisenda Skey,Female,C3,IDR,C3,Cancelled,Lynn Windress,Boeing 737,9211.01
+2916,01H4EEMVCWHMS21XZ6WMM4MXRX,Delta,Devin,22/10/2022,YWS,Liminka,6/7/2023 12:00,Daren Friedank,Male,C3,BGN,C3,Cancelled,Oswell Odcroft,Boeing 737,3877.2
+2917,01H4EEMVCZBSR09SJYH4088RJ8,Delta,Marianowo,28/9/2022,BOV,Kabasalan,6/7/2023 07:32,Nickie Gurden,Genderqueer,A1,PLN,B2,On Time,Alex Eddoes,Embraer E190,9475.27
+2918,01H4EEMVD2K9C521QZHNY6ZV04,United,Karlstad,14/12/2022,CAQ,Laocheng,6/7/2023 23:55,Chet Buxy,Male,C3,SEK,B2,On Time,Tait Pounsett,Airbus A320,6438.87
+2919,01H4EEMVD5K418R9T3JERT7WCC,American,La Roxas,10/12/2022,GAZ,Trenton,6/7/2023 06:34,Brandon Clemetts,Male,A1,PHP,C3,On Time,Dom Rabidge,Embraer E190,5245.18
+2920,01H4EEMVD82NT3MBBXCE38T072,Delta,Lakeland,27/12/2022,KMS,Yamoto,6/7/2023 17:01,Gweneth McGirl,Female,A1,USD,A1,On Time,Queenie Maguire,Airbus A320,5962.49
+2921,01H4EEMVDBAJ96AVBBY66Y0Z6P,Delta,Kiev,1/7/2022,DTU,Calvário,6/7/2023 22:30,Maximilianus Dyke,Male,A1,UAH,B2,On Time,Timmy Spaducci,Embraer E190,3047.32
+2922,01H4EEMVDE1B4Q9930AZMN20VN,American,Jinchang,11/6/2022,LRQ,Quemú Quemú,6/7/2023 19:07,Parry Dearing,Male,B2,CNY,A1,On Time,Skip Goldson,Embraer E190,1060.86
+2923,01H4EEMVDH3XST4A7AAA7EW091,American,Abaza,13/9/2022,MFG,Baganhilir,6/7/2023 22:50,Candra Dignan,Female,C3,RUB,B2,On Time,Cicily Dreigher,Airbus A320,8560.03
+2924,01H4EEMVDNQKPFK2RWRNPC8KG1,Delta,Tha Ruea,20/10/2022,OFU,Metchosin,6/7/2023 13:28,Talia Dalmon,Female,C3,THB,B2,Cancelled,Gabie Diggles,Boeing 737,9260.1
+2925,01H4EEMVDS3W5AWXRA8P37BDPB,Delta,Chiri-Yurt,29/11/2022,VDA,Geldrop,6/7/2023 11:03,Trefor Wilse,Male,C3,RUB,A1,Cancelled,Gabe Nother,Embraer E190,3258.83
+2926,01H4EEMVDWS7K2T14NPWQ1CGJE,United,Heshui,29/1/2022,EWK,Longba,6/7/2023 16:54,Remus Pallas,Male,B2,CNY,B2,Delayed,Codi Matkovic,Airbus A320,5542.46
+2927,01H4EEMVDZ46QN9WBKXRM02SK3,American,Dongping,26/3/2022,JNU,Cerme Kidul,6/7/2023 15:45,Myrlene Beinke,Female,A1,CNY,C3,Delayed,Dniren McDool,Airbus A320,5357.81
+2928,01H4EEMVE2J4TE86G7R9MCGK25,American,Kodamachō-kodamaminami,17/1/2022,SBZ,Fernandópolis,6/7/2023 00:38,Laurent Banbury,Male,C3,JPY,B2,Delayed,Reamonn Codlin,Airbus A320,9551.28
+2929,01H4EEMVE50VQWTFRTV3KFY8FM,American,Huachos,19/10/2022,BAM,Nanhuatang,6/7/2023 05:25,Cleavland Dunsire,Male,B2,PEN,A1,On Time,Roth MacGahy,Embraer E190,9004.94
+2930,01H4EEMVE85HDQ4M9TF04JMXB9,Delta,Gununganyar,26/5/2022,AHM,Ruixi,6/7/2023 12:03,Rafaellle Mesant,Male,C3,IDR,C3,Cancelled,Sherwin Shillaker,Embraer E190,4791.24
+2931,01H4EEMVEBGBEQWX8MG7VJP869,United,Iturama,19/11/2022,JNN,Pofadder,6/7/2023 00:37,Teodoor Strutt,Male,C3,BRL,B2,Delayed,Otho Albutt,Embraer E190,8526.08
+2932,01H4EEMVEEPDMD8JT6XTK56YYQ,American,Shinan,20/11/2022,UCB,Bom Sucesso,6/7/2023 10:17,Giselbert Barck,Male,A1,CNY,A1,On Time,Danie Kleuer,Airbus A320,7271.97
+2933,01H4EEMVEGCZE2VEHBJKRDH9FK,United,Matabao,6/5/2022,BUO,Karpinsk,6/7/2023 01:31,Cathe Calven,Female,A1,PHP,A1,Cancelled,Vania Arlott,Embraer E190,4245.57
+2934,01H4EEMVEK3J11J9W6DF8F96V6,United,Yanzhou,3/3/2022,AER,Yingwusitang,6/7/2023 16:12,Vivianne Wescott,Female,A1,CNY,B2,Cancelled,Lori Brompton,Boeing 737,8815.43
+2935,01H4EEMVEQA72YMDW7ERECYYX8,United,Yong’an,7/6/2022,LYM,Dianfang,6/7/2023 12:14,Godfrey Paulmann,Male,A1,CNY,C3,Delayed,Taddeo Sleicht,Boeing 737,7723.02
+2936,01H4EEMVET3ZJVN8XDFZJBNVWG,Delta,Kōfu-shi,17/1/2022,ECV,Huajlaya,6/7/2023 16:45,Rois Curnucke,Female,A1,JPY,A1,Delayed,Amandie Gippes,Airbus A320,8080.68
+2937,01H4EEMVEWPC5YB9GXGCE7C0HV,American,Tawaramoto,24/8/2022,CYG,Temuji,6/7/2023 03:31,Dan Olekhov,Male,A1,JPY,C3,On Time,Valle Fanshawe,Boeing 737,4400.11
+2938,01H4EEMVEZVNDQ6MVAW5TZRX2R,American,Libertad,1/6/2022,GBL,Mayuan,6/7/2023 22:16,Yvette Marques,Female,B2,ARS,B2,Cancelled,Merline Derx,Airbus A320,9120.99
+2939,01H4EEMVF23GD1SQKS078J6HPB,American,Kyurdarmir,24/12/2022,SRA,San Borja,6/7/2023 22:40,Justino Blakesley,Non-binary,C3,AZN,B2,On Time,Malachi Larchiere,Embraer E190,6624.49
+2940,01H4EEMVF5AKHW317JV38YEXED,American,Al Ghandūrah,18/2/2022,INT,Jiujie,6/7/2023 03:48,Renault Ubach,Male,C3,SYP,B2,Delayed,Sholom Kubiak,Boeing 737,2347.89
+2941,01H4EEMVF8EAKP9EWZVTFZGSFJ,American,Skála Oropoú,11/12/2022,COA,Laocheng,6/7/2023 11:33,Mureil Ramplee,Female,B2,EUR,A1,On Time,Dix Rockey,Boeing 737,7896.06
+2942,01H4EEMVFBR0C21E5CQV0FXF3R,American,Xinxiang,2/3/2022,WWP,Gualmatán,6/7/2023 15:04,Rafaelia Spera,Female,A1,CNY,A1,On Time,Janela Plumbe,Boeing 737,1384.26
+2943,01H4EEMVFEJYF3NHEJS7EQ902P,American,Dayr as Sūdān,20/9/2022,QRW,Huaribamba,6/7/2023 08:28,Evvy Madeley,Polygender,C3,ILS,B2,Cancelled,Lorna Hagland,Airbus A320,8141.07
+2944,01H4EEMVFHF8TQN1HXE2BP4TKG,United,Klenica,26/6/2022,EMD,Pushchino,6/7/2023 05:30,Germain Rabb,Female,B2,PLN,C3,Delayed,Carley Woodrough,Embraer E190,5626.94
+2945,01H4EEMVFMF3EB0NCEHE48155T,United,Jingshan,28/3/2022,SCM,Ta Phraya,6/7/2023 13:27,Nonnah Wychard,Female,C3,CNY,C3,On Time,Bili Harbard,Airbus A320,3824.85
+2946,01H4EEMVFQ546MHX4SNM95JAEJ,American,San Jerónimo,27/12/2022,BSA,Aveiro,6/7/2023 07:54,Amabelle Eayrs,Female,B2,HNL,B2,Delayed,Priscilla Feveryear,Airbus A320,1690.86
+2947,01H4EEMVFTY10X2GXRS3WDS890,Delta,Dnestrovsc,1/12/2022,ILI,Barra Bonita,6/7/2023 06:35,Sloan Sudworth,Male,A1,MDL,B2,On Time,Heath Feighry,Embraer E190,9989.95
+2948,01H4EEMVFXB5QXWVS8KAJ6QBW3,United,Chalcos,25/10/2022,YCF,Cipondok,6/7/2023 02:50,Thomasina MacConnell,Female,A1,PEN,B2,Delayed,Goldarina Clifforth,Embraer E190,4415.51
+2949,01H4EEMVG0G8G94TJW0A2D6ZRE,American,Kalinovo,13/2/2022,TKC,Aitape,6/7/2023 11:34,Randolf Jillings,Agender,A1,RUB,C3,Delayed,Reggie Harmour,Embraer E190,9173.23
+2950,01H4EEMVG323M6TH0QEMYS2MHS,American,Caleufú,25/9/2022,BJK,Thị Trấn Yên Cát,6/7/2023 04:07,Cesya O'Caine,Female,B2,ARS,A1,Delayed,Joela Kener,Boeing 737,6602.8
+2951,01H4EEMVG5R5CZYE9MD27K7D0E,American,Buray,9/4/2022,VVI,Ambulong,6/7/2023 11:06,Sari Kisar,Female,C3,PHP,C3,Delayed,Teresa Bickerdicke,Airbus A320,7769.36
+2952,01H4EEMVG8KCW3CVNMGQK7HDJB,Delta,Postřekov,22/10/2022,RDD,Mejdan - Obilićevo,6/7/2023 12:50,Madelin Borghese,Female,A1,CZK,A1,Cancelled,Jacqueline Deeney,Airbus A320,3324.58
+2953,01H4EEMVGBV399TEY764VXR50Y,United,Viseu,22/4/2022,ONQ,Wąwolnica,6/7/2023 14:44,Mellie Casetti,Female,C3,BRL,C3,Cancelled,Collette Creeboe,Boeing 737,8658.13
+2954,01H4EEMVGEEZ06K354C3YPQ209,American,San Andres,21/10/2022,IDN,Pisang,6/7/2023 01:52,Katheryn Broxap,Female,B2,PHP,C3,Delayed,Velma Rugg,Airbus A320,6760.08
+2955,01H4EEMVGHRHKYY5FF7CM4ZR17,Delta,Chouto,3/11/2022,LCF,Péplos,6/7/2023 18:19,Kristan Cousin,Female,B2,EUR,A1,On Time,Wendye Clilverd,Airbus A320,8919.94
+2956,01H4EEMVGMT08QWPGPX81501XY,American,Monte da Boavista,15/6/2022,MNO,Pasco,6/7/2023 12:53,Alexander Askell,Male,C3,EUR,A1,On Time,Jeremias Wollers,Airbus A320,2011.84
+2957,01H4EEMVGQGEYBE0N0GB6ZVY48,American,La Laja,9/9/2022,WRA,Sadao,6/7/2023 18:02,Ruperta Petren,Female,A1,CLP,A1,Delayed,Dorella MacCoughen,Boeing 737,5387.11
+2958,01H4EEMVGTJZSNNJQ9CMX8KWGH,Delta,Guaçuí,9/3/2022,TIO,Rijau,6/7/2023 10:30,Jami Harvie,Female,C3,BRL,A1,Delayed,Zsa zsa Esseby,Boeing 737,7272.57
+2959,01H4EEMVGXQMZB6MMQBK4GZ842,United,Bouzov,24/11/2022,ZXT,San Antonio,6/7/2023 03:14,Haily Blanche,Female,A1,CZK,C3,Delayed,Jessie Dodge,Airbus A320,6891.31
+2960,01H4EEMVH06FCXB14ERE5F29D5,American,Liloy,11/4/2022,FVM,Roma,6/7/2023 23:46,Anni Keel,Female,C3,PHP,A1,On Time,Mella Ratt,Airbus A320,1843.1
+2961,01H4EEMVH35HAW1JTSJK2GXXGR,Delta,Tacoma,14/12/2022,AWM,Niny,6/7/2023 14:03,Sonia Cicerone,Female,B2,USD,C3,On Time,Rachele Ribou,Airbus A320,1377.09
+2962,01H4EEMVH6QQ6WQHFBNEK2X8JT,Delta,Xinglongchang,16/4/2022,BCG,Changqi,6/7/2023 21:48,Salli Halewood,Female,A1,CNY,A1,Cancelled,Nicholle Hardinge,Embraer E190,7066.84
+2963,01H4EEMVH9KH5YM5YKV8N83DKA,Delta,To’rtko’l Shahri,1/11/2022,CZA,Borovo,6/7/2023 15:02,Viole Vaz,Female,B2,UZS,C3,Cancelled,Pippy Buckmaster,Boeing 737,9643.67
+2964,01H4EEMVHB6BHM8YX7B0RVQ248,United,Caldas das Taipas,5/6/2022,ANP,Banjar Sebual,6/7/2023 14:12,Freida Bedder,Female,C3,EUR,C3,Cancelled,Adrianne Goodricke,Embraer E190,1485.83
+2965,01H4EEMVHEHG2BP42XVP7EJMXT,Delta,Sacramento,17/1/2022,OSP,Ushumun,6/7/2023 21:57,Adan Rapport,Female,B2,USD,A1,On Time,Randa Towhey,Airbus A320,3541.0
+2966,01H4EEMVHHP4R0KSFMAH72GENE,American,Cheban,2/4/2022,AWA,Albi,6/7/2023 20:05,Trina Spottiswoode,Female,C3,CNY,B2,Delayed,Emmie Twigger,Airbus A320,7096.66
+2967,01H4EEMVHMQA8K643M5G2D8WF6,Delta,Bayt al ‘Awābī,19/8/2022,CNP,Naberezhnyye Chelny,6/7/2023 15:13,Lancelot Aitchison,Male,A1,OMR,C3,Cancelled,Garek Fluck,Embraer E190,1779.01
+2968,01H4EEMVHQCQX5SSHTCFWBZZJC,Delta,Toledo,13/2/2022,TWA,Belozërsk,6/7/2023 11:56,Rubie Admans,Female,A1,USD,A1,Delayed,Miguela Sudran,Embraer E190,4582.6
+2969,01H4EEMVHTFSPAW6440WFHEZYK,Delta,Cruz,15/2/2022,YNY,Penedo,6/7/2023 04:57,Hyacinth Perkins,Female,C3,EUR,A1,On Time,Kyla Donnan,Embraer E190,8265.08
+2970,01H4EEMVHX5D0CEQSY22X2ZACT,American,Paranapanema,21/5/2022,AIC,Tumbagaan,6/7/2023 16:41,Myra Coade,Female,B2,BRL,C3,On Time,Pearl Minchinton,Boeing 737,5970.2
+2971,01H4EEMVJ07EJ8Y0J7XM59MJBC,Delta,Le Bourget-du-Lac,23/2/2022,LNO,Krasne,6/7/2023 07:34,Gretta Hancell,Female,A1,EUR,B2,Cancelled,Rachele Vallender,Airbus A320,7849.33
+2972,01H4EEMVJ3F3JFC2YCAHCEWW3T,United,Kandhkot,9/4/2022,MTB,Shangrao,6/7/2023 19:35,Worthy Karpfen,Male,C3,PKR,A1,Delayed,Micah Methuen,Airbus A320,6304.44
+2973,01H4EEMVJ54Z1AMQMCPSWPHYZZ,American,Borzoy,6/10/2022,FVL,Cerro de Pasco,6/7/2023 03:27,Desmond Le Borgne,Male,A1,RUB,A1,On Time,Porter Leehane,Embraer E190,9516.71
+2974,01H4EEMVJ87D4NDSS9CQBBGPFR,Delta,Jiqu,19/2/2022,HBG,Chenzhou,6/7/2023 21:49,Karoly Bellfield,Male,B2,CNY,C3,Cancelled,Riccardo Bounde,Airbus A320,5167.81
+2975,01H4EEMVJB8BF2FCXNKV269FFN,American,Hengliang,6/2/2022,COT,Yixing,6/7/2023 20:01,Welsh Akister,Non-binary,A1,CNY,B2,Cancelled,Kaela Messenger,Embraer E190,6944.28
+2976,01H4EEMVJG6QGQDXZTVC3M2ANP,Delta,Lokokrangan,1/11/2022,RCR,San Rafael Abajo,6/7/2023 23:13,Luise Frenchum,Female,C3,IDR,C3,Cancelled,Enriqueta Rudgerd,Airbus A320,1954.38
+2977,01H4EEMVJMF3AHPHSER1FT85JE,United,Fagatogo,25/12/2022,KSQ,Goroka,6/7/2023 08:18,Mirna Phinnessy,Female,B2,USD,B2,Cancelled,Claudetta Drynan,Boeing 737,1204.3
+2978,01H4EEMVJQ7BMV1WJ1P1FMA833,American,Sundsvall,18/4/2022,XNN,Čáslav,6/7/2023 02:26,Daria Pitkins,Female,B2,SEK,A1,Cancelled,Joly Blakesley,Airbus A320,8734.88
+2979,01H4EEMVJT63W75SJRNZFD9K3C,United,Angered,27/12/2022,EBB,Głuchów,6/7/2023 02:11,Kain Langwade,Male,B2,SEK,C3,Delayed,Gary Giacometti,Boeing 737,7735.71
+2980,01H4EEMVJXW1R52SR4Q1Z3ZHS7,Delta,Novoaltaysk,5/5/2022,INV,Lijie,6/7/2023 22:33,Errol Wolledge,Male,B2,RUB,B2,On Time,Courtney McAlpin,Boeing 737,9696.48
+2981,01H4EEMVJZVGAKA3ZXEX84N2M8,Delta,Klinan,30/6/2022,CIN,Cadiz,6/7/2023 21:29,Mar Robjant,Agender,B2,PHP,C3,Delayed,Rodd Pateman,Embraer E190,1255.03
+2982,01H4EEMVK249287C1AYV9QGN0B,United,Ailuk,26/2/2022,KAM,Nova Cruz,6/7/2023 14:53,Carlen Habble,Female,A1,USD,B2,On Time,Lorenza Celloni,Boeing 737,9643.19
+2983,01H4EEMVK509ZBE7JYT3SNM02R,United,Borkowice,17/6/2022,CXA,Lyon,6/7/2023 11:23,Hedwiga Sappell,Non-binary,B2,PLN,B2,Delayed,Josy Strank,Boeing 737,1873.14
+2984,01H4EEMVK91QBXB0WD9YZ8HDTV,Delta,Bureya,30/9/2022,IKT,Bengtsfors,6/7/2023 18:48,Dorey Widdows,Female,A1,RUB,A1,On Time,Moll Antill,Boeing 737,8502.63
+2985,01H4EEMVKCDQRC7HYVQMDDJ38N,American,Bắc Kạn,11/11/2022,BZR,Cheongsong gun,6/7/2023 10:16,Tabitha Cashford,Female,B2,VND,B2,Cancelled,Elisabetta Gillson,Boeing 737,1812.57
+2986,01H4EEMVKFMKYA14KWE3Q7G041,American,Fangxi,24/11/2022,YGE,Pasatan,6/7/2023 06:46,Peggy Sumsion,Female,B2,CNY,A1,Cancelled,Anna-maria Mayou,Embraer E190,3090.61
+2987,01H4EEMVKJ3SWVFAEA8PFQY2PM,United,North Little Rock,4/6/2022,AIR,Santo Isidro,6/7/2023 18:54,Yvor Dickson,Male,B2,USD,B2,Delayed,Valentino Dablin,Embraer E190,9373.73
+2988,01H4EEMVKN2RFTPDVA64PDB97W,United,Tuburan,24/7/2022,TRV,Newbiggin,6/7/2023 00:12,Obadias Limrick,Male,C3,PHP,A1,On Time,Kin Scrauniage,Airbus A320,1274.51
+2989,01H4EEMVKRYQ2TQJ0VMRXQBJA0,United,Jambuwerkrajan,23/9/2022,RLG,Aras-asan,6/7/2023 07:56,Hendrick Tiuit,Male,B2,IDR,A1,Cancelled,Eddy Skaid,Embraer E190,9844.12
+2990,01H4EEMVKTBANHM9ZA970Q79BC,Delta,Quán Hàu,24/7/2022,MZE,Whitwell,6/7/2023 15:20,Dru Hendrick,Male,B2,VND,C3,Delayed,Chic Karoly,Boeing 737,9205.96
+2991,01H4EEMVKYBY715DJWF1FA57YH,Delta,Aco,27/2/2022,LHR,New-Richmond,6/7/2023 12:19,Burton Baguley,Male,C3,PEN,A1,Cancelled,Tadeas Dwelley,Embraer E190,1851.72
+2992,01H4EEMVM1Y82MS02SBP1JMA3K,American,Pulangbato,9/12/2022,GVR,Zborište,6/7/2023 16:36,Enrico Silvermann,Male,C3,PHP,C3,Delayed,Jefferson Dowry,Airbus A320,3979.19
+2993,01H4EEMVM3FC4AV7ETZJANZRQT,United,Rimouski,11/3/2022,STJ,Novomoskovsk,6/7/2023 07:24,Kaylyn Epelett,Female,C3,CAD,B2,Delayed,Phelia Bartoszewicz,Airbus A320,1457.09
+2994,01H4EEMVM6XFQR7HKPJ8KCQ40V,United,Fengren,22/4/2022,TCM,Bertioga,6/7/2023 21:58,Arabel Spuffard,Female,A1,CNY,A1,On Time,Corenda Scriven,Boeing 737,5057.06
+2995,01H4EEMVM903WF5F0SQD8HJ221,American,Wawa,19/6/2022,LOP,Fiditi,6/7/2023 19:34,Cristina Dunstan,Female,A1,NGN,B2,On Time,Kalinda Filip,Embraer E190,6841.19
+2996,01H4EEMVMCD2Z25NVV7EN2830D,Delta,Tyler,19/12/2022,TVY,Providence,6/7/2023 21:46,Pamela Boylund,Female,B2,USD,A1,Delayed,Roselia Wildt,Embraer E190,1862.22
+2997,01H4EEMVMFRRYPE97JD0Z2HS9A,American,Viedma,15/11/2022,NTJ,Huambo,6/7/2023 00:02,Tony Dartan,Female,C3,ARS,B2,Delayed,Ermengarde Tregido,Airbus A320,2901.75
+2998,01H4EEMVMJFN0ME4E1FH7ZVMTN,United,Pagsabangan,29/3/2022,RDR,Bayasgalant,6/7/2023 20:05,Harlen Simenot,Male,C3,PHP,B2,On Time,Giustino Hellard,Embraer E190,3953.2
+2999,01H4EEMVMNZ0E1K3MT99DD4XZH,American,Fort Beaufort,14/4/2022,ELM,Zoumaling,6/7/2023 06:25,Lanie Mapston,Male,A1,ZAR,C3,On Time,Chucho Klemenz,Boeing 737,2006.59
+3000,01H4EEMVMRHH935MJNDWWMDCMQ,United,San Ricardo,16/6/2022,AEG,Vrýses,6/7/2023 00:45,Christan Roddie,Female,A1,PHP,B2,Delayed,Beitris Vanni,Boeing 737,6103.17
