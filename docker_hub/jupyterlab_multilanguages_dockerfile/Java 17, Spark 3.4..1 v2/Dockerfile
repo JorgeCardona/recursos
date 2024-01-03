@@ -123,8 +123,8 @@ EXPOSE 8888 4040 5006 3000 8080 8081 9091 9092 9093 9094
 ENV AIRFLOW__CORE__LOAD_EXAMPLES=False 
 RUN airflow db init
 RUN airflow users create --role Admin --username admin --email admin@jorgecardona.com --firstname jorge --lastname cardona --password 12345678
-RUN rm /usr/local/lib/python3.11/site-packages/airflow/example_dags/example_branch_operator_decorator.py
-RUN rm /usr/local/lib/python3.11/site-packages/airflow/example_dags/example_branch_operator.py
+RUN rm /usr/local/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+RUN rm /usr/local/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator.py
 RUN mkdir /root/airflow/dags
 RUN mv ./dbt_airflow.py /root/airflow/dags
 
