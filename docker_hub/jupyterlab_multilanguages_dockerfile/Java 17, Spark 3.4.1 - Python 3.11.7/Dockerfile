@@ -131,6 +131,11 @@ RUN mv ./dbt_airflow.py /root/airflow/dags
 #RUN airflow scheduler
 #RUN airflow webserver -p 8081
 
+# Configurar variables de entorno
+ENV SPARK_HOME=/usr/local/spark
+ENV PATH=$PATH:$SPARK_HOME/bin
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
 
