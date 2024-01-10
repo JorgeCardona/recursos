@@ -61,21 +61,22 @@ RUN wget https://archive.apache.org/dist/kafka/${VERSION_KAFKA_KERNEL}/${VERSION
 # Install JupyterLab and PySpark
 RUN pip install install jupyterlab==4.0.10
 RUN pip install jupyterlab-git==0.50.0
-RUN pip install pyspark==3.4.1
 RUN pip install pandas==1.5.3 
-RUN pip install apache-beam[interactive]==2.48.0 
-RUN pip install Faker==22.0.0 
-RUN pip install itables==1.6.3 
-RUN pip install panel==1.3.6
+RUN pip install apache-beam[interactive]==2.48.0
+RUN pip install pyspark==3.4.1
+RUN pip install apache-airflow==2.8.0 
+RUN pip install scikit-learn==1.3.2
+RUN pip install dbt-core==1.7.4
+RUN pip install dbt-postgres==1.7.4
 RUN pip install mysql-connector-python==8.2.0
 RUN pip install psycopg2==2.9.9
 RUN pip install pymongo==4.6.1
-RUN pip install dbt-core==1.7.4
-RUN pip install dbt-postgres==1.7.4
-RUN pip install apache-airflow==2.8.0
-RUN pip install pytest==7.4.3
-RUN pip install scikit-learn==1.3.2
+RUN pip install pytest==7.4.4
+RUN pip install Faker==22.0.0 
+RUN pip install itables==1.6.3 
+RUN pip install panel==1.3.6
 RUN pip install --upgrade pip
+
 
 ARG VERSION_JAVA_KERNEL=1.3.0
 # Install kernel for Java in JupyterLab
@@ -103,14 +104,12 @@ RUN rm -f coursier
 # Set the working directory
 WORKDIR /notebooks
 
-# COPIA LOS CONECTORES DE MONGO, POSTGRES Y MySQL para usar con SPARK
+# COPIA LOS CONECTORES NECESARIOS para usar con SPARK
 COPY ./jars/*.jar /usr/local/spark/jars
-COPY ./airflow_files/*.py ./
 
-# copia archivos kafka
-COPY ./kafka_files /*.properties /usr/local/kafka/config
+COPY ./airflow_files/dbt_airflow.py ./
+COPY ./kafka_files/*.properties /usr/local/kafka/config
 
-# crea los directorios para los logs de los brokers de kafka
 RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_1
 RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_2
 RUN mkdir -p ${KAFKA_HOME}/data/logs/broker_3
@@ -131,11 +130,6 @@ RUN mv ./dbt_airflow.py /root/airflow/dags
 
 #RUN airflow scheduler
 #RUN airflow webserver -p 8081
-
-# Configurar variables de entorno
-ENV SPARK_HOME=/usr/local/spark
-ENV PATH=$PATH:$SPARK_HOME/bin
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 # Start JupyterLab when the container launches
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--LabApp.token=''"]
