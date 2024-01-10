@@ -59,14 +59,14 @@ RUN wget https://archive.apache.org/dist/kafka/${VERSION_KAFKA_KERNEL}/${VERSION
     rm ${VERSION_KAFKA}.tgz
 
 # Install JupyterLab and PySpark
-RUN pip install install jupyterlab==4.0.9
+RUN pip install install jupyterlab==4.0.10
 RUN pip install jupyterlab-git==0.50.0
 RUN pip install pyspark==3.4.1
 RUN pip install pandas==1.5.3 
 RUN pip install apache-beam[interactive]==2.48.0 
-RUN pip install Faker==21.0.0 
+RUN pip install Faker==22.0.0 
 RUN pip install itables==1.6.3 
-RUN pip install panel==1.3.5
+RUN pip install panel==1.3.6
 RUN pip install mysql-connector-python==8.2.0
 RUN pip install psycopg2==2.9.9
 RUN pip install pymongo==4.6.1
@@ -74,6 +74,7 @@ RUN pip install dbt-core==1.7.4
 RUN pip install dbt-postgres==1.7.4
 RUN pip install apache-airflow==2.8.0
 RUN pip install pytest==7.4.3
+RUN pip install scikit-learn==1.3.2
 RUN pip install --upgrade pip
 
 ARG VERSION_JAVA_KERNEL=1.3.0
