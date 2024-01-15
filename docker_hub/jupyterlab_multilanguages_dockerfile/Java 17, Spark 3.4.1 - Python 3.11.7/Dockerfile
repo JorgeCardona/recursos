@@ -75,6 +75,8 @@ RUN pip install pytest==7.4.4
 RUN pip install Faker==22.0.0 
 RUN pip install itables==1.6.3 
 RUN pip install panel==1.3.6
+RUN pip install pip install dask==2024.1.0
+RUN pip install dask-labextension==7.0.0
 RUN pip install --upgrade pip
 
 
