@@ -68,7 +68,7 @@ RUN pip install apache-airflow==2.8.0
 RUN pip install scikit-learn==1.3.2
 RUN pip install dbt-core==1.7.4
 RUN pip install dbt-postgres==1.7.4
-RUN pip install mysql-connector-python==8.2.0
+RUN pip install mysql-connector-python==8.3.0
 RUN pip install psycopg2==2.9.9
 RUN pip install pymongo==4.6.1
 RUN pip install pytest==7.4.4
