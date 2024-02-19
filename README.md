@@ -48,3 +48,8 @@ docker run --name jorgecardona-mysql --rm -e MYSQL_DATABASE=test_poc -e MYSQL_PA
 ```
 docker stop jorgecardona-mysql
 ```
+# Crear una imagen Docker de un Contenedor
+```
+docker commit ID_del_contenedor mi_aplicacion:version_1.0
+docker commit 77a654ba0872 jorgecardona/datascience:v1
+```
