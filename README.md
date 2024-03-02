@@ -58,38 +58,50 @@ docker commit 77a654ba0872 jorgecardona/datascience:v1
 ```python
 import subprocess
 
-# Parameter you want to pass to the shell script
-parameter = "VERSION1"
-parameter = "VERSION2"
-parameter = "VERSION_ALTERNATIVA"
+# Parameters to be passed to the shell script
+parameter_1 = "Condition_1"
+parameter_2 = "Condition_2"
+parameter_3 = "Condition_3"
+parameter_4 = "Condition_Alternative"
 
-# Execute the shell script with the parameter
-subprocess.run(["sh", "script.sh", parameter], check=True)
+# Execute the shell script with the list of parameters
+subprocess.run(["sh", "script.sh", parameter_1, parameter_2, parameter_3, parameter_4], check=True)
 ```
 
 # Bash Code
 ```bash
 #!/bin/bash
 
-# Print the value of the parameter passed from Python
-echo "The Original parameter value passed is: $1"
+# Print the value of the Parameter passed from Python
+echo "The Original Parameter 1 value passed is: $1"
+echo "The Original Parameter 2 value passed is: $2"
+echo "The Original Parameter 3 value passed is: $3"
+echo "The Original Parameter 4 value passed is: $4"
 
-# Capture the parameter sent from Python and convert it to lowercase
-notification_version=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+# Capture the Parameter sent from Python and convert it to lowercase
+Parameter_1=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+Parameter_2=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+Parameter_3=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+Parameter_4=$(echo "$1" | tr '[:upper:]' '[:lower:]')
 
-# Print the value of the parameter passed from Python
-echo "The parameter passed on lower case version is: $notification_version"
+# Print the value of the Parameter passed from Python
+echo "The Parameter 1 passed on lower case Condition_ is: $Parameter_1"
+echo "The Parameter 2 passed on lower case Condition_ is: $Parameter_2"
+echo "The Parameter 3 passed on lower case Condition_ is: $Parameter_3"
+echo "The Parameter 4 passed on lower case Condition_ is: $Parameter_4"
 
 # Initialize the variable message
 message=""
 
-# Assign value to the message variable based on the value of notification_version
-if [ "$notification_version" = "version1" ]; then
+# Assign value to the message variable based on the value of Parameter_1
+if [ "$Parameter_1" = "Condition_1" ]; then
     message="❌ The file 📜 \"$1\" 📜 was not found on Server. ❌"
-elif [ "$notification_version" = "version2" ]; then
-    message="❌ The file 📜 \"$1\" 📜 was not found on Server. ❌"
+elif [ "$Parameter_2" = "Condition_2" ]; then
+    message="❌ The file 📜 \"$2\" 📜 was not found on Server. ❌"
+elif [ "$Parameter_3" = "Condition_3" ]; then
+    message="❌ The file 📜 \"$3\" 📜 was not found on Server. ❌"
 else
-    message="❌ The files 📜 \"$1\" 📜 were not found on Server. ❌"
+    message="❌ The files 📜 \"$4\" 📜 were not found on Server. ❌"
 fi
 
 # Print the value of message
@@ -115,6 +127,9 @@ echo -e "$receiver_email"
 echo -e "$receiver_email_copy"
 echo -e "$message_content"
 echo "Executing sendmail command..."
+
+# Actual sendmail command
+echo -e "Subject: $subject\n$receiver_email\n$receiver_email_copy\n\n$message_content" | sendmail $MAIN_EMAIL,$CC_EMAIL
 
 # Actual sendmail command
 echo -e "Subject: $subject\n$receiver_email\n$receiver_email_copy\n\n$message_content" | sendmail $MAIN_EMAIL,$CC_EMAIL
