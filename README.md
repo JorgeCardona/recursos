@@ -128,6 +128,10 @@ echo -e "$receiver_email_copy"
 echo -e "$message_content"
 echo "Executing sendmail command..."
 
+# Attaching a file on message
+echo "Attaching file: $attachment_file"
+echo -e "$final_message" | sendmail -a "$attachment_file" $MAIN_EMAIL,$CC_EMAIL
+
 # Actual sendmail command
 echo -e "Subject: $subject\n$receiver_email\n$receiver_email_copy\n\n$message_content" | sendmail $MAIN_EMAIL,$CC_EMAIL
 
