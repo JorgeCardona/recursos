@@ -198,6 +198,10 @@ CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-r
 RUN apt update 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# copiar una imagen paar subirla al dockerhub
+# copiar una imagen para subirla al dockerhub
 #docker tag python:3.12.3 jorgecardona/python:3.12.3
 #docker push jorgecardona/python:3.12.3
+
+# guardar un comntenedor como imagen para subirla al dockerhub
+#docker commit 3372e4139040 jorgecardona/datascience:main
+#docker push jorgecardona/datascience:main
