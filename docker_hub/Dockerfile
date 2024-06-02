@@ -205,3 +205,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 # guardar un comntenedor como imagen para subirla al dockerhub
 #docker commit 3372e4139040 jorgecardona/datascience:main
 #docker push jorgecardona/datascience:main
+
+# listar los kernels instalados
+#jupyter kernelspec list
+
+# cambiar el nombre de un kernel existente en la interafacede los notebooks
+#python -m ipykernel install --name python3 --display-name "Python - ML - Data Science" --user
