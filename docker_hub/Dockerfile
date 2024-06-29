@@ -1,6 +1,5 @@
-# docker build -tag jorgecardona/datasciencemultilanguages:latest .
+# docker build --tag jorgecardona/datasciencemultilanguages:latest .
 # docker run --rm -p 8888:8888 -p 4040:4040 -p 5006:5006 -p 3000:3000 -p 8081:8081 -p 8082:8082 -p 8083:8083 -p 9091:9091 -p 9092:9092 -p 9093:9093 -p 9094:9094 jorgecardona/datasciencemultilanguages:latest
-
 
 # Base image
 FROM jorgecardona/python:3.12.3
@@ -19,8 +18,8 @@ RUN curl -O https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb 
     export JAVA_HOME=/usr/lib/jvm/jdk-21-oracle-x64 && \
     export PATH=$PATH:$JAVA_HOME/bin
 
-# INSTALA Scala
-ARG VERSION_SCALA=2.13.13
+# Download and install Scala
+ARG VERSION_SCALA=2.13.14
 ARG VERSION_SCALA_KERNEL=scala-${VERSION_SCALA}
 RUN curl -O https://downloads.lightbend.com/scala/${VERSION_SCALA}/${VERSION_SCALA_KERNEL}.tgz && \
     tar -xzf ${VERSION_SCALA_KERNEL}.tgz && \
@@ -42,6 +41,13 @@ RUN apt-get update && apt-get install -y golang
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
     /root/.cargo/bin/rustup component add rust-src
 
+# INSTALA Julia
+RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.10/julia-1.10.4-linux-x86_64.tar.gz && \
+    tar -xvzf julia-1.10.4-linux-x86_64.tar.gz && \
+    mv julia-1.10.4 /opt/julia && \
+    ln -s /opt/julia/bin/julia /usr/local/bin/julia && \
+    rm julia-1.10.4-linux-x86_64.tar.gz
+	
 ###############################################################
 ############ INSTALACION DE KERNELS EN JUPYTER LAB ############
 ###############################################################
@@ -89,17 +95,29 @@ RUN ijsinstall # jernel javaScript
 RUN /root/.cargo/bin/cargo install --locked evcxr_jupyter && \
     /root/.cargo/bin/evcxr_jupyter --install
 
+# Instalar Kernel Julia
+RUN julia -e 'using Pkg; Pkg.add("IJulia")'
+
+# Renombrar el Kernel de python
+RUN python -m ipykernel install --name python3 --display-name "Python - ML - Data Science" --user
 ###############################################################
 ################ UTILIDADES PARA EL CONTENEDOR ################
 ###############################################################
 
 # Instalar Graphviz para visualización de gráficos y generación de diagramas
 RUN apt install graphviz -y
-
 RUN apt install -y sudo
-
 RUN apt install -y vim
 
+# Install Jenkins	
+RUN apt-get update && \
+    apt-get install -y wget && \
+    wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian/jenkins.io-2023.key && \
+    echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/" | tee /etc/apt/sources.list.d/jenkins.list > /dev/null && \
+    apt-get update && \
+    apt-get install -y jenkins && \
+    sed -i 's/HTTP_PORT=8080/HTTP_PORT=8083/g' /etc/default/jenkins
+	
 # Install Kafka
 ARG VERSION_KAFKA_KERNEL=3.7.0
 ARG VERSION_KAFKA=kafka_2.13-3.7.0
@@ -113,15 +131,6 @@ RUN wget https://archive.apache.org/dist/kafka/${VERSION_KAFKA_KERNEL}/${VERSION
 	mkdir -p ${KAFKA_HOME}/data/zookeeper && \
     rm ${VERSION_KAFKA}.tgz
 	
-# Install Jenkins	
-RUN apt-get update && \
-    apt-get install -y wget && \
-    wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian/jenkins.io-2023.key && \
-    echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/" | tee /etc/apt/sources.list.d/jenkins.list > /dev/null && \
-    apt-get update && \
-    apt-get install -y jenkins && \
-    sed -i 's/HTTP_PORT=8080/HTTP_PORT=8083/g' /etc/default/jenkins
-
 ###############################################################
 ############# INSTALACION DE PAQUETES PARA PYTHON #############
 ###############################################################
@@ -153,19 +162,22 @@ RUN pip install seaborn
 RUN pip install bokeh 
 RUN pip install diagrams
 RUN pip install dask
+RUN pip install dask-labextension
 RUN pip install duckdb
 RUN pip install jupyterlab_code_formatter
 RUN pip install jupyterlab-indent-guides
 RUN pip install jupyterlab-lsp
 RUN pip install python-language-server
 
-RUN pip install pyspark
-RUN pip install apache_beam 
 RUN pip install pandas
+RUN pip install apache-beam[interactive]
 RUN pip install apache-airflow  
 #RUN pip install "apache-airflow[celery]==2.9.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.1/constraints-3.8.txt"
 RUN pip install dbt-core
 RUN pip install dbt-postgres
+RUN pip install pyxtension
+RUN pip install pyspark
+
 
 ###############################################################
 ################## CONFIGURACIONES FINALES ####################
@@ -198,16 +210,6 @@ CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-r
 RUN apt update 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# copiar una imagen para subirla al dockerhub
+# copiar una imagen paar subirla al dockerhub
 #docker tag python:3.12.3 jorgecardona/python:3.12.3
 #docker push jorgecardona/python:3.12.3
-
-# guardar un comntenedor como imagen para subirla al dockerhub
-#docker commit 3372e4139040 jorgecardona/datascience:main
-#docker push jorgecardona/datascience:main
-
-# listar los kernels instalados
-#jupyter kernelspec list
-
-# cambiar el nombre de un kernel existente en la interafacede los notebooks
-#python -m ipykernel install --name python3 --display-name "Python - ML - Data Science" --user
