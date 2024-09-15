@@ -48,9 +48,16 @@ docker run --name jorgecardona-mysql --rm -e MYSQL_DATABASE=test_poc -e MYSQL_PA
 ```
 docker stop jorgecardona-mysql
 ```
+
+# Crear una imagen Docker de otra imagen que esta en local
+```
+docker tag nombre_de_la_imagen_a_copiar:version_de_la_imagen_a_copiar nombre_la_imagen_a_crear:version_de_la_imagen_a_crear
+docker tag python:3.12.6 jorgecardona/python:3.12.6
+```
+
 # Crear una imagen Docker de un Contenedor
 ```
-docker commit ID_del_contenedor mi_aplicacion:version_1.0
+docker commit ID_del_contenedor_a_copiar nombre_la_imagen_a_crear:version_de_la_imagen_a_crear
 docker commit 77a654ba0872 jorgecardona/datascience:v1
 ```
 
