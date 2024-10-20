@@ -515,6 +515,70 @@ db.collection('Orders').aggregate([
 ]).toArray(); // Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
 ```
 
+## TABLA PRINCIPAL **Orders** TABLA SECUNDARIA **Payments**
+## UNION 3 COLECCIONES SIN DUPLICADOS
+```mongodb
+db.collection('Orders').aggregate([
+   {
+      // Proyectamos los campos que queremos incluir de la colección 'Orders'.
+      $project: {
+         _id: 0,               // Excluir el campo _id si no es necesario
+         OrderId: 1,          // Incluir el campo OrderId
+         CustomerId: 1        // Incluir el campo CustomerId
+      }
+   },
+   {
+      // Usamos $unionWith para combinar resultados de la colección 'Payments'.
+      $unionWith: {
+         coll: 'Payments',     // Nombre de la segunda colección
+         pipeline: [
+            {
+               // Proyectamos los campos que queremos incluir de 'Payments'.
+               $project: {
+                  _id: 0,               // Excluir el campo _id si no es necesario
+                  OrderId: 1,          // Incluir el campo OrderId
+                  CustomerId: null      // Puede ser null o un valor por defecto
+               }
+            }
+         ]
+      }
+   },
+   {
+      // Usamos $unionWith nuevamente para combinar resultados de la colección 'Shipments'.
+      $unionWith: {
+         coll: 'Shipments',     // Nombre de la tercera colección
+         pipeline: [
+            {
+               // Proyectamos los campos que queremos incluir de 'Shipments'.
+               $project: {
+                  _id: 0,               // Excluir el campo _id si no es necesario
+                  OrderId: 1,          // Incluir el campo OrderId
+                  CustomerId: null      // Puede ser null o un valor por defecto
+               }
+            }
+         ]
+      }
+   },
+   {
+      // Usamos $group para eliminar duplicados en los resultados.
+      $group: {
+         _id: {
+            OrderId: "$OrderId",   // Agrupar por OrderId
+            CustomerId: "$CustomerId" // Agrupar por CustomerId
+         }
+      }
+   },
+   {
+      // Proyectamos los campos resultantes del grupo para devolver un formato más limpio.
+      $project: {
+         _id: 0,
+         OrderId: "$_id.OrderId",       // Muestra el campo OrderId del grupo
+         CustomerId: "$_id.CustomerId"  // Muestra el campo CustomerId del grupo
+      }
+   }
+]).toArray(); // Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
+```
+
 # PAQUETE COLLECIONES
 ```
  # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
