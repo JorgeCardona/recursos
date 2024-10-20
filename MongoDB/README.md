@@ -646,11 +646,7 @@ Si ejecutamos el aggregate anterior, el resultado final sería:
 ]
 ```
 
-indica que hemos eliminado el duplicado de `OrderId: 2, CustomerId: B` y hemos incluido todos los demás documentos únicos.
-
-### Conclusión
-
-Al decir "si ejecutamos el aggregate anterior", simplemente me refería a que, al correr el código, deberías esperar esos resultados basados en los datos de entrada proporcionados. Espero que esto aclare cualquier confusión. Si tienes más preguntas o necesitas más ejemplos, ¡házmelo saber!
+**indica que hemos eliminado el duplicado de `OrderId: 2, CustomerId: B` y tambien hemos descartado los documentos que estan presentes en otras colecciones, y asi hemos construido la respuesta con solo documentos únicos.**
 
 # PAQUETE COLLECIONES
 ```
