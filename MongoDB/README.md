@@ -428,6 +428,93 @@ for (const order of antiRightJoin) {
 ```
 
 
+## TABLA PRINCIPAL **Orders** TABLA SECUNDARIA **Payments**
+## UNION ALL
+```mongodb
+db.collection('Orders').aggregate([
+   {
+      // Proyectamos (seleccionamos) los campos que queremos incluir de la colección 'Orders'.
+      // Excluimos el campo _id y incluimos OrderId y CustomerId.
+      $project: {
+         _id: 0,               // Excluir el campo _id si no es necesario
+         OrderId: 1,          // Incluir el campo OrderId
+         CustomerId: 1        // Incluir el campo CustomerId
+      }
+   },
+   {
+      // Usamos $unionWith para combinar resultados de la colección 'Payments'.
+      // Esto actúa como un UNION ALL.
+      $unionWith: {
+         coll: 'Payments',     // Nombre de la colección con la que se realizará el join
+         pipeline: [
+            {
+               // Proyectamos los campos que queremos incluir de la colección 'Payments'.
+               // Excluimos el campo _id y incluimos OrderId y un valor nulo para CustomerId.
+               $project: {
+                  _id: 0,               // Excluir el campo _id si no es necesario
+                  OrderId: 1,          // Incluir el campo OrderId
+                  CustomerId: null      // Puede ser null o un valor por defecto
+               }
+            }
+         ]
+      }
+   }
+]).toArray(); // Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
+```
+
+## TABLA PRINCIPAL **Orders** TABLA SECUNDARIA **Payments**
+## UNION 
+```mongodb
+db.collection('Orders').aggregate([
+   {
+      // Proyectamos (seleccionamos) los campos que queremos incluir de la colección 'Orders'.
+      // Excluimos el campo _id y incluimos OrderId y CustomerId.
+      $project: {
+         _id: 0,               // Excluir el campo _id si no es necesario
+         OrderId: 1,          // Incluir el campo OrderId
+         CustomerId: 1        // Incluir el campo CustomerId
+      }
+   },
+   {
+      // Usamos $unionWith para combinar resultados de la colección 'Payments'.
+      // Esto actúa como un UNION.
+      $unionWith: {
+         coll: 'Payments',     // Nombre de la colección con la que se realizará el join
+         pipeline: [
+            {
+               // Proyectamos los campos que queremos incluir de la colección 'Payments'.
+               // Excluimos el campo _id y incluimos OrderId y un valor nulo para CustomerId.
+               $project: {
+                  _id: 0,               // Excluir el campo _id si no es necesario
+                  OrderId: 1,          // Incluir el campo OrderId
+                  CustomerId: null      // Puede ser null o un valor por defecto
+               }
+            }
+         ]
+      }
+   },
+   {
+      // Usamos $group para eliminar duplicados en los resultados.
+      // Agrupamos por OrderId y CustomerId.
+      $group: {
+         _id: {
+            OrderId: "$OrderId",   // Agrupar por OrderId
+            CustomerId: "$CustomerId" // Agrupar por CustomerId
+         }
+      }
+   },
+   {
+      // Proyectamos los campos resultantes del grupo para devolver un formato más limpio.
+      // Excluimos el campo _id y mostramos OrderId y CustomerId.
+      $project: {
+         _id: 0,
+         OrderId: "$_id.OrderId",       // Muestra el campo OrderId del grupo
+         CustomerId: "$_id.CustomerId"  // Muestra el campo CustomerId del grupo
+      }
+   }
+]).toArray(); // Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
+```
+
 # PAQUETE COLLECIONES
 ```
  # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
