@@ -579,6 +579,79 @@ db.collection('Orders').aggregate([
 ]).toArray(); // Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
 ```
 
+Supongamos las siguientes colecciones:
+
+# Orders:
+```json
+[
+   { "OrderId": 1, "CustomerId": "A" },
+   { "OrderId": 2, "CustomerId": "B" },
+   { "OrderId": 2, "CustomerId": "B" },
+   { "OrderId": 3, "CustomerId": "C" }
+]
+```
+
+# Payments:
+```json
+[
+   { "OrderId": 1, "CustomerId": "A" },
+   { "OrderId": 3, "CustomerId": "C" },
+   { "OrderId": 4, "CustomerId": "D" }
+]
+```
+
+# Shipments:
+```json
+[
+   { "OrderId": 2, "CustomerId": "B" },
+   { "OrderId": 3, "CustomerId": "C" },
+   { "OrderId": 5, "CustomerId": "E" }
+]
+```
+
+# Resultados esperados
+Si ejecutamos el aggregate anterior, el resultado final sería:
+```json
+[
+   { "OrderId": 1, "CustomerId": "A" },
+   { "OrderId": 2, "CustomerId": "B" },
+   { "OrderId": 3, "CustomerId": "C" },
+   { "OrderId": 4, "CustomerId": "D" },
+   { "OrderId": 5, "CustomerId": "E" }
+]
+```
+
+### Explicación del Resultado
+
+1. **Datos de entrada**: 
+   - La colección `Orders` tiene dos documentos con `OrderId: 2` y `CustomerId: B`, que son duplicados.
+   - La colección `Payments` tiene un documento con `OrderId: 4` y `CustomerId: D`, y otro documento que no tiene coincidencias en `Orders`.
+   - La colección `Shipments` tiene un documento con `OrderId: 5` y `CustomerId: E`, que tampoco tiene coincidencias en las otras colecciones.
+
+2. **Proceso de Agregación**:
+   - **Proyección**: Se seleccionan los campos `OrderId` y `CustomerId` de cada colección.
+   - **Unión**: Se combinan los resultados de `Orders`, `Payments`, y `Shipments`.
+   - **Agrupación**: Se agrupan los documentos por `OrderId` y `CustomerId` para eliminar duplicados.
+
+3. **Resultado Final**:
+   Al final del proceso de agregación, el resultado esperado será un conjunto de documentos únicos que contienen combinaciones de `OrderId` y `CustomerId` de las tres colecciones. El resultado que mencioné:
+
+```json
+[
+   { "OrderId": 1, "CustomerId": "A" },
+   { "OrderId": 2, "CustomerId": "B" },
+   { "OrderId": 3, "CustomerId": "C" },
+   { "OrderId": 4, "CustomerId": "D" },
+   { "OrderId": 5, "CustomerId": "E" }
+]
+```
+
+indica que hemos eliminado el duplicado de `OrderId: 2, CustomerId: B` y hemos incluido todos los demás documentos únicos.
+
+### Conclusión
+
+Al decir "si ejecutamos el aggregate anterior", simplemente me refería a que, al correr el código, deberías esperar esos resultados basados en los datos de entrada proporcionados. Espero que esto aclare cualquier confusión. Si tienes más preguntas o necesitas más ejemplos, ¡házmelo saber!
+
 # PAQUETE COLLECIONES
 ```
  # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
