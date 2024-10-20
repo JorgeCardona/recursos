@@ -172,6 +172,217 @@ db.collection('Orders').aggregate([
 .toArray();
 ```
 
+## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**
+## FULL OUTER JOIN
+```mongodb
+// Left join entre Customers y Orders
+const leftJoin = await db.collection('Customers').aggregate([
+   {
+      $lookup: {
+         from: 'Orders',                // Colección a la que se quiere unir ('Orders')
+         localField: 'CustomerId',      // Campo en 'Customers' que se usará para el join
+         foreignField: 'CustomerId',    // Campo en 'Orders' que se usará para el join
+         as: 'customer_orders'          // Resultado del join se almacenará en 'customer_orders'
+      }
+   },
+   {
+      $project: {
+         CustomerId: 1,                 // Campo 'CustomerId' de 'Customers'
+         City: 1,                       // Campo 'City' de 'Customers'
+         customer_orders: 1             // Incluir el array de pedidos asociados
+      }
+   }
+]).toArray();
+
+// Right join entre Orders y Customers
+const rightJoin = await db.collection('Orders').aggregate([
+   {
+      $lookup: {
+         from: 'Customers',               // Colección a la que se quiere unir ('Customers')
+         localField: 'CustomerId',        // Campo en 'Orders' que se usará para el join
+         foreignField: 'CustomerId',      // Campo en 'Customers' que se usará para el join
+         as: 'customer_details'           // Resultado del join se almacenará en 'customer_details'
+      }
+   },
+   {
+      $project: {
+         OrderId: 1,                      // Campo 'OrderId' de 'Orders'
+         CustomerId: 1,                   // Campo 'CustomerId' de 'Orders'
+         customer_details: 1              // Incluir el array de detalles del cliente
+      }
+   }
+]).toArray();
+
+// Combinar los resultados de ambos joins
+const fullOuterJoin = [];
+
+// Agregar resultados de left join
+leftJoin.forEach(customer => {
+   fullOuterJoin.push({
+      CustomerId: customer.CustomerId,
+      City: customer.City,
+      OrderId: customer.customer_orders.length > 0 ? customer.customer_orders[0].OrderId : null, // Primer OrderId o null si no hay órdenes
+      customer_details: customer.customer_orders.length > 0 ? customer.customer_orders : [] // Detalles del cliente o array vacío si no hay órdenes
+   });
+});
+
+// Agregar resultados de right join, pero solo si no están ya en fullOuterJoin
+rightJoin.forEach(order => {
+   const existingCustomer = fullOuterJoin.find(item => item.CustomerId === order.CustomerId);
+   if (!existingCustomer) {
+      fullOuterJoin.push({
+         CustomerId: order.CustomerId,   // CustomerId del pedido
+         City: null,                     // Sin información de la ciudad
+         OrderId: order.OrderId,         // OrderId del pedido
+         customer_details: order.customer_details // Detalles del cliente
+      });
+   }
+});
+
+// Ahora fullOuterJoin contiene todos los resultados del full outer join
+```
+
+## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**
+## ANTI FULL OUTER JOIN
+```mongodb
+// Anti left join: obtener Customers que no tienen órdenes
+const antiLeftJoin = await db.collection('Customers').aggregate([
+   {
+      $lookup: {
+         from: 'Orders',                // Colección a la que se quiere unir ('Orders')
+         localField: 'CustomerId',      // Campo en 'Customers' que se usará para el join
+         foreignField: 'CustomerId',    // Campo en 'Orders' que se usará para el join
+         as: 'customer_orders'          // Resultado del join se almacenará en 'customer_orders'
+      }
+   },
+   {
+      // Filtramos para mantener solo aquellos Customers sin órdenes
+      $match: {
+         customer_orders: { $eq: [] }   // Solo incluye documentos donde 'customer_orders' está vacío
+      }
+   },
+   {
+      $project: {
+         CustomerId: 1,                 // Campo 'CustomerId' de 'Customers'
+         City: 1                        // Campo 'City' de 'Customers'
+      }
+   }
+]).toArray();
+
+// Anti right join: obtener Orders que no tienen clientes
+const antiRightJoin = await db.collection('Orders').aggregate([
+   {
+      $lookup: {
+         from: 'Customers',               // Colección a la que se quiere unir ('Customers')
+         localField: 'CustomerId',        // Campo en 'Orders' que se usará para el join
+         foreignField: 'CustomerId',      // Campo en 'Customers' que se usará para el join
+         as: 'customer_details'           // Resultado del join se almacenará en 'customer_details'
+      }
+   },
+   {
+      // Filtramos para mantener solo aquellos Orders sin clientes
+      $match: {
+         customer_details: { $eq: [] }   // Solo incluye documentos donde 'customer_details' está vacío
+      }
+   },
+   {
+      $project: {
+         OrderId: 1,                      // Campo 'OrderId' de 'Orders'
+         CustomerId: 1                    // Campo 'CustomerId' de 'Orders'
+      }
+   }
+]).toArray();
+
+// Combinar ambos resultados para obtener el anti full join
+const result = [];
+
+// Agregar los resultados de anti left join
+for (const customer of antiLeftJoin) {
+   result.push({
+      CustomerId: customer.CustomerId, // Campo 'CustomerId' de Customers sin órdenes
+      City: customer.City,             // Campo 'City' de Customers sin órdenes
+      OrderId: null,                   // No hay OrderId porque no tiene órdenes
+      customer_details: []              // Array vacío porque no tiene detalles de cliente
+   });
+}
+
+// Agregar los resultados de anti right join
+for (const order of antiRightJoin) {
+   result.push({
+      CustomerId: order.CustomerId,     // Campo 'CustomerId' de Orders sin clientes
+      City: null,                       // Sin información de la ciudad
+      OrderId: order.OrderId,           // OrderId de Orders sin cliente
+      customer_details: []               // Array vacío porque no tiene detalles de cliente
+   });
+}
+
+// Ahora result contiene todos los registros sin coincidencias en ninguna de las dos colecciones.
+```
+
+## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**
+## ANTI FULL OUTER JOIN CON TODOS LOS CAMPOS DE AMBAS COLECCIONES
+```mongodb
+// Anti left join: obtener Customers que no tienen órdenes
+const antiLeftJoin = await db.collection('Customers').aggregate([
+   {
+      $lookup: {
+         from: 'Orders',                // Colección a la que se quiere unir ('Orders')
+         localField: 'CustomerId',      // Campo en 'Customers' que se usará para el join
+         foreignField: 'CustomerId',    // Campo en 'Orders' que se usará para el join
+         as: 'customer_orders'          // Resultado del join se almacenará en 'customer_orders'
+      }
+   },
+   {
+      // Filtramos para mantener solo aquellos Customers sin órdenes
+      $match: {
+         customer_orders: { $eq: [] }   // Solo incluye documentos donde 'customer_orders' está vacío
+      }
+   }
+]).toArray();
+
+// Anti right join: obtener Orders que no tienen clientes
+const antiRightJoin = await db.collection('Orders').aggregate([
+   {
+      $lookup: {
+         from: 'Customers',               // Colección a la que se quiere unir ('Customers')
+         localField: 'CustomerId',        // Campo en 'Orders' que se usará para el join
+         foreignField: 'CustomerId',      // Campo en 'Customers' que se usará para el join
+         as: 'customer_details'           // Resultado del join se almacenará en 'customer_details'
+      }
+   },
+   {
+      // Filtramos para mantener solo aquellos Orders sin clientes
+      $match: {
+         customer_details: { $eq: [] }   // Solo incluye documentos donde 'customer_details' está vacío
+      }
+   }
+]).toArray();
+
+// Combinar ambos resultados para obtener el anti full join
+const result = [];
+
+// Agregar los resultados de anti left join
+for (const customer of antiLeftJoin) {
+   result.push({
+      ...customer,                      // Incluir todos los campos de Customers
+      customer_orders: [],              // Array vacío porque no tiene órdenes
+      OrderId: null,                   // No hay OrderId porque no tiene órdenes
+   });
+}
+
+// Agregar los resultados de anti right join
+for (const order of antiRightJoin) {
+   result.push({
+      ...order,                         // Incluir todos los campos de Orders
+      CustomerId: null,                // Sin información de CustomerId
+      customer_details: [],             // Array vacío porque no tiene detalles de cliente
+   });
+}
+
+// Ahora result contiene todos los registros sin coincidencias en ninguna de las dos colecciones, incluyendo todos los campos.
+```
+
+
 # PAQUETE COLLECIONES
 ```
  # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
