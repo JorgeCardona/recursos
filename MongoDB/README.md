@@ -35,6 +35,51 @@ db.collection('Orders').aggregate([
 .toArray();
 ```
 
+## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**  TABLA TERCEARIA **Payments**
+# INNER JOIN DE 3 COLECCIONES
+```
+db.collection('Customers').aggregate([
+   {
+      // Realiza un join entre 'Customers' y 'Orders'
+      $lookup: {
+         from: 'Orders',               // Colección con la que se realiza el join
+         localField: 'CustomerId',     // Campo en 'Customers' que será utilizado en el join
+         foreignField: 'CustomerId',   // Campo en 'Orders' que será utilizado para buscar coincidencias
+         as: 'customer_orders'         // Campo donde se almacenará el resultado del join
+      }
+   },
+   {
+      // Descompone el array de 'customer_orders' para obtener un documento por pedido
+      $unwind: "$customer_orders"
+   },
+   {
+      // Realiza un join entre 'Orders' y 'Payments'
+      $lookup: {
+         from: 'Payments',              // Colección con la que se realiza el join
+         localField: 'customer_orders.OrderId', // Campo en 'Orders' para el join
+         foreignField: 'OrderId',       // Campo en 'Payments' para el join
+         as: 'order_payments'           // Campo donde se almacenará el resultado del join
+      }
+   },
+   {
+      // Descompone el array de 'order_payments' para obtener un documento por pago
+      $unwind: "$order_payments"
+   },
+   {
+      // Proyectamos los campos que queremos ver en el resultado
+      $project: {
+         CustomerId: 1,                // Muestra el campo 'CustomerId' de 'Customers'
+         Name: 1,                       // Muestra el campo 'Name' de 'Customers'
+         "customer_orders.OrderId": 1,  // Muestra el campo 'OrderId' de 'Orders'
+         "customer_orders.Product": 1,   // Muestra el campo 'Product' de 'Orders'
+         "order_payments.PaymentId": 1, // Muestra el campo 'PaymentId' de 'Payments'
+         "order_payments.Amount": 1     // Muestra el campo 'Amount' de 'Payments'
+      }
+   }
+]).toArray();
+```mongodb
+
+
 ## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**
 # LEFT JOIN
 ```mongodb
