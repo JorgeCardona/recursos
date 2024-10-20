@@ -77,7 +77,7 @@ db.collection('Customers').aggregate([
       }
    }
 ]).toArray();
-```mongodb
+```
 
 
 ## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**
