@@ -1,18 +1,176 @@
-# CREAR UN JOIN UNA VISTA EN MONGODB
-https://www.mongodb.com/docs/relational-migrator/code-generation/query-converter/convert-views/#std-label-rm-convert-views
+# JOINS EN MONGODB
 
-### Regular Queries
-<img src="imagenes\07_mongodb_regular_queries.png">
+## TABLA PRINCIPAL **Orders** TABLA SECUNDARIA **Customers**
+# INNER JOIN
+```mongodb
+db.collection('Orders').aggregate([
+   {
+      // Realizamos el $lookup desde la colección 'Orders' hacia 'Customers'
+      // Esto actúa como un inner join: solo queremos las órdenes que tienen un cliente asociado.
+      $lookup: {
+         from: 'Customers',               // Nombre de la colección con la que se realizará el join ('Customers')
+         localField: 'CustomerId',        // Campo en la colección 'Orders' que será utilizado en el join
+         foreignField: 'CustomerId',      // Campo en la colección 'Customers' que será utilizado para buscar coincidencias
+         as: 'customer_details'           // Nombre del campo donde se almacenará el resultado del join
+      }
+   },
+   {
+      // Utilizamos $unwind para descomponer el array resultante de 'customer_details'
+      // Esto asegura que solo obtengamos las órdenes que tienen un cliente asociado.
+      $unwind: "$customer_details"
+   },
+   {
+      // Proyectamos (seleccionamos) los campos que queremos ver en el resultado.
+      // Aquí se selecciona 'CustomerId' y 'OrderId' de la colección 'Orders',
+      // y también los campos 'City' y 'CustomerId' de 'customer_details' (de 'Customers').
+      $project: {
+         CustomerId: 1,                   // Muestra el campo 'CustomerId' de la colección 'Orders'
+         OrderId: 1,                      // Muestra el campo 'OrderId' de la colección 'Orders'
+         "customer_details.City": 1,      // Muestra el campo 'City' de 'customer_details' (de 'Customers')
+         "customer_details.CustomerId": 1  // Muestra el 'CustomerId' de 'customer_details' (de 'Customers')
+      }
+   }
+])
+// Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
+.toArray();
+```
 
-### Inner Join
-<img src="imagenes\08_mongodb_inner_join.png">
+## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**
+# LEFT JOIN
+```mongodb
+db.collection('Customers').aggregate([
+   {
+      // Realizamos el $lookup desde la colección 'Customers' hacia 'Orders'
+      // Esto actúa como un left join: todos los documentos de 'Customers' se incluirán, 
+      // y si hay coincidencias en 'Orders', se añadirán en 'customer_orders'.
+      $lookup: {
+         from: 'Orders',                // Nombre de la colección con la que se realizará el join ('Orders')
+         localField: 'CustomerId',      // Campo en la colección 'Customers' que será utilizado en el join
+         foreignField: 'CustomerId',    // Campo en la colección 'Orders' que será utilizado para buscar coincidencias
+         as: 'customer_orders'          // Nombre del campo donde se almacenará el resultado del join
+      }
+   },
+   {
+      // Proyectamos (seleccionamos) los campos que queremos ver en el resultado.
+      // Aquí se selecciona 'CustomerId' y 'City' de la colección 'Customers',
+      // y también el campo 'customer_orders' que contiene los pedidos asociados.
+      $project: {
+         CustomerId: 1,                 // Muestra el campo 'CustomerId' de la colección 'Customers'
+         City: 1,                       // Muestra el campo 'City' de la colección 'Customers'
+         customer_orders: 1             // Muestra los pedidos asociados (si existen) de 'Orders'
+      }
+   }
+])
+// Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados
+.toArray();
+```
 
-### View 1
-<img src="imagenes\09_mongodb_view_1.png">
+## TABLA PRINCIPAL **Customers** TABLA SECUNDARIA **Orders**
+# ANTILEFT JOIN
+```mongodb
+db.collection('Customers').aggregate([
+   {
+      // Realizamos el $lookup desde la colección 'Customers' hacia 'Orders'
+      // Esto actúa como un anti left join: queremos encontrar todos los clientes
+      // que NO tienen órdenes asociadas.
+      $lookup: {
+         from: 'Orders',                // Nombre de la colección con la que se realizará el join ('Orders')
+         localField: 'CustomerId',      // Campo en la colección 'Customers' que será utilizado en el join
+         foreignField: 'CustomerId',    // Campo en la colección 'Orders' que será utilizado para buscar coincidencias
+         as: 'customer_orders'          // Nombre del campo donde se almacenará el resultado del join
+      }
+   },
+   {
+      // Filtramos los documentos para mantener solo aquellos que NO tienen órdenes.
+      // Esto se logra usando el operador $match para verificar que el array 'customer_orders' esté vacío.
+      $match: {
+         customer_orders: { $eq: [] }   // Solo incluye documentos donde 'customer_orders' está vacío
+      }
+   },
+   {
+      // Proyectamos (seleccionamos) los campos que queremos ver en el resultado.
+      // Aquí se seleccionan 'CustomerId' y 'City' de la colección 'Customers'.
+      $project: {
+         CustomerId: 1,                 // Muestra el campo 'CustomerId' de la colección 'Customers'
+         City: 1                        // Muestra el campo 'City' de la colección 'Customers'
+      }
+   }
+])
+// Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
+.toArray();
+```
 
-### View 2
-<img src="imagenes\10_mongodb_view_2.png">
+## SE INVIERTEN EL ORDEN DE LAS TABLAS, AHOTA LA TABLA PRINCIPAL **Orders** Y LA TABLA SECUNDARIA **Customers**
+# RIGHT JOIN
+```mongodb
+db.collection('Orders').aggregate([
+   {
+      // Realizamos el $lookup desde la colección 'Orders' hacia 'Customers'
+      // Esto actúa como un right join: todos los documentos de 'Orders' se incluirán,
+      // y si hay coincidencias en 'Customers', se añadirán en 'customer_details'.
+      $lookup: {
+         from: 'Customers',               // Nombre de la colección con la que se realizará el join ('Customers')
+         localField: 'CustomerId',        // Campo en la colección 'Orders' que será utilizado en el join
+         foreignField: 'CustomerId',      // Campo en la colección 'Customers' que será utilizado para buscar coincidencias
+         as: 'customer_details'           // Nombre del campo donde se almacenará el resultado del join
+      }
+   },
+   {
+      // Utilizamos $unwind para descomponer el array resultante de 'customer_details'
+      // Esto asegura que cada orden se empareje con un único cliente (si existe).
+      // Se eliminarán las órdenes que no tengan un cliente asociado.
+      $unwind: "$customer_details"
+   },
+   {
+      // Proyectamos (seleccionamos) los campos que queremos ver en el resultado.
+      // Aquí se selecciona 'CustomerId' y 'OrderId' de la colección 'Orders',
+      // y también los campos 'City' y 'CustomerId' de 'customer_details' (de 'Customers').
+      $project: {
+         CustomerId: 1,                   // Muestra el campo 'CustomerId' de la colección 'Orders'
+         OrderId: 1,                      // Muestra el campo 'OrderId' de la colección 'Orders'
+         "customer_details.City": 1,      // Muestra el campo 'City' de 'customer_details' (de 'Customers')
+         "customer_details.CustomerId": 1  // Muestra el 'CustomerId' de 'customer_details' (de 'Customers')
+      }
+   }
+])
+// Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
+.toArray();
+```
 
+## SE INVIERTEN EL ORDEN DE LAS TABLAS, AHOTA LA TABLA PRINCIPAL **Orders** Y LA TABLA SECUNDARIA **Customers**
+# ANTIRIGHT JOIN
+```mongodb
+db.collection('Orders').aggregate([
+   {
+      // Realizamos el $lookup desde la colección 'Orders' hacia 'Customers'
+      // Esto actúa como un anti right join: queremos encontrar todas las órdenes
+      // que NO tienen un cliente asociado.
+      $lookup: {
+         from: 'Customers',               // Nombre de la colección con la que se realizará el join ('Customers')
+         localField: 'CustomerId',        // Campo en la colección 'Orders' que será utilizado en el join
+         foreignField: 'CustomerId',      // Campo en la colección 'Customers' que será utilizado para buscar coincidencias
+         as: 'customer_details'           // Nombre del campo donde se almacenará el resultado del join
+      }
+   },
+   {
+      // Filtramos los documentos para mantener solo aquellos que NO tienen un cliente asociado.
+      // Esto se logra usando el operador $match para verificar que el array 'customer_details' esté vacío.
+      $match: {
+         customer_details: { $eq: [] }    // Solo incluye documentos donde 'customer_details' está vacío
+      }
+   },
+   {
+      // Proyectamos (seleccionamos) los campos que queremos ver en el resultado.
+      // Aquí se seleccionan 'CustomerId' y 'OrderId' de la colección 'Orders'.
+      $project: {
+         CustomerId: 1,                   // Muestra el campo 'CustomerId' de la colección 'Orders'
+         OrderId: 1                       // Muestra el campo 'OrderId' de la colección 'Orders'
+      }
+   }
+])
+// Convierte el cursor de la consulta en un array para que los resultados puedan ser procesados.
+.toArray();
+```
 
 # PAQUETE COLLECIONES
 ```
@@ -2473,3 +2631,18 @@ db.vuelos_1.aggregate([
   flight_distance: 1400.24
 }
 ```
+
+# CREAR UN JOIN UNA VISTA EN MONGODB
+https://www.mongodb.com/docs/relational-migrator/code-generation/query-converter/convert-views/#std-label-rm-convert-views
+
+### Regular Queries
+<img src="imagenes\07_mongodb_regular_queries.png">
+
+### Inner Join
+<img src="imagenes\08_mongodb_inner_join.png">
+
+### View 1
+<img src="imagenes\09_mongodb_view_1.png">
+
+### View 2
+<img src="imagenes\10_mongodb_view_2.png">
