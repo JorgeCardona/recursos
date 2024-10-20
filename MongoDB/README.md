@@ -1,4 +1,20 @@
-PAQUETE COLLECIONES
+# CREAR UN JOIN UNA VISTA EN MONGODB
+https://www.mongodb.com/docs/relational-migrator/code-generation/query-converter/convert-views/#std-label-rm-convert-views
+
+### Regular Queries
+<img src="imagenes\07_mongodb_regular_queries.png">
+
+### Inner Join
+<img src="imagenes\08_mongodb_inner_join.png">
+
+### View 1
+<img src="imagenes\09_mongodb_view_1.png">
+
+### View 2
+<img src="imagenes\10_mongodb_view_2.png">
+
+
+# PAQUETE COLLECIONES
 ```
  # EL MODULO deque EN PYTHON SE PUEDE COMPORTAR COMO COLA O COMO PILA, DEPENDIENDO DE LOS METODOS DE INSERCION O RECUPERACION DE ELEMENTOS A USAR
 from collections import deque
