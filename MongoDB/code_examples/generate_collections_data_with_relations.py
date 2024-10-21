@@ -13,7 +13,7 @@ def get_dummy_value(field_type):
     if field_type == "random_int_20_to_85":
         return fake.random_int(min=20, max=85)  # Genera un entero aleatorio entre 20 y 85
     if field_type == "random_int_1000_to_10000":
-        return fake.random_int(min=20, max=85)  # Genera un entero aleatorio entre 20 y 85                
+        return fake.random_int(min=1000, max=10000)  # Genera un entero aleatorio entre 1000 y 10000                
     if field_type == "random_float_0.5_50":
         return round(fake.random.uniform(0.5, 50), 2)  # Genera un float entre 0.5 y 50
     

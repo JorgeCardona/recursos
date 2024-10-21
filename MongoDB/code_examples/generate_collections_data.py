@@ -8,7 +8,13 @@ def get_dummy_value(field_type):
         return generate_payment_method()
     if field_type == "order_status":
         return generate_order_status()
-        
+    if field_type == "random_int_20_to_85":
+        return fake.random_int(min=20, max=85)  # Genera un entero aleatorio entre 20 y 85
+    if field_type == "random_int_1000_to_10000":
+        return fake.random_int(min=1000, max=10000)  # Genera un entero aleatorio entre 1000 y 10000                
+    if field_type == "random_float_0.5_50":
+        return round(fake.random.uniform(0.5, 50), 2)  # Genera un float entre 0.5 y 50
+    
     fake_method = getattr(fake, field_type, None)
     
     if callable(fake_method):
@@ -19,12 +25,10 @@ def get_dummy_value(field_type):
     else:
         return f"Field type '{field_type}' not found."
 
-# Generar un valor para el campo status
 def generate_order_status():
     order_statuses = ["shipped", "pending", "delivered", "cancelled", "returned"]
     return fake.random_element(elements=order_statuses)
 
-# Generar un valor para el campo payment_method
 def generate_payment_method():
     payment_methods = ["Credit Card", "Debit Card", "PayPal", "Bank Transfer", "Cash"]
     return fake.random_element(elements=payment_methods)
@@ -57,7 +61,7 @@ collections_info = {
         {"address": "address"},               # Dirección
         {"age": "random_int_20_to_85"},      # Edad (entre 20 y 85)
         {"nationality": "country"},           # Nacionalidad
-        {"salary": "random_int_2000_to_10000"},             # Salario
+        {"salary": "random_int_1000_to_10000"}, # Salario
     ],
     "Orders": [
         {"order_id": "random_int"},           # ID de la orden
