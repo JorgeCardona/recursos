@@ -10,7 +10,13 @@ def get_dummy_value(field_type):
         return generate_payment_method()
     if field_type == "order_status":
         return generate_order_status()
-        
+    if field_type == "random_int_20_to_85":
+        return fake.random_int(min=20, max=85)  # Genera un entero aleatorio entre 20 y 85
+    if field_type == "random_int_1000_to_10000":
+        return fake.random_int(min=20, max=85)  # Genera un entero aleatorio entre 20 y 85                
+    if field_type == "random_float_0.5_50":
+        return round(fake.random.uniform(0.5, 50), 2)  # Genera un float entre 0.5 y 50
+    
     fake_method = getattr(fake, field_type, None)
     
     if callable(fake_method):
@@ -43,6 +49,9 @@ def generate_customers(total_samples):
             "email": get_dummy_value("email"),
             "phone": get_dummy_value("phone_number"),
             "address": get_dummy_value("address"),
+            "age": get_dummy_value("random_int_20_to_85"),
+            "nationality": get_dummy_value("country"),
+            "salary": get_dummy_value("random_int_1000_to_10000")            
         }
         for i in range(total_samples)
     ]
@@ -54,6 +63,8 @@ def generate_orders(total_samples, customer_ids):
             "order_id": i,  # ID de la orden
             "customer_id": fake.random_element(elements=selected_customers),  # Usar un customer_id aleatorio
             "order_date": get_dummy_value("date_this_year"),
+            "last_purchase_date": get_dummy_value("date"),
+            "discount": f"{get_dummy_value('random_float_0.5_50')} %",
             "total_amount": get_dummy_value("random_int"),
             "status": generate_order_status()
         }
@@ -69,6 +80,7 @@ def generate_payments(total_samples, order_ids):
             "payment_date": get_dummy_value("date_this_month"),
             "amount": get_dummy_value("random_int"),
             "payment_method": generate_payment_method(),
+            "currency": get_dummy_value("currency"),
         }
         for i in range(total_samples)
     ]

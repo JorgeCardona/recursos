@@ -55,13 +55,18 @@ collections_info = {
         {"email": "email"},                   # Correo electrónico
         {"phone": "phone_number"},            # Número de teléfono
         {"address": "address"},               # Dirección
+        {"age": "random_int_20_to_85"},      # Edad (entre 20 y 85)
+        {"nationality": "country"},           # Nacionalidad
+        {"salary": "random_int_2000_to_10000"},             # Salario
     ],
     "Orders": [
         {"order_id": "random_int"},           # ID de la orden
         {"customer_id": "random_int"},        # ID del cliente (referencia)
         {"order_date": "date_this_year"},    # Fecha de la orden
+        {"last_purchase_date": "date"},       # Última fecha de compra
+        {"discount": f"{get_dummy_value('random_float_0.5_50')} %"}, # Descuento aplicado (tipo float)
         {"total_amount": "random_int"},       # Monto total
-        {"status": "order_status"},          # Estado de la orden (e.g., "shipped", "pending")
+        {"status": "order_status"},            # Estado de la orden (e.g., "shipped", "pending")
     ],
     "Payments": [
         {"payment_id": "random_int"},         # ID del pago
@@ -69,6 +74,7 @@ collections_info = {
         {"payment_date": "date_this_month"},  # Fecha del pago
         {"amount": "random_int"},             # Monto del pago
         {"payment_method": "payment_method"}, # Método de pago (e.g., "credit_card", "paypal")
+        {"currency": "currency"}               # Tipo de moneda
     ],
 }
 
