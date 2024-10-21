@@ -1,1 +1,79 @@
+import json
+from faker import Faker
+from datetime import date, datetime  # Importa las clases date y datetime
+fake = Faker()
 
+def get_dummy_value(field_type):
+    if field_type == "payment_method":
+        return generate_payment_method()
+    if field_type == "order_status":
+        return generate_order_status()
+        
+    fake_method = getattr(fake, field_type, None)
+    
+    if callable(fake_method):
+        value = fake_method()
+        if isinstance(value, (date, datetime)):
+            return value.isoformat()  # Convierte a formato ISO
+        return value
+    else:
+        return f"Field type '{field_type}' not found."
+
+# Generar un valor para el campo status
+def generate_order_status():
+    order_statuses = ["shipped", "pending", "delivered", "cancelled", "returned"]
+    return fake.random_element(elements=order_statuses)
+
+# Generar un valor para el campo payment_method
+def generate_payment_method():
+    payment_methods = ["Credit Card", "Debit Card", "PayPal", "Bank Transfer", "Cash"]
+    return fake.random_element(elements=payment_methods)
+    
+def save_collections_to_json(generated_data):
+    for collection_name, data in generated_data.items():
+        with open(f"{collection_name}.json", "w") as file:
+            for record in data:
+                file.write(json.dumps(record) + "\n")  # Guarda cada registro en una sola línea
+
+def generate_collections_data(total_samples, collections_info):
+    dict_list = {
+        collection_name: [
+            {**{f'Id_reference_{collection_name}': sample_number}, 
+              **{field_name: get_dummy_value(field_type) for field in fields for field_name, field_type in field.items()}}
+            for sample_number in range(total_samples)
+        ]
+        for collection_name, fields in collections_info.items()
+    }
+    return dict_list
+
+# Parámetros de entrada para las colecciones Customers, Orders y Payments
+total_samples = 100
+collections_info = {
+    "Customers": [
+        {"customer_id": "random_int"},        # ID del cliente
+        {"name": "name"},                     # Nombre del cliente
+        {"email": "email"},                   # Correo electrónico
+        {"phone": "phone_number"},            # Número de teléfono
+        {"address": "address"},               # Dirección
+    ],
+    "Orders": [
+        {"order_id": "random_int"},           # ID de la orden
+        {"customer_id": "random_int"},        # ID del cliente (referencia)
+        {"order_date": "date_this_year"},    # Fecha de la orden
+        {"total_amount": "random_int"},       # Monto total
+        {"status": "order_status"},          # Estado de la orden (e.g., "shipped", "pending")
+    ],
+    "Payments": [
+        {"payment_id": "random_int"},         # ID del pago
+        {"order_id": "random_int"},           # ID de la orden (referencia)
+        {"payment_date": "date_this_month"},  # Fecha del pago
+        {"amount": "random_int"},             # Monto del pago
+        {"payment_method": "payment_method"}, # Método de pago (e.g., "credit_card", "paypal")
+    ],
+}
+
+# Generar y guardar los datos
+generated_data = generate_collections_data(total_samples, collections_info)
+save_collections_to_json(generated_data)
+
+print("Datos guardados en archivos JSON separados.")
