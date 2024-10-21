@@ -1,0 +1,282 @@
+MIT License
+
+Copyright (c) 2024 JorgeCardona
+
+# inner join v1, documento anidado
+db.Customers.aggregate([
+    {
+        // Realiza el join entre la colección Customers y Orders
+        $lookup: {
+            from: "Orders", // Especifica la colección con la que estamos haciendo el join (Orders)
+            localField: "customer_id", // Campo en Customers que será usado para el match
+            foreignField: "customer_id", // Campo en Orders que será comparado con el campo en Customers
+            as: "orders_inner_join_v1" // El resultado del join se guardará en este nuevo campo
+        }
+    },
+    {
+        // Filtra los resultados del join
+        $match: {
+            "orders_inner_join_v1": { $ne: [] } // Incluye solo los documentos que tienen órdenes, es decir, que no tienen el array vacío
+        }
+    }
+]);
+
+
+# Crear un índice en la colección 
+db.Customers.createIndex({ customer_id: 1 })
+db.Orders.createIndex({ customer_id: 1 })
+
+# Confirmar que los índices fueron creados
+db.Customers.getIndexes()
+db.Orders.getIndexes()
+
+
+
+# inner join v1, ver el plan de ejecucion
+db.Customers.aggregate([
+    {
+        // Realiza el join entre la colección Customers y Orders
+        $lookup: {
+            from: "Orders", // Especifica la colección con la que estamos haciendo el join (Orders)
+            localField: "customer_id", // Campo en Customers que será usado para el match
+            foreignField: "customer_id", // Campo en Orders que será comparado con el campo en Customers
+            as: "orders_inner_join_v1" // El resultado del join se guardará en este nuevo campo
+        }
+    },
+    {
+        // Filtra los resultados del join
+        $match: {
+            "orders_inner_join_v1": { $ne: [] } // Incluye solo los documentos que tienen órdenes, es decir, que no tienen el array vacío
+        }
+    }
+]).explain("executionStats");
+
+# inner join v1, documento anidado conteos antes y despues del join, ademas de todos los documentos
+db.Customers.aggregate([
+    {
+        // Realiza el join entre Customers y Orders
+        $lookup: {
+            from: "Orders", // Colección Orders con la cual estamos haciendo el join
+            localField: "customer_id", // Campo en Customers que se usará para hacer el match
+            foreignField: "customer_id", // Campo en Orders con el que se comparará
+            as: "orders_inner_join_v3" // Nombre del campo que contendrá las órdenes relacionadas
+        }
+    },
+    {
+        $facet: {
+            // Cuenta el número total de documentos después del lookup (antes de aplicar cualquier filtro)
+            total_documents: [
+                { $count: "count" } // Cuenta cuántos documentos hay en total en el pipeline
+            ],
+            // Cuenta solo los documentos que tienen órdenes (join no vacío)
+            total_documents_with_orders: [
+                { $match: { "orders_inner_join_v3": { $ne: [] } } }, // Filtra para obtener solo los documentos con órdenes
+                { $count: "count" } // Cuenta cuántos de esos documentos tienen órdenes
+            ],
+            // Retorna solo los documentos que tienen órdenes (join válido)
+            all_documents_with_orders: [ 
+                { $match: { "orders_inner_join_v3": { $ne: [] } } }, // Filtra para obtener solo los documentos con órdenes 
+            ]
+        }
+    }
+]);
+
+
+# INNER JOIN MUESTRA SOLO LOS DOCUMENTOS QUE TIENEN ANDIDADOS ENTRE 2 Y 3 DOCUMENTOS
+db.Customers.aggregate([
+    {
+        // Realiza un join entre la colección Customers y Orders
+        $lookup: {
+            from: "Orders", // Colección a la que se está uniendo
+            localField: "customer_id", // Campo en Customers que se usa para el join
+            foreignField: "customer_id", // Campo en Orders que se usa para el join
+            as: "orders_inner_join_v1" // Nombre del nuevo campo que contendrá las órdenes
+        }
+    },
+    {
+        // Filtra los resultados para incluir solo aquellos que cumplen ciertas condiciones
+        $match: {
+            // Asegura que el tamaño de orders_inner_join_v1 sea mayor o igual a 2 y menor o igual a 3
+            $expr: { 
+                $and: [
+                    { $gte: [{ $size: "$orders_inner_join_v1" }, 2] }, // Al menos 2 documentos
+                    { $lte: [{ $size: "$orders_inner_join_v1" }, 3] }  // Máximo 3 documentos
+                ]
+            }
+        }
+    },
+    {
+        $count: "total_documents" // Cuenta el número total de documentos que cumplen con las condiciones
+    }
+]);
+
+
+# INNER JOIN MUESTRA EL TOTAL DE DOCUMENTOS QUE CUMPLEN CON LA CONSULTA
+db.Customers.aggregate([
+    {
+        $lookup: {
+            from: "Orders",
+            localField: "customer_id",
+            foreignField: "customer_id",
+            as: "orders_inner_join_v1"
+        }
+    },
+    {
+        $match: {
+            "orders_inner_join_v1": { $ne: [] } // Filtra los documentos que tienen orders_inner_join no vacío
+        }
+    },
+    {
+        $count: "total_documents" // Cuenta el número total de documentos que cumplen con las condiciones
+    }
+]);
+
+# INNER JOIN CON CONDICION
+db.Customers.aggregate([
+    {
+        $lookup: {
+            from: "Orders",
+            localField: "customer_id",
+            foreignField: "customer_id",
+            as: "orders_inner_join_condition"
+        }
+    },
+    {
+        $match: {
+            "orders_inner_join_condition": { $ne: [] }, // Filtra los documentos que tienen orders_inner_join no vacío
+            "customer_id": 34 // Agrega la condición para customer_id
+        }
+    }
+]);
+
+# INNER Join, v2 documento Relacionado por documento
+
+db.Customers.aggregate([
+    {
+      $lookup: {
+        from: "Orders",
+        localField: "customer_id",
+        foreignField: "customer_id",
+        as: "orders_inner_join_v2"
+      }
+    },
+    {
+      $unwind: "$orders_inner_join_v2" // Descompone el array de órdenes en documentos individuales
+    },
+    {
+      $match: {
+        "orders_inner_join_v2": { $ne: [] } // Asegura que solo se incluyan los documentos con órdenes
+      }
+    }
+  ]);
+
+
+# INNER JOIN MUESTRA EL TOTAL DE DOCUMENTOS QUE CUMPLEN CON LA CONSULTA
+db.Customers.aggregate([
+    {
+      $lookup: {
+        from: "Orders",
+        localField: "customer_id",
+        foreignField: "customer_id",
+        as: "orders_inner_join_v2"
+      }
+    },
+    {
+      $unwind: "$orders_inner_join_v2" // Descompone el array de órdenes en documentos individuales
+    },
+    {
+      $match: {
+        "orders_inner_join_v2": { $ne: [] } // Asegura que solo se incluyan los documentos con órdenes
+      }
+    },
+    {
+        $count: "total_documents" // Cuenta el número total de documentos que cumplen con las condiciones
+    }
+  ]);
+
+
+
+# INNER Join, v3 documento Relacionado por documento, pero con los campos combinados en un solo documento
+db.Customers.aggregate([
+    {
+        $lookup: {
+            from: "Orders",
+            localField: "customer_id",
+            foreignField: "customer_id",
+            as: "orders_inner_join_v3"
+        }
+    },
+    {
+        $unwind: "$orders_inner_join_v3" // Descompone el array de órdenes en documentos individuales
+    },
+    {
+        $match: {
+            "orders_inner_join_v3": { $ne: [] } // Asegura que solo se incluyan los documentos con órdenes
+        }
+    },
+    {
+        $replaceRoot: {
+            newRoot: { $mergeObjects: ["$$ROOT", "$orders_inner_join_v3"] } // Combina los campos de Customers y Orders
+        }
+    },
+    {
+        $project: {
+            orders_inner_join_v3: 0 // Opcional: Si no deseas mostrar el array de órdenes original
+        }
+    }
+]);
+
+
+
+# LEFT JOIN
+
+db.Customers.aggregate([
+    {
+        $lookup: {
+            from: "Orders",
+            localField: "customer_id",
+            foreignField: "customer_id",
+            as: "orders_left_join"
+        }
+    }
+]);
+
+# LEFT JOIN, solo los primeros 10 documentos, ordenando por los no vacios primero
+db.Customers.aggregate([
+    {
+        $lookup: {
+            from: "Orders",
+            localField: "customer_id",
+            foreignField: "customer_id",
+            as: "orders_left_join"
+        }
+    },
+    {
+        $sort: {
+            "orders_left_join": -1 // Ordena primero los documentos con orders_left_join no vacío
+        }
+    },
+    {
+        $limit: 10 // Limita los resultados a los primeros 10 documentos
+    }
+]);
+
+
+# ANTI LEFT JOIN
+db.Customers.aggregate([
+    {
+        $lookup: {
+            from: "Orders",                      // La colección con la que estás haciendo el join
+            localField: "customer_id",           // Campo en Customers
+            foreignField: "customer_id",         // Campo en Orders
+            as: "orders_left_join"               // El nombre del campo nuevo donde se guardarán las órdenes
+        }
+    },
+
+
+    {
+        $match: {
+            "orders_left_join": { $eq: [] }     // Filtra para incluir solo los documentos donde el arreglo de órdenes está vacío
+        }
+    }
+]);
