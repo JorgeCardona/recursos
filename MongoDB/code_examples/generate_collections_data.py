@@ -8,6 +8,8 @@ def get_dummy_value(field_type):
         return generate_payment_method()
     if field_type == "order_status":
         return generate_order_status()
+    if field_type == "continent":
+        return generate_continent()
     if field_type == "random_int_20_to_85":
         return fake.random_int(min=20, max=85)  # Genera un entero aleatorio entre 20 y 85
     if field_type == "random_int_1000_to_10000":
@@ -61,6 +63,7 @@ collections_info = {
         {"address": "address"},               # Dirección
         {"age": "random_int_20_to_85"},      # Edad (entre 20 y 85)
         {"nationality": "country"},           # Nacionalidad
+        {"current_continent": "continent"},  # continente donde vive en este momento
         {"salary": "random_int_1000_to_10000"}, # Salario
     ],
     "Orders": [

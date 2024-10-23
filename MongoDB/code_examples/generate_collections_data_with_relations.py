@@ -10,6 +10,8 @@ def get_dummy_value(field_type):
         return generate_payment_method()
     if field_type == "order_status":
         return generate_order_status()
+    if field_type == "continent":
+        return generate_continent()
     if field_type == "random_int_20_to_85":
         return fake.random_int(min=20, max=85)  # Genera un entero aleatorio entre 20 y 85
     if field_type == "random_int_1000_to_10000":
@@ -35,6 +37,11 @@ def generate_payment_method():
     payment_methods = ["Credit Card", "Debit Card", "PayPal", "Bank Transfer", "Cash"]
     return fake.random_element(elements=payment_methods)
 
+def generate_continent():
+    continents = ["Africa", "America", "Asia", "Europe", "Oceania"]
+    return fake.random_element(elements=continents)
+
+
 def save_collections_to_json(generated_data):
     for collection_name, data in generated_data.items():
         with open(f"{collection_name}.json", "w") as file:
@@ -51,6 +58,7 @@ def generate_customers(total_samples):
             "address": get_dummy_value("address"),
             "age": get_dummy_value("random_int_20_to_85"),
             "nationality": get_dummy_value("country"),
+            "current_continent": get_dummy_value("continent"),
             "salary": get_dummy_value("random_int_1000_to_10000")            
         }
         for i in range(total_samples)
@@ -101,7 +109,7 @@ def generate_collections_data(total_samples):
     }
 
 # Parámetros de entrada para las colecciones Customers, Orders y Payments
-total_samples = 100
+total_samples = 200
 
 # Generar y guardar los datos
 generated_data = generate_collections_data(total_samples)
