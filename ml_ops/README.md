@@ -14,6 +14,11 @@
 
 **Resumen**: Git se encarga del código y archivos pequeños almacenándolos en un repositorio (como GitHub), mientras que DVC gestiona archivos grandes versionándolos en un almacenamiento remoto adecuado. Trabajan juntos para ofrecer un flujo de trabajo eficiente en proyectos de machine learning o ciencia de datos, donde es necesario versionar tanto el código como los datasets y modelos grandes.
 
+# Iniciar el Repositorio Git/DVC
+```
+git init
+dvc init
+```
 
 # Estructura de archivos del repositorio Git/DVC
 ```
@@ -21,6 +26,7 @@ repo/
 ├── 📂 .dvc/                     # Metadatos de DVC que gestionan los archivos y el flujo de trabajo
 │    ├── ⚙️ config                # Configuración del almacenamiento remoto y otras opciones de DVC
 │    ├── 🚫 .gitignore            # Ignora archivos y directorios gestionados por DVC (caché, metadatos, etc.)
+│    ├── ⚠️ dvc.ignore            # Archivos de configuración para ignorar archivos no rastreados por DVC
 │    ├── 🗂️ cache/                # Caché local de DVC (almacena versiones de archivos gestionados por DVC)
 │    │   ├── 🔑 <hash_file1>      # Hash de un archivo gestionado por DVC
 │    │   ├── 🔑 <hash_file2>      # Otro hash de archivo
@@ -32,7 +38,7 @@ repo/
 ├── 🤖 models/                   # Carpeta de modelos entrenados
 │   ├── 🗂️ model.pkl.dvc         # Metadatos de DVC para rastrear `model.pkl` en el almacenamiento remoto
 ├── 💻 src/                      # Código fuente para entrenar, evaluar y desplegar el modelo
-│   ├── 🏋️‍♂️ train.py           # Script para el entrenamiento del modelo
+│   ├── 🏋️‍♂️ train.py             # Script para el entrenamiento del modelo
 │   ├── 📊 evaluate.py           # Script para evaluar el modelo
 │   └── 🚀 deploy.py             # Script para desplegar el modelo
 └── 🚫 .gitignore                # Ignora archivos temporales, dependencias y otros archivos no deseados en Git (ej. __pycache__, .env)
