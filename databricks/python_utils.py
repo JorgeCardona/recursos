@@ -75,6 +75,21 @@ def download_dataset_and_store_in_dbfs(url: str, save_path: str) -> None:
     except Exception as e:
         print(f"Ocurrió un error inesperado al guardar el archivo en DBFS: {e}")
 
+def delete_file_from_dbfs(file_path):
+    """
+    Elimina un archivo de DBFS (Databricks File System).
+    
+    Parámetros:
+    file_path (str): La ruta completa del archivo en DBFS.
+    
+    dbfs:/FileStore/tableswinequality-white.csv
+    """
+    # Elimina el archivo especificado
+    dbutils.fs.rm(file_path, recurse=True)
+    
+    # Verifica si el archivo ha sido eliminado
+    print(f"Archivo {file_path} eliminado.")
+    display(dbutils.fs.ls(os.path.dirname(file_path)))
 
 def list_files_in_directory_path(directory_path: str) -> None:
     """
