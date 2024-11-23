@@ -61,6 +61,11 @@ docker commit ID_del_contenedor_a_copiar nombre_la_imagen_a_crear:version_de_la_
 docker commit 77a654ba0872 jorgecardona/datascience:v1
 ```
 
+# Eliminar todas las imagenes Docker con Tag None
+```
+docker rmi $(docker images -f "dangling=true" -q)
+```
+
 # Python Code
 ```python
 import subprocess
