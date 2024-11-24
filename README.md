@@ -66,6 +66,12 @@ docker commit 77a654ba0872 jorgecardona/datascience:v1
 docker rmi $(docker images -f "dangling=true" -q)
 ```
 
+
+# Eliminar todas las imagenes Docker que contengan el mismo nombre sin importar la Version
+```
+docker images --filter "reference=nombre/imagen-a-eliminar" -q | ForEach-Object { docker rmi -f $_ }
+```
+
 # Python Code
 ```python
 import subprocess
