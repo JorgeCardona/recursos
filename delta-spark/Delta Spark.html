@@ -9069,12 +9069,12 @@ Pandas DataFrame eliminado de la memoria.
 <pre>Ivy Default Cache set to: /root/.ivy2/cache
 The jars for the packages stored in: /root/.ivy2/jars
 io.delta#delta-spark_2.12 added as a dependency
-:: resolving dependencies :: org.apache.spark#spark-submit-parent-dca20368-1f05-4933-a9d6-97f33896bdf2;1.0
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-a712bb10-3b9e-4606-8580-d9231131d7d6;1.0
 	confs: [default]
 	found io.delta#delta-spark_2.12;3.2.1 in central
 	found io.delta#delta-storage;3.2.1 in central
 	found org.antlr#antlr4-runtime;4.9.3 in central
-:: resolution report :: resolve 150ms :: artifacts dl 6ms
+:: resolution report :: resolve 160ms :: artifacts dl 6ms
 	:: modules in use:
 	io.delta#delta-spark_2.12;3.2.1 from central in [default]
 	io.delta#delta-storage;3.2.1 from central in [default]
@@ -9085,10 +9085,10 @@ io.delta#delta-spark_2.12 added as a dependency
 	---------------------------------------------------------------------
 	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
 	---------------------------------------------------------------------
-:: retrieving :: org.apache.spark#spark-submit-parent-dca20368-1f05-4933-a9d6-97f33896bdf2
+:: retrieving :: org.apache.spark#spark-submit-parent-a712bb10-3b9e-4606-8580-d9231131d7d6
 	confs: [default]
 	0 artifacts copied, 3 already retrieved (0kB/5ms)
-24/12/13 21:52:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/12/14 02:44:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 </pre>
@@ -9268,7 +9268,19 @@ only showing top 20 rows
 +--------------------+--------------------+--------------------+------+---+---------------+-----------+-------------+--------------+--------------------+---------------+------------------+-----------------+--------------------+--------------+--------------+--------------+--------------------+------------+
 only showing top 20 rows
 
-+--------------------+--------------------+--------------------+------+---+---------------+-----------+-------------+--------------+--------------------+---------------+------------------+--------------+--------------------+--------------+--------------+--------------+--------------------+-------------+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>[Stage 11:===========================================&gt;              (3 + 1) / 4]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>+--------------------+--------------------+--------------------+------+---+---------------+-----------+-------------+--------------+--------------------+---------------+------------------+--------------+--------------------+--------------+--------------+--------------+--------------------+-------------+
 |               email|             address|             country|   sex|age|     profession|zodiac_sign|favorite_food|favorite_sport|favorite_movie_genre|favorite_animal|preferred_language|         hobby|    favorite_tv_show|favorite_color|favorite_drink|favorite_music| favorite_technology| favorite_car|
 +--------------------+--------------------+--------------------+------+---+---------------+-----------+-------------+--------------+--------------------+---------------+------------------+--------------+--------------------+--------------+--------------+--------------+--------------------+-------------+
 |  dawn38@example.net|14388 Li Flat\nSo...|                Togo|Female| 22|   Entrepreneur|      Libra|        Ramen|        Boxing|     Courtroom Drama|         Donkey|           Italian|  Scrapbooking|             Lucifer|       Crimson|          NULL|        Gospel|            Robotics|         Opel|
@@ -9295,6 +9307,12 @@ only showing top 20 rows
 only showing top 20 rows
 
 </pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>                                                                                </pre>
 </div>
 </div>
 </div>
@@ -9392,7 +9410,7 @@ The following databases and tables are present in the Spark Catalog.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>24/12/13 21:52:31 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+<pre>24/12/14 02:44:20 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
                                                                                 </pre>
 </div>
 </div>
@@ -9521,23 +9539,23 @@ Tabla 'delta_spark_database.delta_dataframe_2' eliminada.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+<pre>24/12/14 02:44:29 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 95.00% for 8 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:29 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 84.44% for 9 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:29 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 76.00% for 10 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:29 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 69.09% for 11 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:29 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 63.33% for 12 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:29 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 69.09% for 11 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:29 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 76.00% for 10 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:30 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 84.44% for 9 writers
-24/12/13 21:52:40 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:44:30 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 95.00% for 8 writers
                                                                                 </pre>
 </div>
@@ -9714,7 +9732,7 @@ Scaling row group sizes to 95.00% for 8 writers
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_52ad14c9_560a_4cd8_8b6b_b70be93f6a44" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_94e2404e_8a38_42d9_af8c_206ffd3767a0" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>email</th>
@@ -9799,7 +9817,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_52ad14c9_560a_4cd8_8b6b_b70be93f6a44:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_94e2404e_8a38_42d9_af8c_206ffd3767a0:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -9884,7 +9902,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_497b9b71_3fd2_4078_a76a_73a19b5bee01" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_4fb33f49_f39c_444f_991c_b2757454a8c6" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>email</th>
@@ -9969,7 +9987,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_497b9b71_3fd2_4078_a76a_73a19b5bee01:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_4fb33f49_f39c_444f_991c_b2757454a8c6:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -10043,7 +10061,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ca69c9c8_bd7b_4f35_9cbe_395141d46d40" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ba48081e_ce30_4d5d_b78f_58966567947f" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>email</th>
@@ -10128,7 +10146,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_ca69c9c8_bd7b_4f35_9cbe_395141d46d40:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_ba48081e_ce30_4d5d_b78f_58966567947f:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -10287,7 +10305,7 @@ Database: delta_spark_database, Table: delta_dataframe_2
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f63238b2_5c5c_498f_841b_699ae1be076c" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_2f20b464_6a55_4cf1_8c48_635fc7ba1936" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>email</th>
@@ -10356,7 +10374,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_f63238b2_5c5c_498f_841b_699ae1be076c:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_2f20b464_6a55_4cf1_8c48_635fc7ba1936:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -10415,7 +10433,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_e6b42376_6ef6_44d3_94e9_bbd5b091777c" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_d1b7f920_ef1a_498c_af67_6c5e97d6f823" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>email</th>
@@ -10484,7 +10502,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_e6b42376_6ef6_44d3_94e9_bbd5b091777c:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_d1b7f920_ef1a_498c_af67_6c5e97d6f823:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -10530,7 +10548,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_255e3246_dfd9_47e6_9f71_841778fe9cec" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_85d8b31d_bde3_4ba0_9f11_bbf629866851" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>email</th>
@@ -10599,7 +10617,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_255e3246_dfd9_47e6_9f71_841778fe9cec:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_85d8b31d_bde3_4ba0_9f11_bbf629866851:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -10671,7 +10689,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_7bcfd23d_84ba_42b3_9a15_b1488728143e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f27472e0_444e_40b4_ba75_9186d03434b7" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -10741,7 +10759,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_7bcfd23d_84ba_42b3_9a15_b1488728143e:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f27472e0_444e_40b4_ba75_9186d03434b7:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -10813,7 +10831,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_69e89cff_30cd_4129_bc4f_fdf2b0e1bfeb" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_308d8c96_86e4_42d0_a9e0_6b1008081060" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -10883,7 +10901,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_69e89cff_30cd_4129_bc4f_fdf2b0e1bfeb:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_308d8c96_86e4_42d0_a9e0_6b1008081060:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -10951,7 +10969,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_93213999_769e_414c_9c5b_58470965715b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_3c43e51f_1510_4518_b0b8_4d4788220da6" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -11021,7 +11039,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_93213999_769e_414c_9c5b_58470965715b:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_3c43e51f_1510_4518_b0b8_4d4788220da6:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -11104,7 +11122,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_59d74ca9_c026_41eb_8232_fcb01efbf3ac" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_4824f55c_4a61_432d_b2bc_b488d19cb14d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>total_age</th>
@@ -11182,7 +11200,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_59d74ca9_c026_41eb_8232_fcb01efbf3ac:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_4824f55c_4a61_432d_b2bc_b488d19cb14d:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -11251,7 +11269,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_7c6c63df_bc50_4dbf_92f1_dbbdfd0f47f9" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_fb7f191a_c991_4b72_afb2_bcfb8395e911" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>total_age</th>
@@ -11329,7 +11347,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_7c6c63df_bc50_4dbf_92f1_dbbdfd0f47f9:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_fb7f191a_c991_4b72_afb2_bcfb8395e911:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -11416,7 +11434,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_b84cc941_8db1_4eba_81e1_50a2f034e713" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_66928f8d_44bc_4930_b455_bc71936be717" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age_category</th>
@@ -11502,7 +11520,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_b84cc941_8db1_4eba_81e1_50a2f034e713:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_66928f8d_44bc_4930_b455_bc71936be717:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -11574,7 +11592,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_6c3f872b_c773_4431_8a12_2c52b608b60d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_3a3122ea_d88b_4621_93a8_cce217f296de" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age_category</th>
@@ -11660,7 +11678,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_6c3f872b_c773_4431_8a12_2c52b608b60d:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_3a3122ea_d88b_4621_93a8_cce217f296de:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -11737,7 +11755,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_39dbfea2_fe2e_4825_b13f_eedabd7cb479" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_97a0504a_e124_4ef9_befa_2ce56c5de5f3" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>sex</th>
@@ -11808,7 +11826,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_39dbfea2_fe2e_4825_b13f_eedabd7cb479:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_97a0504a_e124_4ef9_befa_2ce56c5de5f3:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -11875,7 +11893,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_53aa30cc_2128_42ef_b3e3_a98681b1ce5a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f5ed7493_ddd6_4593_88ca_ad6d7292698e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>sex</th>
@@ -11946,7 +11964,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_53aa30cc_2128_42ef_b3e3_a98681b1ce5a:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f5ed7493_ddd6_4593_88ca_ad6d7292698e:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12063,7 +12081,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_b692d607_488e_4a08_b339_ea93932e4a2a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_42ac6183_96cc_4eb9_afd0_c3474c8b95ef" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -12137,7 +12155,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_b692d607_488e_4a08_b339_ea93932e4a2a:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_42ac6183_96cc_4eb9_afd0_c3474c8b95ef:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12157,7 +12175,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_26a63730_ab98_41df_86b1_bf25ad8f431a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_198f791b_9dd7_4d4c_9ecd_d31f455212e8" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -12230,7 +12248,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_26a63730_ab98_41df_86b1_bf25ad8f431a:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_198f791b_9dd7_4d4c_9ecd_d31f455212e8:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12296,7 +12314,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_79cb9119_ad2e_4c56_8d58_0b696497e57d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_500dba46_5835_44c2_8ff1_4606c92bc696" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -12374,7 +12392,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_79cb9119_ad2e_4c56_8d58_0b696497e57d:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_500dba46_5835_44c2_8ff1_4606c92bc696:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12439,7 +12457,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_10b06ff0_5ecd_41c1_ac34_6f13d95a6515" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_04d9000a_11d6_4c51_b3f5_f15648268bf3" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -12512,7 +12530,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_10b06ff0_5ecd_41c1_ac34_6f13d95a6515:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_04d9000a_11d6_4c51_b3f5_f15648268bf3:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12532,7 +12550,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_c5641639_dba2_4637_b93c_a7c6390bf4d2" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_8ecab86e_309d_4c09_98e1_5fd19d5e372b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -12605,7 +12623,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_c5641639_dba2_4637_b93c_a7c6390bf4d2:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_8ecab86e_309d_4c09_98e1_5fd19d5e372b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12659,7 +12677,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a470333f_429b_470e_bb51_d965aa647d3c" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f08ad581_ec1d_4dba_b1a4_572264b9cb7b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age_zodiac_sign</th>
@@ -12738,7 +12756,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_a470333f_429b_470e_bb51_d965aa647d3c:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f08ad581_ec1d_4dba_b1a4_572264b9cb7b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12806,7 +12824,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_8d1b11ea_2460_4e6a_a842_0c0807339356" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_94ce4c64_5293_43e9_981a_58dfc094bc82" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age_zodiac_sign</th>
@@ -12886,7 +12904,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_8d1b11ea_2460_4e6a_a842_0c0807339356:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_94ce4c64_5293_43e9_981a_58dfc094bc82:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -12979,35 +12997,23 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+<pre>24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 95.00% for 8 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 84.44% for 9 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 76.00% for 10 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 69.09% for 11 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 63.33% for 12 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
-Scaling row group sizes to 58.46% for 13 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
-Scaling row group sizes to 54.29% for 14 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
-Scaling row group sizes to 50.67% for 15 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
-Scaling row group sizes to 54.29% for 14 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
-Scaling row group sizes to 58.46% for 13 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
-Scaling row group sizes to 63.33% for 12 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 69.09% for 11 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 76.00% for 10 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 84.44% for 9 writers
-24/12/13 21:53:11 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+24/12/14 02:45:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 95.00% for 8 writers
 </pre>
 </div>
@@ -13123,7 +13129,7 @@ Database: delta_spark_database, Table: delta_dataframe_uno
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_4d497102_2fd8_44e2_82c4_b5cbadad871d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_72b340d7_50aa_490f_9811_e608d08d2d5d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>country</th>
@@ -13205,7 +13211,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_4d497102_2fd8_44e2_82c4_b5cbadad871d:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_72b340d7_50aa_490f_9811_e608d08d2d5d:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -13281,7 +13287,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_866bad74_8e84_40e9_a64d_b41e1c52c1d9" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_5bfd3376_ddbc_4c73_ae9f_560d23bd8ddb" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>country</th>
@@ -13363,7 +13369,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_866bad74_8e84_40e9_a64d_b41e1c52c1d9:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_5bfd3376_ddbc_4c73_ae9f_560d23bd8ddb:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -13441,7 +13447,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_8145bf94_e2a2_4ab1_aaec_015aec25d5b5" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_7998b57f_4951_46fa_bf0d_12b7ecb5b823" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>row_number</th>
@@ -13511,7 +13517,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_8145bf94_e2a2_4ab1_aaec_015aec25d5b5:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_7998b57f_4951_46fa_bf0d_12b7ecb5b823:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -13574,7 +13580,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_b642a422_03fb_472c_8a2c_8d7a1f2c3198" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_2b17a744_201f_4c88_b382_8c6e4c687b93" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>row_number</th>
@@ -13644,7 +13650,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_b642a422_03fb_472c_8a2c_8d7a1f2c3198:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_2b17a744_201f_4c88_b382_8c6e4c687b93:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -13722,7 +13728,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_764b01cc_4702_4607_95e3_9a2adfb23ac1" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_cc990c84_ee0b_41cb_b6b2_6f78bb5d924a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>row_number</th>
@@ -13792,7 +13798,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_764b01cc_4702_4607_95e3_9a2adfb23ac1:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_cc990c84_ee0b_41cb_b6b2_6f78bb5d924a:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -13854,7 +13860,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_d1162bf5_93c0_4827_ba44_6330e1956273" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_93884108_3271_461a_a839_a11c4472a821" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>row_number</th>
@@ -13924,7 +13930,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_d1162bf5_93c0_4827_ba44_6330e1956273:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_93884108_3271_461a_a839_a11c4472a821:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14012,7 +14018,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_7a0497d2_176a_4d25_933e_42b88bf3a4ec" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a0e139ca_631a_45f2_b961_5bd1aa817c0b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -14085,7 +14091,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_7a0497d2_176a_4d25_933e_42b88bf3a4ec:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_a0e139ca_631a_45f2_b961_5bd1aa817c0b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14136,7 +14142,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_e39f597c_c49a_4c70_a5cf_a7b91466792c" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f518fece_bc47_4102_ade7_024eea27c276" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -14209,7 +14215,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_e39f597c_c49a_4c70_a5cf_a7b91466792c:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f518fece_bc47_4102_ade7_024eea27c276:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14286,7 +14292,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_82eeeaac_8531_4fb1_a93b_0354dc856a1a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_6e26acc5_c240_47c3_ba85_262d867b8f44" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -14359,7 +14365,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_82eeeaac_8531_4fb1_a93b_0354dc856a1a:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_6e26acc5_c240_47c3_ba85_262d867b8f44:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14410,7 +14416,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_e8b072bb_985c_433a_89a5_670064ad6076" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_cb1db707_3cc3_46e8_9304_d610615d5d0a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -14483,7 +14489,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_e8b072bb_985c_433a_89a5_670064ad6076:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_cb1db707_3cc3_46e8_9304_d610615d5d0a:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14560,7 +14566,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_23856bf6_cce1_42e1_bbe7_530a781c2d8f" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_3191bffc_4f7b_4ee3_8504_fb7e8f3fb535" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -14633,7 +14639,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_23856bf6_cce1_42e1_bbe7_530a781c2d8f:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_3191bffc_4f7b_4ee3_8504_fb7e8f3fb535:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14684,7 +14690,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_581a224c_6590_49be_b385_f1a93995883e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_add4ed6d_c840_4435_aed8_f27b62cd83b5" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -14757,7 +14763,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_581a224c_6590_49be_b385_f1a93995883e:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_add4ed6d_c840_4435_aed8_f27b62cd83b5:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14834,7 +14840,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1f64159a_29e1_45fa_81d4_538e78d8dd4b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_dbcf1bc5_a0b8_4cf7_897c_462fca858319" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -14907,7 +14913,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1f64159a_29e1_45fa_81d4_538e78d8dd4b:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_dbcf1bc5_a0b8_4cf7_897c_462fca858319:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -14958,7 +14964,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_09794b00_ee5e_4f0b_9e2e_ba4ce54acc7d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_48e261e3_6b93_4c48_9362_e8122172b673" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -15031,7 +15037,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_09794b00_ee5e_4f0b_9e2e_ba4ce54acc7d:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_48e261e3_6b93_4c48_9362_e8122172b673:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -15071,7 +15077,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1e3bd2ce_091e_498e_be0a_edbf51ae5236" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ce297d2f_94e0_4340_ba43_8004610e377b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -15144,7 +15150,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1e3bd2ce_091e_498e_be0a_edbf51ae5236:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_ce297d2f_94e0_4340_ba43_8004610e377b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -15227,7 +15233,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_37fcf899_6412_4504_ade3_52f3a01b15b3" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_52d3bdd0_06a9_44a7_97c0_bf605000daed" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -15307,7 +15313,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_37fcf899_6412_4504_ade3_52f3a01b15b3:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_52d3bdd0_06a9_44a7_97c0_bf605000daed:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -15372,7 +15378,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1188cd16_8bbe_4f33_ba04_6a307592221c" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_59cf79b3_3cbc_4fa0_bc62_2acb309c9faf" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno.id</th>
@@ -15452,7 +15458,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1188cd16_8bbe_4f33_ba04_6a307592221c:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_59cf79b3_3cbc_4fa0_bc62_2acb309c9faf:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -15525,7 +15531,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_9fccd248_e2b3_4772_8831_bad842d53cf2" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_148533ec_1e79_4015_825a_b27b3e1d0a7e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -15605,7 +15611,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_9fccd248_e2b3_4772_8831_bad842d53cf2:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_148533ec_1e79_4015_825a_b27b3e1d0a7e:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -15666,7 +15672,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_42804ced_a5fb_42fc_9338_d82c6056af9a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_abb66fe8_ceaf_40b6_bcc4_463f9d13fe6d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno.id</th>
@@ -15746,7 +15752,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_42804ced_a5fb_42fc_9338_d82c6056af9a:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_abb66fe8_ceaf_40b6_bcc4_463f9d13fe6d:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -15819,7 +15825,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a5d684ab_8b1e_449e_b271_b8e25fbcf26f" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_34179979_0278_46f4_8e0a_4708ddb4bf8a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -15899,7 +15905,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_a5d684ab_8b1e_449e_b271_b8e25fbcf26f:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_34179979_0278_46f4_8e0a_4708ddb4bf8a:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -15961,7 +15967,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_c6bcfa63_1a38_4eb3_a43a_3a61aa7c26d6" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_0284c73f_7c88_4acf_b250_130e5b1e00b7" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno.id</th>
@@ -16041,7 +16047,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_c6bcfa63_1a38_4eb3_a43a_3a61aa7c26d6:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_0284c73f_7c88_4acf_b250_130e5b1e00b7:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -16114,7 +16120,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f3f093c4_3b6f_453f_9cd8_248b3a712381" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1839beec_7c60_4c25_b9ee_c37c44fd27d9" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -16187,7 +16193,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_f3f093c4_3b6f_453f_9cd8_248b3a712381:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_1839beec_7c60_4c25_b9ee_c37c44fd27d9:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -16239,7 +16245,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_6684f36a_d837_41ca_b470_aaf86d187b93" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_9c6cf3c5_5891_4d89_8bcb_ce70dddce17b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -16312,7 +16318,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_6684f36a_d837_41ca_b470_aaf86d187b93:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_9c6cf3c5_5891_4d89_8bcb_ce70dddce17b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -16369,7 +16375,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_bfe2236a_858b_4fff_ad4e_f92c53973591" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_52f4c8d3_ef60_4bd7_87a7_66a6c11c6200" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -16442,7 +16448,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_bfe2236a_858b_4fff_ad4e_f92c53973591:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_52f4c8d3_ef60_4bd7_87a7_66a6c11c6200:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -16515,7 +16521,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_3baf578a_b02f_44ea_aa16_9f779419f526" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_d2883bed_cc86_49b3_889e_620547a8e56d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -16595,7 +16601,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_3baf578a_b02f_44ea_aa16_9f779419f526:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_d2883bed_cc86_49b3_889e_620547a8e56d:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -16657,7 +16663,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_42f48005_26a0_4847_a0bf_395bb2a6c343" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_6d501ffc_e86f_4f3a_95e1_d652cef55de0" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno.id</th>
@@ -16737,7 +16743,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_42f48005_26a0_4847_a0bf_395bb2a6c343:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_6d501ffc_e86f_4f3a_95e1_d652cef55de0:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -16811,7 +16817,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f3825e21_c57d_42b3_b766_3aa0412c326d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_cdf7903b_3c35_4080_9289_73c7fc73f53b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -16884,7 +16890,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_f3825e21_c57d_42b3_b766_3aa0412c326d:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_cdf7903b_3c35_4080_9289_73c7fc73f53b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -16943,7 +16949,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_fef52ffa_7033_4ae0_80fb_6f9dbe90af94" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_b952f800_0d65_44e2_a2f9_e42d91760989" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -17016,7 +17022,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_fef52ffa_7033_4ae0_80fb_6f9dbe90af94:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_b952f800_0d65_44e2_a2f9_e42d91760989:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -17073,7 +17079,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[69]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_0ec32b46_71e6_44e5_a1c9_98877914e630" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_848a8add_a464_49e6_8910_20ad2c0e9d79" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -17146,7 +17152,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_0ec32b46_71e6_44e5_a1c9_98877914e630:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_848a8add_a464_49e6_8910_20ad2c0e9d79:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -17219,7 +17225,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[70]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_0e49669a_7a54_4d29_8da0_cbda07984420" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_7a384651_0715_42ba_82f1_f8f31cf88e49" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -17299,7 +17305,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_0e49669a_7a54_4d29_8da0_cbda07984420:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_7a384651_0715_42ba_82f1_f8f31cf88e49:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -17362,7 +17368,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[71]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_50d81e43_598f_4b97_acde_cb6aedc13f6c" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a917bad2_96bc_4a74_bf8f_4be856b44fc1" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno.id</th>
@@ -17442,7 +17448,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_50d81e43_598f_4b97_acde_cb6aedc13f6c:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_a917bad2_96bc_4a74_bf8f_4be856b44fc1:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -17520,7 +17526,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[72]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f09aab5e_5828_425c_b042_83a245e98f4e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_c4c9a819_4e58_42ea_a8f3_5c9beade5268" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -17600,7 +17606,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_f09aab5e_5828_425c_b042_83a245e98f4e:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_c4c9a819_4e58_42ea_a8f3_5c9beade5268:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -17668,7 +17674,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[73]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_3438cec4_c0e1_4cb9_b0ad_abf91395d583" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_7c579944_ffe7_4546_9985_a6b2ac186d24" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno.id</th>
@@ -17748,7 +17754,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_3438cec4_c0e1_4cb9_b0ad_abf91395d583:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_7c579944_ffe7_4546_9985_a6b2ac186d24:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -17822,7 +17828,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[74]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a703ed1f_19b2_47fe_a409_c42b506e2f46" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_b169b751_5abc_4e69_8a2b_1c0ccf37c8c6" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -17902,7 +17908,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_a703ed1f_19b2_47fe_a409_c42b506e2f46:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_b169b751_5abc_4e69_8a2b_1c0ccf37c8c6:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -17952,7 +17958,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[75]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_2aaa9f5d_96c8_42ba_8828_1aa6994d5b59" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ac407909_4185_4364_9735_439765007992" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -18032,7 +18038,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_2aaa9f5d_96c8_42ba_8828_1aa6994d5b59:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_ac407909_4185_4364_9735_439765007992:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18093,7 +18099,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[76]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_de83f78a_002a_4afa_8a58_b8698cd72f67" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_d18d79d3_b943_4686_808c_69278c763486" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno.id</th>
@@ -18173,7 +18179,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_de83f78a_002a_4afa_8a58_b8698cd72f67:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_d18d79d3_b943_4686_808c_69278c763486:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18267,7 +18273,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[78]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_832ae78d_0f2b_4b94_a507_290ec20c67c6" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_042480ef_4cdd_43b2_9ad9_e5695cd2b19b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -18340,7 +18346,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_832ae78d_0f2b_4b94_a507_290ec20c67c6:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_042480ef_4cdd_43b2_9ad9_e5695cd2b19b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18425,7 +18431,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_8a75d6b9_03b1_419a_9f30_e0949d0e230e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_2d06957c_a738_492f_a464_87e2a3c37044" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -18505,7 +18511,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_8a75d6b9_03b1_419a_9f30_e0949d0e230e:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_2d06957c_a738_492f_a464_87e2a3c37044:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18533,7 +18539,7 @@ Join -&gt; left_join
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_91fb9812_e66b_40e9_86fd_1f4cebf7685d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_bb38ced2_6c14_437f_9798_90e3bf525969" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -18613,7 +18619,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_91fb9812_e66b_40e9_86fd_1f4cebf7685d:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_bb38ced2_6c14_437f_9798_90e3bf525969:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18641,7 +18647,7 @@ Join -&gt; anti_left_join
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_c75784a3_2252_4731_aed7_088981e756cc" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f1dfcde4_941d_4a06_b1a0_0c8cacd17873" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -18714,7 +18720,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_c75784a3_2252_4731_aed7_088981e756cc:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f1dfcde4_941d_4a06_b1a0_0c8cacd17873:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18742,7 +18748,7 @@ Join -&gt; right_join
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_3bc9b425_1432_4f5f_8849_9e93adf9a744" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_8f76e458_5a1e_4694_86c3_f6658cec5abb" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -18822,7 +18828,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_3bc9b425_1432_4f5f_8849_9e93adf9a744:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_8f76e458_5a1e_4694_86c3_f6658cec5abb:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18850,7 +18856,7 @@ Join -&gt; anti_right_join
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_815c4212_2c0e_4f80_8cde_679ba074a218" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ee869a97_4724_4e80_a43b_e30b87d5620b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_dos_id</th>
@@ -18923,7 +18929,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_815c4212_2c0e_4f80_8cde_679ba074a218:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_ee869a97_4724_4e80_a43b_e30b87d5620b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -18951,7 +18957,7 @@ Join -&gt; outer_join
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_2c5a687c_5985_4d01_b540_0829466fa5b6" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_4b48f916_d25a_46a0_85e0_5723c4384088" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19031,7 +19037,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_2c5a687c_5985_4d01_b540_0829466fa5b6:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_4b48f916_d25a_46a0_85e0_5723c4384088:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19059,7 +19065,7 @@ Join -&gt; anti_outer_join
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1beb91c0_ff7b_4714_80d2_a879b6fb0669" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_aa39c46a_1bef_4792_85db_c24898aef4c0" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19139,7 +19145,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1beb91c0_ff7b_4714_80d2_a879b6fb0669:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_aa39c46a_1bef_4792_85db_c24898aef4c0:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19167,7 +19173,7 @@ Join -&gt; cross_join
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_0fa37c70_993a_4dac_8ad7_0578f2cac950" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f5ca00bf_e511_4051_8c2a_7f45c0cc76d1" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19247,7 +19253,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_0fa37c70_993a_4dac_8ad7_0578f2cac950:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f5ca00bf_e511_4051_8c2a_7f45c0cc76d1:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19275,7 +19281,7 @@ Join -&gt; intersect
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1ad2ff21_dd30_41fd_9071_9b0c08c7e273" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_e6b7dd30_e0dd_4b18_a7f7_ab263e5ad6b4" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19348,7 +19354,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1ad2ff21_dd30_41fd_9071_9b0c08c7e273:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_e6b7dd30_e0dd_4b18_a7f7_ab263e5ad6b4:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19376,7 +19382,7 @@ Join -&gt; except
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_4ae31016_94e7_48d9_b0e3_2fccb56c4b8b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_815f03d1_4bb8_4429_8a7c_3e90debb23a4" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19449,7 +19455,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_4ae31016_94e7_48d9_b0e3_2fccb56c4b8b:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_815f03d1_4bb8_4429_8a7c_3e90debb23a4:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19477,7 +19483,7 @@ Join -&gt; union
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_194cfc07_30e7_43a8_86f0_0b692b9c1ce7" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_26a9e904_3880_4d50_8430_0ca8b40ca8ef" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19550,7 +19556,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_194cfc07_30e7_43a8_86f0_0b692b9c1ce7:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_26a9e904_3880_4d50_8430_0ca8b40ca8ef:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19578,7 +19584,7 @@ Join -&gt; union_all
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ecce8f1c_1398_4c98_8b1a_fe23cd2dd78b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1e4b6039_bcef_4c8c_8cc7_380ac35f3c8a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19658,7 +19664,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_ecce8f1c_1398_4c98_8b1a_fe23cd2dd78b:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_1e4b6039_bcef_4c8c_8cc7_380ac35f3c8a:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19686,7 +19692,7 @@ Join -&gt; self
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1240d316_391e_40fd_abf6_2cd46a558bd1" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_6398b5e2_cb18_4c3c_96a5_300acb667908" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>spark_dataframe_uno_id</th>
@@ -19766,7 +19772,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1240d316_391e_40fd_abf6_2cd46a558bd1:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_6398b5e2_cb18_4c3c_96a5_300acb667908:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -19953,7 +19959,7 @@ No records match the condition 'age &gt;= 60'.
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[83]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ba57b752_fd3e_417e_93c9_2a37c2ef49d3" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_419fd117_f041_4456_9957_574a6a4f181f" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -20026,7 +20032,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_ba57b752_fd3e_417e_93c9_2a37c2ef49d3:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_419fd117_f041_4456_9957_574a6a4f181f:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -20090,7 +20096,7 @@ No records match the condition 'age &gt;= 40'.
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[84]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_50d15279_cdf0_44ec_80ea_053a99b63bea" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_26e5fcf7_0450_4fd6_9c56_82057482868e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>id</th>
@@ -20163,7 +20169,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_50d15279_cdf0_44ec_80ea_053a99b63bea:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_26e5fcf7_0450_4fd6_9c56_82057482868e:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -20214,7 +20220,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>24/12/13 21:53:35 WARN DAGScheduler: Broadcasting large task binary with size 1078.8 KiB
+<pre>24/12/14 02:45:24 WARN DAGScheduler: Broadcasting large task binary with size 1078.8 KiB
 </pre>
 </div>
 </div>
@@ -20228,7 +20234,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[85]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f47d83a1_d6b4_4f70_8bb3_58cf9a8af4ef" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_d70df312_a151_49db_9ae9_d27b1580f22b" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>format</th>
@@ -20309,12 +20315,12 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_f47d83a1_d6b4_4f70_8bb3_58cf9a8af4ef:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_d70df312_a151_49db_9ae9_d27b1580f22b:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
         // Define the table data
-        const data = [["delta", "a0c56b79-9552-4bf6-857b-b45ac0298f1e", "None", "None", "file:/notebooks/warehouse-spark/spark_catalog/database/delta_spark_database.db/delta_dataframe_uno", "2024-12-13 21:53:13.697", "2024-12-13 21:53:37.132", "[age]", "[]", 21, 40131, "{}", 1, 2, "[appendOnly, invariants]"]];
+        const data = [["delta", "e2f6527c-a11e-4d96-8a5f-56787b17681d", "None", "None", "file:/notebooks/warehouse-spark/spark_catalog/database/delta_spark_database.db/delta_dataframe_uno", "2024-12-14 02:45:02.304", "2024-12-14 02:45:25.597", "[age]", "[]", 21, 40131, "{}", 1, 2, "[appendOnly, invariants]"]];
 
         // Define the dt_args
         let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
@@ -20688,7 +20694,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[89]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_c2de860c_8937_4290_8f2a_948ea7c7f677" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_372f162f_9ccb_4a1d_8141_e1d9938a96d0" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>version</th>
@@ -20769,12 +20775,12 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_c2de860c_8937_4290_8f2a_948ea7c7f677:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_372f162f_9ccb_4a1d_8141_e1d9938a96d0:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
         // Define the table data
-        const data = [[16, "2024-12-13 21:53:56.102", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#70441 = id#70425)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 15.0, "Serializable", false, "{'numOutputRows': '2', 'numTargetBytesAdded': '2907', 'numTargetRowsInserted': '2', 'numTargetFilesAdded': '1', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '1344', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '148', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '904', 'numSourceRows': '2', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [15, "2024-12-13 21:53:54.592", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 14.0, "SnapshotIsolation", false, "{'numRemovedBytes': '4352', 'p50FileSize': '2647', 'p25FileSize': '2647', 'numAddedFiles': '1', 'minFileSize': '2647', 'p75FileSize': '2647', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '2647', 'maxFileSize': '2647', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [14, "2024-12-13 21:53:53.612", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 13.0, "Serializable", false, "{'numOutputRows': '1', 'numOutputBytes': '2354', 'numFiles': '1'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [13, "2024-12-13 21:53:52.032", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 12.0, "SnapshotIsolation", false, "{'numRemovedBytes': '3739', 'p50FileSize': '2142', 'p25FileSize': '2142', 'numAddedFiles': '1', 'minFileSize': '2142', 'p75FileSize': '2142', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '2142', 'maxFileSize': '2142', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [12, "2024-12-13 21:53:50.942", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 11.0, "Serializable", false, "{'numOutputRows': '1', 'numOutputBytes': '1871', 'numFiles': '1'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [11, "2024-12-13 21:53:47.642", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 10.0, "SnapshotIsolation", false, "{'numRemovedBytes': '3792', 'p50FileSize': '1998', 'p25FileSize': '1998', 'numAddedFiles': '1', 'minFileSize': '1998', 'p75FileSize': '1998', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '1998', 'maxFileSize': '1998', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [10, "2024-12-13 21:53:45.762", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#63710 = id#63696)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 9.0, "Serializable", false, "{'numOutputRows': '5', 'numTargetBytesAdded': '9442', 'numTargetRowsInserted': '5', 'numTargetFilesAdded': '5', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '725', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '95', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '394', 'numSourceRows': '5', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [9, "2024-12-13 21:53:44.012", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#61031 = id#61017)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 8.0, "Serializable", false, "{'numOutputRows': '5', 'numTargetBytesAdded': '9561', 'numTargetRowsInserted': '5', 'numTargetFilesAdded': '5', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '1081', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '133', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '734', 'numSourceRows': '5', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [8, "2024-12-13 21:53:42.782", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 7.0, "SnapshotIsolation", false, "{'numRemovedBytes': '3782', 'p50FileSize': '1942', 'p25FileSize': '1942', 'numAddedFiles': '1', 'minFileSize': '1942', 'p75FileSize': '1942', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '1942', 'maxFileSize': '1942', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [7, "2024-12-13 21:53:41.482", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#57373 = id#57359)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 6.0, "Serializable", false, "{'numOutputRows': '4', 'numTargetBytesAdded': '7540', 'numTargetRowsInserted': '4', 'numTargetFilesAdded': '4', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '1788', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '143', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '1314', 'numSourceRows': '4', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [6, "2024-12-13 21:53:39.462", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 5.0, "SnapshotIsolation", false, "{'numRemovedBytes': '22917', 'p50FileSize': '1984', 'p25FileSize': '1922', 'numAddedFiles': '6', 'minFileSize': '1890', 'p75FileSize': '2232', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '12194', 'maxFileSize': '2238', 'numRemovedFiles': '12'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [5, "2024-12-13 21:53:37.132", "None", "None", "RESTORE", "{'version': '1', 'timestamp': None}", "None", "None", "None", 4.0, "Serializable", false, "{'removedFilesSize': '17372', 'tableSizeAfterRestore': '40131', 'numRemovedFiles': '9', 'restoredFilesSize': '28670', 'numOfFilesAfterRestore': '21', 'numRestoredFiles': '15'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [4, "2024-12-13 21:53:32.671", "None", "None", "DELETE", "{'predicate': '[\"(id#52491 > 20)\"]'}", "None", "None", "None", 3.0, "Serializable", false, "{'numDeletionVectorsUpdated': '0', 'numAddedFiles': '2', 'executionTimeMs': '529', 'numDeletionVectorsRemoved': '0', 'numRemovedFiles': '2', 'rewriteTimeMs': '124', 'numRemovedBytes': '4470', 'scanTimeMs': '405', 'numCopiedRows': '2', 'numDeletionVectorsAdded': '0', 'numAddedChangeFiles': '0', 'numDeletedRows': '4', 'numAddedBytes': '3787'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [3, "2024-12-13 21:53:30.641", "None", "None", "UPDATE", "{'predicate': '[\"((zodiac_sign#50326 = Capricorn) OR (zodiac_sign#50326 = Leo))\"]'}", "None", "None", "None", 2.0, "Serializable", false, "{'numDeletionVectorsUpdated': '0', 'numAddedFiles': '4', 'executionTimeMs': '628', 'numDeletionVectorsRemoved': '0', 'numUpdatedRows': '4', 'numRemovedFiles': '4', 'rewriteTimeMs': '134', 'numRemovedBytes': '7737', 'scanTimeMs': '492', 'numCopiedRows': '1', 'numDeletionVectorsAdded': '0', 'numAddedChangeFiles': '0', 'numAddedBytes': '7845'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [2, "2024-12-13 21:53:29.201", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 1.0, "SnapshotIsolation", false, "{'numRemovedBytes': '22917', 'p50FileSize': '1984', 'p25FileSize': '1922', 'numAddedFiles': '6', 'minFileSize': '1890', 'p75FileSize': '2232', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '12194', 'maxFileSize': '2238', 'numRemovedFiles': '12'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [1, "2024-12-13 21:53:27.331", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 0.0, "Serializable", true, "{'numOutputRows': '12', 'numOutputBytes': '22903', 'numFiles': '12'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [0, "2024-12-13 21:53:13.961", "None", "None", "CREATE OR REPLACE TABLE AS SELECT", "{'partitionBy': '[\"age\"]', 'description': None, 'properties': '{}', 'clusterBy': '[]', 'isManaged': 'true'}", "None", "None", "None", NaN, "Serializable", false, "{'numOutputRows': '12', 'numOutputBytes': '17228', 'numFiles': '9'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"]];
+        const data = [[16, "2024-12-14 02:45:43.977", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#70441 = id#70425)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 15.0, "Serializable", false, "{'numOutputRows': '2', 'numTargetBytesAdded': '2907', 'numTargetRowsInserted': '2', 'numTargetFilesAdded': '1', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '1327', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '107', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '915', 'numSourceRows': '2', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [15, "2024-12-14 02:45:42.487", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 14.0, "SnapshotIsolation", false, "{'numRemovedBytes': '4349', 'p50FileSize': '2647', 'p25FileSize': '2647', 'numAddedFiles': '1', 'minFileSize': '2647', 'p75FileSize': '2647', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '2647', 'maxFileSize': '2647', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [14, "2024-12-14 02:45:41.527", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 13.0, "Serializable", false, "{'numOutputRows': '1', 'numOutputBytes': '2351', 'numFiles': '1'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [13, "2024-12-14 02:45:39.847", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 12.0, "SnapshotIsolation", false, "{'numRemovedBytes': '3736', 'p50FileSize': '2142', 'p25FileSize': '2142', 'numAddedFiles': '1', 'minFileSize': '2142', 'p75FileSize': '2142', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '2142', 'maxFileSize': '2142', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [12, "2024-12-14 02:45:38.777", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 11.0, "Serializable", false, "{'numOutputRows': '1', 'numOutputBytes': '1868', 'numFiles': '1'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [11, "2024-12-14 02:45:35.657", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 10.0, "SnapshotIsolation", false, "{'numRemovedBytes': '3792', 'p50FileSize': '1998', 'p25FileSize': '1998', 'numAddedFiles': '1', 'minFileSize': '1998', 'p75FileSize': '1998', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '1998', 'maxFileSize': '1998', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [10, "2024-12-14 02:45:33.697", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#63710 = id#63696)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 9.0, "Serializable", false, "{'numOutputRows': '5', 'numTargetBytesAdded': '9442', 'numTargetRowsInserted': '5', 'numTargetFilesAdded': '5', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '546', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '85', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '196', 'numSourceRows': '5', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [9, "2024-12-14 02:45:32.057", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#61031 = id#61017)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 8.0, "Serializable", false, "{'numOutputRows': '5', 'numTargetBytesAdded': '9561', 'numTargetRowsInserted': '5', 'numTargetFilesAdded': '5', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '1074', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '91', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '777', 'numSourceRows': '5', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [8, "2024-12-14 02:45:30.837", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 7.0, "SnapshotIsolation", false, "{'numRemovedBytes': '3782', 'p50FileSize': '1942', 'p25FileSize': '1942', 'numAddedFiles': '1', 'minFileSize': '1942', 'p75FileSize': '1942', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '1942', 'maxFileSize': '1942', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [7, "2024-12-14 02:45:29.667", "None", "None", "MERGE", "{'matchedPredicates': '[{\"actionType\":\"update\"}]', 'predicate': '[\"(id#57373 = id#57359)\"]', 'notMatchedBySourcePredicates': '[]', 'notMatchedPredicates': '[{\"actionType\":\"insert\"}]'}", "None", "None", "None", 6.0, "Serializable", false, "{'numOutputRows': '4', 'numTargetBytesAdded': '7540', 'numTargetRowsInserted': '4', 'numTargetFilesAdded': '4', 'numTargetRowsMatchedDeleted': '0', 'numTargetFilesRemoved': '0', 'numTargetRowsMatchedUpdated': '0', 'executionTimeMs': '1623', 'numTargetDeletionVectorsUpdated': '0', 'numTargetRowsCopied': '0', 'rewriteTimeMs': '102', 'numTargetRowsUpdated': '0', 'numTargetDeletionVectorsRemoved': '0', 'numTargetRowsDeleted': '0', 'scanTimeMs': '1171', 'numSourceRows': '4', 'numTargetDeletionVectorsAdded': '0', 'numTargetChangeFilesAdded': '0', 'numTargetRowsNotMatchedBySourceUpdated': '0', 'numTargetRowsNotMatchedBySourceDeleted': '0', 'numTargetBytesRemoved': '0'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [6, "2024-12-14 02:45:27.837", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 5.0, "SnapshotIsolation", false, "{'numRemovedBytes': '22917', 'p50FileSize': '1984', 'p25FileSize': '1922', 'numAddedFiles': '6', 'minFileSize': '1890', 'p75FileSize': '2232', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '12194', 'maxFileSize': '2238', 'numRemovedFiles': '12'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [5, "2024-12-14 02:45:25.597", "None", "None", "RESTORE", "{'version': '1', 'timestamp': None}", "None", "None", "None", 4.0, "Serializable", false, "{'removedFilesSize': '17372', 'tableSizeAfterRestore': '40131', 'numRemovedFiles': '9', 'restoredFilesSize': '28670', 'numOfFilesAfterRestore': '21', 'numRestoredFiles': '15'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [4, "2024-12-14 02:45:21.057", "None", "None", "DELETE", "{'predicate': '[\"(id#52491 > 20)\"]'}", "None", "None", "None", 3.0, "Serializable", false, "{'numDeletionVectorsUpdated': '0', 'numAddedFiles': '2', 'executionTimeMs': '392', 'numDeletionVectorsRemoved': '0', 'numRemovedFiles': '2', 'rewriteTimeMs': '121', 'numRemovedBytes': '4470', 'scanTimeMs': '270', 'numCopiedRows': '2', 'numDeletionVectorsAdded': '0', 'numAddedChangeFiles': '0', 'numDeletedRows': '4', 'numAddedBytes': '3787'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [3, "2024-12-14 02:45:19.437", "None", "None", "UPDATE", "{'predicate': '[\"((zodiac_sign#50326 = Capricorn) OR (zodiac_sign#50326 = Leo))\"]'}", "None", "None", "None", 2.0, "Serializable", false, "{'numDeletionVectorsUpdated': '0', 'numAddedFiles': '4', 'executionTimeMs': '588', 'numDeletionVectorsRemoved': '0', 'numUpdatedRows': '4', 'numRemovedFiles': '4', 'rewriteTimeMs': '135', 'numRemovedBytes': '7737', 'scanTimeMs': '452', 'numCopiedRows': '1', 'numDeletionVectorsAdded': '0', 'numAddedChangeFiles': '0', 'numAddedBytes': '7845'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [2, "2024-12-14 02:45:17.937", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 1.0, "SnapshotIsolation", false, "{'numRemovedBytes': '22917', 'p50FileSize': '1984', 'p25FileSize': '1922', 'numAddedFiles': '6', 'minFileSize': '1890', 'p75FileSize': '2232', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '12194', 'maxFileSize': '2238', 'numRemovedFiles': '12'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [1, "2024-12-14 02:45:16.017", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 0.0, "Serializable", true, "{'numOutputRows': '12', 'numOutputBytes': '22903', 'numFiles': '12'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [0, "2024-12-14 02:45:02.606", "None", "None", "CREATE OR REPLACE TABLE AS SELECT", "{'partitionBy': '[\"age\"]', 'description': None, 'properties': '{}', 'clusterBy': '[]', 'isManaged': 'true'}", "None", "None", "None", NaN, "Serializable", false, "{'numOutputRows': '12', 'numOutputBytes': '17228', 'numFiles': '9'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"]];
 
         // Define the dt_args
         let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_selected_rows_not_rendered": true};
@@ -20834,7 +20840,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_c91594d2_7dbf_462d_857c_48639199978f" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f506f4b0_b418_4b1f_8822_b5afa6a59344" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -20908,7 +20914,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_c91594d2_7dbf_462d_857c_48639199978f:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f506f4b0_b418_4b1f_8822_b5afa6a59344:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -20936,7 +20942,7 @@ Version : 1, Operation : WRITE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1eded950_e129_4ec5_899d_45b979e2a40d" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_93afa604_d8b3_42a4_a4b8_5f45bd48d156" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -21010,7 +21016,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1eded950_e129_4ec5_899d_45b979e2a40d:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_93afa604_d8b3_42a4_a4b8_5f45bd48d156:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21038,7 +21044,7 @@ Version : 2, Operation : OPTIMIZE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_588c2236_9408_4d5a_b6a0_9fda9e570719" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ac7cbd27_27b4_42bc_aa7b_032ee806409f" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -21111,7 +21117,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_588c2236_9408_4d5a_b6a0_9fda9e570719:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_ac7cbd27_27b4_42bc_aa7b_032ee806409f:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21139,7 +21145,7 @@ Version : 3, Operation : UPDATE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1bb50b6b_dc1e_4da9_bdfd_5bf2b87b6e94" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_33ccb834_3fb6_4900_b6bc_2fc6c37306d6" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -21214,7 +21220,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1bb50b6b_dc1e_4da9_bdfd_5bf2b87b6e94:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_33ccb834_3fb6_4900_b6bc_2fc6c37306d6:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21242,7 +21248,7 @@ Version : 4, Operation : DELETE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a512b39e_2ae9_4fa5_8636_4f0fc9ead830" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_3e1bcfe4_9848_43a9_ba87_c63a72661e19" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -21317,7 +21323,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_a512b39e_2ae9_4fa5_8636_4f0fc9ead830:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_3e1bcfe4_9848_43a9_ba87_c63a72661e19:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21345,7 +21351,7 @@ Version : 5, Operation : RESTORE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_fce8e9a3_4b4f_4559_a70b_2bf8970cc850" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_fa8f5490_c5b6_4332_9a4a_a947fc2306f9" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -21419,7 +21425,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_fce8e9a3_4b4f_4559_a70b_2bf8970cc850:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_fa8f5490_c5b6_4332_9a4a_a947fc2306f9:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21447,7 +21453,7 @@ Version : 6, Operation : OPTIMIZE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_1e492c27_34de_4947_a2d3_e07902de4ae1" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_98eb1fb1_5942_4227_95ac_50864b31bbaf" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -21520,7 +21526,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_1e492c27_34de_4947_a2d3_e07902de4ae1:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_98eb1fb1_5942_4227_95ac_50864b31bbaf:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21548,7 +21554,7 @@ Version : 7, Operation : MERGE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_4abd9b50_d47a_4a2c_912f_e5ab3be475dd" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_9e487b6e_0470_4c93_b9ab_a7f83e3726d4" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -21622,7 +21628,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_4abd9b50_d47a_4a2c_912f_e5ab3be475dd:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_9e487b6e_0470_4c93_b9ab_a7f83e3726d4:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21650,7 +21656,7 @@ Version : 8, Operation : OPTIMIZE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_aa5666dd_2a4b_427c_b795_7a6a7e3e0b63" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_38fe9adb_cbcc_40ce_b354_fe9a5f3bb5dd" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -21723,7 +21729,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_aa5666dd_2a4b_427c_b795_7a6a7e3e0b63:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_38fe9adb_cbcc_40ce_b354_fe9a5f3bb5dd:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21751,7 +21757,7 @@ Version : 9, Operation : MERGE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_9404fb12_19ad_4f87_ab63_d3b01c1644dc" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_395e87a4_ad8b_477f_95bf_a60d477194ee" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -21825,7 +21831,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_9404fb12_19ad_4f87_ab63_d3b01c1644dc:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_395e87a4_ad8b_477f_95bf_a60d477194ee:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21853,7 +21859,7 @@ Version : 10, Operation : MERGE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_205c80cd_6c0f_4be3_9a5c_65ce4ea53e00" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_cec010f0_dca3_4318_b51d_fca2bbf7cf2e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -21927,7 +21933,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_205c80cd_6c0f_4be3_9a5c_65ce4ea53e00:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_cec010f0_dca3_4318_b51d_fca2bbf7cf2e:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -21955,7 +21961,7 @@ Version : 11, Operation : OPTIMIZE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_7730a0e3_f9a4_4429_b444_b548254bc518" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_51101763_0263_490c_ae24_ad2fb9e8631a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -22028,7 +22034,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_7730a0e3_f9a4_4429_b444_b548254bc518:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_51101763_0263_490c_ae24_ad2fb9e8631a:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -22056,7 +22062,7 @@ Version : 12, Operation : WRITE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a1d46dd5_43f9_48e9_b982_9bea3f606af1" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_f317f128_18ee_4644_87ef_c1b250620a4e" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -22129,7 +22135,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_a1d46dd5_43f9_48e9_b982_9bea3f606af1:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f317f128_18ee_4644_87ef_c1b250620a4e:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -22157,7 +22163,7 @@ Version : 13, Operation : OPTIMIZE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_fd26f18b_04b8_4372_b19f_94a87f1bf486" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_c31ee82d_8196_480e_ad8a_c2d2bc08814a" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -22230,7 +22236,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_fd26f18b_04b8_4372_b19f_94a87f1bf486:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_c31ee82d_8196_480e_ad8a_c2d2bc08814a:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -22258,7 +22264,7 @@ Version : 14, Operation : WRITE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_ef816d93_d4d8_4d69_910a_ffdb2370d723" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a0e32108_3d66_4c48_8f86_9de3c455c810" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -22333,7 +22339,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_ef816d93_d4d8_4d69_910a_ffdb2370d723:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_a0e32108_3d66_4c48_8f86_9de3c455c810:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -22361,7 +22367,7 @@ Version : 15, Operation : OPTIMIZE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_8c4c8f29_2fe1_45f3_9978_9126dd640b73" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_5daf8f3b_b480_4b7a_a9aa_4829eb9485ed" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -22436,7 +22442,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_8c4c8f29_2fe1_45f3_9978_9126dd640b73:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_5daf8f3b_b480_4b7a_a9aa_4829eb9485ed:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -22464,7 +22470,7 @@ Version : 16, Operation : MERGE, Content
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table class="display nowrap" data-quarto-disable-processing="true" id="itables_38b53696_0f97_4b8c_99da_6bd09747eba4" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_a051d902_5808_4dca_93db_80c2673b0b70" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
 <thead>
 <tr style="text-align: right;">
 <th>age</th>
@@ -22540,12 +22546,808 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <script type="module">
     const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
 
-    document.querySelectorAll("#itables_38b53696_0f97_4b8c_99da_6bd09747eba4:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_a051d902_5808_4dca_93db_80c2673b0b70:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
         // Define the table data
         const data = [[15, "None", "America", "Peru", "None", 7831, "Pluto", 2, "[8, 13, 5]", "Leo"], [15, "None", "America", "Peru", "None", 7831, "Pluto", 2, "[8, 13, 5]", "Capricorn"]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23de51d7-eb05-465e-9bf7-0d95349ee9d4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Review-the-version-history-FROM-FILE">Review the version history FROM FILE<a class="anchor-link" href="#Review-the-version-history-FROM-FILE">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed71aba9-7402-4266-ae97-4e27bcb763b0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="DESCARGAR-ARCHIVOS">DESCARGAR ARCHIVOS<a class="anchor-link" href="#DESCARGAR-ARCHIVOS">¶</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a3df4ecb-8bbb-4790-ad9b-f2a049482218">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [91]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">gc</span>
+
+<span class="c1"># Ruta del directorio</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">"documents/"</span>
+<span class="n">file_text_1</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/JorgeCardona/recursos/refs/heads/main/delta-spark/documents/IngenieriaDeDatos.txt"</span>
+<span class="n">file_text_2</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/JorgeCardona/recursos/refs/heads/main/delta-spark/documents/DeltaLake.txt"</span>
+<span class="n">file_text_3</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/JorgeCardona/recursos/refs/heads/main/delta-spark/documents/MLOps.txt"</span>
+
+<span class="c1"># Crear el directorio si no existe</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">file_url</span> <span class="ow">in</span> <span class="p">[</span><span class="n">file_text_1</span><span class="p">,</span> <span class="n">file_text_2</span><span class="p">,</span> <span class="n">file_text_3</span><span class="p">]:</span>
+    <span class="c1"># Leer el archivo de texto desde la URL</span>
+    <span class="n">pandas_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+
+    <span class="c1"># Obtener el nombre del archivo</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">file_url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+
+    <span class="c1"># Ruta para guardar el archivo</span>
+    <span class="n">save_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="c1"># Guardar el archivo de texto sin modificaciones</span>
+    <span class="n">pandas_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Archivo descargado: </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> y guardado en el directorio -&gt; </span><span class="si">{</span><span class="n">save_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Liberar memoria eliminando el DataFrame</span>
+<span class="k">del</span> <span class="n">pandas_df</span>
+<span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>  <span class="c1"># Forzar recolección de basura</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Pandas DataFrame eliminado de la memoria."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>IngenieriaDeDatos.txt
+Archivo descargado: IngenieriaDeDatos.txt y guardado en el directorio -&gt; documents//IngenieriaDeDatos.txt
+DeltaLake.txt
+Archivo descargado: DeltaLake.txt y guardado en el directorio -&gt; documents//DeltaLake.txt
+MLOps.txt
+Archivo descargado: MLOps.txt y guardado en el directorio -&gt; documents//MLOps.txt
+Pandas DataFrame eliminado de la memoria.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b401bcb2-5839-4585-8dcc-f3cfbad95961">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="PROCESAR-ARCHIVOS">PROCESAR ARCHIVOS<a class="anchor-link" href="#PROCESAR-ARCHIVOS">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1c7b1791-d07c-41f3-99ba-25d7f0d2d0d1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [92]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Leer el archivo de texto como un DataFrame de Spark</span>
+<span class="n">df_text_1</span> <span class="o">=</span> <span class="n">spark_session</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"documents/IngenieriaDeDatos.txt"</span><span class="p">)</span>
+<span class="n">df_text_2</span> <span class="o">=</span> <span class="n">spark_session</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"documents/DeltaLake.txt"</span><span class="p">)</span>
+<span class="n">df_text_3</span> <span class="o">=</span> <span class="n">spark_session</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"documents/MLOps.txt"</span><span class="p">)</span>
+
+<span class="n">delta_lake_text_path</span> <span class="o">=</span> <span class="s2">"warehouse-spark/spark_files/delta_parquet/texto"</span>
+
+<span class="c1"># Guardar el DataFrame combinado en una tabla Delta</span>
+<span class="k">for</span> <span class="n">new_data_df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">df_text_1</span><span class="p">,</span> <span class="n">df_text_2</span><span class="p">,</span> <span class="n">df_text_3</span><span class="p">]:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">write_into_delta_lake</span><span class="p">(</span><span class="n">spark_session</span><span class="p">,</span> <span class="n">delta_lake_text_path</span><span class="p">,</span> <span class="n">new_data_df</span><span class="p">))</span>
+
+<span class="n">spark_session</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"delta"</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">delta_lake_text_path</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>warehouse-spark/spark_files/delta_parquet/texto does not contain a Delta table.
+Created Delta table with new data.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>None</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Added new data without duplicates.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>None</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Added new data without duplicates.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>None</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[92]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_e03338c8_74d5_4ae9_816c_3bfbae76fcb5" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+<tr style="text-align: right;">
+<th>value</th>
+</tr>
+</thead><tbody><tr>
+<td style="vertical-align:middle; text-align:left">
+<a href="https://mwouts.github.io/itables/"><svg class="main-svg" style="font-family: 'Droid Sans', sans-serif;" viewbox="0 0 500 400" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="fill:#d9d7fc">
+<path d="M100,400H500V357H100Z"></path>
+<path d="M100,300H400V257H100Z"></path>
+<path d="M0,200H400V157H0Z"></path>
+<path d="M100,100H500V57H100Z"></path>
+<path d="M100,350H500V307H100Z"></path>
+<path d="M100,250H400V207H100Z"></path>
+<path d="M0,150H400V107H0Z"></path>
+<path d="M100,50H500V7H100Z"></path>
+</g>
+<g style="fill:#1a1366;stroke:#1a1366;">
+<rect height="43" width="400" x="100" y="7">
+<animate attributename="width" dur="5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="5s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<rect height="43" width="400" x="0" y="107">
+<animate attributename="width" dur="3.5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="3.5s" repeatcount="indefinite" values="0;0;400"></animate>
+</rect>
+<rect height="43" width="300" x="100" y="207">
+<animate attributename="width" dur="3s" repeatcount="indefinite" values="0;300;0"></animate>
+<animate attributename="x" dur="3s" repeatcount="indefinite" values="100;100;400"></animate>
+</rect>
+<rect height="43" width="400" x="100" y="307">
+<animate attributename="width" dur="4s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="4s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<g rx="5" style="fill:transparent;stroke-width:8; stroke-linejoin:round">
+<g transform="translate(45 50) rotate(-45)">
+<circle cx="0" cy="0" r="33"></circle>
+<rect height="30" width="16" x="-8" y="32"></rect>
+</g>
+<g transform="translate(450 152)">
+<polyline points="-15,-20 -35,-20 -35,40 25,40 25,20"></polyline>
+<rect height="60" width="60" x="-15" y="-40"></rect>
+</g>
+<g transform="translate(50 352)">
+<polygon points="-35,-5 0,-40 35,-5"></polygon>
+<polygon points="-35,10 0,45 35,10"></polygon>
+</g>
+<g transform="translate(75 250)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+<g transform="translate(425 250) rotate(180)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+</g>
+</g>
+</svg>
+</a>
+Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
+(need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td>
+</tr></tbody>
+</table>
+<script type="module">
+    const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
+
+    document.querySelectorAll("#itables_e03338c8_74d5_4ae9_816c_3bfbae76fcb5:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        // Define the table data
+        const data = [["MLOps es como cuidar un robot que aprende cosas nuevas todo el tiempo. Primero,\" ense\u00f1as al robot usando datos y un proceso llamado \"\"entrenamiento\"\". Despu\u00e9s\", lo pones a trabajar en el mundo real, pero necesitas revisarlo y darle m\u00e1s datos para que no se equivoque. Tambi\u00e9n construyes herramientas para arreglarlo r\u00e1pido si algo sale mal. MLOps asegura que el robot siga siendo \u00fatil y haga bien su trabajo, incluso cuando el mundo cambia."], ["La ingenier\u00eda de datos es como organizar juguetes en cajas para que sean f\u00e1ciles de encontrar. Los datos vienen de diferentes lugares, como sensores, sitios web o aplicaciones, y los ingenieros los limpian, los ordenan y los guardan en lugares especiales llamados bases de datos. Esto ayuda a que las computadoras entiendan los datos y puedan usarlos para cosas importantes, como mostrar informaci\u00f3n en una app o tomar decisiones. Sin estos procesos, los datos ser\u00edan un gran desorden, como una habitaci\u00f3n llena de juguetes tirados por todas partes."], ["Delta Lake es como un gran ba\u00fal m\u00e1gico donde guardas cosas importantes, pero que tambi\u00e9n recuerda cada cambio que haces. Es una tecnolog\u00eda que organiza datos en un formato que evita errores y permite que las personas siempre tengan acceso a la informaci\u00f3n m\u00e1s reciente. Adem\u00e1s, guarda un historial de todos los cambios, por si alguien necesita ver c\u00f3mo eran las cosas antes. Esto es s\u00faper \u00fatil cuando trabajas con mucha informaci\u00f3n que cambia todo el tiempo, como datos de ventas o clima."]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=140fba76-ee2d-4d50-87a0-76719a3ad85d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [93]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">historic_version_file</span> <span class="o">=</span> <span class="n">show_historic_version_from_delta_file</span><span class="p">(</span><span class="n">spark_session</span><span class="p">,</span> <span class="n">delta_lake_text_path</span><span class="p">)</span>
+<span class="n">historic_version_file</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[93]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_fc655eec_f7aa_4db0_96f3_b441dd1e1806" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+<tr style="text-align: right;">
+<th>version</th>
+<th>timestamp</th>
+<th>userId</th>
+<th>userName</th>
+<th>operation</th>
+<th>operationParameters</th>
+<th>job</th>
+<th>notebook</th>
+<th>clusterId</th>
+<th>readVersion</th>
+<th>isolationLevel</th>
+<th>isBlindAppend</th>
+<th>operationMetrics</th>
+<th>userMetadata</th>
+<th>engineInfo</th>
+</tr>
+</thead><tbody><tr>
+<td style="vertical-align:middle; text-align:left">
+<a href="https://mwouts.github.io/itables/"><svg class="main-svg" style="font-family: 'Droid Sans', sans-serif;" viewbox="0 0 500 400" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="fill:#d9d7fc">
+<path d="M100,400H500V357H100Z"></path>
+<path d="M100,300H400V257H100Z"></path>
+<path d="M0,200H400V157H0Z"></path>
+<path d="M100,100H500V57H100Z"></path>
+<path d="M100,350H500V307H100Z"></path>
+<path d="M100,250H400V207H100Z"></path>
+<path d="M0,150H400V107H0Z"></path>
+<path d="M100,50H500V7H100Z"></path>
+</g>
+<g style="fill:#1a1366;stroke:#1a1366;">
+<rect height="43" width="400" x="100" y="7">
+<animate attributename="width" dur="5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="5s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<rect height="43" width="400" x="0" y="107">
+<animate attributename="width" dur="3.5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="3.5s" repeatcount="indefinite" values="0;0;400"></animate>
+</rect>
+<rect height="43" width="300" x="100" y="207">
+<animate attributename="width" dur="3s" repeatcount="indefinite" values="0;300;0"></animate>
+<animate attributename="x" dur="3s" repeatcount="indefinite" values="100;100;400"></animate>
+</rect>
+<rect height="43" width="400" x="100" y="307">
+<animate attributename="width" dur="4s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="4s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<g rx="5" style="fill:transparent;stroke-width:8; stroke-linejoin:round">
+<g transform="translate(45 50) rotate(-45)">
+<circle cx="0" cy="0" r="33"></circle>
+<rect height="30" width="16" x="-8" y="32"></rect>
+</g>
+<g transform="translate(450 152)">
+<polyline points="-15,-20 -35,-20 -35,40 25,40 25,20"></polyline>
+<rect height="60" width="60" x="-15" y="-40"></rect>
+</g>
+<g transform="translate(50 352)">
+<polygon points="-35,-5 0,-40 35,-5"></polygon>
+<polygon points="-35,10 0,45 35,10"></polygon>
+</g>
+<g transform="translate(75 250)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+<g transform="translate(425 250) rotate(180)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+</g>
+</g>
+</svg>
+</a>
+Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
+(need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td>
+</tr></tbody>
+</table>
+<script type="module">
+    const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
+
+    document.querySelectorAll("#itables_fc655eec_f7aa_4db0_96f3_b441dd1e1806:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        // Define the table data
+        const data = [[3, "2024-12-14 02:46:17.760", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 2.0, "Serializable", false, "{'numOutputRows': '1', 'numOutputBytes': '2664', 'numFiles': '1'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [2, "2024-12-14 02:46:16.860", "None", "None", "OPTIMIZE", "{'predicate': '[]', 'auto': 'false', 'zOrderBy': '[]', 'clusterBy': '[]'}", "None", "None", "None", 1.0, "SnapshotIsolation", false, "{'numRemovedBytes': '6024', 'p50FileSize': '2197', 'p25FileSize': '2197', 'numAddedFiles': '1', 'minFileSize': '2197', 'p75FileSize': '2197', 'numDeletionVectorsRemoved': '0', 'numAddedBytes': '2197', 'maxFileSize': '2197', 'numRemovedFiles': '2'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [1, "2024-12-14 02:46:16.040", "None", "None", "WRITE", "{'mode': 'Append', 'partitionBy': '[]'}", "None", "None", "None", 0.0, "Serializable", false, "{'numOutputRows': '1', 'numOutputBytes': '2898', 'numFiles': '1'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"], [0, "2024-12-14 02:46:14.558", "None", "None", "WRITE", "{'mode': 'Overwrite', 'partitionBy': '[]'}", "None", "None", "None", NaN, "Serializable", false, "{'numOutputRows': '1', 'numOutputBytes': '3126', 'numFiles': '1'}", "None", "Apache-Spark/3.5.3 Delta-Lake/3.2.1"]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1341e058-ec86-4177-adea-8afb3289989e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [94]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">total_versions_file</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">historic_version_file</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="n">total_operations_file</span> <span class="o">=</span> <span class="n">historic_version_file</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">total_operations_file</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">version</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total_versions_file</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Version : </span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s2">, Operation : </span><span class="si">{</span><span class="n">total_operations_file</span><span class="p">[</span><span class="n">version</span><span class="p">]</span><span class="si">}</span><span class="s2">, Content"</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">show_historic_version_from_delta_file</span><span class="p">(</span><span class="n">spark_session</span><span class="p">,</span> <span class="n">delta_lake_text_path</span><span class="p">,</span> <span class="n">version</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Version : 0, Operation : WRITE, Content
+Warning: Column 'None' not found in the DataFrame.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_0f81b86f_4493_4e13_96dd_758c748f1dda" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+<tr style="text-align: right;">
+<th>value</th>
+</tr>
+</thead><tbody><tr>
+<td style="vertical-align:middle; text-align:left">
+<a href="https://mwouts.github.io/itables/"><svg class="main-svg" style="font-family: 'Droid Sans', sans-serif;" viewbox="0 0 500 400" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="fill:#d9d7fc">
+<path d="M100,400H500V357H100Z"></path>
+<path d="M100,300H400V257H100Z"></path>
+<path d="M0,200H400V157H0Z"></path>
+<path d="M100,100H500V57H100Z"></path>
+<path d="M100,350H500V307H100Z"></path>
+<path d="M100,250H400V207H100Z"></path>
+<path d="M0,150H400V107H0Z"></path>
+<path d="M100,50H500V7H100Z"></path>
+</g>
+<g style="fill:#1a1366;stroke:#1a1366;">
+<rect height="43" width="400" x="100" y="7">
+<animate attributename="width" dur="5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="5s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<rect height="43" width="400" x="0" y="107">
+<animate attributename="width" dur="3.5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="3.5s" repeatcount="indefinite" values="0;0;400"></animate>
+</rect>
+<rect height="43" width="300" x="100" y="207">
+<animate attributename="width" dur="3s" repeatcount="indefinite" values="0;300;0"></animate>
+<animate attributename="x" dur="3s" repeatcount="indefinite" values="100;100;400"></animate>
+</rect>
+<rect height="43" width="400" x="100" y="307">
+<animate attributename="width" dur="4s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="4s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<g rx="5" style="fill:transparent;stroke-width:8; stroke-linejoin:round">
+<g transform="translate(45 50) rotate(-45)">
+<circle cx="0" cy="0" r="33"></circle>
+<rect height="30" width="16" x="-8" y="32"></rect>
+</g>
+<g transform="translate(450 152)">
+<polyline points="-15,-20 -35,-20 -35,40 25,40 25,20"></polyline>
+<rect height="60" width="60" x="-15" y="-40"></rect>
+</g>
+<g transform="translate(50 352)">
+<polygon points="-35,-5 0,-40 35,-5"></polygon>
+<polygon points="-35,10 0,45 35,10"></polygon>
+</g>
+<g transform="translate(75 250)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+<g transform="translate(425 250) rotate(180)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+</g>
+</g>
+</svg>
+</a>
+Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
+(need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td>
+</tr></tbody>
+</table>
+<script type="module">
+    const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
+
+    document.querySelectorAll("#itables_0f81b86f_4493_4e13_96dd_758c748f1dda:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        // Define the table data
+        const data = [["La ingenier\u00eda de datos es como organizar juguetes en cajas para que sean f\u00e1ciles de encontrar. Los datos vienen de diferentes lugares, como sensores, sitios web o aplicaciones, y los ingenieros los limpian, los ordenan y los guardan en lugares especiales llamados bases de datos. Esto ayuda a que las computadoras entiendan los datos y puedan usarlos para cosas importantes, como mostrar informaci\u00f3n en una app o tomar decisiones. Sin estos procesos, los datos ser\u00edan un gran desorden, como una habitaci\u00f3n llena de juguetes tirados por todas partes."]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Version : 1, Operation : WRITE, Content
+Warning: Column 'None' not found in the DataFrame.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_052e0bb7_afc1_4a0c_9bf6_271b3e0958da" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+<tr style="text-align: right;">
+<th>value</th>
+</tr>
+</thead><tbody><tr>
+<td style="vertical-align:middle; text-align:left">
+<a href="https://mwouts.github.io/itables/"><svg class="main-svg" style="font-family: 'Droid Sans', sans-serif;" viewbox="0 0 500 400" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="fill:#d9d7fc">
+<path d="M100,400H500V357H100Z"></path>
+<path d="M100,300H400V257H100Z"></path>
+<path d="M0,200H400V157H0Z"></path>
+<path d="M100,100H500V57H100Z"></path>
+<path d="M100,350H500V307H100Z"></path>
+<path d="M100,250H400V207H100Z"></path>
+<path d="M0,150H400V107H0Z"></path>
+<path d="M100,50H500V7H100Z"></path>
+</g>
+<g style="fill:#1a1366;stroke:#1a1366;">
+<rect height="43" width="400" x="100" y="7">
+<animate attributename="width" dur="5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="5s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<rect height="43" width="400" x="0" y="107">
+<animate attributename="width" dur="3.5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="3.5s" repeatcount="indefinite" values="0;0;400"></animate>
+</rect>
+<rect height="43" width="300" x="100" y="207">
+<animate attributename="width" dur="3s" repeatcount="indefinite" values="0;300;0"></animate>
+<animate attributename="x" dur="3s" repeatcount="indefinite" values="100;100;400"></animate>
+</rect>
+<rect height="43" width="400" x="100" y="307">
+<animate attributename="width" dur="4s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="4s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<g rx="5" style="fill:transparent;stroke-width:8; stroke-linejoin:round">
+<g transform="translate(45 50) rotate(-45)">
+<circle cx="0" cy="0" r="33"></circle>
+<rect height="30" width="16" x="-8" y="32"></rect>
+</g>
+<g transform="translate(450 152)">
+<polyline points="-15,-20 -35,-20 -35,40 25,40 25,20"></polyline>
+<rect height="60" width="60" x="-15" y="-40"></rect>
+</g>
+<g transform="translate(50 352)">
+<polygon points="-35,-5 0,-40 35,-5"></polygon>
+<polygon points="-35,10 0,45 35,10"></polygon>
+</g>
+<g transform="translate(75 250)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+<g transform="translate(425 250) rotate(180)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+</g>
+</g>
+</svg>
+</a>
+Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
+(need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td>
+</tr></tbody>
+</table>
+<script type="module">
+    const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
+
+    document.querySelectorAll("#itables_052e0bb7_afc1_4a0c_9bf6_271b3e0958da:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        // Define the table data
+        const data = [["Delta Lake es como un gran ba\u00fal m\u00e1gico donde guardas cosas importantes, pero que tambi\u00e9n recuerda cada cambio que haces. Es una tecnolog\u00eda que organiza datos en un formato que evita errores y permite que las personas siempre tengan acceso a la informaci\u00f3n m\u00e1s reciente. Adem\u00e1s, guarda un historial de todos los cambios, por si alguien necesita ver c\u00f3mo eran las cosas antes. Esto es s\u00faper \u00fatil cuando trabajas con mucha informaci\u00f3n que cambia todo el tiempo, como datos de ventas o clima."]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Version : 2, Operation : OPTIMIZE, Content
+Warning: Column 'None' not found in the DataFrame.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_4bbb8382_8240_4c6b_b21e_cb393d5d9202" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+<tr style="text-align: right;">
+<th>value</th>
+</tr>
+</thead><tbody><tr>
+<td style="vertical-align:middle; text-align:left">
+<a href="https://mwouts.github.io/itables/"><svg class="main-svg" style="font-family: 'Droid Sans', sans-serif;" viewbox="0 0 500 400" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="fill:#d9d7fc">
+<path d="M100,400H500V357H100Z"></path>
+<path d="M100,300H400V257H100Z"></path>
+<path d="M0,200H400V157H0Z"></path>
+<path d="M100,100H500V57H100Z"></path>
+<path d="M100,350H500V307H100Z"></path>
+<path d="M100,250H400V207H100Z"></path>
+<path d="M0,150H400V107H0Z"></path>
+<path d="M100,50H500V7H100Z"></path>
+</g>
+<g style="fill:#1a1366;stroke:#1a1366;">
+<rect height="43" width="400" x="100" y="7">
+<animate attributename="width" dur="5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="5s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<rect height="43" width="400" x="0" y="107">
+<animate attributename="width" dur="3.5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="3.5s" repeatcount="indefinite" values="0;0;400"></animate>
+</rect>
+<rect height="43" width="300" x="100" y="207">
+<animate attributename="width" dur="3s" repeatcount="indefinite" values="0;300;0"></animate>
+<animate attributename="x" dur="3s" repeatcount="indefinite" values="100;100;400"></animate>
+</rect>
+<rect height="43" width="400" x="100" y="307">
+<animate attributename="width" dur="4s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="4s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<g rx="5" style="fill:transparent;stroke-width:8; stroke-linejoin:round">
+<g transform="translate(45 50) rotate(-45)">
+<circle cx="0" cy="0" r="33"></circle>
+<rect height="30" width="16" x="-8" y="32"></rect>
+</g>
+<g transform="translate(450 152)">
+<polyline points="-15,-20 -35,-20 -35,40 25,40 25,20"></polyline>
+<rect height="60" width="60" x="-15" y="-40"></rect>
+</g>
+<g transform="translate(50 352)">
+<polygon points="-35,-5 0,-40 35,-5"></polygon>
+<polygon points="-35,10 0,45 35,10"></polygon>
+</g>
+<g transform="translate(75 250)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+<g transform="translate(425 250) rotate(180)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+</g>
+</g>
+</svg>
+</a>
+Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
+(need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td>
+</tr></tbody>
+</table>
+<script type="module">
+    const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
+
+    document.querySelectorAll("#itables_4bbb8382_8240_4c6b_b21e_cb393d5d9202:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        // Define the table data
+        const data = [];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Version : 3, Operation : WRITE, Content
+Warning: Column 'None' not found in the DataFrame.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<table class="display nowrap" data-quarto-disable-processing="true" id="itables_b0f1a116_873a_48e7_a98d_354ac5289b6f" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+<tr style="text-align: right;">
+<th>value</th>
+</tr>
+</thead><tbody><tr>
+<td style="vertical-align:middle; text-align:left">
+<a href="https://mwouts.github.io/itables/"><svg class="main-svg" style="font-family: 'Droid Sans', sans-serif;" viewbox="0 0 500 400" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="fill:#d9d7fc">
+<path d="M100,400H500V357H100Z"></path>
+<path d="M100,300H400V257H100Z"></path>
+<path d="M0,200H400V157H0Z"></path>
+<path d="M100,100H500V57H100Z"></path>
+<path d="M100,350H500V307H100Z"></path>
+<path d="M100,250H400V207H100Z"></path>
+<path d="M0,150H400V107H0Z"></path>
+<path d="M100,50H500V7H100Z"></path>
+</g>
+<g style="fill:#1a1366;stroke:#1a1366;">
+<rect height="43" width="400" x="100" y="7">
+<animate attributename="width" dur="5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="5s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<rect height="43" width="400" x="0" y="107">
+<animate attributename="width" dur="3.5s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="3.5s" repeatcount="indefinite" values="0;0;400"></animate>
+</rect>
+<rect height="43" width="300" x="100" y="207">
+<animate attributename="width" dur="3s" repeatcount="indefinite" values="0;300;0"></animate>
+<animate attributename="x" dur="3s" repeatcount="indefinite" values="100;100;400"></animate>
+</rect>
+<rect height="43" width="400" x="100" y="307">
+<animate attributename="width" dur="4s" repeatcount="indefinite" values="0;400;0"></animate>
+<animate attributename="x" dur="4s" repeatcount="indefinite" values="100;100;500"></animate>
+</rect>
+<g rx="5" style="fill:transparent;stroke-width:8; stroke-linejoin:round">
+<g transform="translate(45 50) rotate(-45)">
+<circle cx="0" cy="0" r="33"></circle>
+<rect height="30" width="16" x="-8" y="32"></rect>
+</g>
+<g transform="translate(450 152)">
+<polyline points="-15,-20 -35,-20 -35,40 25,40 25,20"></polyline>
+<rect height="60" width="60" x="-15" y="-40"></rect>
+</g>
+<g transform="translate(50 352)">
+<polygon points="-35,-5 0,-40 35,-5"></polygon>
+<polygon points="-35,10 0,45 35,10"></polygon>
+</g>
+<g transform="translate(75 250)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+<g transform="translate(425 250) rotate(180)">
+<polyline points="-30,30 -60,0 -30,-30"></polyline>
+<polyline points="0,30 -30,0 0,-30"></polyline>
+</g>
+</g>
+</g>
+</svg>
+</a>
+Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
+(need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td>
+</tr></tbody>
+</table>
+<script type="module">
+    const { DataTable, jQuery: $ } = await import(window._datatables_src_for_itables_2_2_4);
+
+    document.querySelectorAll("#itables_b0f1a116_873a_48e7_a98d_354ac5289b6f:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        // Define the table data
+        const data = [["MLOps es como cuidar un robot que aprende cosas nuevas todo el tiempo. Primero,\" ense\u00f1as al robot usando datos y un proceso llamado \"\"entrenamiento\"\". Despu\u00e9s\", lo pones a trabajar en el mundo real, pero necesitas revisarlo y darle m\u00e1s datos para que no se equivoque. Tambi\u00e9n construyes herramientas para arreglarlo r\u00e1pido si algo sale mal. MLOps asegura que el robot siga siendo \u00fatil y haga bien su trabajo, incluso cuando el mundo cambia."]];
 
         // Define the dt_args
         let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_selected_rows_not_rendered": true};
@@ -22582,7 +23384,7 @@ Loading ITables v2.2.4 from the <code>init_notebook_mode</code> cell...
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [91]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [95]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Liberar memoria eliminando los DataFrames de Spark del caché</span>
