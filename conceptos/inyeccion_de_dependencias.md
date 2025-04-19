@@ -305,6 +305,8 @@ pastel = Pastel(
 
 ## 🧾 Conclusión
 
+La inyección de dependencias ayuda a simplificar el proceso de desarrollo al evitar que las clases tengan que crear todo lo que necesitan por sí mismas. Esto permite que las clases solo se encarguen de lo que deben hacer, mientras que las dependencias (ya preparadas) se inyectan desde fuera, promoviendo un diseño más limpio, flexible y mantenible.
+
 La inyección de dependencias **simplifica el desarrollo** al evitar que las clases tengan que construir por sí mismas lo que necesitan.  
 Esto promueve un diseño:
 
