@@ -12,6 +12,77 @@ No te importa saber cómo el robot camina o cómo funciona su voz, solo sabes qu
 
 Es como cuando usas un juguete, solo sabes qué hace, no cómo lo hace.
 
+# ✅ Modificadores de acceso
+ Imagina que tienes diferentes cosas en casa: algunas las compartes con todos, otras solo con tu familia, y otras no las compartes con nadie.  
+ 
+| Nivel de acceso | ¿Quién puede usarlo?                          | ¿Se comparte?           | Ejemplo claro para todos                                                                     |
+|-----------------|-----------------------------------------------|--------------------------|-----------------------------------------------------------------------------------------------|
+| `private`       | Solo tú                                       | No                       | Tu **ropa interior**: solo tú la usas, nadie más puede ni debe usarla.                       |
+| `protected`     | Tú y tus hermanos                             | Sí, con hermanos         | La **bicicleta familiar**: solo tú y tus hermanos pueden usarla, no tus amigos.              |
+| `default`       | Todos los que viven en tu casa (familia)      | Sí, dentro de casa       | El **control de la tele**: todos en casa pueden usarlo, pero nadie de afuera.                |
+| `public`        | Todos (familia, amigos, vecinos)              | Sí, con cualquiera       | La **pelota del jardín**: todos pueden jugar con ella, incluso los visitantes.               |
+
+
+---
+
+### **1. `public`** – Se puede usar desde cualquier parte  
+- **Cómo se hace:** sin guiones bajos  
+- **Ejemplo:**
+  ```python
+  class Persona:
+      nombre = "Juan"  # público
+  ```
+
+---
+
+### **2. `protected`** – Se usa dentro de la clase y de sus subclases  
+- **Cómo se indica:** con un **guion bajo delante**: `_nombre`  
+- **Python no lo bloquea**, pero **es una forma de decir "no lo uses desde fuera"**
+- **Ejemplo:**
+  ```python
+  class Persona:
+      _edad = 10  # protegido (recomendación, no forzado)
+  ```
+
+---
+
+### **3. `private`** – Solo dentro de la misma clase  
+- **Cómo se indica:** con **dos guiones bajos delante**: `__nombre`  
+- Python **lo renombra internamente** para que sea difícil acceder desde fuera.
+- **Ejemplo:**
+  ```python
+  class Persona:
+      __documento = "12345"  # privado
+  ```
+
+---
+
+### ¿Y `default`?
+En Python **no existe un nivel "por defecto" como en Java**, porque todo lo que no empieza con guión bajo se considera `public`.
+
+```java
+public class Persona {
+    public String nombre;       // público
+    protected int edad;         // protegido
+    String ciudad;              // default (sin modificador)
+    private String documento;   // privado
+}
+```
+
+---
+## En resumen:
+
+### ¿Por qué importa esto en programación?
+Porque igual que en tu casa decides quién puede usar tus cosas, en programación decides quién puede ver o usar partes del código. Esto ayuda a que todo funcione bien y nadie use lo que no debe.
+
+| Nivel de acceso | Java (ejemplo)                     | Python (equivalente)      | Notas                                                                 |
+|-----------------|------------------------------------|----------------------------|-----------------------------------------------------------------------|
+| `public`        | `public String nombre;`            | `nombre = "Juan"`          | Visible desde cualquier parte.                                       |
+| `protected`     | `protected int edad;`              | `_edad = 10`               | Visible dentro de la clase y subclases. En Python es solo convención.|
+| `default`       | `String ciudad;` *(sin modificador)* | ❌ No existe              | En Java, visible solo en el mismo paquete. Python no tiene paquetes igual. |
+| `private`       | `private String documento;`        | `__documento = "1234"`     | Solo accesible dentro de la clase. En Python se “manglea” el nombre. |
+
+---
 
 # ✅ Inyección de Dependencias
 
