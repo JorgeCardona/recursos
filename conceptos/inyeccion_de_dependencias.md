@@ -13,7 +13,7 @@ No te importa saber cómo el robot camina o cómo funciona su voz, solo sabes qu
 Es como cuando usas un juguete, solo sabes qué hace, no cómo lo hace.
 
 # ✅ Modificadores de acceso
- Imagina que tienes diferentes cosas en casa: algunas las compartes con todos, otras solo con tu familia, y otras no las compartes con nadie.  
+ Imagina que tienes diferentes cosas en casa: algunas las compartes con todos, otras solo con tu familia, otras con tus iguales y otras no las compartes con nadie.  
  
 | Nivel de acceso | ¿Quién puede usarlo?                          | ¿Se comparte?           | Ejemplo claro para todos                                                                     |
 |-----------------|-----------------------------------------------|--------------------------|-----------------------------------------------------------------------------------------------|
