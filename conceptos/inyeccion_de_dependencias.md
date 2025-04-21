@@ -1,3 +1,18 @@
+# ✅ Abstracción
+
+La abstracción en programación es cuando defines y  decides qué cosas puede hacer algo y qué cosas tiene, pero no te preocupas por los detalles de cómo lo hace. Solo usas lo que necesitas saber. Osea que métodos y propiedades debe tener algo, antes de crearlo.
+
+Por ejemplo, imagina que tienes una clase "Robot":
+
+El robot puede "caminar" y "hablar" (esos son sus métodos).
+
+El robot tiene "color" y "tamaño" (esos son sus atributos).
+
+No te importa saber cómo el robot camina o cómo funciona su voz, solo sabes que puedes usar esos botones para hacer que camine y hable. La abstracción es como usar el robot sin tener que entender todos sus detalles internos.
+
+Es como cuando usas un juguete, solo sabes qué hace, no cómo lo hace.
+
+
 # ✅ Inyección de Dependencias
 
 La inyección de dependencias es un patrón de diseño que permite que una clase principal no cree por sí misma los objetos que necesita, sino que los reciba desde afuera (ya construidos), por medio de diferentes mecanismos.  
