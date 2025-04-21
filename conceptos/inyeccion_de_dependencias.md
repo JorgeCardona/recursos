@@ -12,8 +12,11 @@ No te importa saber cómo el robot camina o cómo funciona su voz, solo sabes qu
 
 Es como cuando usas un juguete, solo sabes qué hace, no cómo lo hace.
 
-# ✅ Modificadores de acceso
- Imagina que tienes diferentes cosas en casa: algunas las compartes con todos `public`, otras solo con tu familia `default`, otras con tus iguales `protected` y otras no las compartes con nadie `private`.  
+# ✅ Encapsulamiento y Modificadores de acceso
+Encapsulamiento es el principio de ocultar los detalles internos de un objeto y proteger su información, permitiendo que solo se acceda o modifique de manera controlada.
+No se trata solo de esconder, sino de decidir cómo y quién puede usar esa información. Para lograrlo, usamos los modificadores de acceso, que nos permiten controlar el nivel de acceso a los atributos y métodos de una clase.
+
+Imagina que tienes diferentes cosas en casa: algunas las compartes con todos `public`, otras solo con tu familia `default`, otras con tus iguales `protected` y otras no las compartes con nadie `private`.  
  
 | Nivel de acceso | ¿Quién puede usarlo?                          | ¿Se comparte?           | Ejemplo claro para todos                                                                     |
 |-----------------|-----------------------------------------------|--------------------------|-----------------------------------------------------------------------------------------------|
