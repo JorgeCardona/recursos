@@ -24,6 +24,7 @@ Es como cuando usas un juguete, solo sabes qué hace, no cómo lo hace.
 
 
 ---
+##  EJEMPLO PYTHON
 
 ### **1. `public`** – Se puede usar desde cualquier parte  
 - **Cómo se hace:** sin guiones bajos  
