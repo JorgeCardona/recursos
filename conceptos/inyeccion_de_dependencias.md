@@ -80,8 +80,8 @@ Porque igual que en tu casa decides quién puede usar tus cosas, en programació
 |-----------------|------------------------------------|----------------------------|-----------------------------------------------------------------------|
 | `public`        | `public String nombre;`            | `nombre = "Juan"`          | Visible desde cualquier parte.                                       |
 | `protected`     | `protected int edad;`              | `_edad = 10`               | Visible dentro de la clase y subclases. En Python es solo convención.|
-| `default`       | `String ciudad;` *(sin modificador)* | ❌ No existe              | En Java, visible solo en el mismo paquete. Python no tiene paquetes igual. |
 | `private`       | `private String documento;`        | `__documento = "1234"`     | Solo accesible dentro de la clase. En Python se “manglea” el nombre. |
+| `default`       | `String ciudad;` *(sin modificador declarado)* | ❌ No existe              | En Java, visible solo en el mismo paquete. Python no tiene paquetes igual. |
 
 ---
 
